@@ -1,0 +1,73 @@
+# ==============================================================================
+# Byte-compiled / optimized / DLL files
+# ==============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.pyd
+
+# ==============================================================================
+# Virtual Environments & Packaging
+# ==============================================================================
+.env
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+build/
+dist/
+*.egg-info/
+
+# ==============================================================================
+# IDEs & Editors
+# ==============================================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+
+# ==============================================================================
+# OS Generated Files
+# ==============================================================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ==============================================================================
+# Temporary Dumps, Scratch & Jupyter
+# ==============================================================================
+scratch/
+tmp/
+temp/
+*.log
+.ipynb_checkpoints/
+.pytest_cache/
+
+# ==============================================================================
+# Generated Heavy Outputs & Artifacts
+# ==============================================================================
+# Intermediate inspection step images (5 steps per sample)
+outputs/steps/
+
+# Individual JSON files per sample
+outputs/predictions/
+
+# High-resolution caliper measurement details & quick previews
+outputs/visualizations/*_measured.png
+outputs/prediction_measured.png
+# ==============================================================================
+# Datasets, Reference Images & CAD Drawings
+# ==============================================================================
+assets/
+items/

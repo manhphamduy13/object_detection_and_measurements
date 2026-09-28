@@ -1,0 +1,493 @@
+{
+  "98003P": {
+    "sku": "98003P",
+    "source_file": "items/98003P.pdf",
+    "item_name": "98003P",
+    "part_no": "98003P",
+    "unit": "mm",
+    "drawing": "drawing.png",
+    "review_status": "auto_extracted_from_pdf",
+    "dimensions": [
+      {
+        "raw_spec": "ψ3.95+0.05/-0.10mm",
+        "label": "D_",
+        "nominal": 3.95,
+        "diameter": true,
+        "upper_tol": 0.05,
+        "lower_tol": -0.1,
+        "min": 3.85,
+        "max": 4.0,
+        "tolerance_type": "asymmetric"
+      },
+      {
+        "raw_spec": "ψ4.0+0/-0.05mm",
+        "label": "D_",
+        "nominal": 4.0,
+        "diameter": true,
+        "upper_tol": 0.0,
+        "lower_tol": -0.05,
+        "min": 3.95,
+        "max": 4.0,
+        "tolerance_type": "asymmetric"
+      },
+      {
+        "raw_spec": "ψ3.5mm MAX.",
+        "label": "D_",
+        "nominal": 3.5,
+        "diameter": true,
+        "upper_tol": 0.0,
+        "lower_tol": 0.0,
+        "min": 3.5,
+        "max": 3.5,
+        "tolerance_type": "exact"
+      },
+      {
+        "raw_spec": "32.0+0.0/-1.10mm",
+        "label": "DIM",
+        "nominal": 32.0,
+        "diameter": false,
+        "upper_tol": 0.0,
+        "lower_tol": -1.1,
+        "min": 30.9,
+        "max": 32.0,
+        "tolerance_type": "asymmetric"
+      },
+      {
+        "raw_spec": "W 26.0±0.30mm",
+        "label": "W",
+        "nominal": 26.0,
+        "diameter": false,
+        "upper_tol": 0.3,
+        "lower_tol": -0.3,
+        "min": 25.7,
+        "max": 26.3,
+        "tolerance_type": "symmetric"
+      },
+      {
+        "raw_spec": "7.0±0.2mm",
+        "label": "DIM",
+        "nominal": 7.0,
+        "diameter": false,
+        "upper_tol": 0.2,
+        "lower_tol": -0.2,
+        "min": 6.8,
+        "max": 7.2,
+        "tolerance_type": "symmetric"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.047553,
+    "golden_sample": {
+      "filename": "98003P_1.png",
+      "obb_long_px": 672.94,
+      "obb_short_px": 558.65,
+      "angle_deg": 88.28,
+      "optical_scale_um_per_px": 47.55
+    }
+  },
+  "98475": {
+    "sku": "98475",
+    "source_file": "items/98475.pdf",
+    "item_name": "98475",
+    "part_no": "98475",
+    "unit": "mm",
+    "drawing": "drawing.png",
+    "review_status": "auto_extracted_from_pdf",
+    "dimensions": [
+      {
+        "raw_spec": "4.9±0.30mm",
+        "label": "DIM",
+        "nominal": 4.9,
+        "diameter": false,
+        "upper_tol": 0.3,
+        "lower_tol": -0.3,
+        "min": 4.6,
+        "max": 5.2,
+        "tolerance_type": "symmetric"
+      },
+      {
+        "raw_spec": "L 32.5±0.25mm",
+        "label": "L",
+        "nominal": 32.5,
+        "diameter": false,
+        "upper_tol": 0.25,
+        "lower_tol": -0.25,
+        "min": 32.25,
+        "max": 32.75,
+        "tolerance_type": "symmetric"
+      },
+      {
+        "raw_spec": "D 4.75+0/-0.05mm",
+        "label": "D",
+        "nominal": 4.75,
+        "diameter": false,
+        "upper_tol": 0.0,
+        "lower_tol": -0.05,
+        "min": 4.7,
+        "max": 4.75,
+        "tolerance_type": "asymmetric"
+      },
+      {
+        "raw_spec": "F 4.0±0.25mm",
+        "label": "F",
+        "nominal": 4.0,
+        "diameter": false,
+        "upper_tol": 0.25,
+        "lower_tol": -0.25,
+        "min": 3.75,
+        "max": 4.25,
+        "tolerance_type": "symmetric"
+      },
+      {
+        "raw_spec": "24.5±0.25mm",
+        "label": "DIM",
+        "nominal": 24.5,
+        "diameter": false,
+        "upper_tol": 0.25,
+        "lower_tol": -0.25,
+        "min": 24.25,
+        "max": 24.75,
+        "tolerance_type": "symmetric"
+      },
+      {
+        "raw_spec": "0.7±0.03mm",
+        "label": "DIM",
+        "nominal": 0.7,
+        "diameter": false,
+        "upper_tol": 0.03,
+        "lower_tol": -0.03,
+        "min": 0.67,
+        "max": 0.73,
+        "tolerance_type": "symmetric"
+      },
+      {
+        "raw_spec": "W 4.9±0.30mm",
+        "label": "W",
+        "nominal": 4.9,
+        "diameter": false,
+        "upper_tol": 0.3,
+        "lower_tol": -0.3,
+        "min": 4.6,
+        "max": 5.2,
+        "tolerance_type": "symmetric"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.038547,
+    "golden_sample": {
+      "filename": "98475_1.png",
+      "obb_long_px": 843.12,
+      "obb_short_px": 397.08,
+      "angle_deg": 89.11,
+      "optical_scale_um_per_px": 38.55
+    }
+  },
+  "98661BBS-1": {
+    "sku": "98661BBS-1",
+    "source_file": "items/98661BBS-1.pdf",
+    "item_name": "98661BBS-1",
+    "part_no": "98661BBS-1",
+    "unit": "mm",
+    "drawing": "drawing.png",
+    "review_status": "auto_extracted_from_pdf",
+    "dimensions": [
+      {
+        "raw_spec": "3.0±0.20mm",
+        "label": "DIM",
+        "nominal": 3.0,
+        "diameter": false,
+        "upper_tol": 0.2,
+        "lower_tol": -0.2,
+        "min": 2.8,
+        "max": 3.2,
+        "tolerance_type": "symmetric"
+      },
+      {
+        "raw_spec": "H 4.2±0.30mm",
+        "label": "H",
+        "nominal": 4.2,
+        "diameter": false,
+        "upper_tol": 0.3,
+        "lower_tol": -0.3,
+        "min": 3.9,
+        "max": 4.5,
+        "tolerance_type": "symmetric"
+      },
+      {
+        "raw_spec": "W 4.3±0.30mm",
+        "label": "W",
+        "nominal": 4.3,
+        "diameter": false,
+        "upper_tol": 0.3,
+        "lower_tol": -0.3,
+        "min": 4.0,
+        "max": 4.6,
+        "tolerance_type": "symmetric"
+      },
+      {
+        "raw_spec": "L 28.5±0.30mm",
+        "label": "L",
+        "nominal": 28.5,
+        "diameter": false,
+        "upper_tol": 0.3,
+        "lower_tol": -0.3,
+        "min": 28.2,
+        "max": 28.8,
+        "tolerance_type": "symmetric"
+      },
+      {
+        "raw_spec": "3.15±0.07mm",
+        "label": "DIM",
+        "nominal": 3.15,
+        "diameter": false,
+        "upper_tol": 0.07,
+        "lower_tol": -0.07,
+        "min": 3.08,
+        "max": 3.22,
+        "tolerance_type": "symmetric"
+      },
+      {
+        "raw_spec": "F 4.3±0.30mm",
+        "label": "F",
+        "nominal": 4.3,
+        "diameter": false,
+        "upper_tol": 0.3,
+        "lower_tol": -0.3,
+        "min": 4.0,
+        "max": 4.6,
+        "tolerance_type": "symmetric"
+      },
+      {
+        "raw_spec": "1.5+0/-0.04mm",
+        "label": "DIM",
+        "nominal": 1.5,
+        "diameter": false,
+        "upper_tol": 0.0,
+        "lower_tol": -0.04,
+        "min": 1.46,
+        "max": 1.5,
+        "tolerance_type": "asymmetric"
+      },
+      {
+        "raw_spec": "J 6.3±0.07mm",
+        "label": "J",
+        "nominal": 6.3,
+        "diameter": false,
+        "upper_tol": 0.07,
+        "lower_tol": -0.07,
+        "min": 6.23,
+        "max": 6.37,
+        "tolerance_type": "symmetric"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.044255,
+    "golden_sample": {
+      "filename": "98661BBS-1_1.png",
+      "obb_long_px": 644.0,
+      "obb_short_px": 248.0,
+      "angle_deg": 0.0,
+      "optical_scale_um_per_px": 44.25
+    }
+  },
+  "UH-004": {
+    "sku": "UH-004",
+    "source_file": "items/UH-004.pdf",
+    "item_name": "UH-004",
+    "part_no": "UH-004",
+    "unit": "mm",
+    "drawing": "drawing.png",
+    "review_status": "auto_extracted_from_pdf",
+    "dimensions": [
+      {
+        "raw_spec": "14.2+0.5/-0.3mm",
+        "label": "DIM",
+        "nominal": 14.2,
+        "diameter": false,
+        "upper_tol": 0.5,
+        "lower_tol": -0.3,
+        "min": 13.9,
+        "max": 14.7,
+        "tolerance_type": "asymmetric"
+      },
+      {
+        "raw_spec": "16.8±0.4mm",
+        "label": "DIM",
+        "nominal": 16.8,
+        "diameter": false,
+        "upper_tol": 0.4,
+        "lower_tol": -0.4,
+        "min": 16.4,
+        "max": 17.2,
+        "tolerance_type": "symmetric"
+      },
+      {
+        "raw_spec": "15.6±0.3mm",
+        "label": "DIM",
+        "nominal": 15.6,
+        "diameter": false,
+        "upper_tol": 0.3,
+        "lower_tol": -0.3,
+        "min": 15.3,
+        "max": 15.9,
+        "tolerance_type": "symmetric"
+      },
+      {
+        "raw_spec": "7.0+0.5/-0.3mm",
+        "label": "DIM",
+        "nominal": 7.0,
+        "diameter": false,
+        "upper_tol": 0.5,
+        "lower_tol": -0.3,
+        "min": 6.7,
+        "max": 7.5,
+        "tolerance_type": "asymmetric"
+      },
+      {
+        "raw_spec": "19.8±0.5mm",
+        "label": "DIM",
+        "nominal": 19.8,
+        "diameter": false,
+        "upper_tol": 0.5,
+        "lower_tol": -0.5,
+        "min": 19.3,
+        "max": 20.3,
+        "tolerance_type": "symmetric"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.04486,
+    "golden_sample": {
+      "filename": "UH-004_1.png",
+      "obb_long_px": 441.38,
+      "obb_short_px": 385.55,
+      "angle_deg": 80.95,
+      "optical_scale_um_per_px": 44.86
+    }
+  },
+  "UH-8715P": {
+    "sku": "UH-8715P",
+    "source_file": "items/UH-8715P.pdf",
+    "item_name": "UH-8715P",
+    "part_no": "UH-8715P",
+    "unit": "mm",
+    "drawing": null,
+    "review_status": "auto_extracted_from_pdf",
+    "dimensions": [
+      {
+        "raw_spec": "K 5.8±0.2mm",
+        "label": "K",
+        "nominal": 5.8,
+        "diameter": false,
+        "upper_tol": 0.2,
+        "lower_tol": -0.2,
+        "min": 5.6,
+        "max": 6.0,
+        "tolerance_type": "symmetric"
+      },
+      {
+        "raw_spec": "L 7.9±0.2mm",
+        "label": "L",
+        "nominal": 7.9,
+        "diameter": false,
+        "upper_tol": 0.2,
+        "lower_tol": -0.2,
+        "min": 7.7,
+        "max": 8.1,
+        "tolerance_type": "symmetric"
+      },
+      {
+        "raw_spec": "J 1.6±0.2mm",
+        "label": "J",
+        "nominal": 1.6,
+        "diameter": false,
+        "upper_tol": 0.2,
+        "lower_tol": -0.2,
+        "min": 1.4,
+        "max": 1.8,
+        "tolerance_type": "symmetric"
+      },
+      {
+        "raw_spec": "16±0.2mm",
+        "label": "DIM",
+        "nominal": 16.0,
+        "diameter": false,
+        "upper_tol": 0.2,
+        "lower_tol": -0.2,
+        "min": 15.8,
+        "max": 16.2,
+        "tolerance_type": "symmetric"
+      },
+      {
+        "raw_spec": "8.60±0.15mmH",
+        "label": "DIM",
+        "nominal": 8.6,
+        "diameter": false,
+        "upper_tol": 0.15,
+        "lower_tol": -0.15,
+        "min": 8.45,
+        "max": 8.75,
+        "tolerance_type": "symmetric"
+      },
+      {
+        "raw_spec": "9.5±0.2mm",
+        "label": "DIM",
+        "nominal": 9.5,
+        "diameter": false,
+        "upper_tol": 0.2,
+        "lower_tol": -0.2,
+        "min": 9.3,
+        "max": 9.7,
+        "tolerance_type": "symmetric"
+      },
+      {
+        "raw_spec": "3.05+0.05/-0.10mm",
+        "label": "DIM",
+        "nominal": 3.05,
+        "diameter": false,
+        "upper_tol": 0.05,
+        "lower_tol": -0.1,
+        "min": 2.95,
+        "max": 3.1,
+        "tolerance_type": "asymmetric"
+      },
+      {
+        "raw_spec": "4.7±0.2mm",
+        "label": "DIM",
+        "nominal": 4.7,
+        "diameter": false,
+        "upper_tol": 0.2,
+        "lower_tol": -0.2,
+        "min": 4.5,
+        "max": 4.9,
+        "tolerance_type": "symmetric"
+      },
+      {
+        "raw_spec": "14.5±0.2mm",
+        "label": "DIM",
+        "nominal": 14.5,
+        "diameter": false,
+        "upper_tol": 0.2,
+        "lower_tol": -0.2,
+        "min": 14.3,
+        "max": 14.7,
+        "tolerance_type": "symmetric"
+      },
+      {
+        "raw_spec": "21.90±0.15mm",
+        "label": "DIM",
+        "nominal": 21.9,
+        "diameter": false,
+        "upper_tol": 0.15,
+        "lower_tol": -0.15,
+        "min": 21.75,
+        "max": 22.05,
+        "tolerance_type": "symmetric"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.046489,
+    "golden_sample": {
+      "filename": "UH-8715P_1.png",
+      "obb_long_px": 471.08,
+      "obb_short_px": 337.75,
+      "angle_deg": 0.64,
+      "optical_scale_um_per_px": 46.49
+    }
+  }
+}

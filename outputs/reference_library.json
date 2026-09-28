@@ -1,0 +1,763 @@
+{
+  "98003P": {
+    "label": "98003P",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 148748.5,
+      "perimeter": 4095.3494091033936,
+      "aspect_ratio": 0.8189781021897811,
+      "rect_long": 672.9365844726562,
+      "rect_short": 558.6494140625,
+      "rect_aspect": 0.8301665074433174,
+      "solidity": 0.4288368673691494,
+      "circularity": 0.11145011909240811,
+      "hole_count": 0.0,
+      "hu": [
+        0.3797976159166953,
+        3.6577424532592473,
+        3.565379847742459,
+        2.3540287578274666,
+        5.3141958080649365,
+        -4.203614106658777,
+        6.649669532779939
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      148748.5,
+      148748.5
+    ],
+    "expected_aspect_range": [
+      0.8301665074433174,
+      0.8301665074433174
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "98003P",
+      "source_file": "items/98003P.pdf",
+      "item_name": "98003P",
+      "part_no": "98003P",
+      "unit": "mm",
+      "drawing": "drawing.png",
+      "review_status": "auto_extracted_from_pdf",
+      "dimensions": [
+        {
+          "raw_spec": "\u03c83.95+0.05/-0.10mm",
+          "label": "D_",
+          "nominal": 3.95,
+          "diameter": true,
+          "upper_tol": 0.05,
+          "lower_tol": -0.1,
+          "min": 3.85,
+          "max": 4.0,
+          "tolerance_type": "asymmetric"
+        },
+        {
+          "raw_spec": "\u03c84.0+0/-0.05mm",
+          "label": "D_",
+          "nominal": 4.0,
+          "diameter": true,
+          "upper_tol": 0.0,
+          "lower_tol": -0.05,
+          "min": 3.95,
+          "max": 4.0,
+          "tolerance_type": "asymmetric"
+        },
+        {
+          "raw_spec": "\u03c83.5mm MAX.",
+          "label": "D_",
+          "nominal": 3.5,
+          "diameter": true,
+          "upper_tol": 0.0,
+          "lower_tol": 0.0,
+          "min": 3.5,
+          "max": 3.5,
+          "tolerance_type": "exact"
+        },
+        {
+          "raw_spec": "32.0+0.0/-1.10mm",
+          "label": "DIM",
+          "nominal": 32.0,
+          "diameter": false,
+          "upper_tol": 0.0,
+          "lower_tol": -1.1,
+          "min": 30.9,
+          "max": 32.0,
+          "tolerance_type": "asymmetric"
+        },
+        {
+          "raw_spec": "W 26.0\u00b10.30mm",
+          "label": "W",
+          "nominal": 26.0,
+          "diameter": false,
+          "upper_tol": 0.3,
+          "lower_tol": -0.3,
+          "min": 25.7,
+          "max": 26.3,
+          "tolerance_type": "symmetric"
+        },
+        {
+          "raw_spec": "7.0\u00b10.2mm",
+          "label": "DIM",
+          "nominal": 7.0,
+          "diameter": false,
+          "upper_tol": 0.2,
+          "lower_tol": -0.2,
+          "min": 6.8,
+          "max": 7.2,
+          "tolerance_type": "symmetric"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.047553,
+      "golden_sample": {
+        "filename": "98003P_1.png",
+        "obb_long_px": 672.94,
+        "obb_short_px": 558.65,
+        "angle_deg": 88.28,
+        "optical_scale_um_per_px": 47.55
+      }
+    },
+    "drawing": "C:\\Users\\DELL\\OneDrive\\Desktop\\object-classification\\assets\\references\\98003P\\drawing.png"
+  },
+  "98475": {
+    "label": "98475",
+    "n_references": 2,
+    "feature_mean": {
+      "area": 151353.75,
+      "perimeter": 3998.292016148567,
+      "aspect_ratio": 0.5158642086043307,
+      "rect_long": 842.7334594726562,
+      "rect_short": 437.9572448730469,
+      "rect_aspect": 0.5197086556324177,
+      "solidity": 0.5237277822295666,
+      "circularity": 0.1221101256136698,
+      "hole_count": 0.0,
+      "hu": [
+        0.2553106515843351,
+        0.8610213523412004,
+        2.263413364657529,
+        2.3666650316733824,
+        4.6880534462705725,
+        2.8025960146700672,
+        5.453298275470751
+      ]
+    },
+    "feature_std": {
+      "area": 42038.75,
+      "perimeter": 896.6553716659546,
+      "aspect_ratio": 0.04715110352758922,
+      "rect_long": 0.3822021484375,
+      "rect_short": 40.87591552734375,
+      "rect_aspect": 0.048739668314333434,
+      "solidity": 0.003339996573256343,
+      "circularity": 0.020683159485199415,
+      "hole_count": 0.0,
+      "hu": [
+        0.08977420075703449,
+        0.41975574353704836,
+        1.0729400233309994,
+        0.65184532021413,
+        1.5149592433569963,
+        0.8592538123844783,
+        1.4898226712364406
+      ]
+    },
+    "expected_area_range": [
+      109315.0,
+      193392.5
+    ],
+    "expected_aspect_range": [
+      0.4709689873180843,
+      0.5684483239467512
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "98475",
+      "source_file": "items/98475.pdf",
+      "item_name": "98475",
+      "part_no": "98475",
+      "unit": "mm",
+      "drawing": "drawing.png",
+      "review_status": "auto_extracted_from_pdf",
+      "dimensions": [
+        {
+          "raw_spec": "4.9\u00b10.30mm",
+          "label": "DIM",
+          "nominal": 4.9,
+          "diameter": false,
+          "upper_tol": 0.3,
+          "lower_tol": -0.3,
+          "min": 4.6,
+          "max": 5.2,
+          "tolerance_type": "symmetric"
+        },
+        {
+          "raw_spec": "L 32.5\u00b10.25mm",
+          "label": "L",
+          "nominal": 32.5,
+          "diameter": false,
+          "upper_tol": 0.25,
+          "lower_tol": -0.25,
+          "min": 32.25,
+          "max": 32.75,
+          "tolerance_type": "symmetric"
+        },
+        {
+          "raw_spec": "D 4.75+0/-0.05mm",
+          "label": "D",
+          "nominal": 4.75,
+          "diameter": false,
+          "upper_tol": 0.0,
+          "lower_tol": -0.05,
+          "min": 4.7,
+          "max": 4.75,
+          "tolerance_type": "asymmetric"
+        },
+        {
+          "raw_spec": "F 4.0\u00b10.25mm",
+          "label": "F",
+          "nominal": 4.0,
+          "diameter": false,
+          "upper_tol": 0.25,
+          "lower_tol": -0.25,
+          "min": 3.75,
+          "max": 4.25,
+          "tolerance_type": "symmetric"
+        },
+        {
+          "raw_spec": "24.5\u00b10.25mm",
+          "label": "DIM",
+          "nominal": 24.5,
+          "diameter": false,
+          "upper_tol": 0.25,
+          "lower_tol": -0.25,
+          "min": 24.25,
+          "max": 24.75,
+          "tolerance_type": "symmetric"
+        },
+        {
+          "raw_spec": "0.7\u00b10.03mm",
+          "label": "DIM",
+          "nominal": 0.7,
+          "diameter": false,
+          "upper_tol": 0.03,
+          "lower_tol": -0.03,
+          "min": 0.67,
+          "max": 0.73,
+          "tolerance_type": "symmetric"
+        },
+        {
+          "raw_spec": "W 4.9\u00b10.30mm",
+          "label": "W",
+          "nominal": 4.9,
+          "diameter": false,
+          "upper_tol": 0.3,
+          "lower_tol": -0.3,
+          "min": 4.6,
+          "max": 5.2,
+          "tolerance_type": "symmetric"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.038547,
+      "golden_sample": {
+        "filename": "98475_1.png",
+        "obb_long_px": 843.12,
+        "obb_short_px": 397.08,
+        "angle_deg": 89.11,
+        "optical_scale_um_per_px": 38.55
+      }
+    },
+    "drawing": "C:\\Users\\DELL\\OneDrive\\Desktop\\object-classification\\assets\\references\\98475\\drawing.png"
+  },
+  "98661BBS-1": {
+    "label": "98661BBS-1",
+    "n_references": 10,
+    "feature_mean": {
+      "area": 118546.1,
+      "perimeter": 3576.236117720604,
+      "aspect_ratio": 0.5985615916337979,
+      "rect_long": 608.9260559082031,
+      "rect_short": 379.7796936035156,
+      "rect_aspect": 0.6300096345793842,
+      "solidity": 0.6044241348087198,
+      "circularity": 0.11963228037154292,
+      "hole_count": 0.0,
+      "hu": [
+        0.4577594727236279,
+        1.5498784199954918,
+        3.159009792994275,
+        3.7092785741945944,
+        6.052378551696728,
+        3.3139075784615413,
+        -0.1790042196195814
+      ]
+    },
+    "feature_std": {
+      "area": 34204.30642024481,
+      "perimeter": 715.8199939121339,
+      "aspect_ratio": 0.11730159636097391,
+      "rect_long": 29.540329884491022,
+      "rect_short": 77.99926980541336,
+      "rect_aspect": 0.15385301219967862,
+      "solidity": 0.1476295189387421,
+      "circularity": 0.031065713564223225,
+      "hole_count": 0.0,
+      "hu": [
+        0.14242466396423098,
+        0.31888077815509636,
+        1.360345212042962,
+        1.3300408101631473,
+        5.052909258868435,
+        3.882214949187338,
+        7.824247392380691
+      ]
+    },
+    "expected_area_range": [
+      68070.5,
+      160996.0
+    ],
+    "expected_aspect_range": [
+      0.38509316770186336,
+      0.9076273838346096
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "98661BBS-1",
+      "source_file": "items/98661BBS-1.pdf",
+      "item_name": "98661BBS-1",
+      "part_no": "98661BBS-1",
+      "unit": "mm",
+      "drawing": "drawing.png",
+      "review_status": "auto_extracted_from_pdf",
+      "dimensions": [
+        {
+          "raw_spec": "3.0\u00b10.20mm",
+          "label": "DIM",
+          "nominal": 3.0,
+          "diameter": false,
+          "upper_tol": 0.2,
+          "lower_tol": -0.2,
+          "min": 2.8,
+          "max": 3.2,
+          "tolerance_type": "symmetric"
+        },
+        {
+          "raw_spec": "H 4.2\u00b10.30mm",
+          "label": "H",
+          "nominal": 4.2,
+          "diameter": false,
+          "upper_tol": 0.3,
+          "lower_tol": -0.3,
+          "min": 3.9,
+          "max": 4.5,
+          "tolerance_type": "symmetric"
+        },
+        {
+          "raw_spec": "W 4.3\u00b10.30mm",
+          "label": "W",
+          "nominal": 4.3,
+          "diameter": false,
+          "upper_tol": 0.3,
+          "lower_tol": -0.3,
+          "min": 4.0,
+          "max": 4.6,
+          "tolerance_type": "symmetric"
+        },
+        {
+          "raw_spec": "L 28.5\u00b10.30mm",
+          "label": "L",
+          "nominal": 28.5,
+          "diameter": false,
+          "upper_tol": 0.3,
+          "lower_tol": -0.3,
+          "min": 28.2,
+          "max": 28.8,
+          "tolerance_type": "symmetric"
+        },
+        {
+          "raw_spec": "3.15\u00b10.07mm",
+          "label": "DIM",
+          "nominal": 3.15,
+          "diameter": false,
+          "upper_tol": 0.07,
+          "lower_tol": -0.07,
+          "min": 3.08,
+          "max": 3.22,
+          "tolerance_type": "symmetric"
+        },
+        {
+          "raw_spec": "F 4.3\u00b10.30mm",
+          "label": "F",
+          "nominal": 4.3,
+          "diameter": false,
+          "upper_tol": 0.3,
+          "lower_tol": -0.3,
+          "min": 4.0,
+          "max": 4.6,
+          "tolerance_type": "symmetric"
+        },
+        {
+          "raw_spec": "1.5+0/-0.04mm",
+          "label": "DIM",
+          "nominal": 1.5,
+          "diameter": false,
+          "upper_tol": 0.0,
+          "lower_tol": -0.04,
+          "min": 1.46,
+          "max": 1.5,
+          "tolerance_type": "asymmetric"
+        },
+        {
+          "raw_spec": "J 6.3\u00b10.07mm",
+          "label": "J",
+          "nominal": 6.3,
+          "diameter": false,
+          "upper_tol": 0.07,
+          "lower_tol": -0.07,
+          "min": 6.23,
+          "max": 6.37,
+          "tolerance_type": "symmetric"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.044255,
+      "golden_sample": {
+        "filename": "98661BBS-1_1.png",
+        "obb_long_px": 644.0,
+        "obb_short_px": 248.0,
+        "angle_deg": 0.0,
+        "optical_scale_um_per_px": 44.25
+      }
+    },
+    "drawing": "C:\\Users\\DELL\\OneDrive\\Desktop\\object-classification\\assets\\references\\98661BBS-1\\drawing.png"
+  },
+  "UH-004": {
+    "label": "UH-004",
+    "n_references": 2,
+    "feature_mean": {
+      "area": 177780.75,
+      "perimeter": 1770.3042089939117,
+      "aspect_ratio": 0.92006292006292,
+      "rect_long": 494.3307647705078,
+      "rect_short": 430.3855743408203,
+      "rect_aspect": 0.8709212578869452,
+      "solidity": 0.9772543954778159,
+      "circularity": 0.7041983282017861,
+      "hole_count": 0.0,
+      "hu": [
+        0.7745605175776232,
+        3.1132758154829685,
+        3.312194376648318,
+        5.182044750502973,
+        0.06491120422851004,
+        -0.08922780373409633,
+        9.580487760975632
+      ]
+    },
+    "feature_std": {
+      "area": 40888.25,
+      "perimeter": 215.34671640396118,
+      "aspect_ratio": 0.02588302588302588,
+      "rect_long": 52.95518493652344,
+      "rect_short": 44.83534240722656,
+      "rect_aspect": 0.002598369271883283,
+      "solidity": 0.004069974390761288,
+      "circularity": 0.007264928833391138,
+      "hole_count": 0.0,
+      "hu": [
+        0.0021504680582515867,
+        0.04237523744033478,
+        0.10602453863269767,
+        0.029879017826182075,
+        9.601419275851322,
+        6.900673855827195,
+        0.07479299526518535
+      ]
+    },
+    "expected_area_range": [
+      136892.5,
+      218669.0
+    ],
+    "expected_aspect_range": [
+      0.8683228886150619,
+      0.8735196271588285
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "UH-004",
+      "source_file": "items/UH-004.pdf",
+      "item_name": "UH-004",
+      "part_no": "UH-004",
+      "unit": "mm",
+      "drawing": "drawing.png",
+      "review_status": "auto_extracted_from_pdf",
+      "dimensions": [
+        {
+          "raw_spec": "14.2+0.5/-0.3mm",
+          "label": "DIM",
+          "nominal": 14.2,
+          "diameter": false,
+          "upper_tol": 0.5,
+          "lower_tol": -0.3,
+          "min": 13.9,
+          "max": 14.7,
+          "tolerance_type": "asymmetric"
+        },
+        {
+          "raw_spec": "16.8\u00b10.4mm",
+          "label": "DIM",
+          "nominal": 16.8,
+          "diameter": false,
+          "upper_tol": 0.4,
+          "lower_tol": -0.4,
+          "min": 16.4,
+          "max": 17.2,
+          "tolerance_type": "symmetric"
+        },
+        {
+          "raw_spec": "15.6\u00b10.3mm",
+          "label": "DIM",
+          "nominal": 15.6,
+          "diameter": false,
+          "upper_tol": 0.3,
+          "lower_tol": -0.3,
+          "min": 15.3,
+          "max": 15.9,
+          "tolerance_type": "symmetric"
+        },
+        {
+          "raw_spec": "7.0+0.5/-0.3mm",
+          "label": "DIM",
+          "nominal": 7.0,
+          "diameter": false,
+          "upper_tol": 0.5,
+          "lower_tol": -0.3,
+          "min": 6.7,
+          "max": 7.5,
+          "tolerance_type": "asymmetric"
+        },
+        {
+          "raw_spec": "19.8\u00b10.5mm",
+          "label": "DIM",
+          "nominal": 19.8,
+          "diameter": false,
+          "upper_tol": 0.5,
+          "lower_tol": -0.5,
+          "min": 19.3,
+          "max": 20.3,
+          "tolerance_type": "symmetric"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.04486,
+      "golden_sample": {
+        "filename": "UH-004_1.png",
+        "obb_long_px": 441.38,
+        "obb_short_px": 385.55,
+        "angle_deg": 80.95,
+        "optical_scale_um_per_px": 44.86
+      }
+    },
+    "drawing": "C:\\Users\\DELL\\OneDrive\\Desktop\\object-classification\\assets\\references\\UH-004\\drawing.png"
+  },
+  "UH-8715P": {
+    "label": "UH-8715P",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 141883.0,
+      "perimeter": 1921.244728565216,
+      "aspect_ratio": 0.7172995780590717,
+      "rect_long": 471.08203125,
+      "rect_short": 337.7458190917969,
+      "rect_aspect": 0.7169575502500062,
+      "solidity": 0.932557314123462,
+      "circularity": 0.48303082768564193,
+      "hole_count": 0.0,
+      "hu": [
+        0.7458725793800556,
+        2.4934737890591765,
+        4.237761721272008,
+        5.942907524775264,
+        -11.033444417049184,
+        7.190184791144919,
+        12.548755500021153
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      141883.0,
+      141883.0
+    ],
+    "expected_aspect_range": [
+      0.7169575502500062,
+      0.7169575502500062
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "UH-8715P",
+      "source_file": "items/UH-8715P.pdf",
+      "item_name": "UH-8715P",
+      "part_no": "UH-8715P",
+      "unit": "mm",
+      "drawing": null,
+      "review_status": "auto_extracted_from_pdf",
+      "dimensions": [
+        {
+          "raw_spec": "K 5.8\u00b10.2mm",
+          "label": "K",
+          "nominal": 5.8,
+          "diameter": false,
+          "upper_tol": 0.2,
+          "lower_tol": -0.2,
+          "min": 5.6,
+          "max": 6.0,
+          "tolerance_type": "symmetric"
+        },
+        {
+          "raw_spec": "L 7.9\u00b10.2mm",
+          "label": "L",
+          "nominal": 7.9,
+          "diameter": false,
+          "upper_tol": 0.2,
+          "lower_tol": -0.2,
+          "min": 7.7,
+          "max": 8.1,
+          "tolerance_type": "symmetric"
+        },
+        {
+          "raw_spec": "J 1.6\u00b10.2mm",
+          "label": "J",
+          "nominal": 1.6,
+          "diameter": false,
+          "upper_tol": 0.2,
+          "lower_tol": -0.2,
+          "min": 1.4,
+          "max": 1.8,
+          "tolerance_type": "symmetric"
+        },
+        {
+          "raw_spec": "16\u00b10.2mm",
+          "label": "DIM",
+          "nominal": 16.0,
+          "diameter": false,
+          "upper_tol": 0.2,
+          "lower_tol": -0.2,
+          "min": 15.8,
+          "max": 16.2,
+          "tolerance_type": "symmetric"
+        },
+        {
+          "raw_spec": "8.60\u00b10.15mmH",
+          "label": "DIM",
+          "nominal": 8.6,
+          "diameter": false,
+          "upper_tol": 0.15,
+          "lower_tol": -0.15,
+          "min": 8.45,
+          "max": 8.75,
+          "tolerance_type": "symmetric"
+        },
+        {
+          "raw_spec": "9.5\u00b10.2mm",
+          "label": "DIM",
+          "nominal": 9.5,
+          "diameter": false,
+          "upper_tol": 0.2,
+          "lower_tol": -0.2,
+          "min": 9.3,
+          "max": 9.7,
+          "tolerance_type": "symmetric"
+        },
+        {
+          "raw_spec": "3.05+0.05/-0.10mm",
+          "label": "DIM",
+          "nominal": 3.05,
+          "diameter": false,
+          "upper_tol": 0.05,
+          "lower_tol": -0.1,
+          "min": 2.95,
+          "max": 3.1,
+          "tolerance_type": "asymmetric"
+        },
+        {
+          "raw_spec": "4.7\u00b10.2mm",
+          "label": "DIM",
+          "nominal": 4.7,
+          "diameter": false,
+          "upper_tol": 0.2,
+          "lower_tol": -0.2,
+          "min": 4.5,
+          "max": 4.9,
+          "tolerance_type": "symmetric"
+        },
+        {
+          "raw_spec": "14.5\u00b10.2mm",
+          "label": "DIM",
+          "nominal": 14.5,
+          "diameter": false,
+          "upper_tol": 0.2,
+          "lower_tol": -0.2,
+          "min": 14.3,
+          "max": 14.7,
+          "tolerance_type": "symmetric"
+        },
+        {
+          "raw_spec": "21.90\u00b10.15mm",
+          "label": "DIM",
+          "nominal": 21.9,
+          "diameter": false,
+          "upper_tol": 0.15,
+          "lower_tol": -0.15,
+          "min": 21.75,
+          "max": 22.05,
+          "tolerance_type": "symmetric"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.046489,
+      "golden_sample": {
+        "filename": "UH-8715P_1.png",
+        "obb_long_px": 471.08,
+        "obb_short_px": 337.75,
+        "angle_deg": 0.64,
+        "optical_scale_um_per_px": 46.49
+      }
+    },
+    "drawing": null
+  }
+}

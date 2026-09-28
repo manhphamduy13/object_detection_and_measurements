@@ -1,0 +1,95 @@
+{
+  "test_images": 64,
+  "correct": 64,
+  "wrong_accepted": 0,
+  "unknown": 0,
+  "overall_accuracy": 1.0,
+  "accepted_accuracy": 1.0,
+  "unknown_rate": 0.0,
+  "average_latency_ms": 197.83307652687654,
+  "median_latency_ms": 205.68465068936348,
+  "p95_latency_ms": 321.5666059404611,
+  "reference_images": 16,
+  "skus": [
+    "98003P",
+    "98475",
+    "98661BBS-1",
+    "UH-004",
+    "UH-8715P"
+  ],
+  "match_method": "I3",
+  "match_method_comparison": {
+    "I1": {
+      "worst_genuine_score": 5.662187767796631,
+      "best_impostor_score": 0.18521733671974225,
+      "separation_gap": -5.4769704310768885,
+      "separated": false
+    },
+    "I2": {
+      "worst_genuine_score": 6.1871382004473805,
+      "best_impostor_score": 0.8466282443481851,
+      "separation_gap": -5.340509956099195,
+      "separated": false
+    },
+    "I3": {
+      "worst_genuine_score": 1.9025083086561116,
+      "best_impostor_score": 0.18643603256683536,
+      "separation_gap": -1.7160722760892764,
+      "separated": false
+    }
+  },
+  "thresholds_used": {
+    "match_threshold": 0.5,
+    "min_margin": 0.015
+  },
+  "threshold_calibration": {
+    "calibrated": false,
+    "reason": "AUTO_CALIBRATE is False",
+    "worst_genuine_score": null,
+    "best_impostor_score": null,
+    "n_genuine": 0,
+    "n_impostor": 0
+  },
+  "rotation_self_check": {
+    "angles": [
+      17,
+      37,
+      63,
+      128,
+      214
+    ],
+    "tested": 80,
+    "correct": 59,
+    "unknown": 18,
+    "wrong": 3,
+    "accuracy": 0.7375,
+    "worst_genuine_score": 2.151298471523938,
+    "median_genuine_score": 0.17651084146282137
+  },
+  "holdout_self_check": {
+    "tested": 5,
+    "unknown": 2,
+    "leaked": [
+      {
+        "held_out": "98661BBS-1",
+        "claimed": "98475",
+        "best_score": 0.3108703871845668
+      },
+      {
+        "held_out": "UH-004",
+        "claimed": "UH-8715P",
+        "best_score": 0.3217521015339805
+      },
+      {
+        "held_out": "UH-8715P",
+        "claimed": "UH-004",
+        "best_score": 0.23157523913709502
+      }
+    ],
+    "note": ""
+  },
+  "warnings": [
+    "Only 5 image(s) per SKU. The accuracy above is a smoke test, not a reliable estimate of production accuracy.",
+    "The trustworthy numbers are from the self-checks - worst score for a CORRECT part under rotation: 2.1513."
+  ]
+}
