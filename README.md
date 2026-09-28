@@ -49,23 +49,6 @@ object-classification/
 └── README.md                     # Tài liệu hướng dẫn kỹ thuật
 ```
 
----
-
-## 2. Các File & Thư Mục Đã Dọn Dẹp / Xóa Bỏ
-
-Để giải phóng hơn **215 MB** dung lượng và loại bỏ hoàn toàn các file rác gây lộn xộn:
-1. **Xóa thư mục `QC_CAM/` trùng lặp** (~145 MB): Thư mục copy dự phòng trước đó nằm trong repo gây trùng lặp mã nguồn.
-2. **Xóa thư mục `scratch/`** (~70 MB): Chứa các file ảnh kết xuất tạm, ảnh dump cũ (`chg1_full.png`, `ref_chg1.png`, `thumb_chg_*.jpg`), thư mục rác `qc_cam_out/`, `qc_cam_test/` và các script thử nghiệm cũ.
-3. **Xóa các script cũ không còn dùng ở root**:
-   - `build_real_dataset.py`, `prepare_dataset.py`, `setup_raw_dataset.py` (script cũ thời còn USB-A/Charger).
-4. **Xóa các tool cũ lỗi thời**:
-   - `tools/build_specs.py`, `tools/crop_samples.py` (đã được thay thế hoàn toàn bởi `tools/auto_setup_from_pdf.py`).
-5. **Xóa SKU rác trong references**:
-   - `assets/references/98715PS-0` (thư mục rỗng không có ảnh mẫu hay file PDF, trước đây gây cảnh báo vô nghĩa).
-6. **Xóa file rác hệ điều hành**: `.DS_Store` và toàn bộ cache `__pycache__`.
-
----
-
 ## 3. Quy Trình Sử Dụng Chuẩn (Workflow Commands)
 
 ### 1. Nạp bản vẽ PDF & Tự động cấu hình linh kiện mới:
