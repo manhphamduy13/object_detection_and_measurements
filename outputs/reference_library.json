@@ -1,25 +1,146 @@
 {
-  "98003P": {
-    "label": "98003P",
-    "n_references": 1,
+  "1": {
+    "label": "1",
+    "n_references": 3,
     "feature_mean": {
-      "area": 148748.5,
-      "perimeter": 4095.3494091033936,
-      "aspect_ratio": 0.8189781021897811,
-      "rect_long": 672.9365844726562,
-      "rect_short": 558.6494140625,
-      "rect_aspect": 0.8301665074433174,
-      "solidity": 0.4288368673691494,
-      "circularity": 0.11145011909240811,
+      "area": 35463.0,
+      "perimeter": 1611.6124852498372,
+      "aspect_ratio": 7.870441137034057,
+      "rect_long": 703.1109212239584,
+      "rect_short": 87.6137466430664,
+      "rect_aspect": 0.12346131842302932,
+      "solidity": 0.7180038975862603,
+      "circularity": 0.16729196963306162,
+      "extent": 0.5676623393100207,
+      "convex_perimeter_ratio": 0.92690178619428,
+      "isoperimetric_ratio": 6.25831342605994,
+      "equivalent_diameter": 209.63946087342856,
       "hole_count": 0.0,
       "hu": [
-        0.3797976159166953,
-        3.6577424532592473,
-        3.565379847742459,
-        2.3540287578274666,
-        5.3141958080649365,
-        -4.203614106658777,
-        6.649669532779939
+        -0.052047334664423794,
+        -0.09088481393713055,
+        1.2741369558629898,
+        1.3709243878764987,
+        2.6947156505554837,
+        1.341732919185609,
+        2.3661527897731442
+      ]
+    },
+    "feature_std": {
+      "area": 11804.945517310389,
+      "perimeter": 131.06649426451742,
+      "aspect_ratio": 0.8065726667228663,
+      "rect_long": 74.92019204025807,
+      "rect_short": 17.633957039776995,
+      "rect_aspect": 0.011805132895023185,
+      "solidity": 0.100099587185071,
+      "circularity": 0.033508409973176105,
+      "extent": 0.09745288590509636,
+      "convex_perimeter_ratio": 0.03353388118930321,
+      "isoperimetric_ratio": 1.4079555130993464,
+      "equivalent_diameter": 34.70144693872704,
+      "hole_count": 0.0,
+      "hu": [
+        0.0854822228200777,
+        0.17263707822510835,
+        0.08393734785603323,
+        0.05620348353173734,
+        0.10829900908890014,
+        0.06616367641642763,
+        4.214036153976274
+      ]
+    },
+    "expected_area_range": [
+      23399.0,
+      51489.0
+    ],
+    "expected_perimeter_range": [
+      1487.5538432598114,
+      1792.9092741012573
+    ],
+    "expected_aspect_range": [
+      0.10958993263334299,
+      0.138442521631644
+    ],
+    "expected_extent_range": [
+      0.4480091727460987,
+      0.6867167644846874
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "1",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "1",
+      "part_no": "1",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 32.667 +/- 1.633 mm",
+          "label": "L",
+          "nominal": 32.667,
+          "diameter": false,
+          "upper_tol": 1.633,
+          "lower_tol": -1.633,
+          "min": 31.033,
+          "max": 34.3,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 3.994 +/- 0.200 mm",
+          "label": "W",
+          "nominal": 3.994,
+          "diameter": false,
+          "upper_tol": 0.2,
+          "lower_tol": -0.2,
+          "min": 3.795,
+          "max": 4.194,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "1_1.JPG",
+          "1_2.jpg",
+          "1_4.JPG"
+        ],
+        "median_obb_long_px": 653.332,
+        "median_obb_short_px": 79.889,
+        "sample_count": 3
+      }
+    },
+    "drawing": null
+  },
+  "10": {
+    "label": "10",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 1123510.0,
+      "perimeter": 4418.000732421875,
+      "aspect_ratio": 1.778894472361809,
+      "rect_long": 1415.0,
+      "rect_short": 795.0,
+      "rect_aspect": 0.5618374558303887,
+      "solidity": 1.0,
+      "circularity": 0.7233279372048893,
+      "extent": 0.9987421383647799,
+      "convex_perimeter_ratio": 1.0,
+      "isoperimetric_ratio": 1.3824987928217416,
+      "equivalent_diameter": 1196.0340132727843,
+      "hole_count": 0.0,
+      "hu": [
+        0.7093632581240024,
+        1.9849430480676715,
+        7.781804839358558,
+        9.249346695333612,
+        17.764922462679447,
+        10.241818219367449,
+        -29.289318148746503
       ]
     },
     "feature_std": {
@@ -31,6 +152,10 @@
       "rect_aspect": 0.0,
       "solidity": 0.0,
       "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
       "hole_count": 0.0,
       "hu": [
         0.0,
@@ -43,12 +168,5500 @@
       ]
     },
     "expected_area_range": [
-      148748.5,
-      148748.5
+      1123510.0,
+      1123510.0
+    ],
+    "expected_perimeter_range": [
+      4418.000732421875,
+      4418.000732421875
     ],
     "expected_aspect_range": [
-      0.8301665074433174,
-      0.8301665074433174
+      0.5618374558303887,
+      0.5618374558303887
+    ],
+    "expected_extent_range": [
+      0.9987421383647799,
+      0.9987421383647799
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "10",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "10",
+      "part_no": "10",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 70.750 +/- 3.538 mm",
+          "label": "L",
+          "nominal": 70.75,
+          "diameter": false,
+          "upper_tol": 3.538,
+          "lower_tol": -3.538,
+          "min": 67.213,
+          "max": 74.287,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 39.750 +/- 1.988 mm",
+          "label": "W",
+          "nominal": 39.75,
+          "diameter": false,
+          "upper_tol": 1.988,
+          "lower_tol": -1.988,
+          "min": 37.763,
+          "max": 41.737,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "10.png"
+        ],
+        "median_obb_long_px": 1415.0,
+        "median_obb_short_px": 795.0,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "11": {
+    "label": "11",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 2123665.0,
+      "perimeter": 7061.996541500092,
+      "aspect_ratio": 0.9312354312354313,
+      "rect_long": 1713.6383056640625,
+      "rect_short": 1595.415771484375,
+      "rect_aspect": 0.9310108009438582,
+      "solidity": 0.8953373559603292,
+      "circularity": 0.5351072960041151,
+      "extent": 0.7767709352093843,
+      "convex_perimeter_ratio": 0.8135807958415946,
+      "isoperimetric_ratio": 1.8687840877286597,
+      "equivalent_diameter": 1644.3643932443927,
+      "hole_count": 0.0,
+      "hu": [
+        0.7754895362557396,
+        3.6542871256093745,
+        3.997571988336019,
+        6.153105674136042,
+        -12.686577465505888,
+        -7.9803681151828645,
+        -11.22870798791804
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      2123665.0,
+      2123665.0
+    ],
+    "expected_perimeter_range": [
+      7061.996541500092,
+      7061.996541500092
+    ],
+    "expected_aspect_range": [
+      0.9310108009438582,
+      0.9310108009438582
+    ],
+    "expected_extent_range": [
+      0.7767709352093843,
+      0.7767709352093843
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "11",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "11",
+      "part_no": "11",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 85.683 +/- 4.284 mm",
+          "label": "L",
+          "nominal": 85.683,
+          "diameter": false,
+          "upper_tol": 4.284,
+          "lower_tol": -4.284,
+          "min": 81.399,
+          "max": 89.967,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 79.761 +/- 3.988 mm",
+          "label": "W",
+          "nominal": 79.761,
+          "diameter": false,
+          "upper_tol": 3.988,
+          "lower_tol": -3.988,
+          "min": 75.773,
+          "max": 83.749,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "11.jpg"
+        ],
+        "median_obb_long_px": 1713.659,
+        "median_obb_short_px": 1595.216,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "12": {
+    "label": "12",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 121646.5,
+      "perimeter": 1958.104835510254,
+      "aspect_ratio": 2.1030927835051547,
+      "rect_long": 611.0,
+      "rect_short": 290.0,
+      "rect_aspect": 0.4746317512274959,
+      "solidity": 0.8453367893650584,
+      "circularity": 0.39869207420305525,
+      "extent": 0.6865314069642756,
+      "convex_perimeter_ratio": 0.8073580490285633,
+      "isoperimetric_ratio": 2.50820135313424,
+      "equivalent_diameter": 393.55448705182613,
+      "hole_count": 0.0,
+      "hu": [
+        0.5846741666123563,
+        1.432191179098092,
+        2.803217036055716,
+        3.478612268518684,
+        6.63777927694157,
+        4.215754897398544,
+        7.166306868206027
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      121646.5,
+      121646.5
+    ],
+    "expected_perimeter_range": [
+      1958.104835510254,
+      1958.104835510254
+    ],
+    "expected_aspect_range": [
+      0.4746317512274959,
+      0.4746317512274959
+    ],
+    "expected_extent_range": [
+      0.6865314069642756,
+      0.6865314069642756
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "12",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "12",
+      "part_no": "12",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 30.611 +/- 1.531 mm",
+          "label": "L",
+          "nominal": 30.611,
+          "diameter": false,
+          "upper_tol": 1.531,
+          "lower_tol": -1.531,
+          "min": 29.081,
+          "max": 32.142,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 14.457 +/- 0.723 mm",
+          "label": "W",
+          "nominal": 14.457,
+          "diameter": false,
+          "upper_tol": 0.723,
+          "lower_tol": -0.723,
+          "min": 13.734,
+          "max": 15.18,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "12.jpg"
+        ],
+        "median_obb_long_px": 612.226,
+        "median_obb_short_px": 289.134,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "13": {
+    "label": "13",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 94339.5,
+      "perimeter": 1652.0598168373108,
+      "aspect_ratio": 1.1025641025641026,
+      "rect_long": 476.80535888671875,
+      "rect_short": 306.9413146972656,
+      "rect_aspect": 0.6437455221013779,
+      "solidity": 0.8167285666051995,
+      "circularity": 0.43436207412553046,
+      "extent": 0.6446100813043901,
+      "convex_perimeter_ratio": 0.777467795940155,
+      "isoperimetric_ratio": 2.302226781684905,
+      "equivalent_diameter": 346.578680865605,
+      "hole_count": 0.0,
+      "hu": [
+        0.7152608694967474,
+        2.1440038505604373,
+        3.494389561799725,
+        6.076948238148436,
+        -10.889860988672197,
+        -7.284140654289224,
+        -11.326839575134496
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      94339.5,
+      94339.5
+    ],
+    "expected_perimeter_range": [
+      1652.0598168373108,
+      1652.0598168373108
+    ],
+    "expected_aspect_range": [
+      0.6437455221013779,
+      0.6437455221013779
+    ],
+    "expected_extent_range": [
+      0.6446100813043901,
+      0.6446100813043901
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "13",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "13",
+      "part_no": "13",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 24.044 +/- 1.202 mm",
+          "label": "L",
+          "nominal": 24.044,
+          "diameter": false,
+          "upper_tol": 1.202,
+          "lower_tol": -1.202,
+          "min": 22.842,
+          "max": 25.246,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 15.429 +/- 0.771 mm",
+          "label": "W",
+          "nominal": 15.429,
+          "diameter": false,
+          "upper_tol": 0.771,
+          "lower_tol": -0.771,
+          "min": 14.658,
+          "max": 16.201,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "13.jpg"
+        ],
+        "median_obb_long_px": 480.88,
+        "median_obb_short_px": 308.588,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "14": {
+    "label": "14",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 374871.0,
+      "perimeter": 3582.504020690918,
+      "aspect_ratio": 1.0888594164456233,
+      "rect_long": 785.4213256835938,
+      "rect_short": 605.3985595703125,
+      "rect_aspect": 0.7707946547585808,
+      "solidity": 0.9161943586998761,
+      "circularity": 0.36704417464473416,
+      "extent": 0.7883839465866121,
+      "convex_perimeter_ratio": 0.6652981166754788,
+      "isoperimetric_ratio": 2.7244677046513823,
+      "equivalent_diameter": 690.8694387323956,
+      "hole_count": 0.0,
+      "hu": [
+        0.7758082102657181,
+        2.9099556250565497,
+        4.4332868029461405,
+        6.2390396806913,
+        12.136505659450261,
+        7.789587478905206,
+        11.592226923146788
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      374871.0,
+      374871.0
+    ],
+    "expected_perimeter_range": [
+      3582.504020690918,
+      3582.504020690918
+    ],
+    "expected_aspect_range": [
+      0.7707946547585808,
+      0.7707946547585808
+    ],
+    "expected_extent_range": [
+      0.7883839465866121,
+      0.7883839465866121
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "14",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "14",
+      "part_no": "14",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 39.291 +/- 1.965 mm",
+          "label": "L",
+          "nominal": 39.291,
+          "diameter": false,
+          "upper_tol": 1.965,
+          "lower_tol": -1.965,
+          "min": 37.327,
+          "max": 41.256,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 31.257 +/- 1.563 mm",
+          "label": "W",
+          "nominal": 31.257,
+          "diameter": false,
+          "upper_tol": 1.563,
+          "lower_tol": -1.563,
+          "min": 29.694,
+          "max": 32.82,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "14.jpg"
+        ],
+        "median_obb_long_px": 785.824,
+        "median_obb_short_px": 625.137,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "15": {
+    "label": "15",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 1024072.0,
+      "perimeter": 4273.112496852875,
+      "aspect_ratio": 0.9332748024582967,
+      "rect_long": 1141.428955078125,
+      "rect_short": 1058.767578125,
+      "rect_aspect": 0.9275807954710005,
+      "solidity": 0.9732942649056094,
+      "circularity": 0.7047769679379704,
+      "extent": 0.8473853918287552,
+      "convex_perimeter_ratio": 0.9134736977883194,
+      "isoperimetric_ratio": 1.4188885924092982,
+      "equivalent_diameter": 1141.8795764247768,
+      "hole_count": 0.0,
+      "hu": [
+        0.7797778360715736,
+        3.146782240284326,
+        4.660586955840151,
+        7.3289656833429015,
+        -13.996814227904398,
+        -9.02848715181785,
+        13.333755478962878
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      1024072.0,
+      1024072.0
+    ],
+    "expected_perimeter_range": [
+      4273.112496852875,
+      4273.112496852875
+    ],
+    "expected_aspect_range": [
+      0.9275807954710005,
+      0.9275807954710005
+    ],
+    "expected_extent_range": [
+      0.8473853918287552,
+      0.8473853918287552
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "15",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "15",
+      "part_no": "15",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 57.071 +/- 2.854 mm",
+          "label": "L",
+          "nominal": 57.071,
+          "diameter": false,
+          "upper_tol": 2.854,
+          "lower_tol": -2.854,
+          "min": 54.217,
+          "max": 59.924,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 52.915 +/- 2.646 mm",
+          "label": "W",
+          "nominal": 52.915,
+          "diameter": false,
+          "upper_tol": 2.646,
+          "lower_tol": -2.646,
+          "min": 50.269,
+          "max": 55.56,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "15.jpg"
+        ],
+        "median_obb_long_px": 1141.411,
+        "median_obb_short_px": 1058.292,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "16": {
+    "label": "16",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 113339.0,
+      "perimeter": 1599.064540863037,
+      "aspect_ratio": 3.439153439153439,
+      "rect_long": 649.3023681640625,
+      "rect_short": 184.4083251953125,
+      "rect_aspect": 0.28400993779945233,
+      "solidity": 0.9831456775559064,
+      "circularity": 0.5570026413708801,
+      "extent": 0.9465681037485077,
+      "convex_perimeter_ratio": 0.9829150157206776,
+      "isoperimetric_ratio": 1.7953236227728233,
+      "equivalent_diameter": 379.8785289546365,
+      "hole_count": 0.0,
+      "hu": [
+        0.5061504380107279,
+        1.15405383037613,
+        5.73755174637223,
+        6.68239422242309,
+        15.158745785648517,
+        -7.6569771599444065,
+        -12.89237357482766
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      113339.0,
+      113339.0
+    ],
+    "expected_perimeter_range": [
+      1599.064540863037,
+      1599.064540863037
+    ],
+    "expected_aspect_range": [
+      0.28400993779945233,
+      0.28400993779945233
+    ],
+    "expected_extent_range": [
+      0.9465681037485077,
+      0.9465681037485077
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "16",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "16",
+      "part_no": "16",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 32.464 +/- 1.623 mm",
+          "label": "L",
+          "nominal": 32.464,
+          "diameter": false,
+          "upper_tol": 1.623,
+          "lower_tol": -1.623,
+          "min": 30.841,
+          "max": 34.087,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 9.195 +/- 0.460 mm",
+          "label": "W",
+          "nominal": 9.195,
+          "diameter": false,
+          "upper_tol": 0.46,
+          "lower_tol": -0.46,
+          "min": 8.735,
+          "max": 9.655,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "16.jpg"
+        ],
+        "median_obb_long_px": 649.274,
+        "median_obb_short_px": 183.901,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "17": {
+    "label": "17",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 54780.5,
+      "perimeter": 967.8376727104187,
+      "aspect_ratio": 1.174074074074074,
+      "rect_long": 275.6435241699219,
+      "rect_short": 260.1549530029297,
+      "rect_aspect": 0.9438094139391275,
+      "solidity": 0.9345098474057267,
+      "circularity": 0.7349043367633902,
+      "extent": 0.7639168672748465,
+      "convex_perimeter_ratio": 0.9150106044766474,
+      "isoperimetric_ratio": 1.3607213210961906,
+      "equivalent_diameter": 264.09978962574843,
+      "hole_count": 0.0,
+      "hu": [
+        0.7818644342274316,
+        3.450509268788637,
+        3.7366682833438447,
+        6.946628787348499,
+        12.339018821365599,
+        8.970783333624171,
+        -12.628849770624393
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      54780.5,
+      54780.5
+    ],
+    "expected_perimeter_range": [
+      967.8376727104187,
+      967.8376727104187
+    ],
+    "expected_aspect_range": [
+      0.9438094139391275,
+      0.9438094139391275
+    ],
+    "expected_extent_range": [
+      0.7639168672748465,
+      0.7639168672748465
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "17",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "17",
+      "part_no": "17",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 13.763 +/- 0.688 mm",
+          "label": "L",
+          "nominal": 13.763,
+          "diameter": false,
+          "upper_tol": 0.688,
+          "lower_tol": -0.688,
+          "min": 13.075,
+          "max": 14.452,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 13.004 +/- 0.650 mm",
+          "label": "W",
+          "nominal": 13.004,
+          "diameter": false,
+          "upper_tol": 0.65,
+          "lower_tol": -0.65,
+          "min": 12.354,
+          "max": 13.654,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "17.jpg"
+        ],
+        "median_obb_long_px": 275.268,
+        "median_obb_short_px": 260.082,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "18": {
+    "label": "18",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 67263.0,
+      "perimeter": 1550.2516300678253,
+      "aspect_ratio": 0.8592964824120602,
+      "rect_long": 351.0115051269531,
+      "rect_short": 317.2567138671875,
+      "rect_aspect": 0.9038356556217231,
+      "solidity": 0.7327243909214203,
+      "circularity": 0.351707560354965,
+      "extent": 0.6040099046177222,
+      "convex_perimeter_ratio": 0.7252042791883544,
+      "isoperimetric_ratio": 2.8432712648847764,
+      "equivalent_diameter": 292.6463932761196,
+      "hole_count": 0.0,
+      "hu": [
+        0.7455448537040552,
+        3.5616998943257023,
+        3.748279018887186,
+        4.08270076996627,
+        9.001163953896295,
+        -6.161715710333397,
+        -8.000343240595225
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      67263.0,
+      67263.0
+    ],
+    "expected_perimeter_range": [
+      1550.2516300678253,
+      1550.2516300678253
+    ],
+    "expected_aspect_range": [
+      0.9038356556217231,
+      0.9038356556217231
+    ],
+    "expected_extent_range": [
+      0.6040099046177222,
+      0.6040099046177222
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "18",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "18",
+      "part_no": "18",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 17.564 +/- 0.878 mm",
+          "label": "L",
+          "nominal": 17.564,
+          "diameter": false,
+          "upper_tol": 0.878,
+          "lower_tol": -0.878,
+          "min": 16.686,
+          "max": 18.442,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 15.878 +/- 0.794 mm",
+          "label": "W",
+          "nominal": 15.878,
+          "diameter": false,
+          "upper_tol": 0.794,
+          "lower_tol": -0.794,
+          "min": 15.084,
+          "max": 16.671,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "18.jpg"
+        ],
+        "median_obb_long_px": 351.285,
+        "median_obb_short_px": 317.551,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "19": {
+    "label": "19",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 168882.0,
+      "perimeter": 2308.094706296921,
+      "aspect_ratio": 1.1338582677165354,
+      "rect_long": 591.1773071289062,
+      "rect_short": 427.4619445800781,
+      "rect_aspect": 0.7230689328318044,
+      "solidity": 0.8192488205974022,
+      "circularity": 0.39836940564881457,
+      "extent": 0.66829490709459,
+      "convex_perimeter_ratio": 0.7321345093763932,
+      "isoperimetric_ratio": 2.5102329290858174,
+      "equivalent_diameter": 463.7102983479704,
+      "hole_count": 0.0,
+      "hu": [
+        0.7431873384147399,
+        2.384497124623456,
+        3.670184346082638,
+        4.991478044037236,
+        -9.40919259660811,
+        -6.187881926467695,
+        9.563213241690654
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      168882.0,
+      168882.0
+    ],
+    "expected_perimeter_range": [
+      2308.094706296921,
+      2308.094706296921
+    ],
+    "expected_aspect_range": [
+      0.7230689328318044,
+      0.7230689328318044
+    ],
+    "expected_extent_range": [
+      0.66829490709459,
+      0.66829490709459
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "19",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "19",
+      "part_no": "19",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 29.635 +/- 1.482 mm",
+          "label": "L",
+          "nominal": 29.635,
+          "diameter": false,
+          "upper_tol": 1.482,
+          "lower_tol": -1.482,
+          "min": 28.153,
+          "max": 31.117,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 21.699 +/- 1.085 mm",
+          "label": "W",
+          "nominal": 21.699,
+          "diameter": false,
+          "upper_tol": 1.085,
+          "lower_tol": -1.085,
+          "min": 20.614,
+          "max": 22.784,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "19.jpg"
+        ],
+        "median_obb_long_px": 592.696,
+        "median_obb_short_px": 433.989,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "2": {
+    "label": "2",
+    "n_references": 2,
+    "feature_mean": {
+      "area": 55262.5,
+      "perimeter": 1132.4180374741554,
+      "aspect_ratio": 4.738518518518519,
+      "rect_long": 492.0327911376953,
+      "rect_short": 100.56941413879395,
+      "rect_aspect": 0.20748882768077326,
+      "solidity": 0.9512138874869527,
+      "circularity": 0.41314354669997805,
+      "extent": 0.8561584719838247,
+      "convex_perimeter_ratio": 0.9708578356164272,
+      "isoperimetric_ratio": 2.4336788814194668,
+      "equivalent_diameter": 235.7062221544449,
+      "hole_count": 0.0,
+      "hu": [
+        0.3663823833535328,
+        0.8011021948577743,
+        3.1383038248198023,
+        3.3771356088893505,
+        6.635520801035744,
+        3.7844816409396995,
+        -8.19256366376323
+      ]
+    },
+    "feature_std": {
+      "area": 45050.0,
+      "perimeter": 553.3354443907738,
+      "aspect_ratio": 0.2014814814814816,
+      "rect_long": 247.9672088623047,
+      "rect_short": 48.430585861206055,
+      "rect_aspect": 0.006137476329421895,
+      "solidity": 0.0295497026577482,
+      "circularity": 0.03044138739957014,
+      "extent": 0.05362295373719833,
+      "convex_perimeter_ratio": 0.02421922513431951,
+      "isoperimetric_ratio": 0.17931917907758632,
+      "equivalent_diameter": 121.67570496449328,
+      "hole_count": 0.0,
+      "hu": [
+        0.011393872947348865,
+        0.026443452348936247,
+        0.011469912926919568,
+        0.014923816462361073,
+        0.027476429750525444,
+        0.02154493141705993,
+        0.47538766742847915
+      ]
+    },
+    "expected_area_range": [
+      10212.5,
+      100312.5
+    ],
+    "expected_perimeter_range": [
+      579.0825930833817,
+      1685.7534818649292
+    ],
+    "expected_aspect_range": [
+      0.20135135135135135,
+      0.21362630401019514
+    ],
+    "expected_extent_range": [
+      0.8025355182466264,
+      0.909781425721023
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "2",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "2",
+      "part_no": "2",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 24.602 +/- 1.230 mm",
+          "label": "L",
+          "nominal": 24.602,
+          "diameter": false,
+          "upper_tol": 1.23,
+          "lower_tol": -1.23,
+          "min": 23.372,
+          "max": 25.832,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 5.028 +/- 0.251 mm",
+          "label": "W",
+          "nominal": 5.028,
+          "diameter": false,
+          "upper_tol": 0.251,
+          "lower_tol": -0.251,
+          "min": 4.777,
+          "max": 5.28,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "2_1.JPG",
+          "2_2.jpg"
+        ],
+        "median_obb_long_px": 492.032,
+        "median_obb_short_px": 100.569,
+        "sample_count": 2
+      }
+    },
+    "drawing": null
+  },
+  "20": {
+    "label": "20",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 287456.0,
+      "perimeter": 3380.756732940674,
+      "aspect_ratio": 1.2335858585858586,
+      "rect_long": 1127.5648193359375,
+      "rect_short": 515.8209838867188,
+      "rect_aspect": 0.457464595419449,
+      "solidity": 0.727088771525122,
+      "circularity": 0.31604825643734413,
+      "extent": 0.4942319933017503,
+      "convex_perimeter_ratio": 0.7862702877047129,
+      "isoperimetric_ratio": 3.164073775544615,
+      "equivalent_diameter": 604.9796249225183,
+      "hole_count": 0.0,
+      "hu": [
+        0.5946386276427698,
+        1.6117204104932372,
+        2.107891418116325,
+        2.6025547238096625,
+        4.959866254740489,
+        3.429626544076619,
+        -5.96728526814689
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      287456.0,
+      287456.0
+    ],
+    "expected_perimeter_range": [
+      3380.756732940674,
+      3380.756732940674
+    ],
+    "expected_aspect_range": [
+      0.457464595419449,
+      0.457464595419449
+    ],
+    "expected_extent_range": [
+      0.4942319933017503,
+      0.4942319933017503
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "20",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "20",
+      "part_no": "20",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 56.425 +/- 2.821 mm",
+          "label": "L",
+          "nominal": 56.425,
+          "diameter": false,
+          "upper_tol": 2.821,
+          "lower_tol": -2.821,
+          "min": 53.604,
+          "max": 59.246,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 25.750 +/- 1.288 mm",
+          "label": "W",
+          "nominal": 25.75,
+          "diameter": false,
+          "upper_tol": 1.288,
+          "lower_tol": -1.288,
+          "min": 24.463,
+          "max": 27.038,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "20.jpg"
+        ],
+        "median_obb_long_px": 1128.504,
+        "median_obb_short_px": 515.005,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "21": {
+    "label": "21",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 58210.0,
+      "perimeter": 1676.3947145938873,
+      "aspect_ratio": 0.5291375291375291,
+      "rect_long": 427.43756103515625,
+      "rect_short": 223.32594299316406,
+      "rect_aspect": 0.5224761774616147,
+      "solidity": 0.7500708708089581,
+      "circularity": 0.26028845016922053,
+      "extent": 0.6097976406568327,
+      "convex_perimeter_ratio": 0.6550674013417925,
+      "isoperimetric_ratio": 3.841891560497106,
+      "equivalent_diameter": 272.2412053658186,
+      "hole_count": 0.0,
+      "hu": [
+        0.6868271047175291,
+        1.9750497856468878,
+        2.742897619002098,
+        3.613746020824794,
+        6.79209779126433,
+        4.601271166637016,
+        -8.722257745997295
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      58210.0,
+      58210.0
+    ],
+    "expected_perimeter_range": [
+      1676.3947145938873,
+      1676.3947145938873
+    ],
+    "expected_aspect_range": [
+      0.5224761774616147,
+      0.5224761774616147
+    ],
+    "expected_extent_range": [
+      0.6097976406568327,
+      0.6097976406568327
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "21",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "21",
+      "part_no": "21",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 21.410 +/- 1.070 mm",
+          "label": "L",
+          "nominal": 21.41,
+          "diameter": false,
+          "upper_tol": 1.07,
+          "lower_tol": -1.07,
+          "min": 20.339,
+          "max": 22.48,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 11.259 +/- 0.563 mm",
+          "label": "W",
+          "nominal": 11.259,
+          "diameter": false,
+          "upper_tol": 0.563,
+          "lower_tol": -0.563,
+          "min": 10.696,
+          "max": 11.822,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "21.jpg"
+        ],
+        "median_obb_long_px": 428.191,
+        "median_obb_short_px": 225.189,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "22": {
+    "label": "22",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 1315214.5,
+      "perimeter": 4883.7842898368835,
+      "aspect_ratio": 0.9767790262172285,
+      "rect_long": 1289.195556640625,
+      "rect_short": 1267.7901611328125,
+      "rect_aspect": 0.983396316099948,
+      "solidity": 0.9208299420461845,
+      "circularity": 0.6929366071305129,
+      "extent": 0.8046933479124295,
+      "convex_perimeter_ratio": 0.9065506755744273,
+      "isoperimetric_ratio": 1.4431334550804769,
+      "equivalent_diameter": 1294.0568423408165,
+      "hole_count": 0.0,
+      "hu": [
+        0.7853067491432854,
+        3.4131836666785302,
+        4.972321243217993,
+        6.611761956615867,
+        -12.40413659766742,
+        -8.3294514622377,
+        13.811098274905756
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      1315214.5,
+      1315214.5
+    ],
+    "expected_perimeter_range": [
+      4883.7842898368835,
+      4883.7842898368835
+    ],
+    "expected_aspect_range": [
+      0.983396316099948,
+      0.983396316099948
+    ],
+    "expected_extent_range": [
+      0.8046933479124295,
+      0.8046933479124295
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "22",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "22",
+      "part_no": "22",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 64.453 +/- 3.223 mm",
+          "label": "L",
+          "nominal": 64.453,
+          "diameter": false,
+          "upper_tol": 3.223,
+          "lower_tol": -3.223,
+          "min": 61.231,
+          "max": 67.676,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 63.458 +/- 3.173 mm",
+          "label": "W",
+          "nominal": 63.458,
+          "diameter": false,
+          "upper_tol": 3.173,
+          "lower_tol": -3.173,
+          "min": 60.285,
+          "max": 66.631,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "22.jpg"
+        ],
+        "median_obb_long_px": 1289.067,
+        "median_obb_short_px": 1269.155,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "23": {
+    "label": "23",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 80362.0,
+      "perimeter": 2798.001326560974,
+      "aspect_ratio": 1.0361990950226245,
+      "rect_long": 641.188232421875,
+      "rect_short": 375.91497802734375,
+      "rect_aspect": 0.5862786604917095,
+      "solidity": 0.351084442095008,
+      "circularity": 0.12899259168357743,
+      "extent": 0.3334076521508948,
+      "convex_perimeter_ratio": 0.6905171530311972,
+      "isoperimetric_ratio": 7.7523831946336035,
+      "equivalent_diameter": 319.8750948323535,
+      "hole_count": 0.0,
+      "hu": [
+        0.45186870994419776,
+        2.782256480922277,
+        2.420664549526441,
+        1.490660004973157,
+        3.448125054919619,
+        3.244416449579926,
+        -4.487629716787243
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      80362.0,
+      80362.0
+    ],
+    "expected_perimeter_range": [
+      2798.001326560974,
+      2798.001326560974
+    ],
+    "expected_aspect_range": [
+      0.5862786604917095,
+      0.5862786604917095
+    ],
+    "expected_extent_range": [
+      0.3334076521508948,
+      0.3334076521508948
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "23",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "23",
+      "part_no": "23",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 32.059 +/- 1.603 mm",
+          "label": "L",
+          "nominal": 32.059,
+          "diameter": false,
+          "upper_tol": 1.603,
+          "lower_tol": -1.603,
+          "min": 30.456,
+          "max": 33.662,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 18.796 +/- 0.940 mm",
+          "label": "W",
+          "nominal": 18.796,
+          "diameter": false,
+          "upper_tol": 0.94,
+          "lower_tol": -0.94,
+          "min": 17.856,
+          "max": 19.736,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "23.jpg"
+        ],
+        "median_obb_long_px": 641.188,
+        "median_obb_short_px": 375.915,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "24": {
+    "label": "24",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 104385.5,
+      "perimeter": 2378.2086548805237,
+      "aspect_ratio": 1.239766081871345,
+      "rect_long": 730.9632568359375,
+      "rect_short": 256.2541961669922,
+      "rect_aspect": 0.3505705570977936,
+      "solidity": 0.6616685999708419,
+      "circularity": 0.2319263692429983,
+      "extent": 0.5572802387475773,
+      "convex_perimeter_ratio": 0.7283492183004951,
+      "isoperimetric_ratio": 4.311713253063782,
+      "equivalent_diameter": 364.56514712318886,
+      "hole_count": 0.0,
+      "hu": [
+        0.6348863708586215,
+        1.6868555073833036,
+        2.715612755743436,
+        2.7144884387405797,
+        5.429539636982046,
+        3.5579539922064947,
+        8.208479453959486
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      104385.5,
+      104385.5
+    ],
+    "expected_perimeter_range": [
+      2378.2086548805237,
+      2378.2086548805237
+    ],
+    "expected_aspect_range": [
+      0.3505705570977936,
+      0.3505705570977936
+    ],
+    "expected_extent_range": [
+      0.5572802387475773,
+      0.5572802387475773
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "24",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "24",
+      "part_no": "24",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 36.576 +/- 1.829 mm",
+          "label": "L",
+          "nominal": 36.576,
+          "diameter": false,
+          "upper_tol": 1.829,
+          "lower_tol": -1.829,
+          "min": 34.747,
+          "max": 38.405,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 13.107 +/- 0.655 mm",
+          "label": "W",
+          "nominal": 13.107,
+          "diameter": false,
+          "upper_tol": 0.655,
+          "lower_tol": -0.655,
+          "min": 12.452,
+          "max": 13.763,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "24.jpg"
+        ],
+        "median_obb_long_px": 731.525,
+        "median_obb_short_px": 262.147,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "25": {
+    "label": "25",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 34555.5,
+      "perimeter": 1436.6816744804382,
+      "aspect_ratio": 1.312,
+      "rect_long": 590.6000366210938,
+      "rect_short": 132.80003356933594,
+      "rect_aspect": 0.22485612146098685,
+      "solidity": 0.6406344144828928,
+      "circularity": 0.21038072190941606,
+      "extent": 0.4405807592334531,
+      "convex_perimeter_ratio": 0.8871589098141062,
+      "isoperimetric_ratio": 4.753287235275157,
+      "equivalent_diameter": 209.75564137370876,
+      "hole_count": 0.0,
+      "hu": [
+        0.5416043852953442,
+        1.321629629902659,
+        3.3403665232387985,
+        3.364914176732975,
+        6.717877039681781,
+        4.0286308782574425,
+        -8.131819333494942
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      34555.5,
+      34555.5
+    ],
+    "expected_perimeter_range": [
+      1436.6816744804382,
+      1436.6816744804382
+    ],
+    "expected_aspect_range": [
+      0.22485612146098685,
+      0.22485612146098685
+    ],
+    "expected_extent_range": [
+      0.4405807592334531,
+      0.4405807592334531
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "25",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "25",
+      "part_no": "25",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 30.790 +/- 1.539 mm",
+          "label": "L",
+          "nominal": 30.79,
+          "diameter": false,
+          "upper_tol": 1.539,
+          "lower_tol": -1.539,
+          "min": 29.25,
+          "max": 32.329,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 6.620 +/- 0.331 mm",
+          "label": "W",
+          "nominal": 6.62,
+          "diameter": false,
+          "upper_tol": 0.331,
+          "lower_tol": -0.331,
+          "min": 6.289,
+          "max": 6.951,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "25.jpg"
+        ],
+        "median_obb_long_px": 615.8,
+        "median_obb_short_px": 132.4,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "26": {
+    "label": "26",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 706286.0,
+      "perimeter": 5379.72553730011,
+      "aspect_ratio": 0.6635977337110481,
+      "rect_long": 1183.61865234375,
+      "rect_short": 1105.758056640625,
+      "rect_aspect": 0.9342181744526002,
+      "solidity": 0.7356689871825652,
+      "circularity": 0.30666924427397974,
+      "extent": 0.5396456553261951,
+      "convex_perimeter_ratio": 0.6844489418411285,
+      "isoperimetric_ratio": 3.260842157052421,
+      "equivalent_diameter": 948.2991432521802,
+      "hole_count": 0.0,
+      "hu": [
+        0.7247924993048213,
+        2.724652885734948,
+        3.7775612990478202,
+        3.5434863376369936,
+        7.232358248599258,
+        5.026118004972068,
+        7.660145261281788
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      706286.0,
+      706286.0
+    ],
+    "expected_perimeter_range": [
+      5379.72553730011,
+      5379.72553730011
+    ],
+    "expected_aspect_range": [
+      0.9342181744526002,
+      0.9342181744526002
+    ],
+    "expected_extent_range": [
+      0.5396456553261951,
+      0.5396456553261951
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "26",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "26",
+      "part_no": "26",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 59.195 +/- 2.960 mm",
+          "label": "L",
+          "nominal": 59.195,
+          "diameter": false,
+          "upper_tol": 2.96,
+          "lower_tol": -2.96,
+          "min": 56.235,
+          "max": 62.155,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 55.291 +/- 2.765 mm",
+          "label": "W",
+          "nominal": 55.291,
+          "diameter": false,
+          "upper_tol": 2.765,
+          "lower_tol": -2.765,
+          "min": 52.526,
+          "max": 58.055,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "26.jpg"
+        ],
+        "median_obb_long_px": 1183.897,
+        "median_obb_short_px": 1105.817,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "27": {
+    "label": "27",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 359662.5,
+      "perimeter": 2673.669141769409,
+      "aspect_ratio": 0.8461538461538461,
+      "rect_long": 699.3970336914062,
+      "rect_short": 688.7855224609375,
+      "rect_aspect": 0.9848276290586173,
+      "solidity": 0.9023630225915347,
+      "circularity": 0.6322512482156991,
+      "extent": 0.7465989289333872,
+      "convex_perimeter_ratio": 0.8679621992224535,
+      "isoperimetric_ratio": 1.581649704642164,
+      "equivalent_diameter": 676.710069201213,
+      "hole_count": 0.0,
+      "hu": [
+        0.7922231078354345,
+        4.4713859617910945,
+        4.870974251499854,
+        5.8351653234640395,
+        11.1926715036833,
+        -8.145114507400333,
+        12.035311695777878
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      359662.5,
+      359662.5
+    ],
+    "expected_perimeter_range": [
+      2673.669141769409,
+      2673.669141769409
+    ],
+    "expected_aspect_range": [
+      0.9848276290586173,
+      0.9848276290586173
+    ],
+    "expected_extent_range": [
+      0.7465989289333872,
+      0.7465989289333872
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "27",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "27",
+      "part_no": "27",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 35.446 +/- 1.772 mm",
+          "label": "L",
+          "nominal": 35.446,
+          "diameter": false,
+          "upper_tol": 1.772,
+          "lower_tol": -1.772,
+          "min": 33.674,
+          "max": 37.219,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 34.493 +/- 1.725 mm",
+          "label": "W",
+          "nominal": 34.493,
+          "diameter": false,
+          "upper_tol": 1.725,
+          "lower_tol": -1.725,
+          "min": 32.769,
+          "max": 36.218,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "27.jpg"
+        ],
+        "median_obb_long_px": 708.927,
+        "median_obb_short_px": 689.867,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "28": {
+    "label": "28",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 1447912.0,
+      "perimeter": 6067.473585605621,
+      "aspect_ratio": 0.7339181286549707,
+      "rect_long": 1706.5921630859375,
+      "rect_short": 1241.2718505859375,
+      "rect_aspect": 0.72733947655157,
+      "solidity": 0.8713757922147951,
+      "circularity": 0.4942381243850275,
+      "extent": 0.6835110089146987,
+      "convex_perimeter_ratio": 0.777037614257228,
+      "isoperimetric_ratio": 2.0233161924614453,
+      "equivalent_diameter": 1357.7697948093332,
+      "hole_count": 0.0,
+      "hu": [
+        0.7777123627304792,
+        2.8458509531005833,
+        4.308530870750035,
+        5.426486057699825,
+        10.537179003459373,
+        7.49236932200558,
+        -10.37976462978489
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      1447912.0,
+      1447912.0
+    ],
+    "expected_perimeter_range": [
+      6067.473585605621,
+      6067.473585605621
+    ],
+    "expected_aspect_range": [
+      0.72733947655157,
+      0.72733947655157
+    ],
+    "expected_extent_range": [
+      0.6835110089146987,
+      0.6835110089146987
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "28",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "28",
+      "part_no": "28",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 85.433 +/- 4.272 mm",
+          "label": "L",
+          "nominal": 85.433,
+          "diameter": false,
+          "upper_tol": 4.272,
+          "lower_tol": -4.272,
+          "min": 81.162,
+          "max": 89.705,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 62.076 +/- 3.104 mm",
+          "label": "W",
+          "nominal": 62.076,
+          "diameter": false,
+          "upper_tol": 3.104,
+          "lower_tol": -3.104,
+          "min": 58.972,
+          "max": 65.18,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "28.jpeg"
+        ],
+        "median_obb_long_px": 1708.669,
+        "median_obb_short_px": 1241.524,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "29": {
+    "label": "29",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 193156.0,
+      "perimeter": 2537.7366552352905,
+      "aspect_ratio": 0.7264150943396226,
+      "rect_long": 591.9824829101562,
+      "rect_short": 460.96026611328125,
+      "rect_aspect": 0.7786721388227971,
+      "solidity": 0.8315760923380274,
+      "circularity": 0.37689897970812924,
+      "extent": 0.7078412299964878,
+      "convex_perimeter_ratio": 0.7127552262021004,
+      "isoperimetric_ratio": 2.653230849216945,
+      "equivalent_diameter": 495.91718815026474,
+      "hole_count": 0.0,
+      "hu": [
+        0.7657613963230967,
+        2.739798806032784,
+        4.046422466583522,
+        6.223478466477421,
+        11.418430217008186,
+        -7.678662914710956,
+        -11.667036094635073
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      193156.0,
+      193156.0
+    ],
+    "expected_perimeter_range": [
+      2537.7366552352905,
+      2537.7366552352905
+    ],
+    "expected_aspect_range": [
+      0.7786721388227971,
+      0.7786721388227971
+    ],
+    "expected_extent_range": [
+      0.7078412299964878,
+      0.7078412299964878
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "29",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "29",
+      "part_no": "29",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 31.411 +/- 1.571 mm",
+          "label": "L",
+          "nominal": 31.411,
+          "diameter": false,
+          "upper_tol": 1.571,
+          "lower_tol": -1.571,
+          "min": 29.84,
+          "max": 32.981,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 23.071 +/- 1.154 mm",
+          "label": "W",
+          "nominal": 23.071,
+          "diameter": false,
+          "upper_tol": 1.154,
+          "lower_tol": -1.154,
+          "min": 21.918,
+          "max": 24.225,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "29.png"
+        ],
+        "median_obb_long_px": 628.218,
+        "median_obb_short_px": 461.428,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "3": {
+    "label": "3",
+    "n_references": 2,
+    "feature_mean": {
+      "area": 328034.5,
+      "perimeter": 2676.449108660221,
+      "aspect_ratio": 4.180785371702638,
+      "rect_long": 1110.1110229492188,
+      "rect_short": 253.56572723388672,
+      "rect_aspect": 0.22731968724271617,
+      "solidity": 0.9266986525842607,
+      "circularity": 0.43423456275973926,
+      "extent": 0.8998634445804945,
+      "convex_perimeter_ratio": 0.9560616046514533,
+      "isoperimetric_ratio": 2.3067682595001378,
+      "equivalent_diameter": 567.3814770671149,
+      "hole_count": 0.0,
+      "hu": [
+        0.39252330242041295,
+        0.8667196503765112,
+        4.6638642770766925,
+        5.508166586959263,
+        1.4042224678681823,
+        -6.2557853990933205,
+        -10.67006533717213
+      ]
+    },
+    "feature_std": {
+      "area": 275773.5,
+      "perimeter": 1420.6862639784813,
+      "aspect_ratio": 0.0608812949640285,
+      "rect_long": 603.2395629882812,
+      "rect_short": 139.36530303955078,
+      "rect_aspect": 0.0020151806462372496,
+      "solidity": 0.004156485188925696,
+      "circularity": 0.017775496122729495,
+      "extent": 0.00297939928398111,
+      "convex_perimeter_ratio": 0.008731932895452599,
+      "isoperimetric_ratio": 0.0944281127512816,
+      "equivalent_diameter": 309.42649679457907,
+      "hole_count": 0.0,
+      "hu": [
+        0.010367755674995704,
+        0.022599231199024072,
+        0.6394352177348788,
+        0.5803182981160018,
+        10.972996285647806,
+        0.8230987188080725,
+        1.1289547941299594
+      ]
+    },
+    "expected_area_range": [
+      52261.0,
+      603808.0
+    ],
+    "expected_perimeter_range": [
+      1255.7628446817398,
+      4097.135372638702
+    ],
+    "expected_aspect_range": [
+      0.2253045065964789,
+      0.2293348678889534
+    ],
+    "expected_extent_range": [
+      0.8968840452965133,
+      0.9028428438644756
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "3",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "3",
+      "part_no": "3",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 55.606 +/- 2.780 mm",
+          "label": "L",
+          "nominal": 55.606,
+          "diameter": false,
+          "upper_tol": 2.78,
+          "lower_tol": -2.78,
+          "min": 52.826,
+          "max": 58.386,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 13.201 +/- 0.660 mm",
+          "label": "W",
+          "nominal": 13.201,
+          "diameter": false,
+          "upper_tol": 0.66,
+          "lower_tol": -0.66,
+          "min": 12.541,
+          "max": 13.861,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "3_1.JPG",
+          "3_2.jpg"
+        ],
+        "median_obb_long_px": 1112.118,
+        "median_obb_short_px": 264.022,
+        "sample_count": 2
+      }
+    },
+    "drawing": null
+  },
+  "30": {
+    "label": "30",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 42375.0,
+      "perimeter": 4078.326014280319,
+      "aspect_ratio": 1.0386151797603196,
+      "rect_long": 993.9494018554688,
+      "rect_short": 159.5634765625,
+      "rect_aspect": 0.1605348081749762,
+      "solidity": 0.3098550353728315,
+      "circularity": 0.032015161435615086,
+      "extent": 0.26718492098647467,
+      "convex_perimeter_ratio": 0.5371826349170882,
+      "isoperimetric_ratio": 31.23520092225915,
+      "equivalent_diameter": 232.27898249336405,
+      "hole_count": 0.0,
+      "hu": [
+        -0.3022392544913571,
+        -0.5683111202929522,
+        -0.8488495608061705,
+        -0.8585982818138893,
+        -1.7123222029097835,
+        -1.1427502540064043,
+        2.7907102950820124
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      42375.0,
+      42375.0
+    ],
+    "expected_perimeter_range": [
+      4078.326014280319,
+      4078.326014280319
+    ],
+    "expected_aspect_range": [
+      0.1605348081749762,
+      0.1605348081749762
+    ],
+    "expected_extent_range": [
+      0.26718492098647467,
+      0.26718492098647467
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "30",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "30",
+      "part_no": "30",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 49.710 +/- 2.485 mm",
+          "label": "L",
+          "nominal": 49.71,
+          "diameter": false,
+          "upper_tol": 2.485,
+          "lower_tol": -2.485,
+          "min": 47.224,
+          "max": 52.195,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 8.026 +/- 0.401 mm",
+          "label": "W",
+          "nominal": 8.026,
+          "diameter": false,
+          "upper_tol": 0.401,
+          "lower_tol": -0.401,
+          "min": 7.624,
+          "max": 8.427,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "30.jpg"
+        ],
+        "median_obb_long_px": 994.192,
+        "median_obb_short_px": 160.513,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "31": {
+    "label": "31",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 43651.0,
+      "perimeter": 3303.146264076233,
+      "aspect_ratio": 1.0573643410852713,
+      "rect_long": 869.6964721679688,
+      "rect_short": 188.85931396484375,
+      "rect_aspect": 0.2171554329685362,
+      "solidity": 0.3403042788482153,
+      "circularity": 0.05027458008500202,
+      "extent": 0.2657590613635399,
+      "convex_perimeter_ratio": 0.5828389720326869,
+      "isoperimetric_ratio": 19.890767825593862,
+      "equivalent_diameter": 235.75024786250933,
+      "hole_count": 0.0,
+      "hu": [
+        -0.1583695615682982,
+        -0.24659162251719474,
+        -0.31408218788547076,
+        -0.32371011857221654,
+        -0.6426055990472656,
+        -0.4469517286167398,
+        2.111843144396472
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      43651.0,
+      43651.0
+    ],
+    "expected_perimeter_range": [
+      3303.146264076233,
+      3303.146264076233
+    ],
+    "expected_aspect_range": [
+      0.2171554329685362,
+      0.2171554329685362
+    ],
+    "expected_extent_range": [
+      0.2657590613635399,
+      0.2657590613635399
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "31",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "31",
+      "part_no": "31",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 43.518 +/- 2.176 mm",
+          "label": "L",
+          "nominal": 43.518,
+          "diameter": false,
+          "upper_tol": 2.176,
+          "lower_tol": -2.176,
+          "min": 41.342,
+          "max": 45.694,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 9.451 +/- 0.473 mm",
+          "label": "W",
+          "nominal": 9.451,
+          "diameter": false,
+          "upper_tol": 0.473,
+          "lower_tol": -0.473,
+          "min": 8.978,
+          "max": 9.923,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "31.jpg"
+        ],
+        "median_obb_long_px": 870.359,
+        "median_obb_short_px": 189.012,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "32": {
+    "label": "32",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 140709.5,
+      "perimeter": 3468.244807243347,
+      "aspect_ratio": 1.2353951890034365,
+      "rect_long": 781.001708984375,
+      "rect_short": 314.67718505859375,
+      "rect_aspect": 0.4029148482502095,
+      "solidity": 0.7250637672944632,
+      "circularity": 0.14699880167191232,
+      "extent": 0.5725404553514807,
+      "convex_perimeter_ratio": 0.5450490825716745,
+      "isoperimetric_ratio": 6.80277654393338,
+      "equivalent_diameter": 423.26929928818646,
+      "hole_count": 0.0,
+      "hu": [
+        0.5469714810930891,
+        1.3796723339801993,
+        2.2360551820831036,
+        2.3891338951480816,
+        4.7017337948881615,
+        3.091489032994141,
+        -7.00548032623178
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      140709.5,
+      140709.5
+    ],
+    "expected_perimeter_range": [
+      3468.244807243347,
+      3468.244807243347
+    ],
+    "expected_aspect_range": [
+      0.4029148482502095,
+      0.4029148482502095
+    ],
+    "expected_extent_range": [
+      0.5725404553514807,
+      0.5725404553514807
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "32",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "32",
+      "part_no": "32",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 38.987 +/- 1.949 mm",
+          "label": "L",
+          "nominal": 38.987,
+          "diameter": false,
+          "upper_tol": 1.949,
+          "lower_tol": -1.949,
+          "min": 37.038,
+          "max": 40.937,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 15.948 +/- 0.797 mm",
+          "label": "W",
+          "nominal": 15.948,
+          "diameter": false,
+          "upper_tol": 0.797,
+          "lower_tol": -0.797,
+          "min": 15.151,
+          "max": 16.746,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "32.jpg"
+        ],
+        "median_obb_long_px": 779.749,
+        "median_obb_short_px": 318.966,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "33": {
+    "label": "33",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 12139.5,
+      "perimeter": 1708.3585648536682,
+      "aspect_ratio": 0.9483333333333334,
+      "rect_long": 821.5367431640625,
+      "rect_short": 45.133514404296875,
+      "rect_aspect": 0.05493791334331546,
+      "solidity": 0.5030249036588903,
+      "circularity": 0.052270012598677584,
+      "extent": 0.32739696977598626,
+      "convex_perimeter_ratio": 0.970405911734451,
+      "isoperimetric_ratio": 19.131428333064907,
+      "equivalent_diameter": 124.32413865904122,
+      "hole_count": 0.0,
+      "hu": [
+        -0.5699102839830015,
+        -1.1377270448129453,
+        0.712222448954576,
+        0.809787947496867,
+        1.571105658625294,
+        0.26790281509350894,
+        -2.991892564879091
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      12139.5,
+      12139.5
+    ],
+    "expected_perimeter_range": [
+      1708.3585648536682,
+      1708.3585648536682
+    ],
+    "expected_aspect_range": [
+      0.05493791334331546,
+      0.05493791334331546
+    ],
+    "expected_extent_range": [
+      0.32739696977598626,
+      0.32739696977598626
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "33",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "33",
+      "part_no": "33",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 41.093 +/- 2.055 mm",
+          "label": "L",
+          "nominal": 41.093,
+          "diameter": false,
+          "upper_tol": 2.055,
+          "lower_tol": -2.055,
+          "min": 39.039,
+          "max": 43.148,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 2.249 +/- 0.150 mm",
+          "label": "W",
+          "nominal": 2.249,
+          "diameter": false,
+          "upper_tol": 0.15,
+          "lower_tol": -0.15,
+          "min": 2.099,
+          "max": 2.399,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "33.jpg"
+        ],
+        "median_obb_long_px": 821.87,
+        "median_obb_short_px": 44.973,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "34": {
+    "label": "34",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 96637.5,
+      "perimeter": 1518.316078543663,
+      "aspect_ratio": 1.0739795918367347,
+      "rect_long": 387.01995849609375,
+      "rect_short": 346.3063049316406,
+      "rect_aspect": 0.8948021861129313,
+      "solidity": 0.868132756599426,
+      "circularity": 0.5267822926429075,
+      "extent": 0.7210276606012628,
+      "convex_perimeter_ratio": 0.8048023570940163,
+      "isoperimetric_ratio": 1.8983174149285136,
+      "equivalent_diameter": 350.77440970564584,
+      "hole_count": 0.0,
+      "hu": [
+        0.7685502817923978,
+        2.9242202085835385,
+        4.62041137007558,
+        5.440490743924892,
+        -11.433317665467644,
+        -6.912868281095083,
+        -10.473539553291813
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      96637.5,
+      96637.5
+    ],
+    "expected_perimeter_range": [
+      1518.316078543663,
+      1518.316078543663
+    ],
+    "expected_aspect_range": [
+      0.8948021861129313,
+      0.8948021861129313
+    ],
+    "expected_extent_range": [
+      0.7210276606012628,
+      0.7210276606012628
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "34",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "34",
+      "part_no": "34",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 19.305 +/- 0.965 mm",
+          "label": "L",
+          "nominal": 19.305,
+          "diameter": false,
+          "upper_tol": 0.965,
+          "lower_tol": -0.965,
+          "min": 18.34,
+          "max": 20.27,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 17.560 +/- 0.878 mm",
+          "label": "W",
+          "nominal": 17.56,
+          "diameter": false,
+          "upper_tol": 0.878,
+          "lower_tol": -0.878,
+          "min": 16.682,
+          "max": 18.438,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "34.jpg"
+        ],
+        "median_obb_long_px": 386.104,
+        "median_obb_short_px": 351.2,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "35": {
+    "label": "35",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 112416.5,
+      "perimeter": 2565.9524941444397,
+      "aspect_ratio": 1.9768637532133677,
+      "rect_long": 760.0020751953125,
+      "rect_short": 278.35308837890625,
+      "rect_aspect": 0.3662530635950862,
+      "solidity": 0.691478957274841,
+      "circularity": 0.21455700613604065,
+      "extent": 0.5313971701989324,
+      "convex_perimeter_ratio": 0.6933858563639298,
+      "isoperimetric_ratio": 4.660766003445939,
+      "equivalent_diameter": 378.3293978541985,
+      "hole_count": 0.0,
+      "hu": [
+        0.5522660014342946,
+        1.4017096010197971,
+        2.219496751942828,
+        2.3049283719144795,
+        4.5671781781202085,
+        3.0237002661419887,
+        -6.4500069390946715
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      112416.5,
+      112416.5
+    ],
+    "expected_perimeter_range": [
+      2565.9524941444397,
+      2565.9524941444397
+    ],
+    "expected_aspect_range": [
+      0.3662530635950862,
+      0.3662530635950862
+    ],
+    "expected_extent_range": [
+      0.5313971701989324,
+      0.5313971701989324
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "35",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "35",
+      "part_no": "35",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 38.013 +/- 1.901 mm",
+          "label": "L",
+          "nominal": 38.013,
+          "diameter": false,
+          "upper_tol": 1.901,
+          "lower_tol": -1.901,
+          "min": 36.112,
+          "max": 39.914,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 14.244 +/- 0.712 mm",
+          "label": "W",
+          "nominal": 14.244,
+          "diameter": false,
+          "upper_tol": 0.712,
+          "lower_tol": -0.712,
+          "min": 13.532,
+          "max": 14.956,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "35.jpg"
+        ],
+        "median_obb_long_px": 760.263,
+        "median_obb_short_px": 284.875,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "36": {
+    "label": "36",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 63895.5,
+      "perimeter": 1783.5193469524384,
+      "aspect_ratio": 1.2337662337662338,
+      "rect_long": 513.7991027832031,
+      "rect_short": 219.42202758789062,
+      "rect_aspect": 0.42705802014698235,
+      "solidity": 0.7280833195644867,
+      "circularity": 0.2524204214161016,
+      "extent": 0.5667567582457391,
+      "convex_perimeter_ratio": 0.7031435836832116,
+      "isoperimetric_ratio": 3.9616446022469525,
+      "equivalent_diameter": 285.22671216179174,
+      "hole_count": 0.0,
+      "hu": [
+        0.6149905866887693,
+        1.6562947664981136,
+        2.549770647891105,
+        2.666392397736814,
+        5.274484307658311,
+        3.508168445150255,
+        7.434608957944152
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      63895.5,
+      63895.5
+    ],
+    "expected_perimeter_range": [
+      1783.5193469524384,
+      1783.5193469524384
+    ],
+    "expected_aspect_range": [
+      0.42705802014698235,
+      0.42705802014698235
+    ],
+    "expected_extent_range": [
+      0.5667567582457391,
+      0.5667567582457391
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "36",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "36",
+      "part_no": "36",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 25.737 +/- 1.287 mm",
+          "label": "L",
+          "nominal": 25.737,
+          "diameter": false,
+          "upper_tol": 1.287,
+          "lower_tol": -1.287,
+          "min": 24.45,
+          "max": 27.024,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 10.941 +/- 0.547 mm",
+          "label": "W",
+          "nominal": 10.941,
+          "diameter": false,
+          "upper_tol": 0.547,
+          "lower_tol": -0.547,
+          "min": 10.394,
+          "max": 11.488,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "36.jpg"
+        ],
+        "median_obb_long_px": 514.738,
+        "median_obb_short_px": 218.825,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "37": {
+    "label": "37",
+    "n_references": 2,
+    "feature_mean": {
+      "area": 109611.75,
+      "perimeter": 3778.258404135704,
+      "aspect_ratio": 0.441979558030945,
+      "rect_long": 1052.9910278320312,
+      "rect_short": 210.55555725097656,
+      "rect_aspect": 0.22910456290651385,
+      "solidity": 0.5418317251686533,
+      "circularity": 0.0985398261351842,
+      "extent": 0.42890195547207,
+      "convex_perimeter_ratio": 0.6226540921904163,
+      "isoperimetric_ratio": 11.198087555968435,
+      "equivalent_diameter": 339.2483886645038,
+      "hole_count": 0.0,
+      "hu": [
+        0.15529993569681688,
+        0.4088490963231061,
+        0.5659360300280478,
+        0.5725941581383623,
+        1.141859522852894,
+        0.777025215582874,
+        0.3521018067267603
+      ]
+    },
+    "feature_std": {
+      "area": 83363.75,
+      "perimeter": 2177.438346028328,
+      "aspect_ratio": 0.16224387521156178,
+      "rect_long": 602.9910278320312,
+      "rect_short": 84.55555725097656,
+      "rect_aspect": 0.05089543709348618,
+      "solidity": 0.024071363280654012,
+      "circularity": 0.030172768999256354,
+      "extent": 0.034025734122286266,
+      "convex_perimeter_ratio": 0.026465443787763387,
+      "isoperimetric_ratio": 3.4288401178641994,
+      "equivalent_diameter": 156.43703351880026,
+      "hole_count": 0.0,
+      "hu": [
+        0.19188246639418607,
+        0.4433248575543975,
+        0.5186943842255078,
+        0.5080089128599584,
+        1.0213608308978048,
+        0.7296768647896003,
+        4.6132477162702115
+      ]
+    },
+    "expected_area_range": [
+      26248.0,
+      192975.5
+    ],
+    "expected_perimeter_range": [
+      1600.820058107376,
+      5955.696750164032
+    ],
+    "expected_aspect_range": [
+      0.17820912581302767,
+      0.28
+    ],
+    "expected_extent_range": [
+      0.39487622134978373,
+      0.46292768959435626
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "37",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "37",
+      "part_no": "37",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 52.737 +/- 2.637 mm",
+          "label": "L",
+          "nominal": 52.737,
+          "diameter": false,
+          "upper_tol": 2.637,
+          "lower_tol": -2.637,
+          "min": 50.1,
+          "max": 55.374,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 10.520 +/- 0.526 mm",
+          "label": "W",
+          "nominal": 10.52,
+          "diameter": false,
+          "upper_tol": 0.526,
+          "lower_tol": -0.526,
+          "min": 9.994,
+          "max": 11.046,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "37.jpg",
+          "37_a.jpg"
+        ],
+        "median_obb_long_px": 1054.738,
+        "median_obb_short_px": 210.402,
+        "sample_count": 2
+      }
+    },
+    "drawing": null
+  },
+  "38": {
+    "label": "38",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 49656.5,
+      "perimeter": 1751.4238650798798,
+      "aspect_ratio": 0.987037037037037,
+      "rect_long": 716.53125,
+      "rect_short": 153.6935577392578,
+      "rect_aspect": 0.21449665696961273,
+      "solidity": 0.6699383440590386,
+      "circularity": 0.20342458707260985,
+      "extent": 0.4509052641127145,
+      "convex_perimeter_ratio": 0.8840405697115071,
+      "isoperimetric_ratio": 4.915826618554533,
+      "equivalent_diameter": 251.445062495054,
+      "hole_count": 0.0,
+      "hu": [
+        0.10766668263970935,
+        0.25300167457128464,
+        0.8248187435185386,
+        0.9070815600956966,
+        1.7730325064529777,
+        1.0335985665799903,
+        4.49134860630636
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      49656.5,
+      49656.5
+    ],
+    "expected_perimeter_range": [
+      1751.4238650798798,
+      1751.4238650798798
+    ],
+    "expected_aspect_range": [
+      0.21449665696961273,
+      0.21449665696961273
+    ],
+    "expected_extent_range": [
+      0.4509052641127145,
+      0.4509052641127145
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "38",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "38",
+      "part_no": "38",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 35.806 +/- 1.790 mm",
+          "label": "L",
+          "nominal": 35.806,
+          "diameter": false,
+          "upper_tol": 1.79,
+          "lower_tol": -1.79,
+          "min": 34.015,
+          "max": 37.596,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 7.803 +/- 0.390 mm",
+          "label": "W",
+          "nominal": 7.803,
+          "diameter": false,
+          "upper_tol": 0.39,
+          "lower_tol": -0.39,
+          "min": 7.413,
+          "max": 8.193,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "38.jpg"
+        ],
+        "median_obb_long_px": 716.111,
+        "median_obb_short_px": 156.061,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "39": {
+    "label": "39",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 49477.0,
+      "perimeter": 1496.853824853897,
+      "aspect_ratio": 1.5317460317460319,
+      "rect_long": 359.7371826171875,
+      "rect_short": 179.98593139648438,
+      "rect_aspect": 0.500326182817792,
+      "solidity": 0.8632243769246203,
+      "circularity": 0.2774945383952607,
+      "extent": 0.764151499754385,
+      "convex_perimeter_ratio": 0.6457837594630927,
+      "isoperimetric_ratio": 3.603674529174369,
+      "equivalent_diameter": 250.99018497714536,
+      "hole_count": 0.0,
+      "hu": [
+        0.6513872802164054,
+        1.6945365915727308,
+        4.433423484896706,
+        6.079019481376231,
+        -11.377202352072784,
+        -9.339394519418308,
+        11.712836142841457
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      49477.0,
+      49477.0
+    ],
+    "expected_perimeter_range": [
+      1496.853824853897,
+      1496.853824853897
+    ],
+    "expected_aspect_range": [
+      0.500326182817792,
+      0.500326182817792
+    ],
+    "expected_extent_range": [
+      0.764151499754385,
+      0.764151499754385
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "39",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "39",
+      "part_no": "39",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 18.037 +/- 0.902 mm",
+          "label": "L",
+          "nominal": 18.037,
+          "diameter": false,
+          "upper_tol": 0.902,
+          "lower_tol": -0.902,
+          "min": 17.135,
+          "max": 18.939,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 9.015 +/- 0.451 mm",
+          "label": "W",
+          "nominal": 9.015,
+          "diameter": false,
+          "upper_tol": 0.451,
+          "lower_tol": -0.451,
+          "min": 8.564,
+          "max": 9.466,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "39.jpg"
+        ],
+        "median_obb_long_px": 360.746,
+        "median_obb_short_px": 180.305,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "4": {
+    "label": "4",
+    "n_references": 2,
+    "feature_mean": {
+      "area": 17077.25,
+      "perimeter": 901.51818805933,
+      "aspect_ratio": 4.995471014492754,
+      "rect_long": 351.19895935058594,
+      "rect_short": 68.29401969909668,
+      "rect_aspect": 0.19448782958702235,
+      "solidity": 0.7624478841095257,
+      "circularity": 0.26774473127097953,
+      "extent": 0.7093041671884293,
+      "convex_perimeter_ratio": 0.8872797620791374,
+      "isoperimetric_ratio": 3.9184629243406577,
+      "equivalent_diameter": 147.0424152357697,
+      "hole_count": 0.0,
+      "hu": [
+        0.1883916398804212,
+        0.4170773191922293,
+        3.242218536787597,
+        3.266805543721446,
+        6.522188730644898,
+        3.4988479584070236,
+        -8.41744856856814
+      ]
+    },
+    "feature_std": {
+      "area": 2550.75,
+      "perimeter": 31.281311690807343,
+      "aspect_ratio": 0.12047101449275344,
+      "rect_long": 1.2416229248046875,
+      "rect_short": 2.559816360473633,
+      "rect_aspect": 0.00797638157432004,
+      "solidity": 0.08010019281355119,
+      "circularity": 0.057950161247285484,
+      "extent": 0.08228087430130687,
+      "convex_perimeter_ratio": 0.0317031682168476,
+      "isoperimetric_ratio": 0.8481046750355357,
+      "equivalent_diameter": 11.043465803815138,
+      "hole_count": 0.0,
+      "hu": [
+        0.08090627863603364,
+        0.16945587341329377,
+        0.6062157889315576,
+        0.536404517752334,
+        1.106844232014165,
+        0.6007676883522617,
+        1.9550707181580131
+      ]
+    },
+    "expected_area_range": [
+      14526.5,
+      19628.0
+    ],
+    "expected_perimeter_range": [
+      870.2368763685226,
+      932.7994997501373
+    ],
+    "expected_aspect_range": [
+      0.1865114480127023,
+      0.2024642111613424
+    ],
+    "expected_extent_range": [
+      0.6270232928871223,
+      0.7915850414897361
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "4",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "4",
+      "part_no": "4",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 17.559 +/- 0.878 mm",
+          "label": "L",
+          "nominal": 17.559,
+          "diameter": false,
+          "upper_tol": 0.878,
+          "lower_tol": -0.878,
+          "min": 16.681,
+          "max": 18.437,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 3.414 +/- 0.171 mm",
+          "label": "W",
+          "nominal": 3.414,
+          "diameter": false,
+          "upper_tol": 0.171,
+          "lower_tol": -0.171,
+          "min": 3.243,
+          "max": 3.585,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "4_1.JPG",
+          "4_3.JPG"
+        ],
+        "median_obb_long_px": 351.189,
+        "median_obb_short_px": 68.282,
+        "sample_count": 2
+      }
+    },
+    "drawing": null
+  },
+  "40": {
+    "label": "40",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 574319.5,
+      "perimeter": 4350.667764186859,
+      "aspect_ratio": 0.9374416433239963,
+      "rect_long": 1034.2737426757812,
+      "rect_short": 760.539794921875,
+      "rect_aspect": 0.7353370423523214,
+      "solidity": 0.8420211927617666,
+      "circularity": 0.3812866383852315,
+      "extent": 0.7301231514255874,
+      "convex_perimeter_ratio": 0.7117315400897567,
+      "isoperimetric_ratio": 2.622698776529519,
+      "equivalent_diameter": 855.1294046590413,
+      "hole_count": 0.0,
+      "hu": [
+        0.7519718712048646,
+        2.415581640596749,
+        4.653068084365651,
+        5.511943505811479,
+        -11.530483934866071,
+        -6.785405433339263,
+        -10.597384359661689
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      574319.5,
+      574319.5
+    ],
+    "expected_perimeter_range": [
+      4350.667764186859,
+      4350.667764186859
+    ],
+    "expected_aspect_range": [
+      0.7353370423523214,
+      0.7353370423523214
+    ],
+    "expected_extent_range": [
+      0.7301231514255874,
+      0.7301231514255874
+    ],
+    "expected_hole_count": 0,
+    "spec": null,
+    "drawing": null
+  },
+  "41": {
+    "label": "41",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 78867.5,
+      "perimeter": 1745.8263816833496,
+      "aspect_ratio": 1.3033033033033032,
+      "rect_long": 433.1900634765625,
+      "rect_short": 234.40408325195312,
+      "rect_aspect": 0.5411114035505467,
+      "solidity": 0.8571436334391166,
+      "circularity": 0.3251665285719598,
+      "extent": 0.7767019858538569,
+      "convex_perimeter_ratio": 0.6805782316084557,
+      "isoperimetric_ratio": 3.075347282488513,
+      "equivalent_diameter": 316.88676178471144,
+      "hole_count": 0.0,
+      "hu": [
+        0.6932752639918969,
+        1.8689501326443227,
+        6.630671468423516,
+        6.554056864675402,
+        -13.146643315884814,
+        -7.500064046344919,
+        14.641454575533889
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      78867.5,
+      78867.5
+    ],
+    "expected_perimeter_range": [
+      1745.8263816833496,
+      1745.8263816833496
+    ],
+    "expected_aspect_range": [
+      0.5411114035505467,
+      0.5411114035505467
+    ],
+    "expected_extent_range": [
+      0.7767019858538569,
+      0.7767019858538569
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "41",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "41",
+      "part_no": "41",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 21.695 +/- 1.085 mm",
+          "label": "L",
+          "nominal": 21.695,
+          "diameter": false,
+          "upper_tol": 1.085,
+          "lower_tol": -1.085,
+          "min": 20.61,
+          "max": 22.779,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 11.902 +/- 0.595 mm",
+          "label": "W",
+          "nominal": 11.902,
+          "diameter": false,
+          "upper_tol": 0.595,
+          "lower_tol": -0.595,
+          "min": 11.306,
+          "max": 12.497,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "41.jpg"
+        ],
+        "median_obb_long_px": 433.893,
+        "median_obb_short_px": 238.031,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "42": {
+    "label": "42",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 227662.5,
+      "perimeter": 2861.546952724457,
+      "aspect_ratio": 1.11,
+      "rect_long": 729.531982421875,
+      "rect_short": 473.2701416015625,
+      "rect_aspect": 0.64873117698064,
+      "solidity": 0.7315879873838931,
+      "circularity": 0.3493812643004293,
+      "extent": 0.6593834746724879,
+      "convex_perimeter_ratio": 0.7659704271013503,
+      "isoperimetric_ratio": 2.8622027056954904,
+      "equivalent_diameter": 538.3947416656937,
+      "hole_count": 0.0,
+      "hu": [
+        0.6265363196475836,
+        1.8240745001556669,
+        3.3864173132191615,
+        3.919244563203689,
+        -7.722606301918898,
+        -4.920441155075109,
+        7.7225746977252525
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      227662.5,
+      227662.5
+    ],
+    "expected_perimeter_range": [
+      2861.546952724457,
+      2861.546952724457
+    ],
+    "expected_aspect_range": [
+      0.64873117698064,
+      0.64873117698064
+    ],
+    "expected_extent_range": [
+      0.6593834746724879,
+      0.6593834746724879
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "42",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "42",
+      "part_no": "42",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 36.495 +/- 1.825 mm",
+          "label": "L",
+          "nominal": 36.495,
+          "diameter": false,
+          "upper_tol": 1.825,
+          "lower_tol": -1.825,
+          "min": 34.671,
+          "max": 38.32,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 23.728 +/- 1.186 mm",
+          "label": "W",
+          "nominal": 23.728,
+          "diameter": false,
+          "upper_tol": 1.186,
+          "lower_tol": -1.186,
+          "min": 22.542,
+          "max": 24.914,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "43.jpg"
+        ],
+        "median_obb_long_px": 729.908,
+        "median_obb_short_px": 474.56,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "43": {
+    "label": "43",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 575046.5,
+      "perimeter": 3883.1802020072937,
+      "aspect_ratio": 2.0413971539456663,
+      "rect_long": 1570.529052734375,
+      "rect_short": 398.83831787109375,
+      "rect_aspect": 0.2539515694897174,
+      "solidity": 0.9334920412034418,
+      "circularity": 0.4792230941857035,
+      "extent": 0.9180368494390531,
+      "convex_perimeter_ratio": 0.9831413850698374,
+      "isoperimetric_ratio": 2.086710786964892,
+      "equivalent_diameter": 855.6704645256542,
+      "hole_count": 0.0,
+      "hu": [
+        0.4139788623261952,
+        0.9223743430814416,
+        6.010727810478863,
+        6.441430334397991,
+        12.715000011006133,
+        7.144390252786671,
+        -13.02089542906351
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      575046.5,
+      575046.5
+    ],
+    "expected_perimeter_range": [
+      3883.1802020072937,
+      3883.1802020072937
+    ],
+    "expected_aspect_range": [
+      0.2539515694897174,
+      0.2539515694897174
+    ],
+    "expected_extent_range": [
+      0.9180368494390531,
+      0.9180368494390531
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "43",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "43",
+      "part_no": "43",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 78.551 +/- 3.928 mm",
+          "label": "L",
+          "nominal": 78.551,
+          "diameter": false,
+          "upper_tol": 3.928,
+          "lower_tol": -3.928,
+          "min": 74.624,
+          "max": 82.479,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 19.946 +/- 0.997 mm",
+          "label": "W",
+          "nominal": 19.946,
+          "diameter": false,
+          "upper_tol": 0.997,
+          "lower_tol": -0.997,
+          "min": 18.949,
+          "max": 20.944,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "43.jpg"
+        ],
+        "median_obb_long_px": 1571.024,
+        "median_obb_short_px": 398.928,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "44": {
+    "label": "44",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 428537.5,
+      "perimeter": 2723.652341365814,
+      "aspect_ratio": 1.1623465211459754,
+      "rect_long": 895.05712890625,
+      "rect_short": 551.788330078125,
+      "rect_aspect": 0.616483922933952,
+      "solidity": 0.9584953052378247,
+      "circularity": 0.7259310163087191,
+      "extent": 0.8676919424079542,
+      "convex_perimeter_ratio": 0.948789889078413,
+      "isoperimetric_ratio": 1.3775413607272107,
+      "equivalent_diameter": 738.6683229988578,
+      "hole_count": 0.0,
+      "hu": [
+        0.7396098046927415,
+        2.1919608455987616,
+        5.509137603599849,
+        7.131999956557647,
+        -13.481686457864797,
+        -8.47497818526822,
+        13.903263401899626
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      428537.5,
+      428537.5
+    ],
+    "expected_perimeter_range": [
+      2723.652341365814,
+      2723.652341365814
+    ],
+    "expected_aspect_range": [
+      0.616483922933952,
+      0.616483922933952
+    ],
+    "expected_extent_range": [
+      0.8676919424079542,
+      0.8676919424079542
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "44",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "44",
+      "part_no": "44",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 44.781 +/- 2.239 mm",
+          "label": "L",
+          "nominal": 44.781,
+          "diameter": false,
+          "upper_tol": 2.239,
+          "lower_tol": -2.239,
+          "min": 42.542,
+          "max": 47.02,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 27.628 +/- 1.381 mm",
+          "label": "W",
+          "nominal": 27.628,
+          "diameter": false,
+          "upper_tol": 1.381,
+          "lower_tol": -1.381,
+          "min": 26.246,
+          "max": 29.009,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "44.jpg"
+        ],
+        "median_obb_long_px": 895.617,
+        "median_obb_short_px": 552.556,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "45": {
+    "label": "45",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 96476.0,
+      "perimeter": 1827.78874874115,
+      "aspect_ratio": 1.217741935483871,
+      "rect_long": 393.240234375,
+      "rect_short": 386.220458984375,
+      "rect_aspect": 0.9821488881935442,
+      "solidity": 0.8366010804811003,
+      "circularity": 0.3628917989460526,
+      "extent": 0.6352227841300517,
+      "convex_perimeter_ratio": 0.7073774180182729,
+      "isoperimetric_ratio": 2.7556423234261618,
+      "equivalent_diameter": 350.48118111800176,
+      "hole_count": 0.0,
+      "hu": [
+        0.7189575797115624,
+        3.199524590964636,
+        2.624859104591664,
+        5.19071410102116,
+        9.50735522925494,
+        -6.99692818463676,
+        -9.134342895754491
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      96476.0,
+      96476.0
+    ],
+    "expected_perimeter_range": [
+      1827.78874874115,
+      1827.78874874115
+    ],
+    "expected_aspect_range": [
+      0.9821488881935442,
+      0.9821488881935442
+    ],
+    "expected_extent_range": [
+      0.6352227841300517,
+      0.6352227841300517
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "45",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "45",
+      "part_no": "45",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 19.714 +/- 0.986 mm",
+          "label": "L",
+          "nominal": 19.714,
+          "diameter": false,
+          "upper_tol": 0.986,
+          "lower_tol": -0.986,
+          "min": 18.728,
+          "max": 20.699,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 19.443 +/- 0.972 mm",
+          "label": "W",
+          "nominal": 19.443,
+          "diameter": false,
+          "upper_tol": 0.972,
+          "lower_tol": -0.972,
+          "min": 18.471,
+          "max": 20.415,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "45.jpg"
+        ],
+        "median_obb_long_px": 394.271,
+        "median_obb_short_px": 388.855,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "46": {
+    "label": "46",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 91384.5,
+      "perimeter": 1430.3982071876526,
+      "aspect_ratio": 0.9453125,
+      "rect_long": 367.3706970214844,
+      "rect_short": 356.32928466796875,
+      "rect_aspect": 0.9699447657555825,
+      "solidity": 0.8851913558123541,
+      "circularity": 0.5612656835662205,
+      "extent": 0.6980981895812052,
+      "convex_perimeter_ratio": 0.8182469835234064,
+      "isoperimetric_ratio": 1.7816874063030361,
+      "equivalent_diameter": 341.1075478142495,
+      "hole_count": 0.0,
+      "hu": [
+        0.7879557151310842,
+        4.491842736069256,
+        4.448456836700123,
+        5.932313212991034,
+        11.155720164692742,
+        -8.254525576778953,
+        -11.547975956465217
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      91384.5,
+      91384.5
+    ],
+    "expected_perimeter_range": [
+      1430.3982071876526,
+      1430.3982071876526
+    ],
+    "expected_aspect_range": [
+      0.9699447657555825,
+      0.9699447657555825
+    ],
+    "expected_extent_range": [
+      0.6980981895812052,
+      0.6980981895812052
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "46",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "46",
+      "part_no": "46",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 18.369 +/- 0.918 mm",
+          "label": "L",
+          "nominal": 18.369,
+          "diameter": false,
+          "upper_tol": 0.918,
+          "lower_tol": -0.918,
+          "min": 17.45,
+          "max": 19.287,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 17.816 +/- 0.891 mm",
+          "label": "W",
+          "nominal": 17.816,
+          "diameter": false,
+          "upper_tol": 0.891,
+          "lower_tol": -0.891,
+          "min": 16.926,
+          "max": 18.707,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "46.jpg"
+        ],
+        "median_obb_long_px": 367.371,
+        "median_obb_short_px": 356.329,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "47": {
+    "label": "47",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 30398.5,
+      "perimeter": 890.7300332784653,
+      "aspect_ratio": 1.4607843137254901,
+      "rect_long": 260.1363525390625,
+      "rect_short": 171.68978881835938,
+      "rect_aspect": 0.6599992163439677,
+      "solidity": 0.8592243986545691,
+      "circularity": 0.48147065904165465,
+      "extent": 0.6806230315700962,
+      "convex_perimeter_ratio": 0.8331079841370181,
+      "isoperimetric_ratio": 2.0769697617513274,
+      "equivalent_diameter": 196.7347765409864,
+      "hole_count": 0.0,
+      "hu": [
+        0.725713026859531,
+        2.2556671843247216,
+        4.321775271316604,
+        5.783817077648397,
+        11.47945916991196,
+        6.926879720670817,
+        10.848162686780965
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      30398.5,
+      30398.5
+    ],
+    "expected_perimeter_range": [
+      890.7300332784653,
+      890.7300332784653
+    ],
+    "expected_aspect_range": [
+      0.6599992163439677,
+      0.6599992163439677
+    ],
+    "expected_extent_range": [
+      0.6806230315700962,
+      0.6806230315700962
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "47",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "47",
+      "part_no": "47",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 12.933 +/- 0.647 mm",
+          "label": "L",
+          "nominal": 12.933,
+          "diameter": false,
+          "upper_tol": 0.647,
+          "lower_tol": -0.647,
+          "min": 12.287,
+          "max": 13.58,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 9.034 +/- 0.452 mm",
+          "label": "W",
+          "nominal": 9.034,
+          "diameter": false,
+          "upper_tol": 0.452,
+          "lower_tol": -0.452,
+          "min": 8.582,
+          "max": 9.485,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "47.jpg"
+        ],
+        "median_obb_long_px": 258.665,
+        "median_obb_short_px": 180.671,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "48": {
+    "label": "48",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 80267.0,
+      "perimeter": 1725.1101903915405,
+      "aspect_ratio": 1.1305637982195846,
+      "rect_long": 430.6684875488281,
+      "rect_short": 292.25299072265625,
+      "rect_aspect": 0.678603146438759,
+      "solidity": 0.8531101368407068,
+      "circularity": 0.33893249938277553,
+      "extent": 0.6377272461651005,
+      "convex_perimeter_ratio": 0.6650922500202101,
+      "isoperimetric_ratio": 2.9504399897356666,
+      "equivalent_diameter": 319.6859686274287,
+      "hole_count": 0.0,
+      "hu": [
+        0.7539537500022336,
+        2.4353364390595424,
+        4.277739756195466,
+        5.730046210832581,
+        -10.815261271159853,
+        6.959965692233997,
+        10.986605669789423
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      80267.0,
+      80267.0
+    ],
+    "expected_perimeter_range": [
+      1725.1101903915405,
+      1725.1101903915405
+    ],
+    "expected_aspect_range": [
+      0.678603146438759,
+      0.678603146438759
+    ],
+    "expected_extent_range": [
+      0.6377272461651005,
+      0.6377272461651005
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "48",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "48",
+      "part_no": "48",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 21.533 +/- 1.077 mm",
+          "label": "L",
+          "nominal": 21.533,
+          "diameter": false,
+          "upper_tol": 1.077,
+          "lower_tol": -1.077,
+          "min": 20.457,
+          "max": 22.61,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 14.613 +/- 0.731 mm",
+          "label": "W",
+          "nominal": 14.613,
+          "diameter": false,
+          "upper_tol": 0.731,
+          "lower_tol": -0.731,
+          "min": 13.882,
+          "max": 15.343,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "48.jpg"
+        ],
+        "median_obb_long_px": 430.668,
+        "median_obb_short_px": 292.253,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "49": {
+    "label": "49",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 97224.0,
+      "perimeter": 1589.5018773078918,
+      "aspect_ratio": 1.055,
+      "rect_long": 440.92999267578125,
+      "rect_short": 313.6181945800781,
+      "rect_aspect": 0.7112652797258989,
+      "solidity": 0.8602751847099942,
+      "circularity": 0.48357212509578684,
+      "extent": 0.7030765182757102,
+      "convex_perimeter_ratio": 0.8051735019209619,
+      "isoperimetric_ratio": 2.067943845609211,
+      "equivalent_diameter": 351.83723722387805,
+      "hole_count": 0.0,
+      "hu": [
+        0.7152130771948735,
+        2.1022502533253573,
+        4.181251925670947,
+        5.970386034862854,
+        -11.079832537731724,
+        7.784736068247714,
+        11.467831558723594
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      97224.0,
+      97224.0
+    ],
+    "expected_perimeter_range": [
+      1589.5018773078918,
+      1589.5018773078918
+    ],
+    "expected_aspect_range": [
+      0.7112652797258989,
+      0.7112652797258989
+    ],
+    "expected_extent_range": [
+      0.7030765182757102,
+      0.7030765182757102
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "49",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "49",
+      "part_no": "49",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 22.183 +/- 1.109 mm",
+          "label": "L",
+          "nominal": 22.183,
+          "diameter": false,
+          "upper_tol": 1.109,
+          "lower_tol": -1.109,
+          "min": 21.074,
+          "max": 23.292,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 16.203 +/- 0.810 mm",
+          "label": "W",
+          "nominal": 16.203,
+          "diameter": false,
+          "upper_tol": 0.81,
+          "lower_tol": -0.81,
+          "min": 15.393,
+          "max": 17.013,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "49.jpg"
+        ],
+        "median_obb_long_px": 443.658,
+        "median_obb_short_px": 324.056,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "5": {
+    "label": "5",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 87908.0,
+      "perimeter": 1984.0540053844452,
+      "aspect_ratio": 1.3138297872340425,
+      "rect_long": 496.9773864746094,
+      "rect_short": 292.69207763671875,
+      "rect_aspect": 0.5889444582438208,
+      "solidity": 0.7013451197523576,
+      "circularity": 0.2806281833271916,
+      "extent": 0.6043392540735623,
+      "convex_perimeter_ratio": 0.6797445223780305,
+      "isoperimetric_ratio": 3.5634339649844593,
+      "equivalent_diameter": 334.5563359115751,
+      "hole_count": 0.0,
+      "hu": [
+        0.5991210073592491,
+        1.5797880073924555,
+        2.9632796631574805,
+        3.671132899567218,
+        -7.12259937601008,
+        -4.562342756217829,
+        -7.156424923550974
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      87908.0,
+      87908.0
+    ],
+    "expected_perimeter_range": [
+      1984.0540053844452,
+      1984.0540053844452
+    ],
+    "expected_aspect_range": [
+      0.5889444582438208,
+      0.5889444582438208
+    ],
+    "expected_extent_range": [
+      0.6043392540735623,
+      0.6043392540735623
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "5",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "5",
+      "part_no": "5",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 25.200 +/- 1.260 mm",
+          "label": "L",
+          "nominal": 25.2,
+          "diameter": false,
+          "upper_tol": 1.26,
+          "lower_tol": -1.26,
+          "min": 23.94,
+          "max": 26.46,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 14.883 +/- 0.744 mm",
+          "label": "W",
+          "nominal": 14.883,
+          "diameter": false,
+          "upper_tol": 0.744,
+          "lower_tol": -0.744,
+          "min": 14.139,
+          "max": 15.628,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "5.jpg"
+        ],
+        "median_obb_long_px": 503.999,
+        "median_obb_short_px": 297.667,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "6": {
+    "label": "6",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 96289.5,
+      "perimeter": 1874.620787858963,
+      "aspect_ratio": 1.2398921832884098,
+      "rect_long": 435.98486328125,
+      "rect_short": 291.6395263671875,
+      "rect_aspect": 0.668921219356768,
+      "solidity": 0.8610423056631107,
+      "circularity": 0.34431975313720253,
+      "extent": 0.7572881059622923,
+      "convex_perimeter_ratio": 0.6907633489634438,
+      "isoperimetric_ratio": 2.9042771751800305,
+      "equivalent_diameter": 350.1422555801805,
+      "hole_count": 0.0,
+      "hu": [
+        0.7046118924923267,
+        1.983831581508613,
+        4.025178486696607,
+        6.049717868875704,
+        11.459167946135562,
+        7.59632216976052,
+        -11.130338631285067
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      96289.5,
+      96289.5
+    ],
+    "expected_perimeter_range": [
+      1874.620787858963,
+      1874.620787858963
+    ],
+    "expected_aspect_range": [
+      0.668921219356768,
+      0.668921219356768
+    ],
+    "expected_extent_range": [
+      0.7572881059622923,
+      0.7572881059622923
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "6",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "6",
+      "part_no": "6",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 21.777 +/- 1.089 mm",
+          "label": "L",
+          "nominal": 21.777,
+          "diameter": false,
+          "upper_tol": 1.089,
+          "lower_tol": -1.089,
+          "min": 20.688,
+          "max": 22.866,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 14.549 +/- 0.727 mm",
+          "label": "W",
+          "nominal": 14.549,
+          "diameter": false,
+          "upper_tol": 0.727,
+          "lower_tol": -0.727,
+          "min": 13.822,
+          "max": 15.276,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "6.jpg"
+        ],
+        "median_obb_long_px": 435.538,
+        "median_obb_short_px": 290.979,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "7": {
+    "label": "7",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 109031.0,
+      "perimeter": 1381.2653160095215,
+      "aspect_ratio": 0.8671023965141612,
+      "rect_long": 458.88629150390625,
+      "rect_short": 320.6651306152344,
+      "rect_aspect": 0.6987899541830283,
+      "solidity": 0.9284686326438504,
+      "circularity": 0.7181342598204111,
+      "extent": 0.7409572884239343,
+      "convex_perimeter_ratio": 0.9427973925379936,
+      "isoperimetric_ratio": 1.39249727516144,
+      "equivalent_diameter": 372.58902399563453,
+      "hole_count": 0.0,
+      "hu": [
+        0.7407925744023882,
+        2.2375503277793323,
+        3.487661208145915,
+        4.939741804735309,
+        9.173336730871869,
+        6.094193507589698,
+        -9.682336524602201
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      109031.0,
+      109031.0
+    ],
+    "expected_perimeter_range": [
+      1381.2653160095215,
+      1381.2653160095215
+    ],
+    "expected_aspect_range": [
+      0.6987899541830283,
+      0.6987899541830283
+    ],
+    "expected_extent_range": [
+      0.7409572884239343,
+      0.7409572884239343
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "7",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "7",
+      "part_no": "7",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 22.968 +/- 1.148 mm",
+          "label": "L",
+          "nominal": 22.968,
+          "diameter": false,
+          "upper_tol": 1.148,
+          "lower_tol": -1.148,
+          "min": 21.82,
+          "max": 24.116,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 16.058 +/- 0.803 mm",
+          "label": "W",
+          "nominal": 16.058,
+          "diameter": false,
+          "upper_tol": 0.803,
+          "lower_tol": -0.803,
+          "min": 15.255,
+          "max": 16.86,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "7.jpg"
+        ],
+        "median_obb_long_px": 459.36,
+        "median_obb_short_px": 321.15,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "8": {
+    "label": "8",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 68166.5,
+      "perimeter": 4301.597471237183,
+      "aspect_ratio": 1.4447115384615385,
+      "rect_long": 598.3816528320312,
+      "rect_short": 206.26864624023438,
+      "rect_aspect": 0.34471084677145847,
+      "solidity": 0.5769024073392321,
+      "circularity": 0.04629363929875669,
+      "extent": 0.5522802445400756,
+      "convex_perimeter_ratio": 0.3481087810880224,
+      "isoperimetric_ratio": 21.601239719921026,
+      "equivalent_diameter": 294.60530108297354,
+      "hole_count": 0.0,
+      "hu": [
+        0.35700633213070165,
+        0.8525361182789702,
+        4.653362856225464,
+        4.351392933022171,
+        -9.60712466900205,
+        4.909274742666714,
+        8.860639892075927
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      68166.5,
+      68166.5
+    ],
+    "expected_perimeter_range": [
+      4301.597471237183,
+      4301.597471237183
+    ],
+    "expected_aspect_range": [
+      0.34471084677145847,
+      0.34471084677145847
+    ],
+    "expected_extent_range": [
+      0.5522802445400756,
+      0.5522802445400756
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "8",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "8",
+      "part_no": "8",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 30.114 +/- 1.506 mm",
+          "label": "L",
+          "nominal": 30.114,
+          "diameter": false,
+          "upper_tol": 1.506,
+          "lower_tol": -1.506,
+          "min": 28.608,
+          "max": 31.62,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 10.517 +/- 0.526 mm",
+          "label": "W",
+          "nominal": 10.517,
+          "diameter": false,
+          "upper_tol": 0.526,
+          "lower_tol": -0.526,
+          "min": 9.992,
+          "max": 11.043,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "8.jpg"
+        ],
+        "median_obb_long_px": 602.282,
+        "median_obb_short_px": 210.35,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "9": {
+    "label": "9",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 72345.0,
+      "perimeter": 4356.452766180038,
+      "aspect_ratio": 1.3676092544987146,
+      "rect_long": 579.717041015625,
+      "rect_short": 215.0223388671875,
+      "rect_aspect": 0.3709091223029824,
+      "solidity": 0.6296399446470379,
+      "circularity": 0.04790185873701076,
+      "extent": 0.5803752351651636,
+      "convex_perimeter_ratio": 0.33596524713305675,
+      "isoperimetric_ratio": 20.876016638313924,
+      "equivalent_diameter": 303.50043634872316,
+      "hole_count": 0.0,
+      "hu": [
+        0.4195310288352685,
+        1.022530654241248,
+        4.49944577842748,
+        4.818320296169971,
+        -9.57824919816085,
+        5.490357128807915,
+        9.691888507087292
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      72345.0,
+      72345.0
+    ],
+    "expected_perimeter_range": [
+      4356.452766180038,
+      4356.452766180038
+    ],
+    "expected_aspect_range": [
+      0.3709091223029824,
+      0.3709091223029824
+    ],
+    "expected_extent_range": [
+      0.5803752351651636,
+      0.5803752351651636
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "9",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "9",
+      "part_no": "9",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 29.002 +/- 1.450 mm",
+          "label": "L",
+          "nominal": 29.002,
+          "diameter": false,
+          "upper_tol": 1.45,
+          "lower_tol": -1.45,
+          "min": 27.552,
+          "max": 30.452,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 10.784 +/- 0.539 mm",
+          "label": "W",
+          "nominal": 10.784,
+          "diameter": false,
+          "upper_tol": 0.539,
+          "lower_tol": -0.539,
+          "min": 10.245,
+          "max": 11.323,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "9.jpg"
+        ],
+        "median_obb_long_px": 580.033,
+        "median_obb_short_px": 215.676,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "98003P": {
+    "label": "98003P",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 147666.0,
+      "perimeter": 3823.358090877533,
+      "aspect_ratio": 0.8155197657393851,
+      "rect_long": 673.6188354492188,
+      "rect_short": 555.4534912109375,
+      "rect_aspect": 0.8245812943168671,
+      "solidity": 0.4280477889009509,
+      "circularity": 0.12694056413740482,
+      "extent": 0.39465588909795046,
+      "convex_perimeter_ratio": 0.5946873252833534,
+      "isoperimetric_ratio": 7.877702504280395,
+      "equivalent_diameter": 433.6060315688223,
+      "hole_count": 0.0,
+      "hu": [
+        0.3612876053884722,
+        4.760334782287386,
+        3.2911610864987657,
+        2.3726830787386994,
+        5.204666503526708,
+        -4.860001284452371,
+        6.979133424483968
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      147666.0,
+      147666.0
+    ],
+    "expected_perimeter_range": [
+      3823.358090877533,
+      3823.358090877533
+    ],
+    "expected_aspect_range": [
+      0.8245812943168671,
+      0.8245812943168671
+    ],
+    "expected_extent_range": [
+      0.39465588909795046,
+      0.39465588909795046
     ],
     "expected_hole_count": 0,
     "spec": {
@@ -56,56 +5669,26 @@
       "source_file": "items/98003P.pdf",
       "item_name": "98003P",
       "part_no": "98003P",
+      "description": "Equipment",
+      "material": "Engineering Plastic",
       "unit": "mm",
       "drawing": "drawing.png",
-      "review_status": "auto_extracted_from_pdf",
+      "review_status": "dynamically_extracted_from_pdf",
       "dimensions": [
         {
-          "raw_spec": "\u03c83.95+0.05/-0.10mm",
-          "label": "D_",
-          "nominal": 3.95,
-          "diameter": true,
-          "upper_tol": 0.05,
-          "lower_tol": -0.1,
-          "min": 3.85,
-          "max": 4.0,
-          "tolerance_type": "asymmetric"
-        },
-        {
-          "raw_spec": "\u03c84.0+0/-0.05mm",
-          "label": "D_",
-          "nominal": 4.0,
-          "diameter": true,
-          "upper_tol": 0.0,
-          "lower_tol": -0.05,
-          "min": 3.95,
-          "max": 4.0,
-          "tolerance_type": "asymmetric"
-        },
-        {
-          "raw_spec": "\u03c83.5mm MAX.",
-          "label": "D_",
-          "nominal": 3.5,
-          "diameter": true,
-          "upper_tol": 0.0,
-          "lower_tol": 0.0,
-          "min": 3.5,
-          "max": 3.5,
-          "tolerance_type": "exact"
-        },
-        {
           "raw_spec": "32.0+0.0/-1.10mm",
-          "label": "DIM",
+          "label": "L",
           "nominal": 32.0,
           "diameter": false,
           "upper_tol": 0.0,
           "lower_tol": -1.1,
           "min": 30.9,
           "max": 32.0,
-          "tolerance_type": "asymmetric"
+          "tolerance_type": "asymmetric",
+          "axis": "2D_in_plane"
         },
         {
-          "raw_spec": "W 26.0\u00b10.30mm",
+          "raw_spec": "W 26.0\u00b10.30mm \u6e2c  \u91cf",
           "label": "W",
           "nominal": 26.0,
           "diameter": false,
@@ -113,27 +5696,65 @@
           "lower_tol": -0.3,
           "min": 25.7,
           "max": 26.3,
-          "tolerance_type": "symmetric"
+          "tolerance_type": "symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "\u03c6 4.0+0/-0.05 mm",
+          "label": "D",
+          "nominal": 4.0,
+          "diameter": true,
+          "upper_tol": 0.0,
+          "lower_tol": -0.05,
+          "min": 3.95,
+          "max": 4.0,
+          "tolerance_type": "asymmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "\u03c6 3.95+0.05/-0.10 mm",
+          "label": "D1",
+          "nominal": 3.95,
+          "diameter": true,
+          "upper_tol": 0.05,
+          "lower_tol": -0.1,
+          "min": 3.85,
+          "max": 4.0,
+          "tolerance_type": "asymmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "\u03c6 3.5 mm MAX.",
+          "label": "D2",
+          "nominal": 3.5,
+          "diameter": true,
+          "upper_tol": 0.0,
+          "lower_tol": -3.5,
+          "min": 0.0,
+          "max": 3.5,
+          "tolerance_type": "max_limit",
+          "axis": "2D_in_plane"
         },
         {
           "raw_spec": "7.0\u00b10.2mm",
-          "label": "DIM",
+          "label": "H",
           "nominal": 7.0,
           "diameter": false,
           "upper_tol": 0.2,
           "lower_tol": -0.2,
           "min": 6.8,
           "max": 7.2,
-          "tolerance_type": "symmetric"
+          "tolerance_type": "symmetric",
+          "axis": "Z_height_side_view"
         }
       ],
-      "optical_scale_mm_per_px": 0.047553,
+      "optical_scale_mm_per_px": 0.047145,
       "golden_sample": {
         "filename": "98003P_1.png",
-        "obb_long_px": 672.94,
-        "obb_short_px": 558.65,
-        "angle_deg": 88.28,
-        "optical_scale_um_per_px": 47.55
+        "obb_long_px": 678.8,
+        "obb_short_px": 564.4,
+        "angle_deg": 88.4,
+        "optical_scale_um_per_px": 47.14
       }
     },
     "drawing": "C:\\Users\\DELL\\OneDrive\\Desktop\\object-classification\\assets\\references\\98003P\\drawing.png"
@@ -142,52 +5763,68 @@
     "label": "98475",
     "n_references": 2,
     "feature_mean": {
-      "area": 151353.75,
-      "perimeter": 3998.292016148567,
-      "aspect_ratio": 0.5158642086043307,
-      "rect_long": 842.7334594726562,
-      "rect_short": 437.9572448730469,
-      "rect_aspect": 0.5197086556324177,
-      "solidity": 0.5237277822295666,
-      "circularity": 0.1221101256136698,
+      "area": 149914.0,
+      "perimeter": 3455.440962910652,
+      "aspect_ratio": 0.5152897653775815,
+      "rect_long": 841.9752502441406,
+      "rect_short": 438.65789794921875,
+      "rect_aspect": 0.5209971910226489,
+      "solidity": 0.5289961544648103,
+      "circularity": 0.16909534881320776,
+      "extent": 0.3999351408692786,
+      "convex_perimeter_ratio": 0.7043249331659039,
+      "isoperimetric_ratio": 6.338360748606634,
+      "equivalent_diameter": 433.552208515634,
       "hole_count": 0.0,
       "hu": [
-        0.2553106515843351,
-        0.8610213523412004,
-        2.263413364657529,
-        2.3666650316733824,
-        4.6880534462705725,
-        2.8025960146700672,
-        5.453298275470751
+        0.2633440664747939,
+        0.8729252313124958,
+        2.037408887548597,
+        2.251530442241272,
+        4.399386670569743,
+        2.7063403333611875,
+        -1.1451400863248402
       ]
     },
     "feature_std": {
-      "area": 42038.75,
-      "perimeter": 896.6553716659546,
-      "aspect_ratio": 0.04715110352758922,
-      "rect_long": 0.3822021484375,
-      "rect_short": 40.87591552734375,
-      "rect_aspect": 0.048739668314333434,
-      "solidity": 0.003339996573256343,
-      "circularity": 0.020683159485199415,
+      "area": 36730.5,
+      "perimeter": 870.4933301210403,
+      "aspect_ratio": 0.04956872518845623,
+      "rect_long": 0.166839599609375,
+      "rect_short": 44.536956787109375,
+      "rect_aspect": 0.05299903974246037,
+      "solidity": 0.01198612004724281,
+      "circularity": 0.04376240988724828,
+      "extent": 0.058924261479680745,
+      "convex_perimeter_ratio": 0.1264051528230361,
+      "isoperimetric_ratio": 1.640387763711828,
+      "equivalent_diameter": 53.93436381977105,
       "hole_count": 0.0,
       "hu": [
-        0.08977420075703449,
-        0.41975574353704836,
-        1.0729400233309994,
-        0.65184532021413,
-        1.5149592433569963,
-        0.8592538123844783,
-        1.4898226712364406
+        0.07035358472894307,
+        0.3715135100104796,
+        0.8045979655467786,
+        0.5088563689004002,
+        1.1659038969169966,
+        0.7087720082341809,
+        5.302164685825768
       ]
     },
     "expected_area_range": [
-      109315.0,
-      193392.5
+      113183.5,
+      186644.5
+    ],
+    "expected_perimeter_range": [
+      2584.947632789612,
+      4325.9342930316925
     ],
     "expected_aspect_range": [
-      0.4709689873180843,
-      0.5684483239467512
+      0.46799815128018846,
+      0.5739962307651092
+    ],
+    "expected_extent_range": [
+      0.34101087938959784,
+      0.45885940234895933
     ],
     "expected_hole_count": 0,
     "spec": {
@@ -195,21 +5832,12 @@
       "source_file": "items/98475.pdf",
       "item_name": "98475",
       "part_no": "98475",
+      "description": "Equipment",
+      "material": "Brass / Copper",
       "unit": "mm",
       "drawing": "drawing.png",
-      "review_status": "auto_extracted_from_pdf",
+      "review_status": "dynamically_extracted_from_pdf",
       "dimensions": [
-        {
-          "raw_spec": "4.9\u00b10.30mm",
-          "label": "DIM",
-          "nominal": 4.9,
-          "diameter": false,
-          "upper_tol": 0.3,
-          "lower_tol": -0.3,
-          "min": 4.6,
-          "max": 5.2,
-          "tolerance_type": "symmetric"
-        },
         {
           "raw_spec": "L 32.5\u00b10.25mm",
           "label": "L",
@@ -219,51 +5847,8 @@
           "lower_tol": -0.25,
           "min": 32.25,
           "max": 32.75,
-          "tolerance_type": "symmetric"
-        },
-        {
-          "raw_spec": "D 4.75+0/-0.05mm",
-          "label": "D",
-          "nominal": 4.75,
-          "diameter": false,
-          "upper_tol": 0.0,
-          "lower_tol": -0.05,
-          "min": 4.7,
-          "max": 4.75,
-          "tolerance_type": "asymmetric"
-        },
-        {
-          "raw_spec": "F 4.0\u00b10.25mm",
-          "label": "F",
-          "nominal": 4.0,
-          "diameter": false,
-          "upper_tol": 0.25,
-          "lower_tol": -0.25,
-          "min": 3.75,
-          "max": 4.25,
-          "tolerance_type": "symmetric"
-        },
-        {
-          "raw_spec": "24.5\u00b10.25mm",
-          "label": "DIM",
-          "nominal": 24.5,
-          "diameter": false,
-          "upper_tol": 0.25,
-          "lower_tol": -0.25,
-          "min": 24.25,
-          "max": 24.75,
-          "tolerance_type": "symmetric"
-        },
-        {
-          "raw_spec": "0.7\u00b10.03mm",
-          "label": "DIM",
-          "nominal": 0.7,
-          "diameter": false,
-          "upper_tol": 0.03,
-          "lower_tol": -0.03,
-          "min": 0.67,
-          "max": 0.73,
-          "tolerance_type": "symmetric"
+          "tolerance_type": "symmetric",
+          "axis": "2D_in_plane"
         },
         {
           "raw_spec": "W 4.9\u00b10.30mm",
@@ -274,330 +5859,106 @@
           "lower_tol": -0.3,
           "min": 4.6,
           "max": 5.2,
-          "tolerance_type": "symmetric"
+          "tolerance_type": "symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "24.5\u00b10.25mm",
+          "label": "E",
+          "nominal": 24.5,
+          "diameter": false,
+          "upper_tol": 0.25,
+          "lower_tol": -0.25,
+          "min": 24.25,
+          "max": 24.75,
+          "tolerance_type": "symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "D 4.75+0/-0.05mm \u6e2c   \u91cf",
+          "label": "D",
+          "nominal": 4.75,
+          "diameter": false,
+          "upper_tol": 0.0,
+          "lower_tol": -0.05,
+          "min": 4.7,
+          "max": 4.75,
+          "tolerance_type": "asymmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "F 4.0\u00b10.25mm",
+          "label": "F",
+          "nominal": 4.0,
+          "diameter": false,
+          "upper_tol": 0.25,
+          "lower_tol": -0.25,
+          "min": 3.75,
+          "max": 4.25,
+          "tolerance_type": "symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "0.7\u00b10.03mm",
+          "label": "t",
+          "nominal": 0.7,
+          "diameter": false,
+          "upper_tol": 0.03,
+          "lower_tol": -0.03,
+          "min": 0.67,
+          "max": 0.73,
+          "tolerance_type": "symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "4.9\u00b10.30mm",
+          "label": "H",
+          "nominal": 4.9,
+          "diameter": false,
+          "upper_tol": 0.3,
+          "lower_tol": -0.3,
+          "min": 4.6,
+          "max": 5.2,
+          "tolerance_type": "symmetric",
+          "axis": "Z_height_side_view"
         }
       ],
-      "optical_scale_mm_per_px": 0.038547,
+      "optical_scale_mm_per_px": 0.038592,
       "golden_sample": {
         "filename": "98475_1.png",
-        "obb_long_px": 843.12,
-        "obb_short_px": 397.08,
-        "angle_deg": 89.11,
-        "optical_scale_um_per_px": 38.55
+        "obb_long_px": 842.1,
+        "obb_short_px": 394.1,
+        "angle_deg": 89.2,
+        "optical_scale_um_per_px": 38.59
       }
     },
     "drawing": "C:\\Users\\DELL\\OneDrive\\Desktop\\object-classification\\assets\\references\\98475\\drawing.png"
   },
   "98661BBS-1": {
     "label": "98661BBS-1",
-    "n_references": 10,
-    "feature_mean": {
-      "area": 118546.1,
-      "perimeter": 3576.236117720604,
-      "aspect_ratio": 0.5985615916337979,
-      "rect_long": 608.9260559082031,
-      "rect_short": 379.7796936035156,
-      "rect_aspect": 0.6300096345793842,
-      "solidity": 0.6044241348087198,
-      "circularity": 0.11963228037154292,
-      "hole_count": 0.0,
-      "hu": [
-        0.4577594727236279,
-        1.5498784199954918,
-        3.159009792994275,
-        3.7092785741945944,
-        6.052378551696728,
-        3.3139075784615413,
-        -0.1790042196195814
-      ]
-    },
-    "feature_std": {
-      "area": 34204.30642024481,
-      "perimeter": 715.8199939121339,
-      "aspect_ratio": 0.11730159636097391,
-      "rect_long": 29.540329884491022,
-      "rect_short": 77.99926980541336,
-      "rect_aspect": 0.15385301219967862,
-      "solidity": 0.1476295189387421,
-      "circularity": 0.031065713564223225,
-      "hole_count": 0.0,
-      "hu": [
-        0.14242466396423098,
-        0.31888077815509636,
-        1.360345212042962,
-        1.3300408101631473,
-        5.052909258868435,
-        3.882214949187338,
-        7.824247392380691
-      ]
-    },
-    "expected_area_range": [
-      68070.5,
-      160996.0
-    ],
-    "expected_aspect_range": [
-      0.38509316770186336,
-      0.9076273838346096
-    ],
-    "expected_hole_count": 0,
-    "spec": {
-      "sku": "98661BBS-1",
-      "source_file": "items/98661BBS-1.pdf",
-      "item_name": "98661BBS-1",
-      "part_no": "98661BBS-1",
-      "unit": "mm",
-      "drawing": "drawing.png",
-      "review_status": "auto_extracted_from_pdf",
-      "dimensions": [
-        {
-          "raw_spec": "3.0\u00b10.20mm",
-          "label": "DIM",
-          "nominal": 3.0,
-          "diameter": false,
-          "upper_tol": 0.2,
-          "lower_tol": -0.2,
-          "min": 2.8,
-          "max": 3.2,
-          "tolerance_type": "symmetric"
-        },
-        {
-          "raw_spec": "H 4.2\u00b10.30mm",
-          "label": "H",
-          "nominal": 4.2,
-          "diameter": false,
-          "upper_tol": 0.3,
-          "lower_tol": -0.3,
-          "min": 3.9,
-          "max": 4.5,
-          "tolerance_type": "symmetric"
-        },
-        {
-          "raw_spec": "W 4.3\u00b10.30mm",
-          "label": "W",
-          "nominal": 4.3,
-          "diameter": false,
-          "upper_tol": 0.3,
-          "lower_tol": -0.3,
-          "min": 4.0,
-          "max": 4.6,
-          "tolerance_type": "symmetric"
-        },
-        {
-          "raw_spec": "L 28.5\u00b10.30mm",
-          "label": "L",
-          "nominal": 28.5,
-          "diameter": false,
-          "upper_tol": 0.3,
-          "lower_tol": -0.3,
-          "min": 28.2,
-          "max": 28.8,
-          "tolerance_type": "symmetric"
-        },
-        {
-          "raw_spec": "3.15\u00b10.07mm",
-          "label": "DIM",
-          "nominal": 3.15,
-          "diameter": false,
-          "upper_tol": 0.07,
-          "lower_tol": -0.07,
-          "min": 3.08,
-          "max": 3.22,
-          "tolerance_type": "symmetric"
-        },
-        {
-          "raw_spec": "F 4.3\u00b10.30mm",
-          "label": "F",
-          "nominal": 4.3,
-          "diameter": false,
-          "upper_tol": 0.3,
-          "lower_tol": -0.3,
-          "min": 4.0,
-          "max": 4.6,
-          "tolerance_type": "symmetric"
-        },
-        {
-          "raw_spec": "1.5+0/-0.04mm",
-          "label": "DIM",
-          "nominal": 1.5,
-          "diameter": false,
-          "upper_tol": 0.0,
-          "lower_tol": -0.04,
-          "min": 1.46,
-          "max": 1.5,
-          "tolerance_type": "asymmetric"
-        },
-        {
-          "raw_spec": "J 6.3\u00b10.07mm",
-          "label": "J",
-          "nominal": 6.3,
-          "diameter": false,
-          "upper_tol": 0.07,
-          "lower_tol": -0.07,
-          "min": 6.23,
-          "max": 6.37,
-          "tolerance_type": "symmetric"
-        }
-      ],
-      "optical_scale_mm_per_px": 0.044255,
-      "golden_sample": {
-        "filename": "98661BBS-1_1.png",
-        "obb_long_px": 644.0,
-        "obb_short_px": 248.0,
-        "angle_deg": 0.0,
-        "optical_scale_um_per_px": 44.25
-      }
-    },
-    "drawing": "C:\\Users\\DELL\\OneDrive\\Desktop\\object-classification\\assets\\references\\98661BBS-1\\drawing.png"
-  },
-  "UH-004": {
-    "label": "UH-004",
-    "n_references": 2,
-    "feature_mean": {
-      "area": 177780.75,
-      "perimeter": 1770.3042089939117,
-      "aspect_ratio": 0.92006292006292,
-      "rect_long": 494.3307647705078,
-      "rect_short": 430.3855743408203,
-      "rect_aspect": 0.8709212578869452,
-      "solidity": 0.9772543954778159,
-      "circularity": 0.7041983282017861,
-      "hole_count": 0.0,
-      "hu": [
-        0.7745605175776232,
-        3.1132758154829685,
-        3.312194376648318,
-        5.182044750502973,
-        0.06491120422851004,
-        -0.08922780373409633,
-        9.580487760975632
-      ]
-    },
-    "feature_std": {
-      "area": 40888.25,
-      "perimeter": 215.34671640396118,
-      "aspect_ratio": 0.02588302588302588,
-      "rect_long": 52.95518493652344,
-      "rect_short": 44.83534240722656,
-      "rect_aspect": 0.002598369271883283,
-      "solidity": 0.004069974390761288,
-      "circularity": 0.007264928833391138,
-      "hole_count": 0.0,
-      "hu": [
-        0.0021504680582515867,
-        0.04237523744033478,
-        0.10602453863269767,
-        0.029879017826182075,
-        9.601419275851322,
-        6.900673855827195,
-        0.07479299526518535
-      ]
-    },
-    "expected_area_range": [
-      136892.5,
-      218669.0
-    ],
-    "expected_aspect_range": [
-      0.8683228886150619,
-      0.8735196271588285
-    ],
-    "expected_hole_count": 0,
-    "spec": {
-      "sku": "UH-004",
-      "source_file": "items/UH-004.pdf",
-      "item_name": "UH-004",
-      "part_no": "UH-004",
-      "unit": "mm",
-      "drawing": "drawing.png",
-      "review_status": "auto_extracted_from_pdf",
-      "dimensions": [
-        {
-          "raw_spec": "14.2+0.5/-0.3mm",
-          "label": "DIM",
-          "nominal": 14.2,
-          "diameter": false,
-          "upper_tol": 0.5,
-          "lower_tol": -0.3,
-          "min": 13.9,
-          "max": 14.7,
-          "tolerance_type": "asymmetric"
-        },
-        {
-          "raw_spec": "16.8\u00b10.4mm",
-          "label": "DIM",
-          "nominal": 16.8,
-          "diameter": false,
-          "upper_tol": 0.4,
-          "lower_tol": -0.4,
-          "min": 16.4,
-          "max": 17.2,
-          "tolerance_type": "symmetric"
-        },
-        {
-          "raw_spec": "15.6\u00b10.3mm",
-          "label": "DIM",
-          "nominal": 15.6,
-          "diameter": false,
-          "upper_tol": 0.3,
-          "lower_tol": -0.3,
-          "min": 15.3,
-          "max": 15.9,
-          "tolerance_type": "symmetric"
-        },
-        {
-          "raw_spec": "7.0+0.5/-0.3mm",
-          "label": "DIM",
-          "nominal": 7.0,
-          "diameter": false,
-          "upper_tol": 0.5,
-          "lower_tol": -0.3,
-          "min": 6.7,
-          "max": 7.5,
-          "tolerance_type": "asymmetric"
-        },
-        {
-          "raw_spec": "19.8\u00b10.5mm",
-          "label": "DIM",
-          "nominal": 19.8,
-          "diameter": false,
-          "upper_tol": 0.5,
-          "lower_tol": -0.5,
-          "min": 19.3,
-          "max": 20.3,
-          "tolerance_type": "symmetric"
-        }
-      ],
-      "optical_scale_mm_per_px": 0.04486,
-      "golden_sample": {
-        "filename": "UH-004_1.png",
-        "obb_long_px": 441.38,
-        "obb_short_px": 385.55,
-        "angle_deg": 80.95,
-        "optical_scale_um_per_px": 44.86
-      }
-    },
-    "drawing": "C:\\Users\\DELL\\OneDrive\\Desktop\\object-classification\\assets\\references\\UH-004\\drawing.png"
-  },
-  "UH-8715P": {
-    "label": "UH-8715P",
     "n_references": 1,
     "feature_mean": {
-      "area": 141883.0,
-      "perimeter": 1921.244728565216,
-      "aspect_ratio": 0.7172995780590717,
-      "rect_long": 471.08203125,
-      "rect_short": 337.7458190917969,
-      "rect_aspect": 0.7169575502500062,
-      "solidity": 0.932557314123462,
-      "circularity": 0.48303082768564193,
+      "area": 69761.5,
+      "perimeter": 2843.256349802017,
+      "aspect_ratio": 0.3844856661045531,
+      "rect_long": 594.0,
+      "rect_short": 231.0,
+      "rect_aspect": 0.3888888888888889,
+      "solidity": 0.6401517758415806,
+      "circularity": 0.1084410311892691,
+      "extent": 0.5084138644744706,
+      "convex_perimeter_ratio": 0.5069958048765512,
+      "isoperimetric_ratio": 9.22160172245721,
+      "equivalent_diameter": 298.03204609578825,
       "hole_count": 0.0,
       "hu": [
-        0.7458725793800556,
-        2.4934737890591765,
-        4.237761721272008,
-        5.942907524775264,
-        -11.033444417049184,
-        7.190184791144919,
-        12.548755500021153
+        0.420089457798369,
+        0.9624824706933403,
+        3.4930503413985035,
+        3.3972968213766093,
+        6.842995901844816,
+        3.878898546652653,
+        -8.150824276846935
       ]
     },
     "feature_std": {
@@ -609,6 +5970,10 @@
       "rect_aspect": 0.0,
       "solidity": 0.0,
       "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
       "hole_count": 0.0,
       "hu": [
         0.0,
@@ -621,12 +5986,473 @@
       ]
     },
     "expected_area_range": [
-      141883.0,
-      141883.0
+      69761.5,
+      69761.5
+    ],
+    "expected_perimeter_range": [
+      2843.256349802017,
+      2843.256349802017
     ],
     "expected_aspect_range": [
-      0.7169575502500062,
-      0.7169575502500062
+      0.3888888888888889,
+      0.3888888888888889
+    ],
+    "expected_extent_range": [
+      0.5084138644744706,
+      0.5084138644744706
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "98661BBS-1",
+      "source_file": "items/98661BBS-1.pdf",
+      "item_name": "98661BBS-1",
+      "part_no": "98661BBS-1",
+      "description": "Equipment",
+      "material": "Brass / Copper",
+      "unit": "mm",
+      "drawing": "drawing.png",
+      "review_status": "dynamically_extracted_from_pdf",
+      "dimensions": [
+        {
+          "raw_spec": "L 28.5\u00b10.30mm",
+          "label": "L",
+          "nominal": 28.5,
+          "diameter": false,
+          "upper_tol": 0.3,
+          "lower_tol": -0.3,
+          "min": 28.2,
+          "max": 28.8,
+          "tolerance_type": "symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "W 4.3\u00b10.30mm \u6e2c  \u91cf",
+          "label": "W",
+          "nominal": 4.3,
+          "diameter": false,
+          "upper_tol": 0.3,
+          "lower_tol": -0.3,
+          "min": 4.0,
+          "max": 4.6,
+          "tolerance_type": "symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "J 6.3\u00b10.07mm",
+          "label": "J",
+          "nominal": 6.3,
+          "diameter": false,
+          "upper_tol": 0.07,
+          "lower_tol": -0.07,
+          "min": 6.23,
+          "max": 6.37,
+          "tolerance_type": "symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "F 4.3\u00b10.30mm",
+          "label": "F",
+          "nominal": 4.3,
+          "diameter": false,
+          "upper_tol": 0.3,
+          "lower_tol": -0.3,
+          "min": 4.0,
+          "max": 4.6,
+          "tolerance_type": "symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "3.15\u00b10.07mm",
+          "label": "d",
+          "nominal": 3.15,
+          "diameter": false,
+          "upper_tol": 0.07,
+          "lower_tol": -0.07,
+          "min": 3.08,
+          "max": 3.22,
+          "tolerance_type": "symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "3.0\u00b10.20mm",
+          "label": "K",
+          "nominal": 3.0,
+          "diameter": false,
+          "upper_tol": 0.2,
+          "lower_tol": -0.2,
+          "min": 2.8,
+          "max": 3.2,
+          "tolerance_type": "symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "1.5+0/-0.04mm",
+          "label": "T",
+          "nominal": 1.5,
+          "diameter": false,
+          "upper_tol": 0.0,
+          "lower_tol": -0.04,
+          "min": 1.46,
+          "max": 1.5,
+          "tolerance_type": "asymmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "H 4.2\u00b10.30mm \u6e2c  \u91cf",
+          "label": "H",
+          "nominal": 4.2,
+          "diameter": false,
+          "upper_tol": 0.3,
+          "lower_tol": -0.3,
+          "min": 3.9,
+          "max": 4.5,
+          "tolerance_type": "symmetric",
+          "axis": "Z_height_side_view"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.048142,
+      "golden_sample": {
+        "filename": "98661BBS-1_2.png",
+        "obb_long_px": 592.0,
+        "obb_short_px": 227.0,
+        "angle_deg": 0.0,
+        "optical_scale_um_per_px": 48.14
+      }
+    },
+    "drawing": "C:\\Users\\DELL\\OneDrive\\Desktop\\object-classification\\assets\\references\\98661BBS-1\\drawing.png"
+  },
+  "AH001": {
+    "label": "AH001",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 45166.0,
+      "perimeter": 1570.4710583686829,
+      "aspect_ratio": 0.2779783393501805,
+      "rect_long": 556.5034790039062,
+      "rect_short": 141.05520629882812,
+      "rect_aspect": 0.253466890362132,
+      "solidity": 0.7180204599108158,
+      "circularity": 0.23012384379507736,
+      "extent": 0.5753798200307038,
+      "convex_perimeter_ratio": 0.8215078967262907,
+      "isoperimetric_ratio": 4.34548625430787,
+      "equivalent_diameter": 239.8064579562201,
+      "hole_count": 0.0,
+      "hu": [
+        0.2250807927015497,
+        0.4983034170366351,
+        3.1337140069114438,
+        3.6571773562423866,
+        7.082861361112013,
+        4.577549861437224,
+        7.495665084058417
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      45166.0,
+      45166.0
+    ],
+    "expected_perimeter_range": [
+      1570.4710583686829,
+      1570.4710583686829
+    ],
+    "expected_aspect_range": [
+      0.253466890362132,
+      0.253466890362132
+    ],
+    "expected_extent_range": [
+      0.5753798200307038,
+      0.5753798200307038
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "AH001",
+      "source_file": "generated_from_reference_silhouette",
+      "item_name": "AH001",
+      "part_no": "AH001",
+      "description": "Provisional rotation-repeatability specification",
+      "material": "unknown",
+      "unit": "mm (provisional)",
+      "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+      "dimensions": [
+        {
+          "raw_spec": "PROVISIONAL L 27.838 +/- 1.392 mm",
+          "label": "L",
+          "nominal": 27.838,
+          "diameter": false,
+          "upper_tol": 1.392,
+          "lower_tol": -1.392,
+          "min": 26.446,
+          "max": 29.23,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "PROVISIONAL W 7.065 +/- 0.353 mm",
+          "label": "W",
+          "nominal": 7.065,
+          "diameter": false,
+          "upper_tol": 0.353,
+          "lower_tol": -0.353,
+          "min": 6.712,
+          "max": 7.418,
+          "tolerance_type": "provisional_symmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.05,
+      "golden_sample": {
+        "filenames": [
+          "98661BBS-1_6.png"
+        ],
+        "median_obb_long_px": 556.756,
+        "median_obb_short_px": 141.298,
+        "sample_count": 1
+      }
+    },
+    "drawing": null
+  },
+  "UH-004": {
+    "label": "UH-004",
+    "n_references": 2,
+    "feature_mean": {
+      "area": 203337.75,
+      "perimeter": 1867.1391668319702,
+      "aspect_ratio": 1.0488310708898942,
+      "rect_long": 531.1853179931641,
+      "rect_short": 483.40895080566406,
+      "rect_aspect": 0.9051897107767941,
+      "solidity": 0.9492968528834526,
+      "circularity": 0.7344502860143911,
+      "extent": 0.7746556289618334,
+      "convex_perimeter_ratio": 0.9300087405495159,
+      "isoperimetric_ratio": 1.3810489498432221,
+      "equivalent_diameter": 501.50917906342113,
+      "hole_count": 0.0,
+      "hu": [
+        0.7734102798449887,
+        3.0285757899716486,
+        3.941955888513241,
+        5.268763598278229,
+        10.972268385692857,
+        -0.2731673267692867,
+        9.903945645760865
+      ]
+    },
+    "feature_std": {
+      "area": 67703.25,
+      "perimeter": 426.89703273773193,
+      "aspect_ratio": 0.10312971342383104,
+      "rect_long": 91.81779479980469,
+      "rect_short": 98.06999206542969,
+      "rect_aspect": 0.028158664104161013,
+      "solidity": 0.02498043664249827,
+      "circularity": 0.08724162331957247,
+      "extent": 0.026467553523081333,
+      "convex_perimeter_ratio": 0.06053365254449594,
+      "isoperimetric_ratio": 0.16404779814566328,
+      "equivalent_diameter": 85.9430483087825,
+      "hole_count": 0.0,
+      "hu": [
+        0.0012141293150120247,
+        0.16850499975310385,
+        0.7476282319878027,
+        0.04205410787751518,
+        1.2251927029321878,
+        7.125116941260982,
+        0.4071096095513784
+      ]
+    },
+    "expected_area_range": [
+      135634.5,
+      271041.0
+    ],
+    "expected_perimeter_range": [
+      1440.2421340942383,
+      2294.036199569702
+    ],
+    "expected_aspect_range": [
+      0.8770310466726331,
+      0.9333483748809551
+    ],
+    "expected_extent_range": [
+      0.748188075438752,
+      0.8011231824849147
+    ],
+    "expected_hole_count": 0,
+    "spec": {
+      "sku": "UH-004",
+      "source_file": "items/UH-004.pdf",
+      "item_name": "UH-004",
+      "part_no": "UH-004",
+      "description": "Equipment",
+      "material": "Engineering Plastic",
+      "unit": "mm",
+      "drawing": "drawing.png",
+      "review_status": "dynamically_extracted_from_pdf",
+      "dimensions": [
+        {
+          "raw_spec": "19.8\u00b10.5mm",
+          "label": "A",
+          "nominal": 19.8,
+          "diameter": false,
+          "upper_tol": 0.5,
+          "lower_tol": -0.5,
+          "min": 19.3,
+          "max": 20.3,
+          "tolerance_type": "symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "15.6\u00b10.3mm",
+          "label": "B",
+          "nominal": 15.6,
+          "diameter": false,
+          "upper_tol": 0.3,
+          "lower_tol": -0.3,
+          "min": 15.3,
+          "max": 15.9,
+          "tolerance_type": "symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "16.8\u00b10.4mm",
+          "label": "E",
+          "nominal": 16.8,
+          "diameter": false,
+          "upper_tol": 0.4,
+          "lower_tol": -0.4,
+          "min": 16.4,
+          "max": 17.2,
+          "tolerance_type": "symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "14.2+0.5/-0.3mm",
+          "label": "D",
+          "nominal": 14.2,
+          "diameter": false,
+          "upper_tol": 0.5,
+          "lower_tol": -0.3,
+          "min": 13.9,
+          "max": 14.7,
+          "tolerance_type": "asymmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "7.0+0.5/-0.3mm",
+          "label": "C",
+          "nominal": 7.0,
+          "diameter": false,
+          "upper_tol": 0.5,
+          "lower_tol": -0.3,
+          "min": 6.7,
+          "max": 7.5,
+          "tolerance_type": "asymmetric",
+          "axis": "2D_in_plane"
+        }
+      ],
+      "optical_scale_mm_per_px": 0.044944,
+      "golden_sample": {
+        "filename": "UH-004_1.png",
+        "obb_long_px": 440.5,
+        "obb_short_px": 386.0,
+        "angle_deg": 81.0,
+        "optical_scale_um_per_px": 44.94
+      }
+    },
+    "drawing": "C:\\Users\\DELL\\OneDrive\\Desktop\\object-classification\\assets\\references\\UH-004\\drawing.png"
+  },
+  "UH-8715P": {
+    "label": "UH-8715P",
+    "n_references": 1,
+    "feature_mean": {
+      "area": 156794.5,
+      "perimeter": 1939.3430993556976,
+      "aspect_ratio": 0.7534246575342466,
+      "rect_long": 508.09429931640625,
+      "rect_short": 376.9881286621094,
+      "rect_aspect": 0.7419648855917336,
+      "solidity": 0.9245422087781522,
+      "circularity": 0.5238794829143752,
+      "extent": 0.818575661547649,
+      "convex_perimeter_ratio": 0.7987424411629073,
+      "isoperimetric_ratio": 1.9088359682210414,
+      "equivalent_diameter": 446.8075176146631,
+      "hole_count": 0.0,
+      "hu": [
+        0.766103609580047,
+        2.5662608334064743,
+        4.4691649465427865,
+        5.604244022691067,
+        11.205005830647814,
+        8.224081089790015,
+        10.657749395333019
+      ]
+    },
+    "feature_std": {
+      "area": 0.0,
+      "perimeter": 0.0,
+      "aspect_ratio": 0.0,
+      "rect_long": 0.0,
+      "rect_short": 0.0,
+      "rect_aspect": 0.0,
+      "solidity": 0.0,
+      "circularity": 0.0,
+      "extent": 0.0,
+      "convex_perimeter_ratio": 0.0,
+      "isoperimetric_ratio": 0.0,
+      "equivalent_diameter": 0.0,
+      "hole_count": 0.0,
+      "hu": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "expected_area_range": [
+      156794.5,
+      156794.5
+    ],
+    "expected_perimeter_range": [
+      1939.3430993556976,
+      1939.3430993556976
+    ],
+    "expected_aspect_range": [
+      0.7419648855917336,
+      0.7419648855917336
+    ],
+    "expected_extent_range": [
+      0.818575661547649,
+      0.818575661547649
     ],
     "expected_hole_count": 0,
     "spec": {
@@ -634,23 +6460,26 @@
       "source_file": "items/UH-8715P.pdf",
       "item_name": "UH-8715P",
       "part_no": "UH-8715P",
+      "description": "Equipment",
+      "material": "Engineering Plastic",
       "unit": "mm",
       "drawing": null,
-      "review_status": "auto_extracted_from_pdf",
+      "review_status": "dynamically_extracted_from_pdf",
       "dimensions": [
         {
-          "raw_spec": "K 5.8\u00b10.2mm",
-          "label": "K",
-          "nominal": 5.8,
+          "raw_spec": "21.90\u00b10.15mm",
+          "label": "A",
+          "nominal": 21.9,
           "diameter": false,
-          "upper_tol": 0.2,
-          "lower_tol": -0.2,
-          "min": 5.6,
-          "max": 6.0,
-          "tolerance_type": "symmetric"
+          "upper_tol": 0.15,
+          "lower_tol": -0.15,
+          "min": 21.75,
+          "max": 22.05,
+          "tolerance_type": "symmetric",
+          "axis": "2D_in_plane"
         },
         {
-          "raw_spec": "L 7.9\u00b10.2mm",
+          "raw_spec": "L 7.9\u00b10.2mm \u6e2c  \u91cf",
           "label": "L",
           "nominal": 7.9,
           "diameter": false,
@@ -658,10 +6487,83 @@
           "lower_tol": -0.2,
           "min": 7.7,
           "max": 8.1,
-          "tolerance_type": "symmetric"
+          "tolerance_type": "symmetric",
+          "axis": "2D_in_plane"
         },
         {
-          "raw_spec": "J 1.6\u00b10.2mm",
+          "raw_spec": "14.5 \u00b1 0.2mm",
+          "label": "B",
+          "nominal": 14.5,
+          "diameter": false,
+          "upper_tol": 0.2,
+          "lower_tol": -0.2,
+          "min": 14.3,
+          "max": 14.7,
+          "tolerance_type": "symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "16\u00b10.2mm",
+          "label": "G",
+          "nominal": 16.0,
+          "diameter": false,
+          "upper_tol": 0.2,
+          "lower_tol": -0.2,
+          "min": 15.8,
+          "max": 16.2,
+          "tolerance_type": "symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "9.5\u00b10.2mm",
+          "label": "C",
+          "nominal": 9.5,
+          "diameter": false,
+          "upper_tol": 0.2,
+          "lower_tol": -0.2,
+          "min": 9.3,
+          "max": 9.7,
+          "tolerance_type": "symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "K 5.8\u00b10.2mm \u6e2c  \u91cf",
+          "label": "K",
+          "nominal": 5.8,
+          "diameter": false,
+          "upper_tol": 0.2,
+          "lower_tol": -0.2,
+          "min": 5.6,
+          "max": 6.0,
+          "tolerance_type": "symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "4.7\u00b10.2mm",
+          "label": "E",
+          "nominal": 4.7,
+          "diameter": false,
+          "upper_tol": 0.2,
+          "lower_tol": -0.2,
+          "min": 4.5,
+          "max": 4.9,
+          "tolerance_type": "symmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "3.05+0.05/-0.10mm",
+          "label": "I",
+          "nominal": 3.05,
+          "diameter": false,
+          "upper_tol": 0.05,
+          "lower_tol": -0.1,
+          "min": 2.95,
+          "max": 3.1,
+          "tolerance_type": "asymmetric",
+          "axis": "2D_in_plane"
+        },
+        {
+          "raw_spec": "J 1.6\u00b10.2mm \u6e2c  \u91cf",
           "label": "J",
           "nominal": 1.6,
           "diameter": false,
@@ -669,93 +6571,29 @@
           "lower_tol": -0.2,
           "min": 1.4,
           "max": 1.8,
-          "tolerance_type": "symmetric"
+          "tolerance_type": "symmetric",
+          "axis": "2D_in_plane"
         },
         {
-          "raw_spec": "16\u00b10.2mm",
-          "label": "DIM",
-          "nominal": 16.0,
-          "diameter": false,
-          "upper_tol": 0.2,
-          "lower_tol": -0.2,
-          "min": 15.8,
-          "max": 16.2,
-          "tolerance_type": "symmetric"
-        },
-        {
-          "raw_spec": "8.60\u00b10.15mmH",
-          "label": "DIM",
+          "raw_spec": "8.60\u00b10.15mm",
+          "label": "H",
           "nominal": 8.6,
           "diameter": false,
           "upper_tol": 0.15,
           "lower_tol": -0.15,
           "min": 8.45,
           "max": 8.75,
-          "tolerance_type": "symmetric"
-        },
-        {
-          "raw_spec": "9.5\u00b10.2mm",
-          "label": "DIM",
-          "nominal": 9.5,
-          "diameter": false,
-          "upper_tol": 0.2,
-          "lower_tol": -0.2,
-          "min": 9.3,
-          "max": 9.7,
-          "tolerance_type": "symmetric"
-        },
-        {
-          "raw_spec": "3.05+0.05/-0.10mm",
-          "label": "DIM",
-          "nominal": 3.05,
-          "diameter": false,
-          "upper_tol": 0.05,
-          "lower_tol": -0.1,
-          "min": 2.95,
-          "max": 3.1,
-          "tolerance_type": "asymmetric"
-        },
-        {
-          "raw_spec": "4.7\u00b10.2mm",
-          "label": "DIM",
-          "nominal": 4.7,
-          "diameter": false,
-          "upper_tol": 0.2,
-          "lower_tol": -0.2,
-          "min": 4.5,
-          "max": 4.9,
-          "tolerance_type": "symmetric"
-        },
-        {
-          "raw_spec": "14.5\u00b10.2mm",
-          "label": "DIM",
-          "nominal": 14.5,
-          "diameter": false,
-          "upper_tol": 0.2,
-          "lower_tol": -0.2,
-          "min": 14.3,
-          "max": 14.7,
-          "tolerance_type": "symmetric"
-        },
-        {
-          "raw_spec": "21.90\u00b10.15mm",
-          "label": "DIM",
-          "nominal": 21.9,
-          "diameter": false,
-          "upper_tol": 0.15,
-          "lower_tol": -0.15,
-          "min": 21.75,
-          "max": 22.05,
-          "tolerance_type": "symmetric"
+          "tolerance_type": "symmetric",
+          "axis": "Z_height_side_view"
         }
       ],
-      "optical_scale_mm_per_px": 0.046489,
+      "optical_scale_mm_per_px": 0.046694,
       "golden_sample": {
         "filename": "UH-8715P_1.png",
-        "obb_long_px": 471.08,
-        "obb_short_px": 337.75,
-        "angle_deg": 0.64,
-        "optical_scale_um_per_px": 46.49
+        "obb_long_px": 469.0,
+        "obb_short_px": 337.3,
+        "angle_deg": 0.4,
+        "optical_scale_um_per_px": 46.69
       }
     },
     "drawing": null

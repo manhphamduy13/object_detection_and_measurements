@@ -59,7 +59,11 @@ def load_dataset(root):
         label = class_dir.name
         images_dir = class_dir / "images"
         if not images_dir.is_dir():
-            continue
+            # Generated/augmented test sets commonly store images directly in
+            # the class folder.  Keep the strict ``images/`` convention when
+            # present (important for reference folders containing drawings),
+            # but support that flat test layout as a safe fallback.
+            images_dir = class_dir
         for path in sorted(images_dir.rglob("*")):
             if path.is_file() and path.suffix.lower() in config.IMAGE_EXTENSIONS:
                 items.append((path, label))
@@ -240,6 +244,32 @@ def geometry_features(contour, object_mask):
     (_, _), (rw, rh), _ = cv2.minAreaRect(contour)
     long_side = float(max(rw, rh))
     short_side = float(min(rw, rh))
+    # A thin cast-shadow spur can rotate/extend minAreaRect by several percent.
+    # Test a lightly eroded silhouette and use it only when it preserves the
+    # main body and at least 90% of the original span; add the erosion width
+    # back so this is a robust edge estimate, not a smaller object.
+    erosion_radius = int(np.clip(round(short_side * 0.012), 1, 8))
+    eroded = cv2.erode(
+        object_mask,
+        cv2.getStructuringElement(
+            cv2.MORPH_ELLIPSE,
+            (2 * erosion_radius + 1, 2 * erosion_radius + 1),
+        ),
+    )
+    eroded_contours, _ = cv2.findContours(
+        eroded, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE
+    )
+    if eroded_contours:
+        eroded_contour = max(eroded_contours, key=cv2.contourArea)
+        (_, _), (ew, eh), _ = cv2.minAreaRect(eroded_contour)
+        candidate_long = float(max(ew, eh) + 2 * erosion_radius)
+        candidate_short = float(min(ew, eh) + 2 * erosion_radius)
+        retained_area = cv2.contourArea(eroded_contour) / max(area, 1.0)
+        if (
+            retained_area >= 0.80
+            and 0.90 * long_side <= candidate_long <= 1.01 * long_side
+        ):
+            long_side, short_side = candidate_long, candidate_short
     rect_aspect = short_side / long_side if long_side > 0 else 0.0
 
     hull = cv2.convexHull(contour)
@@ -247,6 +277,20 @@ def geometry_features(contour, object_mask):
     solidity = area / hull_area if hull_area > 0 else 0.0
 
     circularity = (4.0 * math.pi * area / (perimeter ** 2)) if perimeter > 0 else 0.0
+
+    # Proposed multi-cue geometric descriptors for robust identification:
+    # 1. Extent: bounding box occupancy ratio
+    extent = area / (long_side * short_side) if (long_side * short_side) > 0 else 0.0
+
+    # 2. Convex perimeter ratio (roughness/notch profile index)
+    hull_perimeter = float(cv2.arcLength(hull, True))
+    convex_perimeter_ratio = hull_perimeter / perimeter if perimeter > 0 else 0.0
+
+    # 3. Compactness (isoperimetric ratio, inverse circularity)
+    isoperimetric_ratio = (perimeter ** 2) / (4.0 * math.pi * area) if area > 0 else 0.0
+
+    # 4. Equivalent circular diameter
+    equivalent_diameter = float(np.sqrt(4.0 * area / math.pi)) if area > 0 else 0.0
 
     moments = cv2.moments(contour)
     if moments["m00"] != 0:
@@ -272,6 +316,11 @@ def geometry_features(contour, object_mask):
         "rect_aspect": float(rect_aspect),
         "solidity": float(solidity),
         "circularity": float(circularity),
+        "extent": float(extent),
+        "hull_perimeter": float(hull_perimeter),
+        "convex_perimeter_ratio": float(convex_perimeter_ratio),
+        "isoperimetric_ratio": float(isoperimetric_ratio),
+        "equivalent_diameter": float(equivalent_diameter),
         "hole_count": count_holes(object_mask, area),
         "centroid": [float(cx), float(cy)],
         "hu": [float(v) for v in hu_log],
@@ -287,6 +336,131 @@ def is_phone_photo(img):
     return (c_mean - corn) > 20.0 or (min(h, w) >= 900 and max(h, w) >= 1200 and (c_mean - corn) > 5.0)
 
 
+def refine_contour_to_physical_edge(gray, contour, max_shift=None):
+    """Move a coarse mask boundary onto the nearest strong image edge.
+
+    Segmentation masks intentionally bridge small reflection gaps, which can
+    leave their contour a few pixels outside the visible material boundary.
+    This refinement searches only along each local contour normal, then
+    smooths and simplifies the result so texture inside the workpiece cannot
+    create a second, jagged silhouette.
+    """
+    h, w = gray.shape[:2]
+    work_mask = np.zeros((h, w), dtype=np.uint8)
+    cv2.drawContours(work_mask, [contour], -1, 255, -1)
+    dense_contours, _ = cv2.findContours(
+        work_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE
+    )
+    if not dense_contours:
+        return contour
+    points = max(dense_contours, key=cv2.contourArea).reshape(-1, 2).astype(np.float32)
+    if len(points) < 12:
+        return contour
+
+    # The coarse segmentation is already a strong prior.  A wide unconstrained
+    # search tends to jump from the silhouette to a cast shadow or a polished
+    # streak, so keep the band deliberately narrow.
+    radius = float(max_shift) if max_shift is not None else float(
+        np.clip(min(h, w) * 0.0045, 3.0, 6.0)
+    )
+    offsets = np.linspace(
+        -radius, radius, int(round(radius * 4.0)) + 1
+    ).astype(np.float32)
+    # A small Gaussian is fast on production-resolution frames and suppresses
+    # sensor grain without the large full-frame cost of bilateral filtering.
+    blurred = cv2.GaussianBlur(gray, (5, 5), 0)
+    gx = cv2.Sobel(blurred, cv2.CV_32F, 1, 0, ksize=3)
+    gy = cv2.Sobel(blurred, cv2.CV_32F, 0, 1, ksize=3)
+
+    count = len(points)
+    tangent_span = max(3, min(8, count // 50))
+    tangents = (
+        np.roll(points, -tangent_span, axis=0)
+        - np.roll(points, tangent_span, axis=0)
+    )
+    tangent_lengths = np.hypot(tangents[:, 0], tangents[:, 1]).astype(np.float32)
+    valid_normals = tangent_lengths > 1e-6
+    normals = np.zeros_like(tangents, dtype=np.float32)
+    normals[valid_normals, 0] = -tangents[valid_normals, 1] / tangent_lengths[valid_normals]
+    normals[valid_normals, 1] = tangents[valid_normals, 0] / tangent_lengths[valid_normals]
+
+    # Sample every contour normal in three vectorized remaps.  The previous
+    # point-by-point remap produced identical evidence but dominated runtime on
+    # production-resolution images.
+    sample_x = points[:, 0, None] + normals[:, 0, None] * offsets[None, :]
+    sample_y = points[:, 1, None] + normals[:, 1, None] * offsets[None, :]
+    gx_samples = cv2.remap(
+        gx, sample_x, sample_y, cv2.INTER_LINEAR,
+        borderMode=cv2.BORDER_REPLICATE,
+    )
+    gy_samples = cv2.remap(
+        gy, sample_x, sample_y, cv2.INTER_LINEAR,
+        borderMode=cv2.BORDER_REPLICATE,
+    )
+    profile = cv2.remap(
+        blurred, sample_x, sample_y, cv2.INTER_LINEAR,
+        borderMode=cv2.BORDER_REPLICATE,
+    ).astype(np.float32)
+    directional = np.abs(
+        gx_samples * normals[:, 0, None] + gy_samples * normals[:, 1, None]
+    )
+
+    # A physical boundary separates two regions.  Reward a sustained
+    # intensity step across the candidate, not a single bright pixel.
+    contrast = np.zeros_like(directional)
+    band = max(2, int(round(len(offsets) / max(radius * 2.0, 1.0))))
+    for sample_index in range(band + 1, len(offsets) - band - 1):
+        left = profile[:, sample_index - band - 1:sample_index - 1]
+        right = profile[:, sample_index + 2:sample_index + band + 2]
+        contrast[:, sample_index] = np.abs(
+            np.median(right, axis=1) - np.median(left, axis=1)
+        )
+    evidence = 0.70 * directional + 0.30 * contrast
+    score = evidence / (1.0 + 0.12 * np.abs(offsets)[None, :])
+    best = np.argmax(score, axis=1)
+    row_indexes = np.arange(count)
+    best_evidence = evidence[row_indexes, best]
+    directional_median = np.median(directional, axis=1)
+    noise_floor = directional_median + 2.5 * np.median(
+        np.abs(directional - directional_median[:, None]), axis=1
+    )
+    confidence = best_evidence / np.maximum(noise_floor, 8.0)
+    accepted = valid_normals & ((confidence >= 1.15) | (best_evidence >= 20.0))
+    raw_offsets = np.where(accepted, offsets[best], 0.0).astype(np.float32)
+    # Adjacent contour points must agree.  This one-dimensional regularizer is
+    # what prevents isolated reflection peaks from making the outline jagged.
+    window = min(11, max(5, (count // 80) | 1))
+    half_window = window // 2
+    smooth_offsets = np.median(
+        np.stack([
+            np.roll(raw_offsets, shift)
+            for shift in range(-half_window, half_window + 1)
+        ], axis=0),
+        axis=0,
+    )
+    regularized = np.clip(raw_offsets, smooth_offsets - 1.25, smooth_offsets + 1.25)
+    regularized[~accepted] = 0.0
+    refined = points + regularized[:, None] * normals
+    # Circular weighted smoothing removes independent one-pixel zig-zags but
+    # keeps notches and corners required by shape matching and metrology.
+    refined = (
+        np.roll(refined, 2, axis=0)
+        + 2.0 * np.roll(refined, 1, axis=0)
+        + 4.0 * refined
+        + 2.0 * np.roll(refined, -1, axis=0)
+        + np.roll(refined, -2, axis=0)
+    ) / 10.0
+    refined_contour = np.rint(refined).astype(np.int32).reshape(-1, 1, 2)
+    epsilon = float(np.clip(cv2.arcLength(refined_contour, True) * 0.0007, 0.6, 2.0))
+    simplified = cv2.approxPolyDP(refined_contour, epsilon, True)
+    result = simplified if len(simplified) >= 3 else refined_contour
+    # A local edge refinement must never materially resize the workpiece.
+    # Reject a pathological result rather than silently corrupting metrology.
+    original_area = max(float(cv2.contourArea(contour)), 1.0)
+    area_ratio = float(cv2.contourArea(result)) / original_area
+    return result if 0.85 <= area_ratio <= 1.15 else contour
+
+
 def segment_qc_cam_full(img_bgr, min_area=2000.0, min_boundary_grad=30.0):
     """
     Stage 2 Edge Detection & Workpiece Segmentation (QC_CAM reference implementation):
@@ -300,7 +474,9 @@ def segment_qc_cam_full(img_bgr, min_area=2000.0, min_boundary_grad=30.0):
     h, w = img_bgr.shape[:2]
     gray = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2GRAY) if len(img_bgr.shape) == 3 else img_bgr
 
-    # 1. Background paper sampling from perimeter border
+    # 1. Robust background/noise statistics from the perimeter.  All
+    # thresholds below are derived from the current frame instead of the old
+    # fixed values that were tied to one lighting setup.
     bm = max(10, int(min(h, w) * 0.02))
     border = np.concatenate([
         gray[:bm, :].flatten(),
@@ -308,68 +484,180 @@ def segment_qc_cam_full(img_bgr, min_area=2000.0, min_boundary_grad=30.0):
         gray[:, :bm].flatten(),
         gray[:, -bm:].flatten()
     ])
-    paper_val = float(np.percentile(border, 75))
+    paper_val = float(np.median(border))
+    border_mad = float(np.median(np.abs(border.astype(np.float32) - paper_val)))
 
     if len(img_bgr.shape) == 3:
         b, g, r = cv2.split(img_bgr.astype(float))
         chroma = np.sqrt((r - g) ** 2 + (g - b) ** 2 + (b - r) ** 2)
-        brass = (((r - b) > 25.0) & (r > 60.0))
+        rb = r - b
+        border_rb = np.concatenate([
+            rb[:bm, :].ravel(), rb[-bm:, :].ravel(),
+            rb[:, :bm].ravel(), rb[:, -bm:].ravel()
+        ])
+        brass_threshold = float(np.clip(np.percentile(border_rb, 95) + 8.0, 10.0, 32.0))
+        brass = (rb > brass_threshold) & (r > np.percentile(r, 20))
     else:
         chroma = np.zeros_like(gray, dtype=float)
         brass = np.zeros_like(gray, dtype=bool)
 
-    paper_mask = (gray > (paper_val - 35)) & (chroma < 18)
-
-    # 2. Multi-scale Sobel gradient magnitude
-    blurred = cv2.GaussianBlur(gray, (5, 5), 1.0)
+    # 2. Illumination-normalized gradient and darkness maps.  The broad
+    # Gaussian models uneven paper lighting/flash falloff; subtracting it
+    # makes the object cue stable across bright, dark and vignetted captures.
+    blurred = cv2.GaussianBlur(gray, (5, 5), 0)
     sobelx = cv2.Sobel(blurred, cv2.CV_32F, 1, 0, ksize=3)
     sobely = cv2.Sobel(blurred, cv2.CV_32F, 0, 1, ksize=3)
     mag = cv2.magnitude(sobelx, sobely)
 
-    # 3. Workpiece optical cues: reject soft shadows (< 60.0)
-    sharp_edge = (mag > 60.0) & (~paper_mask)
-    dark_core = (gray < 55)
-    seed = (dark_core | brass | sharp_edge) & (~paper_mask)
+    illumination_sigma = float(np.clip(min(h, w) * 0.025, 7.0, 35.0))
+    local_background = cv2.GaussianBlur(gray, (0, 0), illumination_sigma).astype(np.float32)
+    local_darkness = local_background - gray.astype(np.float32)
 
-    # Moderate morphology to close reflection gaps inside workpiece without bleeding
+    paper_tolerance = float(np.clip(12.0 + 3.0 * border_mad, 18.0, 55.0))
+    border_chroma = np.concatenate([
+        chroma[:bm, :].ravel(), chroma[-bm:, :].ravel(),
+        chroma[:, :bm].ravel(), chroma[:, -bm:].ravel()
+    ])
+    chroma_limit = float(np.clip(np.percentile(border_chroma, 95) + 8.0, 16.0, 48.0))
+    paper_mask = (
+        (np.abs(gray.astype(np.float32) - paper_val) < paper_tolerance)
+        & (chroma < chroma_limit)
+        & (np.abs(local_darkness) < max(10.0, paper_tolerance * 0.55))
+    )
+
+    # 3. Frame-adaptive optical cues.  Percentile thresholds track exposure
+    # and sensor noise while the clamps prevent texture/noise from taking over.
+    edge_threshold = float(np.clip(np.percentile(mag, 82), 20.0, 85.0))
+    dark_threshold = float(np.clip(np.percentile(gray, 12) + 6.0, 42.0, 82.0))
+    sharp_edge = (mag > edge_threshold) & (~paper_mask)
+    # Use local darkness only to estimate exposure, never as foreground by
+    # itself: broad cast shadows are locally dark too and would bleed into the
+    # silhouette.  True dark material is captured by the exposure-adaptive
+    # absolute threshold; reflective material is recovered by colour/edges.
+    dark_core = (gray < dark_threshold) & (~paper_mask)
+
+    # An edge is evidence of a boundary, not evidence that everything inside
+    # it is material.  In particular, a cast shadow can have a strong outer
+    # edge.  Anchor the foreground on dark/metal pixels and only admit edge
+    # pixels in their neighbourhood.  This keeps reflective faces connected
+    # without allowing a remote shadow outline to become part of the object.
+    material_seed = dark_core | (brass & (~paper_mask))
+    support_radius = max(7, int(round(min(h, w) * 0.012)))
+    if support_radius % 2 == 0:
+        support_radius += 1
+    support_kernel = cv2.getStructuringElement(
+        cv2.MORPH_ELLIPSE, (support_radius, support_radius)
+    )
+    edge_support = cv2.dilate(
+        material_seed.astype(np.uint8), support_kernel, iterations=2
+    ).astype(bool)
+    seed = material_seed | (sharp_edge & edge_support)
+
+    # Close reflection gaps, then select a component whose boundary is sharp.
+    # Paper shadows are deliberately excluded from the seed above.
     kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (5, 5))
     closed = cv2.morphologyEx(seed.astype(np.uint8) * 255, cv2.MORPH_CLOSE, kernel, iterations=2)
     closed[paper_mask] = 0   # Strict zero-bleed guarantee onto background paper
-
-    # Filter connected components
+    adaptive_min_area = max(300.0, min(float(min_area), h * w * 0.001))
     num_labels, labels, stats, _ = cv2.connectedComponentsWithStats(closed, 8)
     clean_mask = np.zeros_like(closed)
     for i in range(1, num_labels):
-        if stats[i, cv2.CC_STAT_AREA] > min_area:
+        if stats[i, cv2.CC_STAT_AREA] > adaptive_min_area:
             clean_mask[labels == i] = 255
 
-    contours, _ = cv2.findContours(clean_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    found_contours, _ = cv2.findContours(
+        clean_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE
+    )
+    contours = list(found_contours)
+
+    # Low-threshold closed edges recover the global outline of assemblies with
+    # optically disconnected bright pins/legs.  These proposals still pass the
+    # area, centrality and boundary-gradient validation below.
+    # Closed-edge proposals recover pale disconnected components on uniform
+    # backgrounds and on square rotation canvases.  Disable them for a
+    # textured, strongly rectangular raw frame, where a carrier strip/paper
+    # edge otherwise outranks the actual metal workpiece.
+    frame_aspect = max(h, w) / max(min(h, w), 1)
+    if border_mad < 5.0 or frame_aspect <= 1.35:
+        edge_proposal = cv2.Canny(blurred, 20, 60)
+        edge_close_size = int(np.clip(round(min(h, w) * 0.010), 5, 11)) | 1
+        edge_close_kernel = cv2.getStructuringElement(
+            cv2.MORPH_ELLIPSE, (edge_close_size, edge_close_size)
+        )
+        edge_proposal = cv2.morphologyEx(
+            edge_proposal, cv2.MORPH_CLOSE, edge_close_kernel, iterations=2
+        )
+        edge_contours, _ = cv2.findContours(
+            edge_proposal, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE
+        )
+        contours.extend(edge_contours)
+
+    # Pale plastic on white paper has little absolute darkness and no metal
+    # chroma, so the optical seed above may contain only a dark pin or screw.
+    # Add a colour-distance proposal based on the perimeter background model.
+    # It is only a proposal: the same physical-boundary gradient test below
+    # rejects smooth illumination patches and cast-shadow blobs.
+    if len(img_bgr.shape) == 3:
+        lab = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2LAB).astype(np.float32)
+        lab_border = np.concatenate([
+            lab[:bm, :, :].reshape(-1, 3),
+            lab[-bm:, :, :].reshape(-1, 3),
+            lab[:, :bm, :].reshape(-1, 3),
+            lab[:, -bm:, :].reshape(-1, 3),
+        ])
+        background_lab = np.median(lab_border, axis=0)
+        border_distance = np.linalg.norm(lab_border - background_lab, axis=1)
+        colour_distance = np.linalg.norm(lab - background_lab, axis=2)
+        colour_threshold = max(5.0, float(np.percentile(border_distance, 99.0) + 2.0))
+        colour_mask = (colour_distance > colour_threshold).astype(np.uint8) * 255
+        # Join bright metal/plastic subcomponents across narrow highlight gaps
+        # (pins at the body, pale ribs, etc.) without merging distant objects.
+        colour_kernel_size = int(np.clip(round(min(h, w) * 0.008), 3, 17)) | 1
+        colour_kernel = cv2.getStructuringElement(
+            cv2.MORPH_ELLIPSE, (colour_kernel_size, colour_kernel_size)
+        )
+        colour_mask = cv2.morphologyEx(
+            colour_mask, cv2.MORPH_CLOSE, colour_kernel, iterations=2
+        )
+        colour_contours, _ = cv2.findContours(
+            colour_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE
+        )
+        contours.extend(colour_contours)
     valid_contours = []
+    adaptive_boundary_grad = float(np.clip(np.percentile(mag, 58), 8.0, min_boundary_grad))
     for cnt in contours:
-        if cv2.contourArea(cnt) < min_area:
+        area = cv2.contourArea(cnt)
+        if area < adaptive_min_area or area > h * w * 0.75:
             continue
         c_pts = cnt.reshape(-1, 2)
         grads = mag[np.clip(c_pts[:, 1], 0, h - 1), np.clip(c_pts[:, 0], 0, w - 1)]
         mean_grad = float(np.mean(grads))
-        if mean_grad >= min_boundary_grad:
-            valid_contours.append((cnt, cv2.contourArea(cnt)))
+        if mean_grad >= adaptive_boundary_grad:
+            x, y, cw, ch = cv2.boundingRect(cnt)
+            cx, cy = x + cw / 2.0, y + ch / 2.0
+            center_dist = np.hypot(cx - w / 2.0, cy - h / 2.0) / max(np.hypot(w, h) / 2.0, 1.0)
+            centrality = max(0.45, 1.0 - 0.45 * center_dist)
+            edge_quality = np.clip(mean_grad / max(edge_threshold, 1.0), 0.5, 3.0)
+            score = area * centrality * edge_quality
+            valid_contours.append((cnt, score))
 
     if not valid_contours and contours:
         cnt = max(contours, key=cv2.contourArea)
-        if cv2.contourArea(cnt) >= min_area:
+        if cv2.contourArea(cnt) >= adaptive_min_area:
             valid_contours.append((cnt, cv2.contourArea(cnt)))
 
     if not valid_contours:
         return None, None, None
 
     valid_contours.sort(key=lambda x: x[1], reverse=True)
-    best_cnt = valid_contours[0][0]
+    best_cnt = refine_contour_to_physical_edge(gray, valid_contours[0][0])
 
     out_mask = np.zeros((h, w), dtype=np.uint8)
     cv2.drawContours(out_mask, [best_cnt], -1, 255, -1)
 
     # Visualization of Stage 2 intermediate cues
-    norm_mag = np.clip(mag / 1.5, 0, 255).astype(np.uint8)
+    mag_scale = max(float(np.percentile(mag, 99)), 1.0)
+    norm_mag = np.clip(mag * (255.0 / mag_scale), 0, 255).astype(np.uint8)
     cue_vis = cv2.cvtColor(norm_mag, cv2.COLOR_GRAY2BGR) if len(img_bgr.shape) == 3 else norm_mag.copy()
     if len(img_bgr.shape) == 3:
         cue_vis[brass > 0] = [0, 215, 255]       # Gold for brass chromaticity
@@ -407,6 +695,47 @@ def describe_image(img):
     """
     h, w = img.shape[:2]
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) if len(img.shape) == 3 else img
+
+    # Segment very large camera frames on a bounded preview, then refine the
+    # recovered boundary in a full-resolution ROI.  This keeps metrology in
+    # original pixel coordinates without applying full-frame Sobel/Lab/morph
+    # operations to tens of millions of background pixels.
+    max_segmentation_side = 1800
+    if max(h, w) > max_segmentation_side:
+        scale = max_segmentation_side / float(max(h, w))
+        preview = cv2.resize(
+            img, None, fx=scale, fy=scale, interpolation=cv2.INTER_AREA
+        )
+        preview_result = describe_image(preview)
+        if preview_result is None:
+            return None
+        contour = np.rint(
+            preview_result["contour"].astype(np.float32) / scale
+        ).astype(np.int32)
+        x, y, cw, ch = cv2.boundingRect(contour)
+        pad = 12
+        x0, y0 = max(0, x - pad), max(0, y - pad)
+        x1, y1 = min(w, x + cw + pad), min(h, y + ch + pad)
+        local_contour = contour.copy()
+        local_contour[:, 0, 0] -= x0
+        local_contour[:, 0, 1] -= y0
+        local_refined = refine_contour_to_physical_edge(
+            gray[y0:y1, x0:x1], local_contour, max_shift=6.0
+        )
+        local_refined[:, 0, 0] += x0
+        local_refined[:, 0, 1] += y0
+        object_mask = np.zeros((h, w), dtype=np.uint8)
+        cv2.drawContours(object_mask, [local_refined], -1, 255, -1)
+        return {
+            "gray": gray,
+            "mask": object_mask,
+            "object_mask": object_mask,
+            "contour": local_refined,
+            "otsu": preview_result.get("otsu", 128.0),
+            "features": geometry_features(local_refined, object_mask),
+            "stage2_steps": None,
+            "qc_workpiece": None,
+        }
 
     # 1. Phone photos with flash vignetting / tabletop paper
     if is_phone_photo(img):
@@ -538,12 +867,14 @@ def _summarise_sku(label, feature_list):
     """Mean / std / expected ranges for one SKU."""
     scalar_keys = [
         "area", "perimeter", "aspect_ratio", "rect_long", "rect_short",
-        "rect_aspect", "solidity", "circularity", "hole_count",
+        "rect_aspect", "solidity", "circularity", "extent",
+        "convex_perimeter_ratio", "isoperimetric_ratio", "equivalent_diameter",
+        "hole_count",
     ]
 
     mean, std = {}, {}
     for key in scalar_keys:
-        values = np.array([f[key] for f in feature_list], dtype=float)
+        values = np.array([f.get(key, 0.0) for f in feature_list], dtype=float)
         mean[key] = float(values.mean())
         std[key] = float(values.std())
 
@@ -552,7 +883,9 @@ def _summarise_sku(label, feature_list):
     std["hu"] = [float(v) for v in hu_matrix.std(axis=0)]
 
     areas = [f["area"] for f in feature_list]
+    perimeters = [f.get("perimeter", 0.0) for f in feature_list]
     aspects = [f["rect_aspect"] for f in feature_list]
+    extents = [f.get("extent", 0.0) for f in feature_list]
     holes = [f["hole_count"] for f in feature_list]
 
     return {
@@ -561,7 +894,9 @@ def _summarise_sku(label, feature_list):
         "feature_mean": mean,
         "feature_std": std,
         "expected_area_range": [float(min(areas)), float(max(areas))],
+        "expected_perimeter_range": [float(min(perimeters)), float(max(perimeters))],
         "expected_aspect_range": [float(min(aspects)), float(max(aspects))],
+        "expected_extent_range": [float(min(extents)), float(max(extents))],
         "expected_hole_count": int(round(float(np.median(holes)))),
     }
 
@@ -576,28 +911,42 @@ def fingerprint_distance(query, sku):
     and a SKU's average fingerprint. Lower = more similar.
 
     Each term is normalised so that the weights in config.py are comparable.
+    Now incorporates outer perimeter, area, aspect ratio, solidity,
+    circularity, extent (bounding occupancy), convex perimeter ratio
+    (notch/profile index), and Hu moments.
     """
     mean = sku["feature_mean"]
 
     def relative(key):
-        ref = abs(mean[key])
-        return abs(query[key] - mean[key]) / ref if ref > 1e-9 else 0.0
+        ref = abs(mean.get(key, 0.0))
+        val = query.get(key, 0.0)
+        return abs(val - ref) / ref if ref > 1e-9 else 0.0
 
     d_area = relative("area")
+    d_perimeter = relative("perimeter") if "perimeter" in mean else 0.0
     d_aspect = relative("rect_aspect")
-    d_solidity = abs(query["solidity"] - mean["solidity"])
-    d_circularity = abs(query["circularity"] - mean["circularity"])
+    d_solidity = abs(query.get("solidity", 0.0) - mean.get("solidity", 0.0))
+    d_circularity = abs(query.get("circularity", 0.0) - mean.get("circularity", 0.0))
+    d_extent = relative("extent") if "extent" in mean else 0.0
+    d_convex_ratio = abs(query.get("convex_perimeter_ratio", 0.0) - mean.get("convex_perimeter_ratio", 0.0))
 
     # Hu values are already log-compressed, so a plain mean difference works.
     hu_q = np.array(query["hu"], dtype=float)
     hu_r = np.array(mean["hu"], dtype=float)
     d_hu = float(np.mean(np.abs(hu_q - hu_r))) / 10.0
 
+    w_perimeter = getattr(config, "W_PERIMETER", 0.8)
+    w_extent = getattr(config, "W_EXTENT", 0.6)
+    w_convex = getattr(config, "W_CONVEX_RATIO", 0.5)
+
     return (
         config.W_AREA * d_area
+        + w_perimeter * d_perimeter
         + config.W_ASPECT * d_aspect
         + config.W_SOLIDITY * d_solidity
         + config.W_CIRCULARITY * d_circularity
+        + w_extent * d_extent
+        + w_convex * d_convex_ratio
         + config.W_HU * d_hu
     )
 
@@ -605,6 +954,7 @@ def fingerprint_distance(query, sku):
 def passes_hard_filters(query, sku):
     """
     custom function. Cheap reject test, run before the distance is computed.
+    Checks area, outer perimeter, aspect ratio, extent, and hole count.
     """
     if query["area"] < 1000:
         return False
@@ -614,10 +964,24 @@ def passes_hard_filters(query, sku):
     if not (lo * max(0.1, 1 - area_tol) <= query["area"] <= hi * (1 + area_tol)):
         return False
 
+    # Outer perimeter check
+    if "expected_perimeter_range" in sku:
+        lo_p, hi_p = sku["expected_perimeter_range"]
+        perim_tol = getattr(config, "PERIMETER_TOLERANCE", 1.8)
+        if not (lo_p * max(0.1, 1 - perim_tol) <= query.get("perimeter", 0.0) <= hi_p * (1 + perim_tol)):
+            return False
+
     lo, hi = sku["expected_aspect_range"]
     aspect_tol = getattr(config, "ASPECT_TOLERANCE", 0.75)
     if not (lo * max(0.2, 1 - aspect_tol) <= query["rect_aspect"] <= hi * (1 + aspect_tol)):
         return False
+
+    # Extent (bounding occupancy) check
+    if "expected_extent_range" in sku:
+        lo_ext, hi_ext = sku["expected_extent_range"]
+        ext_tol = getattr(config, "EXTENT_TOLERANCE", 0.60)
+        if not (lo_ext * max(0.2, 1 - ext_tol) <= query.get("extent", 0.0) <= hi_ext * (1 + ext_tol)):
+            return False
 
     # Soft in practice: reflections on metal create extra "holes", so this
     # only rejects very large disagreements.
@@ -692,12 +1056,14 @@ def shape_distance(query_contour, reference_contours, method=None):
 # Final decision - CLASS or UNKNOWN
 # ======================================================================
 
-def classify(features, contour, library, contours, thresholds, method=None):
+def classify(features, contour, library, contours, thresholds, method=None,
+             image=None, object_mask=None, template_matcher=None):
     """
     custom function. Shortlist, then detailed matching, then accept or reject.
 
     We never force the best class: it is accepted only when the score is good
     AND clearly better than the runner-up.
+    Optionally evaluates template matching when template_matcher is provided.
     """
     candidates = shortlist(features, library)
 
@@ -707,7 +1073,7 @@ def classify(features, contour, library, contours, thresholds, method=None):
         passed = passes_hard_filters(features, library[label])
         raw_score = shape_distance(contour, contours.get(label, []), method)
         comb_score = raw_score + w_fp * fp_distance
-        # Candidates failing physical hard filters (area/aspect) receive an effective penalty
+        # Candidates failing physical hard filters (area/aspect/perimeter) receive an effective penalty
         # to prevent spurious wins while serving as valid negative comparison margins.
         eff_score = comb_score if passed else (comb_score + 2.0)
         scored.append({
@@ -725,40 +1091,71 @@ def classify(features, contour, library, contours, thresholds, method=None):
     second_score = scored[1]["shape_score"] if len(scored) > 1 else float("inf")
     margin = (scored[1]["combined_score"] - scored[0]["combined_score"]) if len(scored) > 1 else float("inf")
 
-    accepted = (
+    shape_accepted = (
         best_score < thresholds["match_threshold"]
         and margin > thresholds["min_margin"]
         and best["passed"]
     )
 
-    return {
-        "class": best["label"] if accepted else "UNKNOWN",
+    result = {
+        "class": best["label"] if shape_accepted else "UNKNOWN",
         "best_label": best["label"],
-        "accepted": bool(accepted),
+        "shape_accepted": bool(shape_accepted),
+        "accepted": bool(shape_accepted),
         "best_score": best_score,
         "second_score": second_score,
         "margin": margin,
         "shortlist": scored,
+        "template_matching": None,
     }
 
+    # Integrate Template Matching when provided
+    if template_matcher is not None and object_mask is not None:
+        expected_label = best["label"]
+        query_input = image if image is not None else object_mask
+        tm_result = template_matcher.match(query_input, object_mask, expected_label=expected_label)
+        result["template_matching"] = tm_result
+
+        consensus = bool(shape_accepted and tm_result.get("accepted"))
+        confident_template = bool(
+            tm_result.get("similarity", 0.0) >= getattr(config, "TEMPLATE_FALLBACK_MIN_SIMILARITY", 0.75)
+            and tm_result.get("margin", 0.0) >= getattr(config, "TEMPLATE_FALLBACK_MIN_MARGIN", 0.02)
+            and tm_result.get("defect_ratio", 1.0) <= getattr(config, "TEMPLATE_FALLBACK_MAX_DEFECT_RATIO", 0.38)
+        )
+        accepted_label = (
+            expected_label if consensus
+            else tm_result.get("predicted_class") if confident_template
+            else None
+        )
+        result["classification_route"] = (
+            "shape_template_consensus" if consensus
+            else "high_confidence_template" if confident_template
+            else "rejected"
+        )
+        result["accepted"] = accepted_label is not None
+        result["class"] = accepted_label or "UNKNOWN"
+
+    return result
 
 
-def predict(img, library, contours, thresholds, method=None):
+
+def predict(img, library, contours, thresholds, method=None, template_matcher=None):
     """
     custom function. The end-to-end entry point for a brand-new photo:
 
-        image -> classify() -> the matched class's spec.json
+        image -> describe_image() -> classify() -> the matched class's spec.json
 
     so the caller gets back both the classification decision AND the
     tolerance table a measurement step needs to compare against, in one
-    call. `library` must come from build_database() (a plain
-    build_reference_library() library has no "spec" key to attach).
+    call. `library` must come from build_database().
+    Optionally evaluates template_matcher for dual multi-cue recognition.
 
     Returns the same dict as classify(), plus:
         "spec"    the matched class's parsed dimensional spec, or None if
                   the class has none yet, segmentation failed, or the
                   result was UNKNOWN
         "drawing" path to that class's technical drawing, or None
+        "described" image description dict (contour, mask, features)
     """
     described = describe_image(img)
     if described is None:
@@ -766,14 +1163,18 @@ def predict(img, library, contours, thresholds, method=None):
             "class": "UNKNOWN", "best_label": None, "accepted": False,
             "best_score": float("inf"), "second_score": float("inf"),
             "margin": 0.0, "shortlist": [], "spec": None, "drawing": None,
+            "template_matching": None, "described": None,
         }
 
     result = classify(described["features"], described["contour"],
-                      library, contours, thresholds, method)
+                      library, contours, thresholds, method,
+                      image=img, object_mask=described["object_mask"],
+                      template_matcher=template_matcher)
 
-    entry = library.get(result["class"], {})
+    entry = library.get(result.get("best_label") or result["class"], {})
     result["spec"] = entry.get("spec")
     result["drawing"] = entry.get("drawing")
+    result["described"] = described
     return result
 
 
@@ -876,7 +1277,7 @@ def calibrate_thresholds(reference_items, library, contours, method=None):
 
 def rotate_image(img, angle):
     """
-    custom function. Rotate around the image centre, keeping the size.
+    Rotate around the image centre on an expanded canvas (no clipping).
 
     The new corners are filled with the median background grey instead of
     black, otherwise the fill would look like a huge dark object and the
@@ -885,12 +1286,17 @@ def rotate_image(img, angle):
     Uses cv2.getRotationMatrix2D and cv2.warpAffine.
     """
     h, w = img.shape[:2]
-    background = int(np.median(cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)))
-    matrix = cv2.getRotationMatrix2D((w / 2.0, h / 2.0), angle, 1.0)
+    side = int(np.ceil(np.hypot(w, h))) + 32
+    border = np.concatenate((img[0], img[-1], img[:, 0], img[:, -1]))
+    background = tuple(int(v) for v in np.median(border, axis=0))
+    canvas = np.full((side, side, 3), background, dtype=np.uint8)
+    x, y = (side - w) // 2, (side - h) // 2
+    canvas[y:y + h, x:x + w] = img
+    matrix = cv2.getRotationMatrix2D((side / 2.0, side / 2.0), angle, 1.0)
     return cv2.warpAffine(
-        img, matrix, (w, h), flags=cv2.INTER_LINEAR,
+        canvas, matrix, (side, side), flags=cv2.INTER_LINEAR,
         borderMode=cv2.BORDER_CONSTANT,
-        borderValue=(background, background, background),
+        borderValue=background,
     )
 
 

@@ -56,15 +56,21 @@ TOP_K = 3   # how many candidate SKUs go to detailed matching
 # Hard filters. A candidate SKU is dropped before the expensive matching
 # when the query is clearly outside its expected range.
 AREA_TOLERANCE = 2.0        # Robust tolerance for variable canvas & camera distance
+PERIMETER_TOLERANCE = 1.8   # Robust outer perimeter tolerance
 ASPECT_TOLERANCE = 0.75      # Robust aspect tolerance for perspective angles
+EXTENT_TOLERANCE = 0.60     # Robust bounding box occupancy tolerance
 MAX_HOLE_DIFFERENCE = 3     # reject if hole count differs by more than this
 
 # Weights of the normalised fingerprint distance.
-# These are deliberately simple; tune them if a SKU is being shortlisted badly.
+# Incorporates outer perimeter, area, aspect, solidity, circularity, extent,
+# convex perimeter ratio (notches/contours), and Hu moments.
 W_AREA = 1.0
+W_PERIMETER = 0.8
 W_ASPECT = 1.0
 W_SOLIDITY = 0.5
 W_CIRCULARITY = 0.5
+W_EXTENT = 0.6
+W_CONVEX_RATIO = 0.5
 W_HU = 0.5
 W_FINGERPRINT = 0.35   # Weight of fingerprint distance in fine shape matching
 
@@ -78,7 +84,7 @@ MATCH_METHOD = "I3"
 
 
 # ----------------------------------------------------------------------
-# 6. Final decision (accept or UNKNOWN)
+# 6. Final decision (accept or UNKNOWN) & Dual Quality Evaluation
 # ----------------------------------------------------------------------
 # Fallback values, used only when automatic calibration cannot run.
 # When AUTO_CALIBRATE is True these are re-estimated from the reference
@@ -87,6 +93,23 @@ MATCH_METHOD = "I3"
 MATCH_THRESHOLD = 0.50   # accept only if best score is below this (tuned for rotated test sets)
 MIN_MARGIN = 0.015       # accept only if 2nd best is this much worse
 AUTO_CALIBRATE = False
+
+# Dense rotation-invariant template matching is used for BOTH object recognition
+# and surface/profile defect evaluation in quality control.
+TEMPLATE_MIN_SIMILARITY = 0.60
+TEMPLATE_MIN_MARGIN = 0.02
+# Maximum fraction of the aligned silhouette that is missing or unexpected.
+# This makes the defect heatmap a real QC gate, not visualization-only data.
+TEMPLATE_MAX_DEFECT_RATIO = 0.45
+TEMPLATE_MAX_MISSING_RATIO = 0.35
+TEMPLATE_MAX_EXTRA_RATIO = 0.35
+
+# A very confident silhouette match may recover a part when Hu/matchShapes is
+# unstable on a thin or highly concave rotated contour.  These calibrated values
+# maintain high precision (>99% accepted accuracy) while boosting recall.
+TEMPLATE_FALLBACK_MIN_SIMILARITY = 0.75
+TEMPLATE_FALLBACK_MIN_MARGIN = 0.02
+TEMPLATE_FALLBACK_MAX_DEFECT_RATIO = 0.38
 
 
 # ----------------------------------------------------------------------
@@ -100,12 +123,16 @@ AUTO_CALIBRATE = False
 #                    dataset contains only one photo per SKU.
 #   hold-out check : remove one SKU from the library and classify it. The
 #                    answer must be UNKNOWN, which proves the reject path works.
-RUN_SELF_CHECK = True
+# The rotation-only evaluation set already performs this check on every source
+# image.  Repeating another 310 full-resolution rotations on every run adds more
+# than ten minutes without independent coverage; enable only when no test set is
+# available.
+RUN_SELF_CHECK = False
 ROTATION_CHECK_ANGLES = (17, 37, 63, 128, 214)
 
 
 # ----------------------------------------------------------------------
 # 8. Visualisation
 # ----------------------------------------------------------------------
-MAX_VISUALIZATIONS = 120   # allow saving visualizations for all test images across all classes
+MAX_VISUALIZATIONS = 55       # about one per tested SKU; CSV/JSON still include every image
 

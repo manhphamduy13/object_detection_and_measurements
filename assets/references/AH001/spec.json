@@ -1,0 +1,45 @@
+{
+  "sku": "AH001",
+  "source_file": "generated_from_reference_silhouette",
+  "item_name": "AH001",
+  "part_no": "AH001",
+  "description": "Provisional rotation-repeatability specification",
+  "material": "unknown",
+  "unit": "mm (provisional)",
+  "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+  "dimensions": [
+    {
+      "raw_spec": "PROVISIONAL L 27.838 +/- 1.392 mm",
+      "label": "L",
+      "nominal": 27.838,
+      "diameter": false,
+      "upper_tol": 1.392,
+      "lower_tol": -1.392,
+      "min": 26.446,
+      "max": 29.23,
+      "tolerance_type": "provisional_symmetric",
+      "axis": "2D_in_plane"
+    },
+    {
+      "raw_spec": "PROVISIONAL W 7.065 +/- 0.353 mm",
+      "label": "W",
+      "nominal": 7.065,
+      "diameter": false,
+      "upper_tol": 0.353,
+      "lower_tol": -0.353,
+      "min": 6.712,
+      "max": 7.418,
+      "tolerance_type": "provisional_symmetric",
+      "axis": "2D_in_plane"
+    }
+  ],
+  "optical_scale_mm_per_px": 0.05,
+  "golden_sample": {
+    "filenames": [
+      "98661BBS-1_6.png"
+    ],
+    "median_obb_long_px": 556.756,
+    "median_obb_short_px": 141.298,
+    "sample_count": 1
+  }
+}

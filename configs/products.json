@@ -4,56 +4,26 @@
     "source_file": "items/98003P.pdf",
     "item_name": "98003P",
     "part_no": "98003P",
+    "description": "Equipment",
+    "material": "Engineering Plastic",
     "unit": "mm",
     "drawing": "drawing.png",
-    "review_status": "auto_extracted_from_pdf",
+    "review_status": "dynamically_extracted_from_pdf",
     "dimensions": [
       {
-        "raw_spec": "ψ3.95+0.05/-0.10mm",
-        "label": "D_",
-        "nominal": 3.95,
-        "diameter": true,
-        "upper_tol": 0.05,
-        "lower_tol": -0.1,
-        "min": 3.85,
-        "max": 4.0,
-        "tolerance_type": "asymmetric"
-      },
-      {
-        "raw_spec": "ψ4.0+0/-0.05mm",
-        "label": "D_",
-        "nominal": 4.0,
-        "diameter": true,
-        "upper_tol": 0.0,
-        "lower_tol": -0.05,
-        "min": 3.95,
-        "max": 4.0,
-        "tolerance_type": "asymmetric"
-      },
-      {
-        "raw_spec": "ψ3.5mm MAX.",
-        "label": "D_",
-        "nominal": 3.5,
-        "diameter": true,
-        "upper_tol": 0.0,
-        "lower_tol": 0.0,
-        "min": 3.5,
-        "max": 3.5,
-        "tolerance_type": "exact"
-      },
-      {
         "raw_spec": "32.0+0.0/-1.10mm",
-        "label": "DIM",
+        "label": "L",
         "nominal": 32.0,
         "diameter": false,
         "upper_tol": 0.0,
         "lower_tol": -1.1,
         "min": 30.9,
         "max": 32.0,
-        "tolerance_type": "asymmetric"
+        "tolerance_type": "asymmetric",
+        "axis": "2D_in_plane"
       },
       {
-        "raw_spec": "W 26.0±0.30mm",
+        "raw_spec": "W 26.0±0.30mm 測  量",
         "label": "W",
         "nominal": 26.0,
         "diameter": false,
@@ -61,27 +31,65 @@
         "lower_tol": -0.3,
         "min": 25.7,
         "max": 26.3,
-        "tolerance_type": "symmetric"
+        "tolerance_type": "symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "φ 4.0+0/-0.05 mm",
+        "label": "D",
+        "nominal": 4.0,
+        "diameter": true,
+        "upper_tol": 0.0,
+        "lower_tol": -0.05,
+        "min": 3.95,
+        "max": 4.0,
+        "tolerance_type": "asymmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "φ 3.95+0.05/-0.10 mm",
+        "label": "D1",
+        "nominal": 3.95,
+        "diameter": true,
+        "upper_tol": 0.05,
+        "lower_tol": -0.1,
+        "min": 3.85,
+        "max": 4.0,
+        "tolerance_type": "asymmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "φ 3.5 mm MAX.",
+        "label": "D2",
+        "nominal": 3.5,
+        "diameter": true,
+        "upper_tol": 0.0,
+        "lower_tol": -3.5,
+        "min": 0.0,
+        "max": 3.5,
+        "tolerance_type": "max_limit",
+        "axis": "2D_in_plane"
       },
       {
         "raw_spec": "7.0±0.2mm",
-        "label": "DIM",
+        "label": "H",
         "nominal": 7.0,
         "diameter": false,
         "upper_tol": 0.2,
         "lower_tol": -0.2,
         "min": 6.8,
         "max": 7.2,
-        "tolerance_type": "symmetric"
+        "tolerance_type": "symmetric",
+        "axis": "Z_height_side_view"
       }
     ],
-    "optical_scale_mm_per_px": 0.047553,
+    "optical_scale_mm_per_px": 0.047145,
     "golden_sample": {
       "filename": "98003P_1.png",
-      "obb_long_px": 672.94,
-      "obb_short_px": 558.65,
-      "angle_deg": 88.28,
-      "optical_scale_um_per_px": 47.55
+      "obb_long_px": 678.8,
+      "obb_short_px": 564.4,
+      "angle_deg": 88.4,
+      "optical_scale_um_per_px": 47.14
     }
   },
   "98475": {
@@ -89,21 +97,12 @@
     "source_file": "items/98475.pdf",
     "item_name": "98475",
     "part_no": "98475",
+    "description": "Equipment",
+    "material": "Brass / Copper",
     "unit": "mm",
     "drawing": "drawing.png",
-    "review_status": "auto_extracted_from_pdf",
+    "review_status": "dynamically_extracted_from_pdf",
     "dimensions": [
-      {
-        "raw_spec": "4.9±0.30mm",
-        "label": "DIM",
-        "nominal": 4.9,
-        "diameter": false,
-        "upper_tol": 0.3,
-        "lower_tol": -0.3,
-        "min": 4.6,
-        "max": 5.2,
-        "tolerance_type": "symmetric"
-      },
       {
         "raw_spec": "L 32.5±0.25mm",
         "label": "L",
@@ -113,51 +112,8 @@
         "lower_tol": -0.25,
         "min": 32.25,
         "max": 32.75,
-        "tolerance_type": "symmetric"
-      },
-      {
-        "raw_spec": "D 4.75+0/-0.05mm",
-        "label": "D",
-        "nominal": 4.75,
-        "diameter": false,
-        "upper_tol": 0.0,
-        "lower_tol": -0.05,
-        "min": 4.7,
-        "max": 4.75,
-        "tolerance_type": "asymmetric"
-      },
-      {
-        "raw_spec": "F 4.0±0.25mm",
-        "label": "F",
-        "nominal": 4.0,
-        "diameter": false,
-        "upper_tol": 0.25,
-        "lower_tol": -0.25,
-        "min": 3.75,
-        "max": 4.25,
-        "tolerance_type": "symmetric"
-      },
-      {
-        "raw_spec": "24.5±0.25mm",
-        "label": "DIM",
-        "nominal": 24.5,
-        "diameter": false,
-        "upper_tol": 0.25,
-        "lower_tol": -0.25,
-        "min": 24.25,
-        "max": 24.75,
-        "tolerance_type": "symmetric"
-      },
-      {
-        "raw_spec": "0.7±0.03mm",
-        "label": "DIM",
-        "nominal": 0.7,
-        "diameter": false,
-        "upper_tol": 0.03,
-        "lower_tol": -0.03,
-        "min": 0.67,
-        "max": 0.73,
-        "tolerance_type": "symmetric"
+        "tolerance_type": "symmetric",
+        "axis": "2D_in_plane"
       },
       {
         "raw_spec": "W 4.9±0.30mm",
@@ -168,16 +124,77 @@
         "lower_tol": -0.3,
         "min": 4.6,
         "max": 5.2,
-        "tolerance_type": "symmetric"
+        "tolerance_type": "symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "24.5±0.25mm",
+        "label": "E",
+        "nominal": 24.5,
+        "diameter": false,
+        "upper_tol": 0.25,
+        "lower_tol": -0.25,
+        "min": 24.25,
+        "max": 24.75,
+        "tolerance_type": "symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "D 4.75+0/-0.05mm 測   量",
+        "label": "D",
+        "nominal": 4.75,
+        "diameter": false,
+        "upper_tol": 0.0,
+        "lower_tol": -0.05,
+        "min": 4.7,
+        "max": 4.75,
+        "tolerance_type": "asymmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "F 4.0±0.25mm",
+        "label": "F",
+        "nominal": 4.0,
+        "diameter": false,
+        "upper_tol": 0.25,
+        "lower_tol": -0.25,
+        "min": 3.75,
+        "max": 4.25,
+        "tolerance_type": "symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "0.7±0.03mm",
+        "label": "t",
+        "nominal": 0.7,
+        "diameter": false,
+        "upper_tol": 0.03,
+        "lower_tol": -0.03,
+        "min": 0.67,
+        "max": 0.73,
+        "tolerance_type": "symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "4.9±0.30mm",
+        "label": "H",
+        "nominal": 4.9,
+        "diameter": false,
+        "upper_tol": 0.3,
+        "lower_tol": -0.3,
+        "min": 4.6,
+        "max": 5.2,
+        "tolerance_type": "symmetric",
+        "axis": "Z_height_side_view"
       }
     ],
-    "optical_scale_mm_per_px": 0.038547,
+    "optical_scale_mm_per_px": 0.038592,
     "golden_sample": {
       "filename": "98475_1.png",
-      "obb_long_px": 843.12,
-      "obb_short_px": 397.08,
-      "angle_deg": 89.11,
-      "optical_scale_um_per_px": 38.55
+      "obb_long_px": 842.1,
+      "obb_short_px": 394.1,
+      "angle_deg": 89.2,
+      "optical_scale_um_per_px": 38.59
     }
   },
   "98661BBS-1": {
@@ -185,43 +202,12 @@
     "source_file": "items/98661BBS-1.pdf",
     "item_name": "98661BBS-1",
     "part_no": "98661BBS-1",
+    "description": "Equipment",
+    "material": "Brass / Copper",
     "unit": "mm",
     "drawing": "drawing.png",
-    "review_status": "auto_extracted_from_pdf",
+    "review_status": "dynamically_extracted_from_pdf",
     "dimensions": [
-      {
-        "raw_spec": "3.0±0.20mm",
-        "label": "DIM",
-        "nominal": 3.0,
-        "diameter": false,
-        "upper_tol": 0.2,
-        "lower_tol": -0.2,
-        "min": 2.8,
-        "max": 3.2,
-        "tolerance_type": "symmetric"
-      },
-      {
-        "raw_spec": "H 4.2±0.30mm",
-        "label": "H",
-        "nominal": 4.2,
-        "diameter": false,
-        "upper_tol": 0.3,
-        "lower_tol": -0.3,
-        "min": 3.9,
-        "max": 4.5,
-        "tolerance_type": "symmetric"
-      },
-      {
-        "raw_spec": "W 4.3±0.30mm",
-        "label": "W",
-        "nominal": 4.3,
-        "diameter": false,
-        "upper_tol": 0.3,
-        "lower_tol": -0.3,
-        "min": 4.0,
-        "max": 4.6,
-        "tolerance_type": "symmetric"
-      },
       {
         "raw_spec": "L 28.5±0.30mm",
         "label": "L",
@@ -231,40 +217,20 @@
         "lower_tol": -0.3,
         "min": 28.2,
         "max": 28.8,
-        "tolerance_type": "symmetric"
+        "tolerance_type": "symmetric",
+        "axis": "2D_in_plane"
       },
       {
-        "raw_spec": "3.15±0.07mm",
-        "label": "DIM",
-        "nominal": 3.15,
-        "diameter": false,
-        "upper_tol": 0.07,
-        "lower_tol": -0.07,
-        "min": 3.08,
-        "max": 3.22,
-        "tolerance_type": "symmetric"
-      },
-      {
-        "raw_spec": "F 4.3±0.30mm",
-        "label": "F",
+        "raw_spec": "W 4.3±0.30mm 測  量",
+        "label": "W",
         "nominal": 4.3,
         "diameter": false,
         "upper_tol": 0.3,
         "lower_tol": -0.3,
         "min": 4.0,
         "max": 4.6,
-        "tolerance_type": "symmetric"
-      },
-      {
-        "raw_spec": "1.5+0/-0.04mm",
-        "label": "DIM",
-        "nominal": 1.5,
-        "diameter": false,
-        "upper_tol": 0.0,
-        "lower_tol": -0.04,
-        "min": 1.46,
-        "max": 1.5,
-        "tolerance_type": "asymmetric"
+        "tolerance_type": "symmetric",
+        "axis": "2D_in_plane"
       },
       {
         "raw_spec": "J 6.3±0.07mm",
@@ -275,16 +241,77 @@
         "lower_tol": -0.07,
         "min": 6.23,
         "max": 6.37,
-        "tolerance_type": "symmetric"
+        "tolerance_type": "symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "F 4.3±0.30mm",
+        "label": "F",
+        "nominal": 4.3,
+        "diameter": false,
+        "upper_tol": 0.3,
+        "lower_tol": -0.3,
+        "min": 4.0,
+        "max": 4.6,
+        "tolerance_type": "symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "3.15±0.07mm",
+        "label": "d",
+        "nominal": 3.15,
+        "diameter": false,
+        "upper_tol": 0.07,
+        "lower_tol": -0.07,
+        "min": 3.08,
+        "max": 3.22,
+        "tolerance_type": "symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "3.0±0.20mm",
+        "label": "K",
+        "nominal": 3.0,
+        "diameter": false,
+        "upper_tol": 0.2,
+        "lower_tol": -0.2,
+        "min": 2.8,
+        "max": 3.2,
+        "tolerance_type": "symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "1.5+0/-0.04mm",
+        "label": "T",
+        "nominal": 1.5,
+        "diameter": false,
+        "upper_tol": 0.0,
+        "lower_tol": -0.04,
+        "min": 1.46,
+        "max": 1.5,
+        "tolerance_type": "asymmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "H 4.2±0.30mm 測  量",
+        "label": "H",
+        "nominal": 4.2,
+        "diameter": false,
+        "upper_tol": 0.3,
+        "lower_tol": -0.3,
+        "min": 3.9,
+        "max": 4.5,
+        "tolerance_type": "symmetric",
+        "axis": "Z_height_side_view"
       }
     ],
-    "optical_scale_mm_per_px": 0.044255,
+    "optical_scale_mm_per_px": 0.048142,
     "golden_sample": {
-      "filename": "98661BBS-1_1.png",
-      "obb_long_px": 644.0,
-      "obb_short_px": 248.0,
+      "filename": "98661BBS-1_2.png",
+      "obb_long_px": 592.0,
+      "obb_short_px": 227.0,
       "angle_deg": 0.0,
-      "optical_scale_um_per_px": 44.25
+      "optical_scale_um_per_px": 48.14
     }
   },
   "UH-004": {
@@ -292,73 +319,80 @@
     "source_file": "items/UH-004.pdf",
     "item_name": "UH-004",
     "part_no": "UH-004",
+    "description": "Equipment",
+    "material": "Engineering Plastic",
     "unit": "mm",
     "drawing": "drawing.png",
-    "review_status": "auto_extracted_from_pdf",
+    "review_status": "dynamically_extracted_from_pdf",
     "dimensions": [
       {
-        "raw_spec": "14.2+0.5/-0.3mm",
-        "label": "DIM",
-        "nominal": 14.2,
-        "diameter": false,
-        "upper_tol": 0.5,
-        "lower_tol": -0.3,
-        "min": 13.9,
-        "max": 14.7,
-        "tolerance_type": "asymmetric"
-      },
-      {
-        "raw_spec": "16.8±0.4mm",
-        "label": "DIM",
-        "nominal": 16.8,
-        "diameter": false,
-        "upper_tol": 0.4,
-        "lower_tol": -0.4,
-        "min": 16.4,
-        "max": 17.2,
-        "tolerance_type": "symmetric"
-      },
-      {
-        "raw_spec": "15.6±0.3mm",
-        "label": "DIM",
-        "nominal": 15.6,
-        "diameter": false,
-        "upper_tol": 0.3,
-        "lower_tol": -0.3,
-        "min": 15.3,
-        "max": 15.9,
-        "tolerance_type": "symmetric"
-      },
-      {
-        "raw_spec": "7.0+0.5/-0.3mm",
-        "label": "DIM",
-        "nominal": 7.0,
-        "diameter": false,
-        "upper_tol": 0.5,
-        "lower_tol": -0.3,
-        "min": 6.7,
-        "max": 7.5,
-        "tolerance_type": "asymmetric"
-      },
-      {
         "raw_spec": "19.8±0.5mm",
-        "label": "DIM",
+        "label": "A",
         "nominal": 19.8,
         "diameter": false,
         "upper_tol": 0.5,
         "lower_tol": -0.5,
         "min": 19.3,
         "max": 20.3,
-        "tolerance_type": "symmetric"
+        "tolerance_type": "symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "15.6±0.3mm",
+        "label": "B",
+        "nominal": 15.6,
+        "diameter": false,
+        "upper_tol": 0.3,
+        "lower_tol": -0.3,
+        "min": 15.3,
+        "max": 15.9,
+        "tolerance_type": "symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "16.8±0.4mm",
+        "label": "E",
+        "nominal": 16.8,
+        "diameter": false,
+        "upper_tol": 0.4,
+        "lower_tol": -0.4,
+        "min": 16.4,
+        "max": 17.2,
+        "tolerance_type": "symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "14.2+0.5/-0.3mm",
+        "label": "D",
+        "nominal": 14.2,
+        "diameter": false,
+        "upper_tol": 0.5,
+        "lower_tol": -0.3,
+        "min": 13.9,
+        "max": 14.7,
+        "tolerance_type": "asymmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "7.0+0.5/-0.3mm",
+        "label": "C",
+        "nominal": 7.0,
+        "diameter": false,
+        "upper_tol": 0.5,
+        "lower_tol": -0.3,
+        "min": 6.7,
+        "max": 7.5,
+        "tolerance_type": "asymmetric",
+        "axis": "2D_in_plane"
       }
     ],
-    "optical_scale_mm_per_px": 0.04486,
+    "optical_scale_mm_per_px": 0.044944,
     "golden_sample": {
       "filename": "UH-004_1.png",
-      "obb_long_px": 441.38,
-      "obb_short_px": 385.55,
-      "angle_deg": 80.95,
-      "optical_scale_um_per_px": 44.86
+      "obb_long_px": 440.5,
+      "obb_short_px": 386.0,
+      "angle_deg": 81.0,
+      "optical_scale_um_per_px": 44.94
     }
   },
   "UH-8715P": {
@@ -366,23 +400,26 @@
     "source_file": "items/UH-8715P.pdf",
     "item_name": "UH-8715P",
     "part_no": "UH-8715P",
+    "description": "Equipment",
+    "material": "Engineering Plastic",
     "unit": "mm",
     "drawing": null,
-    "review_status": "auto_extracted_from_pdf",
+    "review_status": "dynamically_extracted_from_pdf",
     "dimensions": [
       {
-        "raw_spec": "K 5.8±0.2mm",
-        "label": "K",
-        "nominal": 5.8,
+        "raw_spec": "21.90±0.15mm",
+        "label": "A",
+        "nominal": 21.9,
         "diameter": false,
-        "upper_tol": 0.2,
-        "lower_tol": -0.2,
-        "min": 5.6,
-        "max": 6.0,
-        "tolerance_type": "symmetric"
+        "upper_tol": 0.15,
+        "lower_tol": -0.15,
+        "min": 21.75,
+        "max": 22.05,
+        "tolerance_type": "symmetric",
+        "axis": "2D_in_plane"
       },
       {
-        "raw_spec": "L 7.9±0.2mm",
+        "raw_spec": "L 7.9±0.2mm 測  量",
         "label": "L",
         "nominal": 7.9,
         "diameter": false,
@@ -390,10 +427,83 @@
         "lower_tol": -0.2,
         "min": 7.7,
         "max": 8.1,
-        "tolerance_type": "symmetric"
+        "tolerance_type": "symmetric",
+        "axis": "2D_in_plane"
       },
       {
-        "raw_spec": "J 1.6±0.2mm",
+        "raw_spec": "14.5 ± 0.2mm",
+        "label": "B",
+        "nominal": 14.5,
+        "diameter": false,
+        "upper_tol": 0.2,
+        "lower_tol": -0.2,
+        "min": 14.3,
+        "max": 14.7,
+        "tolerance_type": "symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "16±0.2mm",
+        "label": "G",
+        "nominal": 16.0,
+        "diameter": false,
+        "upper_tol": 0.2,
+        "lower_tol": -0.2,
+        "min": 15.8,
+        "max": 16.2,
+        "tolerance_type": "symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "9.5±0.2mm",
+        "label": "C",
+        "nominal": 9.5,
+        "diameter": false,
+        "upper_tol": 0.2,
+        "lower_tol": -0.2,
+        "min": 9.3,
+        "max": 9.7,
+        "tolerance_type": "symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "K 5.8±0.2mm 測  量",
+        "label": "K",
+        "nominal": 5.8,
+        "diameter": false,
+        "upper_tol": 0.2,
+        "lower_tol": -0.2,
+        "min": 5.6,
+        "max": 6.0,
+        "tolerance_type": "symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "4.7±0.2mm",
+        "label": "E",
+        "nominal": 4.7,
+        "diameter": false,
+        "upper_tol": 0.2,
+        "lower_tol": -0.2,
+        "min": 4.5,
+        "max": 4.9,
+        "tolerance_type": "symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "3.05+0.05/-0.10mm",
+        "label": "I",
+        "nominal": 3.05,
+        "diameter": false,
+        "upper_tol": 0.05,
+        "lower_tol": -0.1,
+        "min": 2.95,
+        "max": 3.1,
+        "tolerance_type": "asymmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "J 1.6±0.2mm 測  量",
         "label": "J",
         "nominal": 1.6,
         "diameter": false,
@@ -401,93 +511,2240 @@
         "lower_tol": -0.2,
         "min": 1.4,
         "max": 1.8,
-        "tolerance_type": "symmetric"
+        "tolerance_type": "symmetric",
+        "axis": "2D_in_plane"
       },
       {
-        "raw_spec": "16±0.2mm",
-        "label": "DIM",
-        "nominal": 16.0,
-        "diameter": false,
-        "upper_tol": 0.2,
-        "lower_tol": -0.2,
-        "min": 15.8,
-        "max": 16.2,
-        "tolerance_type": "symmetric"
-      },
-      {
-        "raw_spec": "8.60±0.15mmH",
-        "label": "DIM",
+        "raw_spec": "8.60±0.15mm",
+        "label": "H",
         "nominal": 8.6,
         "diameter": false,
         "upper_tol": 0.15,
         "lower_tol": -0.15,
         "min": 8.45,
         "max": 8.75,
-        "tolerance_type": "symmetric"
+        "tolerance_type": "symmetric",
+        "axis": "Z_height_side_view"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.046694,
+    "golden_sample": {
+      "filename": "UH-8715P_1.png",
+      "obb_long_px": 469.0,
+      "obb_short_px": 337.3,
+      "angle_deg": 0.4,
+      "optical_scale_um_per_px": 46.69
+    }
+  },
+  "1": {
+    "sku": "1",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "1",
+    "part_no": "1",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 32.667 +/- 1.633 mm",
+        "label": "L",
+        "nominal": 32.667,
+        "diameter": false,
+        "upper_tol": 1.633,
+        "lower_tol": -1.633,
+        "min": 31.033,
+        "max": 34.3,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
       },
       {
-        "raw_spec": "9.5±0.2mm",
-        "label": "DIM",
-        "nominal": 9.5,
+        "raw_spec": "PROVISIONAL W 3.994 +/- 0.200 mm",
+        "label": "W",
+        "nominal": 3.994,
         "diameter": false,
         "upper_tol": 0.2,
         "lower_tol": -0.2,
-        "min": 9.3,
-        "max": 9.7,
-        "tolerance_type": "symmetric"
-      },
+        "min": 3.795,
+        "max": 4.194,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "1_1.JPG",
+        "1_2.jpg",
+        "1_4.JPG"
+      ],
+      "median_obb_long_px": 653.332,
+      "median_obb_short_px": 79.889,
+      "sample_count": 3
+    }
+  },
+  "10": {
+    "sku": "10",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "10",
+    "part_no": "10",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
       {
-        "raw_spec": "3.05+0.05/-0.10mm",
-        "label": "DIM",
-        "nominal": 3.05,
+        "raw_spec": "PROVISIONAL L 70.750 +/- 3.538 mm",
+        "label": "L",
+        "nominal": 70.75,
         "diameter": false,
-        "upper_tol": 0.05,
-        "lower_tol": -0.1,
-        "min": 2.95,
-        "max": 3.1,
-        "tolerance_type": "asymmetric"
+        "upper_tol": 3.538,
+        "lower_tol": -3.538,
+        "min": 67.213,
+        "max": 74.287,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
       },
       {
-        "raw_spec": "4.7±0.2mm",
-        "label": "DIM",
-        "nominal": 4.7,
+        "raw_spec": "PROVISIONAL W 39.750 +/- 1.988 mm",
+        "label": "W",
+        "nominal": 39.75,
         "diameter": false,
-        "upper_tol": 0.2,
-        "lower_tol": -0.2,
-        "min": 4.5,
-        "max": 4.9,
-        "tolerance_type": "symmetric"
-      },
+        "upper_tol": 1.988,
+        "lower_tol": -1.988,
+        "min": 37.763,
+        "max": 41.737,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "10.png"
+      ],
+      "median_obb_long_px": 1415.0,
+      "median_obb_short_px": 795.0,
+      "sample_count": 1
+    }
+  },
+  "11": {
+    "sku": "11",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "11",
+    "part_no": "11",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
       {
-        "raw_spec": "14.5±0.2mm",
-        "label": "DIM",
-        "nominal": 14.5,
+        "raw_spec": "PROVISIONAL L 85.683 +/- 4.284 mm",
+        "label": "L",
+        "nominal": 85.683,
         "diameter": false,
-        "upper_tol": 0.2,
-        "lower_tol": -0.2,
-        "min": 14.3,
-        "max": 14.7,
-        "tolerance_type": "symmetric"
+        "upper_tol": 4.284,
+        "lower_tol": -4.284,
+        "min": 81.399,
+        "max": 89.967,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
       },
       {
-        "raw_spec": "21.90±0.15mm",
-        "label": "DIM",
-        "nominal": 21.9,
+        "raw_spec": "PROVISIONAL W 79.761 +/- 3.988 mm",
+        "label": "W",
+        "nominal": 79.761,
+        "diameter": false,
+        "upper_tol": 3.988,
+        "lower_tol": -3.988,
+        "min": 75.773,
+        "max": 83.749,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "11.jpg"
+      ],
+      "median_obb_long_px": 1713.659,
+      "median_obb_short_px": 1595.216,
+      "sample_count": 1
+    }
+  },
+  "12": {
+    "sku": "12",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "12",
+    "part_no": "12",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 30.611 +/- 1.531 mm",
+        "label": "L",
+        "nominal": 30.611,
+        "diameter": false,
+        "upper_tol": 1.531,
+        "lower_tol": -1.531,
+        "min": 29.081,
+        "max": 32.142,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 14.457 +/- 0.723 mm",
+        "label": "W",
+        "nominal": 14.457,
+        "diameter": false,
+        "upper_tol": 0.723,
+        "lower_tol": -0.723,
+        "min": 13.734,
+        "max": 15.18,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "12.jpg"
+      ],
+      "median_obb_long_px": 612.226,
+      "median_obb_short_px": 289.134,
+      "sample_count": 1
+    }
+  },
+  "13": {
+    "sku": "13",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "13",
+    "part_no": "13",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 24.044 +/- 1.202 mm",
+        "label": "L",
+        "nominal": 24.044,
+        "diameter": false,
+        "upper_tol": 1.202,
+        "lower_tol": -1.202,
+        "min": 22.842,
+        "max": 25.246,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 15.429 +/- 0.771 mm",
+        "label": "W",
+        "nominal": 15.429,
+        "diameter": false,
+        "upper_tol": 0.771,
+        "lower_tol": -0.771,
+        "min": 14.658,
+        "max": 16.201,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "13.jpg"
+      ],
+      "median_obb_long_px": 480.88,
+      "median_obb_short_px": 308.588,
+      "sample_count": 1
+    }
+  },
+  "14": {
+    "sku": "14",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "14",
+    "part_no": "14",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 39.291 +/- 1.965 mm",
+        "label": "L",
+        "nominal": 39.291,
+        "diameter": false,
+        "upper_tol": 1.965,
+        "lower_tol": -1.965,
+        "min": 37.327,
+        "max": 41.256,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 31.257 +/- 1.563 mm",
+        "label": "W",
+        "nominal": 31.257,
+        "diameter": false,
+        "upper_tol": 1.563,
+        "lower_tol": -1.563,
+        "min": 29.694,
+        "max": 32.82,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "14.jpg"
+      ],
+      "median_obb_long_px": 785.824,
+      "median_obb_short_px": 625.137,
+      "sample_count": 1
+    }
+  },
+  "15": {
+    "sku": "15",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "15",
+    "part_no": "15",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 57.071 +/- 2.854 mm",
+        "label": "L",
+        "nominal": 57.071,
+        "diameter": false,
+        "upper_tol": 2.854,
+        "lower_tol": -2.854,
+        "min": 54.217,
+        "max": 59.924,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 52.915 +/- 2.646 mm",
+        "label": "W",
+        "nominal": 52.915,
+        "diameter": false,
+        "upper_tol": 2.646,
+        "lower_tol": -2.646,
+        "min": 50.269,
+        "max": 55.56,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "15.jpg"
+      ],
+      "median_obb_long_px": 1141.411,
+      "median_obb_short_px": 1058.292,
+      "sample_count": 1
+    }
+  },
+  "16": {
+    "sku": "16",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "16",
+    "part_no": "16",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 32.464 +/- 1.623 mm",
+        "label": "L",
+        "nominal": 32.464,
+        "diameter": false,
+        "upper_tol": 1.623,
+        "lower_tol": -1.623,
+        "min": 30.841,
+        "max": 34.087,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 9.195 +/- 0.460 mm",
+        "label": "W",
+        "nominal": 9.195,
+        "diameter": false,
+        "upper_tol": 0.46,
+        "lower_tol": -0.46,
+        "min": 8.735,
+        "max": 9.655,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "16.jpg"
+      ],
+      "median_obb_long_px": 649.274,
+      "median_obb_short_px": 183.901,
+      "sample_count": 1
+    }
+  },
+  "17": {
+    "sku": "17",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "17",
+    "part_no": "17",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 13.763 +/- 0.688 mm",
+        "label": "L",
+        "nominal": 13.763,
+        "diameter": false,
+        "upper_tol": 0.688,
+        "lower_tol": -0.688,
+        "min": 13.075,
+        "max": 14.452,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 13.004 +/- 0.650 mm",
+        "label": "W",
+        "nominal": 13.004,
+        "diameter": false,
+        "upper_tol": 0.65,
+        "lower_tol": -0.65,
+        "min": 12.354,
+        "max": 13.654,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "17.jpg"
+      ],
+      "median_obb_long_px": 275.268,
+      "median_obb_short_px": 260.082,
+      "sample_count": 1
+    }
+  },
+  "18": {
+    "sku": "18",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "18",
+    "part_no": "18",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 17.564 +/- 0.878 mm",
+        "label": "L",
+        "nominal": 17.564,
+        "diameter": false,
+        "upper_tol": 0.878,
+        "lower_tol": -0.878,
+        "min": 16.686,
+        "max": 18.442,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 15.878 +/- 0.794 mm",
+        "label": "W",
+        "nominal": 15.878,
+        "diameter": false,
+        "upper_tol": 0.794,
+        "lower_tol": -0.794,
+        "min": 15.084,
+        "max": 16.671,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "18.jpg"
+      ],
+      "median_obb_long_px": 351.285,
+      "median_obb_short_px": 317.551,
+      "sample_count": 1
+    }
+  },
+  "19": {
+    "sku": "19",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "19",
+    "part_no": "19",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 29.635 +/- 1.482 mm",
+        "label": "L",
+        "nominal": 29.635,
+        "diameter": false,
+        "upper_tol": 1.482,
+        "lower_tol": -1.482,
+        "min": 28.153,
+        "max": 31.117,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 21.699 +/- 1.085 mm",
+        "label": "W",
+        "nominal": 21.699,
+        "diameter": false,
+        "upper_tol": 1.085,
+        "lower_tol": -1.085,
+        "min": 20.614,
+        "max": 22.784,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "19.jpg"
+      ],
+      "median_obb_long_px": 592.696,
+      "median_obb_short_px": 433.989,
+      "sample_count": 1
+    }
+  },
+  "2": {
+    "sku": "2",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "2",
+    "part_no": "2",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 24.602 +/- 1.230 mm",
+        "label": "L",
+        "nominal": 24.602,
+        "diameter": false,
+        "upper_tol": 1.23,
+        "lower_tol": -1.23,
+        "min": 23.372,
+        "max": 25.832,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 5.028 +/- 0.251 mm",
+        "label": "W",
+        "nominal": 5.028,
+        "diameter": false,
+        "upper_tol": 0.251,
+        "lower_tol": -0.251,
+        "min": 4.777,
+        "max": 5.28,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "2_1.JPG",
+        "2_2.jpg"
+      ],
+      "median_obb_long_px": 492.032,
+      "median_obb_short_px": 100.569,
+      "sample_count": 2
+    }
+  },
+  "20": {
+    "sku": "20",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "20",
+    "part_no": "20",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 56.425 +/- 2.821 mm",
+        "label": "L",
+        "nominal": 56.425,
+        "diameter": false,
+        "upper_tol": 2.821,
+        "lower_tol": -2.821,
+        "min": 53.604,
+        "max": 59.246,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 25.750 +/- 1.288 mm",
+        "label": "W",
+        "nominal": 25.75,
+        "diameter": false,
+        "upper_tol": 1.288,
+        "lower_tol": -1.288,
+        "min": 24.463,
+        "max": 27.038,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "20.jpg"
+      ],
+      "median_obb_long_px": 1128.504,
+      "median_obb_short_px": 515.005,
+      "sample_count": 1
+    }
+  },
+  "21": {
+    "sku": "21",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "21",
+    "part_no": "21",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 21.410 +/- 1.070 mm",
+        "label": "L",
+        "nominal": 21.41,
+        "diameter": false,
+        "upper_tol": 1.07,
+        "lower_tol": -1.07,
+        "min": 20.339,
+        "max": 22.48,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 11.259 +/- 0.563 mm",
+        "label": "W",
+        "nominal": 11.259,
+        "diameter": false,
+        "upper_tol": 0.563,
+        "lower_tol": -0.563,
+        "min": 10.696,
+        "max": 11.822,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "21.jpg"
+      ],
+      "median_obb_long_px": 428.191,
+      "median_obb_short_px": 225.189,
+      "sample_count": 1
+    }
+  },
+  "22": {
+    "sku": "22",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "22",
+    "part_no": "22",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 64.453 +/- 3.223 mm",
+        "label": "L",
+        "nominal": 64.453,
+        "diameter": false,
+        "upper_tol": 3.223,
+        "lower_tol": -3.223,
+        "min": 61.231,
+        "max": 67.676,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 63.458 +/- 3.173 mm",
+        "label": "W",
+        "nominal": 63.458,
+        "diameter": false,
+        "upper_tol": 3.173,
+        "lower_tol": -3.173,
+        "min": 60.285,
+        "max": 66.631,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "22.jpg"
+      ],
+      "median_obb_long_px": 1289.067,
+      "median_obb_short_px": 1269.155,
+      "sample_count": 1
+    }
+  },
+  "23": {
+    "sku": "23",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "23",
+    "part_no": "23",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 32.059 +/- 1.603 mm",
+        "label": "L",
+        "nominal": 32.059,
+        "diameter": false,
+        "upper_tol": 1.603,
+        "lower_tol": -1.603,
+        "min": 30.456,
+        "max": 33.662,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 18.796 +/- 0.940 mm",
+        "label": "W",
+        "nominal": 18.796,
+        "diameter": false,
+        "upper_tol": 0.94,
+        "lower_tol": -0.94,
+        "min": 17.856,
+        "max": 19.736,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "23.jpg"
+      ],
+      "median_obb_long_px": 641.188,
+      "median_obb_short_px": 375.915,
+      "sample_count": 1
+    }
+  },
+  "24": {
+    "sku": "24",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "24",
+    "part_no": "24",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 36.576 +/- 1.829 mm",
+        "label": "L",
+        "nominal": 36.576,
+        "diameter": false,
+        "upper_tol": 1.829,
+        "lower_tol": -1.829,
+        "min": 34.747,
+        "max": 38.405,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 13.107 +/- 0.655 mm",
+        "label": "W",
+        "nominal": 13.107,
+        "diameter": false,
+        "upper_tol": 0.655,
+        "lower_tol": -0.655,
+        "min": 12.452,
+        "max": 13.763,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "24.jpg"
+      ],
+      "median_obb_long_px": 731.525,
+      "median_obb_short_px": 262.147,
+      "sample_count": 1
+    }
+  },
+  "25": {
+    "sku": "25",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "25",
+    "part_no": "25",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 30.790 +/- 1.539 mm",
+        "label": "L",
+        "nominal": 30.79,
+        "diameter": false,
+        "upper_tol": 1.539,
+        "lower_tol": -1.539,
+        "min": 29.25,
+        "max": 32.329,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 6.620 +/- 0.331 mm",
+        "label": "W",
+        "nominal": 6.62,
+        "diameter": false,
+        "upper_tol": 0.331,
+        "lower_tol": -0.331,
+        "min": 6.289,
+        "max": 6.951,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "25.jpg"
+      ],
+      "median_obb_long_px": 615.8,
+      "median_obb_short_px": 132.4,
+      "sample_count": 1
+    }
+  },
+  "26": {
+    "sku": "26",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "26",
+    "part_no": "26",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 59.195 +/- 2.960 mm",
+        "label": "L",
+        "nominal": 59.195,
+        "diameter": false,
+        "upper_tol": 2.96,
+        "lower_tol": -2.96,
+        "min": 56.235,
+        "max": 62.155,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 55.291 +/- 2.765 mm",
+        "label": "W",
+        "nominal": 55.291,
+        "diameter": false,
+        "upper_tol": 2.765,
+        "lower_tol": -2.765,
+        "min": 52.526,
+        "max": 58.055,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "26.jpg"
+      ],
+      "median_obb_long_px": 1183.897,
+      "median_obb_short_px": 1105.817,
+      "sample_count": 1
+    }
+  },
+  "27": {
+    "sku": "27",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "27",
+    "part_no": "27",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 35.446 +/- 1.772 mm",
+        "label": "L",
+        "nominal": 35.446,
+        "diameter": false,
+        "upper_tol": 1.772,
+        "lower_tol": -1.772,
+        "min": 33.674,
+        "max": 37.219,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 34.493 +/- 1.725 mm",
+        "label": "W",
+        "nominal": 34.493,
+        "diameter": false,
+        "upper_tol": 1.725,
+        "lower_tol": -1.725,
+        "min": 32.769,
+        "max": 36.218,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "27.jpg"
+      ],
+      "median_obb_long_px": 708.927,
+      "median_obb_short_px": 689.867,
+      "sample_count": 1
+    }
+  },
+  "28": {
+    "sku": "28",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "28",
+    "part_no": "28",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 85.433 +/- 4.272 mm",
+        "label": "L",
+        "nominal": 85.433,
+        "diameter": false,
+        "upper_tol": 4.272,
+        "lower_tol": -4.272,
+        "min": 81.162,
+        "max": 89.705,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 62.076 +/- 3.104 mm",
+        "label": "W",
+        "nominal": 62.076,
+        "diameter": false,
+        "upper_tol": 3.104,
+        "lower_tol": -3.104,
+        "min": 58.972,
+        "max": 65.18,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "28.jpeg"
+      ],
+      "median_obb_long_px": 1708.669,
+      "median_obb_short_px": 1241.524,
+      "sample_count": 1
+    }
+  },
+  "29": {
+    "sku": "29",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "29",
+    "part_no": "29",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 31.411 +/- 1.571 mm",
+        "label": "L",
+        "nominal": 31.411,
+        "diameter": false,
+        "upper_tol": 1.571,
+        "lower_tol": -1.571,
+        "min": 29.84,
+        "max": 32.981,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 23.071 +/- 1.154 mm",
+        "label": "W",
+        "nominal": 23.071,
+        "diameter": false,
+        "upper_tol": 1.154,
+        "lower_tol": -1.154,
+        "min": 21.918,
+        "max": 24.225,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "29.png"
+      ],
+      "median_obb_long_px": 628.218,
+      "median_obb_short_px": 461.428,
+      "sample_count": 1
+    }
+  },
+  "3": {
+    "sku": "3",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "3",
+    "part_no": "3",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 55.606 +/- 2.780 mm",
+        "label": "L",
+        "nominal": 55.606,
+        "diameter": false,
+        "upper_tol": 2.78,
+        "lower_tol": -2.78,
+        "min": 52.826,
+        "max": 58.386,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 13.201 +/- 0.660 mm",
+        "label": "W",
+        "nominal": 13.201,
+        "diameter": false,
+        "upper_tol": 0.66,
+        "lower_tol": -0.66,
+        "min": 12.541,
+        "max": 13.861,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "3_1.JPG",
+        "3_2.jpg"
+      ],
+      "median_obb_long_px": 1112.118,
+      "median_obb_short_px": 264.022,
+      "sample_count": 2
+    }
+  },
+  "30": {
+    "sku": "30",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "30",
+    "part_no": "30",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 49.710 +/- 2.485 mm",
+        "label": "L",
+        "nominal": 49.71,
+        "diameter": false,
+        "upper_tol": 2.485,
+        "lower_tol": -2.485,
+        "min": 47.224,
+        "max": 52.195,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 8.026 +/- 0.401 mm",
+        "label": "W",
+        "nominal": 8.026,
+        "diameter": false,
+        "upper_tol": 0.401,
+        "lower_tol": -0.401,
+        "min": 7.624,
+        "max": 8.427,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "30.jpg"
+      ],
+      "median_obb_long_px": 994.192,
+      "median_obb_short_px": 160.513,
+      "sample_count": 1
+    }
+  },
+  "31": {
+    "sku": "31",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "31",
+    "part_no": "31",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 43.518 +/- 2.176 mm",
+        "label": "L",
+        "nominal": 43.518,
+        "diameter": false,
+        "upper_tol": 2.176,
+        "lower_tol": -2.176,
+        "min": 41.342,
+        "max": 45.694,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 9.451 +/- 0.473 mm",
+        "label": "W",
+        "nominal": 9.451,
+        "diameter": false,
+        "upper_tol": 0.473,
+        "lower_tol": -0.473,
+        "min": 8.978,
+        "max": 9.923,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "31.jpg"
+      ],
+      "median_obb_long_px": 870.359,
+      "median_obb_short_px": 189.012,
+      "sample_count": 1
+    }
+  },
+  "32": {
+    "sku": "32",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "32",
+    "part_no": "32",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 38.987 +/- 1.949 mm",
+        "label": "L",
+        "nominal": 38.987,
+        "diameter": false,
+        "upper_tol": 1.949,
+        "lower_tol": -1.949,
+        "min": 37.038,
+        "max": 40.937,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 15.948 +/- 0.797 mm",
+        "label": "W",
+        "nominal": 15.948,
+        "diameter": false,
+        "upper_tol": 0.797,
+        "lower_tol": -0.797,
+        "min": 15.151,
+        "max": 16.746,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "32.jpg"
+      ],
+      "median_obb_long_px": 779.749,
+      "median_obb_short_px": 318.966,
+      "sample_count": 1
+    }
+  },
+  "33": {
+    "sku": "33",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "33",
+    "part_no": "33",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 41.093 +/- 2.055 mm",
+        "label": "L",
+        "nominal": 41.093,
+        "diameter": false,
+        "upper_tol": 2.055,
+        "lower_tol": -2.055,
+        "min": 39.039,
+        "max": 43.148,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 2.249 +/- 0.150 mm",
+        "label": "W",
+        "nominal": 2.249,
         "diameter": false,
         "upper_tol": 0.15,
         "lower_tol": -0.15,
-        "min": 21.75,
-        "max": 22.05,
-        "tolerance_type": "symmetric"
+        "min": 2.099,
+        "max": 2.399,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
       }
     ],
-    "optical_scale_mm_per_px": 0.046489,
+    "optical_scale_mm_per_px": 0.05,
     "golden_sample": {
-      "filename": "UH-8715P_1.png",
-      "obb_long_px": 471.08,
-      "obb_short_px": 337.75,
-      "angle_deg": 0.64,
-      "optical_scale_um_per_px": 46.49
+      "filenames": [
+        "33.jpg"
+      ],
+      "median_obb_long_px": 821.87,
+      "median_obb_short_px": 44.973,
+      "sample_count": 1
+    }
+  },
+  "34": {
+    "sku": "34",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "34",
+    "part_no": "34",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 19.305 +/- 0.965 mm",
+        "label": "L",
+        "nominal": 19.305,
+        "diameter": false,
+        "upper_tol": 0.965,
+        "lower_tol": -0.965,
+        "min": 18.34,
+        "max": 20.27,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 17.560 +/- 0.878 mm",
+        "label": "W",
+        "nominal": 17.56,
+        "diameter": false,
+        "upper_tol": 0.878,
+        "lower_tol": -0.878,
+        "min": 16.682,
+        "max": 18.438,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "34.jpg"
+      ],
+      "median_obb_long_px": 386.104,
+      "median_obb_short_px": 351.2,
+      "sample_count": 1
+    }
+  },
+  "35": {
+    "sku": "35",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "35",
+    "part_no": "35",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 38.013 +/- 1.901 mm",
+        "label": "L",
+        "nominal": 38.013,
+        "diameter": false,
+        "upper_tol": 1.901,
+        "lower_tol": -1.901,
+        "min": 36.112,
+        "max": 39.914,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 14.244 +/- 0.712 mm",
+        "label": "W",
+        "nominal": 14.244,
+        "diameter": false,
+        "upper_tol": 0.712,
+        "lower_tol": -0.712,
+        "min": 13.532,
+        "max": 14.956,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "35.jpg"
+      ],
+      "median_obb_long_px": 760.263,
+      "median_obb_short_px": 284.875,
+      "sample_count": 1
+    }
+  },
+  "36": {
+    "sku": "36",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "36",
+    "part_no": "36",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 25.737 +/- 1.287 mm",
+        "label": "L",
+        "nominal": 25.737,
+        "diameter": false,
+        "upper_tol": 1.287,
+        "lower_tol": -1.287,
+        "min": 24.45,
+        "max": 27.024,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 10.941 +/- 0.547 mm",
+        "label": "W",
+        "nominal": 10.941,
+        "diameter": false,
+        "upper_tol": 0.547,
+        "lower_tol": -0.547,
+        "min": 10.394,
+        "max": 11.488,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "36.jpg"
+      ],
+      "median_obb_long_px": 514.738,
+      "median_obb_short_px": 218.825,
+      "sample_count": 1
+    }
+  },
+  "37": {
+    "sku": "37",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "37",
+    "part_no": "37",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 52.737 +/- 2.637 mm",
+        "label": "L",
+        "nominal": 52.737,
+        "diameter": false,
+        "upper_tol": 2.637,
+        "lower_tol": -2.637,
+        "min": 50.1,
+        "max": 55.374,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 10.520 +/- 0.526 mm",
+        "label": "W",
+        "nominal": 10.52,
+        "diameter": false,
+        "upper_tol": 0.526,
+        "lower_tol": -0.526,
+        "min": 9.994,
+        "max": 11.046,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "37.jpg",
+        "37_a.jpg"
+      ],
+      "median_obb_long_px": 1054.738,
+      "median_obb_short_px": 210.402,
+      "sample_count": 2
+    }
+  },
+  "38": {
+    "sku": "38",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "38",
+    "part_no": "38",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 35.806 +/- 1.790 mm",
+        "label": "L",
+        "nominal": 35.806,
+        "diameter": false,
+        "upper_tol": 1.79,
+        "lower_tol": -1.79,
+        "min": 34.015,
+        "max": 37.596,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 7.803 +/- 0.390 mm",
+        "label": "W",
+        "nominal": 7.803,
+        "diameter": false,
+        "upper_tol": 0.39,
+        "lower_tol": -0.39,
+        "min": 7.413,
+        "max": 8.193,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "38.jpg"
+      ],
+      "median_obb_long_px": 716.111,
+      "median_obb_short_px": 156.061,
+      "sample_count": 1
+    }
+  },
+  "39": {
+    "sku": "39",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "39",
+    "part_no": "39",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 18.037 +/- 0.902 mm",
+        "label": "L",
+        "nominal": 18.037,
+        "diameter": false,
+        "upper_tol": 0.902,
+        "lower_tol": -0.902,
+        "min": 17.135,
+        "max": 18.939,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 9.015 +/- 0.451 mm",
+        "label": "W",
+        "nominal": 9.015,
+        "diameter": false,
+        "upper_tol": 0.451,
+        "lower_tol": -0.451,
+        "min": 8.564,
+        "max": 9.466,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "39.jpg"
+      ],
+      "median_obb_long_px": 360.746,
+      "median_obb_short_px": 180.305,
+      "sample_count": 1
+    }
+  },
+  "4": {
+    "sku": "4",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "4",
+    "part_no": "4",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 17.559 +/- 0.878 mm",
+        "label": "L",
+        "nominal": 17.559,
+        "diameter": false,
+        "upper_tol": 0.878,
+        "lower_tol": -0.878,
+        "min": 16.681,
+        "max": 18.437,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 3.414 +/- 0.171 mm",
+        "label": "W",
+        "nominal": 3.414,
+        "diameter": false,
+        "upper_tol": 0.171,
+        "lower_tol": -0.171,
+        "min": 3.243,
+        "max": 3.585,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "4_1.JPG",
+        "4_3.JPG"
+      ],
+      "median_obb_long_px": 351.189,
+      "median_obb_short_px": 68.282,
+      "sample_count": 2
+    }
+  },
+  "41": {
+    "sku": "41",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "41",
+    "part_no": "41",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 21.695 +/- 1.085 mm",
+        "label": "L",
+        "nominal": 21.695,
+        "diameter": false,
+        "upper_tol": 1.085,
+        "lower_tol": -1.085,
+        "min": 20.61,
+        "max": 22.779,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 11.902 +/- 0.595 mm",
+        "label": "W",
+        "nominal": 11.902,
+        "diameter": false,
+        "upper_tol": 0.595,
+        "lower_tol": -0.595,
+        "min": 11.306,
+        "max": 12.497,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "41.jpg"
+      ],
+      "median_obb_long_px": 433.893,
+      "median_obb_short_px": 238.031,
+      "sample_count": 1
+    }
+  },
+  "42": {
+    "sku": "42",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "42",
+    "part_no": "42",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 36.495 +/- 1.825 mm",
+        "label": "L",
+        "nominal": 36.495,
+        "diameter": false,
+        "upper_tol": 1.825,
+        "lower_tol": -1.825,
+        "min": 34.671,
+        "max": 38.32,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 23.728 +/- 1.186 mm",
+        "label": "W",
+        "nominal": 23.728,
+        "diameter": false,
+        "upper_tol": 1.186,
+        "lower_tol": -1.186,
+        "min": 22.542,
+        "max": 24.914,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "43.jpg"
+      ],
+      "median_obb_long_px": 729.908,
+      "median_obb_short_px": 474.56,
+      "sample_count": 1
+    }
+  },
+  "43": {
+    "sku": "43",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "43",
+    "part_no": "43",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 78.551 +/- 3.928 mm",
+        "label": "L",
+        "nominal": 78.551,
+        "diameter": false,
+        "upper_tol": 3.928,
+        "lower_tol": -3.928,
+        "min": 74.624,
+        "max": 82.479,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 19.946 +/- 0.997 mm",
+        "label": "W",
+        "nominal": 19.946,
+        "diameter": false,
+        "upper_tol": 0.997,
+        "lower_tol": -0.997,
+        "min": 18.949,
+        "max": 20.944,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "43.jpg"
+      ],
+      "median_obb_long_px": 1571.024,
+      "median_obb_short_px": 398.928,
+      "sample_count": 1
+    }
+  },
+  "44": {
+    "sku": "44",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "44",
+    "part_no": "44",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 44.781 +/- 2.239 mm",
+        "label": "L",
+        "nominal": 44.781,
+        "diameter": false,
+        "upper_tol": 2.239,
+        "lower_tol": -2.239,
+        "min": 42.542,
+        "max": 47.02,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 27.628 +/- 1.381 mm",
+        "label": "W",
+        "nominal": 27.628,
+        "diameter": false,
+        "upper_tol": 1.381,
+        "lower_tol": -1.381,
+        "min": 26.246,
+        "max": 29.009,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "44.jpg"
+      ],
+      "median_obb_long_px": 895.617,
+      "median_obb_short_px": 552.556,
+      "sample_count": 1
+    }
+  },
+  "45": {
+    "sku": "45",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "45",
+    "part_no": "45",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 19.714 +/- 0.986 mm",
+        "label": "L",
+        "nominal": 19.714,
+        "diameter": false,
+        "upper_tol": 0.986,
+        "lower_tol": -0.986,
+        "min": 18.728,
+        "max": 20.699,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 19.443 +/- 0.972 mm",
+        "label": "W",
+        "nominal": 19.443,
+        "diameter": false,
+        "upper_tol": 0.972,
+        "lower_tol": -0.972,
+        "min": 18.471,
+        "max": 20.415,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "45.jpg"
+      ],
+      "median_obb_long_px": 394.271,
+      "median_obb_short_px": 388.855,
+      "sample_count": 1
+    }
+  },
+  "46": {
+    "sku": "46",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "46",
+    "part_no": "46",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 18.369 +/- 0.918 mm",
+        "label": "L",
+        "nominal": 18.369,
+        "diameter": false,
+        "upper_tol": 0.918,
+        "lower_tol": -0.918,
+        "min": 17.45,
+        "max": 19.287,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 17.816 +/- 0.891 mm",
+        "label": "W",
+        "nominal": 17.816,
+        "diameter": false,
+        "upper_tol": 0.891,
+        "lower_tol": -0.891,
+        "min": 16.926,
+        "max": 18.707,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "46.jpg"
+      ],
+      "median_obb_long_px": 367.371,
+      "median_obb_short_px": 356.329,
+      "sample_count": 1
+    }
+  },
+  "47": {
+    "sku": "47",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "47",
+    "part_no": "47",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 12.933 +/- 0.647 mm",
+        "label": "L",
+        "nominal": 12.933,
+        "diameter": false,
+        "upper_tol": 0.647,
+        "lower_tol": -0.647,
+        "min": 12.287,
+        "max": 13.58,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 9.034 +/- 0.452 mm",
+        "label": "W",
+        "nominal": 9.034,
+        "diameter": false,
+        "upper_tol": 0.452,
+        "lower_tol": -0.452,
+        "min": 8.582,
+        "max": 9.485,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "47.jpg"
+      ],
+      "median_obb_long_px": 258.665,
+      "median_obb_short_px": 180.671,
+      "sample_count": 1
+    }
+  },
+  "48": {
+    "sku": "48",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "48",
+    "part_no": "48",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 21.533 +/- 1.077 mm",
+        "label": "L",
+        "nominal": 21.533,
+        "diameter": false,
+        "upper_tol": 1.077,
+        "lower_tol": -1.077,
+        "min": 20.457,
+        "max": 22.61,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 14.613 +/- 0.731 mm",
+        "label": "W",
+        "nominal": 14.613,
+        "diameter": false,
+        "upper_tol": 0.731,
+        "lower_tol": -0.731,
+        "min": 13.882,
+        "max": 15.343,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "48.jpg"
+      ],
+      "median_obb_long_px": 430.668,
+      "median_obb_short_px": 292.253,
+      "sample_count": 1
+    }
+  },
+  "49": {
+    "sku": "49",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "49",
+    "part_no": "49",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 22.183 +/- 1.109 mm",
+        "label": "L",
+        "nominal": 22.183,
+        "diameter": false,
+        "upper_tol": 1.109,
+        "lower_tol": -1.109,
+        "min": 21.074,
+        "max": 23.292,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 16.203 +/- 0.810 mm",
+        "label": "W",
+        "nominal": 16.203,
+        "diameter": false,
+        "upper_tol": 0.81,
+        "lower_tol": -0.81,
+        "min": 15.393,
+        "max": 17.013,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "49.jpg"
+      ],
+      "median_obb_long_px": 443.658,
+      "median_obb_short_px": 324.056,
+      "sample_count": 1
+    }
+  },
+  "5": {
+    "sku": "5",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "5",
+    "part_no": "5",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 25.200 +/- 1.260 mm",
+        "label": "L",
+        "nominal": 25.2,
+        "diameter": false,
+        "upper_tol": 1.26,
+        "lower_tol": -1.26,
+        "min": 23.94,
+        "max": 26.46,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 14.883 +/- 0.744 mm",
+        "label": "W",
+        "nominal": 14.883,
+        "diameter": false,
+        "upper_tol": 0.744,
+        "lower_tol": -0.744,
+        "min": 14.139,
+        "max": 15.628,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "5.jpg"
+      ],
+      "median_obb_long_px": 503.999,
+      "median_obb_short_px": 297.667,
+      "sample_count": 1
+    }
+  },
+  "6": {
+    "sku": "6",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "6",
+    "part_no": "6",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 21.777 +/- 1.089 mm",
+        "label": "L",
+        "nominal": 21.777,
+        "diameter": false,
+        "upper_tol": 1.089,
+        "lower_tol": -1.089,
+        "min": 20.688,
+        "max": 22.866,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 14.549 +/- 0.727 mm",
+        "label": "W",
+        "nominal": 14.549,
+        "diameter": false,
+        "upper_tol": 0.727,
+        "lower_tol": -0.727,
+        "min": 13.822,
+        "max": 15.276,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "6.jpg"
+      ],
+      "median_obb_long_px": 435.538,
+      "median_obb_short_px": 290.979,
+      "sample_count": 1
+    }
+  },
+  "7": {
+    "sku": "7",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "7",
+    "part_no": "7",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 22.968 +/- 1.148 mm",
+        "label": "L",
+        "nominal": 22.968,
+        "diameter": false,
+        "upper_tol": 1.148,
+        "lower_tol": -1.148,
+        "min": 21.82,
+        "max": 24.116,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 16.058 +/- 0.803 mm",
+        "label": "W",
+        "nominal": 16.058,
+        "diameter": false,
+        "upper_tol": 0.803,
+        "lower_tol": -0.803,
+        "min": 15.255,
+        "max": 16.86,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "7.jpg"
+      ],
+      "median_obb_long_px": 459.36,
+      "median_obb_short_px": 321.15,
+      "sample_count": 1
+    }
+  },
+  "8": {
+    "sku": "8",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "8",
+    "part_no": "8",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 30.114 +/- 1.506 mm",
+        "label": "L",
+        "nominal": 30.114,
+        "diameter": false,
+        "upper_tol": 1.506,
+        "lower_tol": -1.506,
+        "min": 28.608,
+        "max": 31.62,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 10.517 +/- 0.526 mm",
+        "label": "W",
+        "nominal": 10.517,
+        "diameter": false,
+        "upper_tol": 0.526,
+        "lower_tol": -0.526,
+        "min": 9.992,
+        "max": 11.043,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "8.jpg"
+      ],
+      "median_obb_long_px": 602.282,
+      "median_obb_short_px": 210.35,
+      "sample_count": 1
+    }
+  },
+  "9": {
+    "sku": "9",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "9",
+    "part_no": "9",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 29.002 +/- 1.450 mm",
+        "label": "L",
+        "nominal": 29.002,
+        "diameter": false,
+        "upper_tol": 1.45,
+        "lower_tol": -1.45,
+        "min": 27.552,
+        "max": 30.452,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 10.784 +/- 0.539 mm",
+        "label": "W",
+        "nominal": 10.784,
+        "diameter": false,
+        "upper_tol": 0.539,
+        "lower_tol": -0.539,
+        "min": 10.245,
+        "max": 11.323,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "9.jpg"
+      ],
+      "median_obb_long_px": 580.033,
+      "median_obb_short_px": 215.676,
+      "sample_count": 1
+    }
+  },
+  "AH001": {
+    "sku": "AH001",
+    "source_file": "generated_from_reference_silhouette",
+    "item_name": "AH001",
+    "part_no": "AH001",
+    "description": "Provisional rotation-repeatability specification",
+    "material": "unknown",
+    "unit": "mm (provisional)",
+    "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+    "dimensions": [
+      {
+        "raw_spec": "PROVISIONAL L 27.838 +/- 1.392 mm",
+        "label": "L",
+        "nominal": 27.838,
+        "diameter": false,
+        "upper_tol": 1.392,
+        "lower_tol": -1.392,
+        "min": 26.446,
+        "max": 29.23,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      },
+      {
+        "raw_spec": "PROVISIONAL W 7.065 +/- 0.353 mm",
+        "label": "W",
+        "nominal": 7.065,
+        "diameter": false,
+        "upper_tol": 0.353,
+        "lower_tol": -0.353,
+        "min": 6.712,
+        "max": 7.418,
+        "tolerance_type": "provisional_symmetric",
+        "axis": "2D_in_plane"
+      }
+    ],
+    "optical_scale_mm_per_px": 0.05,
+    "golden_sample": {
+      "filenames": [
+        "98661BBS-1_6.png"
+      ],
+      "median_obb_long_px": 556.756,
+      "median_obb_short_px": 141.298,
+      "sample_count": 1
     }
   }
 }

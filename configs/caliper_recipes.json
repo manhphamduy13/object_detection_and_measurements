@@ -1,0 +1,816 @@
+{
+  "98661BBS-1": {
+    "sku": "98661BBS-1",
+    "reference_image": "assets\\references\\98661BBS-1\\images\\98661BBS-1_1.png",
+    "optical_scale_mm_per_px": 0.044255,
+    "wcs": {
+      "center": [
+        290.0,
+        461.0
+      ],
+      "width": 644.0,
+      "height": 248.0,
+      "angle": 90.0,
+      "centroid_offset": [
+        1.4851261191050753,
+        -9.010817223922459
+      ]
+    },
+    "calipers": [
+      {
+        "label": "L",
+        "desc": "Tong chieu dai (Overall length L)",
+        "nominal_mm": 28.5,
+        "axis": "2D_in_plane",
+        "p1_wcs": [
+          -0.5,
+          0.0
+        ],
+        "p2_wcs": [
+          0.5,
+          0.0
+        ],
+        "measure_type": "length",
+        "color": [
+          0,
+          230,
+          255
+        ],
+        "p1_ref": [
+          290.0,
+          139.0
+        ],
+        "p2_ref": [
+          290.0,
+          783.0
+        ]
+      },
+      {
+        "label": "W",
+        "desc": "Chieu rong than (Body width W)",
+        "nominal_mm": 4.3,
+        "axis": "2D_in_plane",
+        "p1_wcs": [
+          0.08,
+          -0.4
+        ],
+        "p2_wcs": [
+          0.08,
+          0.4
+        ],
+        "measure_type": "width",
+        "color": [
+          255,
+          160,
+          0
+        ],
+        "p1_ref": [
+          389.2,
+          512.52
+        ],
+        "p2_ref": [
+          190.8,
+          512.52
+        ]
+      },
+      {
+        "label": "F",
+        "desc": "Chieu rong la tiep diem (Contact blade width F)",
+        "nominal_mm": 4.3,
+        "axis": "2D_in_plane",
+        "p1_wcs": [
+          -0.35,
+          -0.38
+        ],
+        "p2_wcs": [
+          -0.35,
+          0.38
+        ],
+        "measure_type": "width",
+        "color": [
+          0,
+          255,
+          255
+        ],
+        "p1_ref": [
+          384.24,
+          235.60000000000002
+        ],
+        "p2_ref": [
+          195.76,
+          235.60000000000002
+        ]
+      },
+      {
+        "label": "J",
+        "desc": "Chieu dai doan khoa ngam (Locking tab length J)",
+        "nominal_mm": 6.3,
+        "axis": "2D_in_plane",
+        "p1_wcs": [
+          0.28,
+          0.0
+        ],
+        "p2_wcs": [
+          0.5,
+          0.0
+        ],
+        "measure_type": "step_length",
+        "color": [
+          255,
+          0,
+          255
+        ],
+        "p1_ref": [
+          290.0,
+          641.32
+        ],
+        "p2_ref": [
+          290.0,
+          783.0
+        ]
+      },
+      {
+        "label": "K",
+        "desc": "Khoang cach ngam kep (Contact gap K)",
+        "nominal_mm": 3.0,
+        "axis": "2D_in_plane",
+        "p1_wcs": [
+          -0.35,
+          -0.15
+        ],
+        "p2_wcs": [
+          -0.35,
+          0.15
+        ],
+        "measure_type": "gap",
+        "color": [
+          0,
+          200,
+          255
+        ],
+        "p1_ref": [
+          327.2,
+          235.60000000000002
+        ],
+        "p2_ref": [
+          252.79999999999998,
+          235.60000000000002
+        ]
+      },
+      {
+        "label": "d",
+        "desc": "Duong kinh lo tron (Hole diameter d)",
+        "nominal_mm": 3.15,
+        "axis": "2D_in_plane",
+        "p1_wcs": [
+          -0.334,
+          -0.156
+        ],
+        "p2_wcs": [
+          -0.334,
+          0.156
+        ],
+        "measure_type": "hole",
+        "color": [
+          0,
+          255,
+          100
+        ]
+      }
+    ]
+  },
+  "98475": {
+    "sku": "98475",
+    "reference_image": "assets\\references\\98475\\images\\98475_1.png",
+    "optical_scale_mm_per_px": 0.038547,
+    "wcs": {
+      "center": [
+        335.37945556640625,
+        695.035400390625
+      ],
+      "width": 843.1156616210938,
+      "height": 397.0813293457031,
+      "angle": 89.11405181884766,
+      "centroid_offset": [
+        18.869545028205664,
+        85.807561081573
+      ]
+    },
+    "calipers": [
+      {
+        "label": "W",
+        "desc": "Chieu rong than (Body width W 4.9mm)",
+        "nominal_mm": 4.9,
+        "axis": "2D_in_plane",
+        "p1_wcs": [
+          -0.2167,
+          0.0795
+        ],
+        "p2_wcs": [
+          -0.2147,
+          -0.1874
+        ],
+        "p1_ref": [
+          301.0,
+          512.88
+        ],
+        "p2_ref": [
+          407.0,
+          512.88
+        ],
+        "p1_edge": [
+          301.0,
+          512.87939453125
+        ],
+        "p2_edge": [
+          407.0,
+          512.87939453125
+        ],
+        "measured_mm": 4.09,
+        "length_px": 106.0,
+        "measure_type": "taught_caliper",
+        "color": [
+          0,
+          230,
+          255
+        ]
+      },
+      {
+        "label": "L",
+        "desc": "L 32.5±0.25mm",
+        "nominal_mm": 32.5,
+        "axis": "2D_in_plane",
+        "p1_wcs": [
+          0.5004,
+          -0.0579
+        ],
+        "p2_wcs": [
+          -0.4961,
+          -0.0484
+        ],
+        "p1_ref": [
+          364.9,
+          1116.5
+        ],
+        "p2_ref": [
+          348.13,
+          276.5
+        ],
+        "p1_edge": [
+          364.89980959543493,
+          1116.4999004285546
+        ],
+        "p2_edge": [
+          348.13335583850267,
+          276.4995631779288
+        ],
+        "measured_mm": 32.39,
+        "length_px": 840.17,
+        "measure_type": "taught_caliper",
+        "color": [
+          255,
+          160,
+          0
+        ]
+      },
+      {
+        "label": "D",
+        "desc": "D 4.75+0/-0.05mm 測   量",
+        "nominal_mm": 4.75,
+        "axis": "2D_in_plane",
+        "p1_wcs": [
+          0.4407,
+          0.4688
+        ],
+        "p2_wcs": [
+          0.4407,
+          -0.4871
+        ],
+        "p1_ref": [
+          155.0,
+          1069.42
+        ],
+        "p2_ref": [
+          534.5,
+          1063.55
+        ],
+        "p1_edge": [
+          154.99988045506728,
+          1069.4230144936073
+        ],
+        "p2_edge": [
+          534.5005379521972,
+          1063.5544425912676
+        ],
+        "measured_mm": 14.63,
+        "length_px": 379.55,
+        "measure_type": "taught_caliper",
+        "color": [
+          0,
+          255,
+          180
+        ]
+      }
+    ]
+  },
+  "UH-004": {
+    "sku": "UH-004",
+    "reference_image": "assets\\references\\UH-004\\images\\UH-004_1.png",
+    "optical_scale_mm_per_px": 0.04486,
+    "wcs": {
+      "center": [
+        260.3144836425781,
+        250.05502319335938
+      ],
+      "width": 441.3755798339844,
+      "height": 385.55023193359375,
+      "angle": 80.95242309570312,
+      "centroid_offset": [
+        -14.611909238088003,
+        21.40454666376695
+      ]
+    },
+    "calipers": [
+      {
+        "label": "A",
+        "desc": "Tong chieu dai vo ngoai (Overall length A)",
+        "nominal_mm": 19.8,
+        "axis": "2D_in_plane",
+        "p1_wcs": [
+          -0.5,
+          0.0
+        ],
+        "p2_wcs": [
+          0.5,
+          0.0
+        ],
+        "measure_type": "length",
+        "color": [
+          0,
+          230,
+          255
+        ],
+        "p1_ref": [
+          225.61032204074476,
+          32.11300846017326
+        ],
+        "p2_ref": [
+          295.01864524441146,
+          467.9970379265455
+        ]
+      },
+      {
+        "label": "E",
+        "desc": "Chieu dai bac vai (Step shoulder length E)",
+        "nominal_mm": 16.8,
+        "axis": "2D_in_plane",
+        "p1_wcs": [
+          -0.42,
+          0.0
+        ],
+        "p2_wcs": [
+          0.42,
+          0.0
+        ],
+        "measure_type": "length",
+        "color": [
+          0,
+          255,
+          0
+        ],
+        "p1_ref": [
+          231.1629878970381,
+          66.98373081748306
+        ],
+        "p2_ref": [
+          289.46597938811817,
+          433.12631556923566
+        ]
+      },
+      {
+        "label": "B",
+        "desc": "Chieu rong than vo (Body width B)",
+        "nominal_mm": 15.6,
+        "axis": "2D_in_plane",
+        "p1_wcs": [
+          0.0,
+          -0.4
+        ],
+        "p2_wcs": [
+          0.0,
+          0.4
+        ],
+        "measure_type": "width",
+        "color": [
+          255,
+          160,
+          0
+        ],
+        "p1_ref": [
+          412.61578560415944,
+          225.8032101507248
+        ],
+        "p2_ref": [
+          108.01318168099684,
+          274.30683623599396
+        ]
+      },
+      {
+        "label": "D",
+        "desc": "Khau do khoang ben trong (Inner cavity width D)",
+        "nominal_mm": 14.2,
+        "axis": "2D_in_plane",
+        "p1_wcs": [
+          0.15,
+          -0.36
+        ],
+        "p2_wcs": [
+          0.15,
+          0.36
+        ],
+        "measure_type": "gap",
+        "color": [
+          0,
+          255,
+          255
+        ],
+        "p1_ref": [
+          407.79690388855124,
+          293.6109958749441
+        ],
+        "p2_ref": [
+          133.654560357705,
+          337.2642593516863
+        ]
+      }
+    ]
+  },
+  "UH-8715P": {
+    "sku": "UH-8715P",
+    "reference_image": "assets\\references\\UH-8715P\\images\\UH-8715P_1.png",
+    "optical_scale_mm_per_px": 0.046489,
+    "wcs": {
+      "center": [
+        222.79991149902344,
+        290.5088806152344
+      ],
+      "width": 471.08203125,
+      "height": 337.7458190917969,
+      "angle": 90.63659358024597,
+      "centroid_offset": [
+        -0.32544074965014147,
+        1.545309574334965
+      ]
+    },
+    "calipers": [
+      {
+        "label": "A",
+        "desc": "Tong chieu dai than (Overall length A)",
+        "nominal_mm": 21.9,
+        "axis": "2D_in_plane",
+        "p1_wcs": [
+          -0.5,
+          0.0
+        ],
+        "p2_wcs": [
+          0.5,
+          0.0
+        ],
+        "measure_type": "length",
+        "color": [
+          0,
+          230,
+          255
+        ],
+        "p1_ref": [
+          225.4168723766525,
+          54.98240321317783
+        ],
+        "p2_ref": [
+          220.18295062139438,
+          526.035358017291
+        ]
+      },
+      {
+        "label": "B",
+        "desc": "Chieu dai doan chinh (Main section length B)",
+        "nominal_mm": 14.5,
+        "axis": "2D_in_plane",
+        "p1_wcs": [
+          -0.33,
+          0.0
+        ],
+        "p2_wcs": [
+          0.33,
+          0.0
+        ],
+        "measure_type": "length",
+        "color": [
+          0,
+          255,
+          0
+        ],
+        "p1_ref": [
+          224.5271056782586,
+          135.06140552987705
+        ],
+        "p2_ref": [
+          221.07271731978827,
+          445.9563557005917
+        ]
+      },
+      {
+        "label": "C",
+        "desc": "Chieu dai go lap rap (Assembly joint step C)",
+        "nominal_mm": 9.5,
+        "axis": "2D_in_plane",
+        "p1_wcs": [
+          0.28,
+          0.0
+        ],
+        "p2_wcs": [
+          0.5,
+          0.0
+        ],
+        "measure_type": "step_length",
+        "color": [
+          255,
+          160,
+          0
+        ],
+        "p1_ref": [
+          221.33441340755115,
+          422.40370796038604
+        ],
+        "p2_ref": [
+          220.18295062139438,
+          526.035358017291
+        ]
+      },
+      {
+        "label": "E",
+        "desc": "Chieu rong than (Body width E)",
+        "nominal_mm": 16.0,
+        "axis": "2D_in_plane",
+        "p1_wcs": [
+          -0.1,
+          -0.45
+        ],
+        "p2_wcs": [
+          -0.1,
+          0.45
+        ],
+        "measure_type": "width",
+        "color": [
+          0,
+          255,
+          255
+        ],
+        "p1_ref": [
+          375.299541306022,
+          245.0922100087556
+        ],
+        "p2_ref": [
+          71.34706604307652,
+          241.71496026089054
+        ]
+      },
+      {
+        "label": "L",
+        "desc": "Chieu dai mieng khoang (Opening length L)",
+        "nominal_mm": 7.9,
+        "axis": "2D_in_plane",
+        "p1_wcs": [
+          -0.5,
+          0.0
+        ],
+        "p2_wcs": [
+          -0.14,
+          0.0
+        ],
+        "measure_type": "step_length",
+        "color": [
+          255,
+          0,
+          255
+        ],
+        "p1_ref": [
+          225.4168723766525,
+          54.98240321317783
+        ],
+        "p2_ref": [
+          223.53266054475958,
+          224.56146694265854
+        ]
+      },
+      {
+        "label": "K",
+        "desc": "Khau do lo trong (Inner aperture K)",
+        "nominal_mm": 5.8,
+        "axis": "2D_in_plane",
+        "p1_wcs": [
+          -0.3,
+          -0.16
+        ],
+        "p2_wcs": [
+          -0.3,
+          0.16
+        ],
+        "measure_type": "gap",
+        "color": [
+          0,
+          200,
+          255
+        ],
+        "p1_ref": [
+          278.40608362790226,
+          149.79339412917648
+        ],
+        "p2_ref": [
+          170.33409242329947,
+          148.59259421882444
+        ]
+      },
+      {
+        "label": "G",
+        "desc": "Khoang cach khe ranh (Slot gap width G)",
+        "nominal_mm": 4.7,
+        "axis": "2D_in_plane",
+        "p1_wcs": [
+          0.15,
+          -0.13
+        ],
+        "p2_wcs": [
+          0.15,
+          0.13
+        ],
+        "measure_type": "gap",
+        "color": [
+          200,
+          255,
+          0
+        ],
+        "p1_ref": [
+          265.9190696626046,
+          361.6546487994318
+        ],
+        "p2_ref": [
+          178.1105768088648,
+          360.6789988722708
+        ]
+      },
+      {
+        "label": "I",
+        "desc": "Chieu rong ranh ngam (Locking notch width I)",
+        "nominal_mm": 3.05,
+        "axis": "2D_in_plane",
+        "p1_wcs": [
+          0.35,
+          -0.09
+        ],
+        "p2_wcs": [
+          0.35,
+          0.09
+        ],
+        "measure_type": "gap",
+        "color": [
+          255,
+          120,
+          120
+        ],
+        "p1_ref": [
+          251.36328641097765,
+          455.7151397714605
+        ],
+        "p2_ref": [
+          190.57279135838854,
+          455.03968982188746
+        ]
+      },
+      {
+        "label": "J",
+        "desc": "Do day vach ben (Wall thickness J)",
+        "nominal_mm": 1.6,
+        "axis": "2D_in_plane",
+        "p1_wcs": [
+          -0.2,
+          -0.45
+        ],
+        "p2_wcs": [
+          -0.2,
+          -0.38
+        ],
+        "measure_type": "thickness",
+        "color": [
+          120,
+          255,
+          180
+        ],
+        "p1_ref": [
+          375.8229334815478,
+          197.9869145283443
+        ],
+        "p2_ref": [
+          352.18218540554096,
+          197.72423954795477
+        ]
+      }
+    ]
+  },
+  "98003P": {
+    "sku": "98003P",
+    "reference_image": "assets\\references\\98003P\\images\\98003P_1.png",
+    "optical_scale_mm_per_px": 0.047553,
+    "wcs": {
+      "center": [
+        558.6024169921875,
+        543.9518432617188
+      ],
+      "width": 672.9365844726562,
+      "height": 558.6494140625,
+      "angle": 88.27851867675781,
+      "centroid_offset": [
+        1.309635902463583,
+        54.27263631286519
+      ]
+    },
+    "calipers": [
+      {
+        "label": "W",
+        "desc": "W 26.0±0.30mm 測  量",
+        "nominal_mm": 26.0,
+        "axis": "2D_in_plane",
+        "p1_wcs": [
+          0.2318,
+          0.4948
+        ],
+        "p2_wcs": [
+          0.2285,
+          -0.4935
+        ],
+        "p1_ref": [
+          287.0,
+          708.15
+        ],
+        "p2_ref": [
+          838.77,
+          689.36
+        ],
+        "p1_edge": [
+          286.9994206648678,
+          708.1500477156967
+        ],
+        "p2_edge": [
+          838.7762286112679,
+          689.3598050271646
+        ],
+        "measured_mm": 26.25,
+        "length_px": 552.09,
+        "measure_type": "taught_caliper",
+        "color": [
+          0,
+          230,
+          255
+        ]
+      },
+      {
+        "label": "L",
+        "desc": "32.0+0.0/-1.10mm",
+        "nominal_mm": 32.0,
+        "axis": "2D_in_plane",
+        "p1_wcs": [
+          -0.5,
+          0.0
+        ],
+        "p2_wcs": [
+          0.5,
+          0.0
+        ],
+        "p1_ref": [
+          548.49,
+          207.64
+        ],
+        "p2_ref": [
+          568.71,
+          880.26
+        ],
+        "p1_edge": [
+          548.49,
+          207.64
+        ],
+        "p2_edge": [
+          568.71,
+          880.26
+        ],
+        "measured_mm": 32.0,
+        "length_px": 672.94,
+        "measure_type": "length",
+        "color": [
+          255,
+          160,
+          0
+        ]
+      }
+    ]
+  }
+}

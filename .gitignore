@@ -62,6 +62,8 @@ outputs/steps/
 
 # Individual JSON files per sample
 outputs/predictions/
+outputs/scanline_diagrams/
+outputs/predictions.json
 
 # High-resolution caliper measurement details & quick previews
 outputs/visualizations/*_measured.png
@@ -69,5 +71,4 @@ outputs/prediction_measured.png
 # ==============================================================================
 # Datasets, Reference Images & CAD Drawings
 # ==============================================================================
-assets/
-items/
+*.RAF

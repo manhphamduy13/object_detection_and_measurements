@@ -1,0 +1,117 @@
+{
+  "sku": "98661BBS-1",
+  "source_file": "items/98661BBS-1.pdf",
+  "item_name": "98661BBS-1",
+  "part_no": "98661BBS-1",
+  "description": "Equipment",
+  "material": "Brass / Copper",
+  "unit": "mm",
+  "drawing": "drawing.png",
+  "review_status": "dynamically_extracted_from_pdf",
+  "dimensions": [
+    {
+      "raw_spec": "L 28.5±0.30mm",
+      "label": "L",
+      "nominal": 28.5,
+      "diameter": false,
+      "upper_tol": 0.3,
+      "lower_tol": -0.3,
+      "min": 28.2,
+      "max": 28.8,
+      "tolerance_type": "symmetric",
+      "axis": "2D_in_plane"
+    },
+    {
+      "raw_spec": "W 4.3±0.30mm 測  量",
+      "label": "W",
+      "nominal": 4.3,
+      "diameter": false,
+      "upper_tol": 0.3,
+      "lower_tol": -0.3,
+      "min": 4.0,
+      "max": 4.6,
+      "tolerance_type": "symmetric",
+      "axis": "2D_in_plane"
+    },
+    {
+      "raw_spec": "J 6.3±0.07mm",
+      "label": "J",
+      "nominal": 6.3,
+      "diameter": false,
+      "upper_tol": 0.07,
+      "lower_tol": -0.07,
+      "min": 6.23,
+      "max": 6.37,
+      "tolerance_type": "symmetric",
+      "axis": "2D_in_plane"
+    },
+    {
+      "raw_spec": "F 4.3±0.30mm",
+      "label": "F",
+      "nominal": 4.3,
+      "diameter": false,
+      "upper_tol": 0.3,
+      "lower_tol": -0.3,
+      "min": 4.0,
+      "max": 4.6,
+      "tolerance_type": "symmetric",
+      "axis": "2D_in_plane"
+    },
+    {
+      "raw_spec": "3.15±0.07mm",
+      "label": "d",
+      "nominal": 3.15,
+      "diameter": false,
+      "upper_tol": 0.07,
+      "lower_tol": -0.07,
+      "min": 3.08,
+      "max": 3.22,
+      "tolerance_type": "symmetric",
+      "axis": "2D_in_plane"
+    },
+    {
+      "raw_spec": "3.0±0.20mm",
+      "label": "K",
+      "nominal": 3.0,
+      "diameter": false,
+      "upper_tol": 0.2,
+      "lower_tol": -0.2,
+      "min": 2.8,
+      "max": 3.2,
+      "tolerance_type": "symmetric",
+      "axis": "2D_in_plane"
+    },
+    {
+      "raw_spec": "1.5+0/-0.04mm",
+      "label": "T",
+      "nominal": 1.5,
+      "diameter": false,
+      "upper_tol": 0.0,
+      "lower_tol": -0.04,
+      "min": 1.46,
+      "max": 1.5,
+      "tolerance_type": "asymmetric",
+      "axis": "2D_in_plane"
+    },
+    {
+      "raw_spec": "H 4.2±0.30mm 測  量",
+      "label": "H",
+      "nominal": 4.2,
+      "diameter": false,
+      "upper_tol": 0.3,
+      "lower_tol": -0.3,
+      "min": 3.9,
+      "max": 4.5,
+      "tolerance_type": "symmetric",
+      "axis": "Z_height_side_view"
+    }
+  ],
+  "optical_scale_mm_per_px": 0.048142,
+  "golden_sample": {
+    "filename": "98661BBS-1_2.png",
+    "obb_long_px": 592.0,
+    "obb_short_px": 227.0,
+    "angle_deg": 0.0,
+    "optical_scale_um_per_px": 48.14
+  }
+}

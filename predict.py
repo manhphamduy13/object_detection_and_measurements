@@ -41,18 +41,25 @@ import numpy as np
 import config
 import classifier as clf
 import measurer
+from src.template_matcher import TemplateMatcher, public_result as public_template_result
 
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Classify one photo and print its metrology report.')
-    parser.add_argument('image', help='Path to the part photo to inspect')
+    parser.add_argument('image', nargs='?', default=None, help='Path to the part photo to inspect')
+    parser.add_argument('--image', dest='image_opt', default=None, help='Optional explicit image flag')
     parser.add_argument('--reference-dir', default=str(config.REFERENCE_DIR),
                         help='Class database folder (default: assets/references)')
     parser.add_argument('--output-dir', default=str(config.OUTPUT_DIR),
                         help='Base output folder (default: outputs)')
     parser.add_argument('--true-class', default=None,
                         help='Optional ground truth label for validation')
-    return parser.parse_args()
+    args = parser.parse_args()
+    if args.image_opt:
+        args.image = args.image_opt
+    if not args.image:
+        parser.error("Vui lòng cung cấp đường dẫn ảnh (ví dụ: python predict.py <đường_dẫn_ảnh> hoặc python predict.py --image <đường_dẫn_ảnh>)")
+    return args
 
 
 def to_python(obj):
@@ -77,9 +84,9 @@ def save_visualization_panel(img, described, result, meas, stem, output_png_path
     Generates and saves the full 6-panel inspection summary figure:
     1. Original photo
     2. Grayscale + Edge Gradient / Otsu
-    3. Binary workpiece mask
-    4. Caliper Metrology Overlay (L, W lines and oriented box)
-    5. Geometric fingerprint (area, perimeter, Hu moments)
+    3. Classification and template/shape matching on the source image
+    4. PDF specification with nominal values and tolerance ranges
+    5. Edge measurement overlay and tolerance HUD
     6. Step-by-step QC Pipeline & Tolerance Verdict
     """
     features = described['features']
@@ -100,47 +107,95 @@ def save_visualization_panel(img, described, result, meas, stem, output_png_path
         axes[0][1].imshow(described['gray'], cmap='gray')
         axes[0][1].set_title(f'2. Grayscale (Otsu = {described["otsu"]:.0f})', fontsize=10, fontweight='bold')
 
-    # 3. Binary mask
-    axes[0][2].imshow(described['mask'], cmap='gray')
-    axes[0][2].set_title('3. Binary Workpiece Mask (Zero-Bleed)', fontsize=10, fontweight='bold')
-
-    # 4. Caliper Metrology Overlay
-    overlay = measurer.annotate_measurements(img, contour, meas, result['class'])
-    axes[1][0].imshow(cv2.cvtColor(overlay, cv2.COLOR_BGR2RGB))
-    axes[1][0].set_title(f'4. Caliper Metrology\nL: {meas.get("Length_L_px", 0):.1f}px | W: {meas.get("Width_W_px", 0):.1f}px',
-                         fontsize=10, fontweight='bold')
-
-    # 5. Fingerprint numbers
-    hu_text = '\n'.join(f'    Hu{i + 1} = {v:+.3f}' for i, v in enumerate(features['hu']))
-    fingerprint_text = (
-        '5. Geometric Fingerprint\n\n'
-        f'area          = {features["area"]:.0f} px\n'
-        f'perimeter     = {features["perimeter"]:.1f} px\n'
-        f'rect aspect   = {features["rect_aspect"]:.3f}   (rotation invariant)\n'
-        f'solidity      = {features["solidity"]:.3f}\n'
-        f'circularity   = {features["circularity"]:.3f}\n'
-        f'hole_count    = {features["hole_count"]}\n\n'
-        f'Hu moments (signed log):\n{hu_text}'
+    # 3. Classification / template-shape matching on the same source image.
+    matching_vis = img.copy()
+    cv2.drawContours(matching_vis, [contour], -1, (0, 255, 0), 2, cv2.LINE_AA)
+    tm = result.get('template_matching', {})
+    shortlist = result.get('shortlist', [])[:3]
+    match_lines = [f"MATCH: {result.get('class', 'UNKNOWN')}"]
+    match_lines.extend(
+        f"{i}. {cand['label']}  score={cand['shape_score']:.4f}"
+        for i, cand in enumerate(shortlist, start=1)
     )
-    axes[1][1].text(0.02, 0.98, fingerprint_text, va='top', ha='left',
-                    family='monospace', fontsize=8.5)
-    axes[1][1].axis('off')
+    match_lines.extend([
+        f"TM: {tm.get('predicted_class', 'UNKNOWN')} sim={tm.get('similarity', 0.0):.3f}",
+        f"TM margin={tm.get('margin', 0.0):.3f} pass={tm.get('accepted', False)}",
+    ])
+    for line_no, line in enumerate(match_lines):
+        y = 28 + line_no * 22
+        cv2.putText(matching_vis, line, (12, y), cv2.FONT_HERSHEY_SIMPLEX,
+                    0.55, (0, 0, 0), 3, cv2.LINE_AA)
+        cv2.putText(matching_vis, line, (12, y), cv2.FONT_HERSHEY_SIMPLEX,
+                    0.55, (0, 255, 255), 1, cv2.LINE_AA)
+    defect_map = tm.get('_defect_overlay_rgb')
+    if defect_map is not None:
+        axes[0][2].imshow(defect_map)
+    else:
+        axes[0][2].imshow(cv2.cvtColor(matching_vis, cv2.COLOR_BGR2RGB))
+    axes[0][2].set_title(
+        '3. Template Similarity / Defect Map\n'
+        f"sim={tm.get('similarity', 0.0):.3f} | defect={tm.get('defect_ratio', 0.0)*100:.1f}% "
+        f"(max {tm.get('max_defect_ratio', 0.0)*100:.0f}%) | "
+        f"missing={tm.get('missing_ratio', 0.0)*100:.1f}% | extra={tm.get('extra_ratio', 0.0)*100:.1f}%\n"
+        'green=match, red=missing, blue=extra', fontsize=8.5, fontweight='bold'
+    )
+
+    # 4. Specification loaded from PDF, including all nominal/tolerance values.
+    spec = result.get('spec') or {}
+    spec_lines = [
+        '4. PDF Specification', '',
+        f"SKU   : {spec.get('sku', 'N/A')}",
+        f"Unit  : {spec.get('unit', 'mm')}",
+        f"Scale : {float(spec.get('optical_scale_mm_per_px', 0.0) or 0.0) * 1000:.2f} um/px",
+        '', 'Dimensions:'
+    ]
+    for dim in spec.get('dimensions', []):
+        if dim.get('axis') == 'Z_height_side_view':
+            suffix = ' [Z/not measured]'
+        else:
+            suffix = ''
+        spec_lines.append(
+            f" {dim.get('label', 'DIM'):<4} {float(dim.get('nominal', 0.0)):6.2f} mm  "
+            f"[{float(dim.get('min', 0.0)):6.2f}..{float(dim.get('max', 0.0)):6.2f}]{suffix}"
+        )
+    axes[1][0].text(0.02, 0.98, '\n'.join(spec_lines), va='top', ha='left',
+                    family='monospace', fontsize=7.7)
+    axes[1][0].axis('off')
+
+    # 5. Caliper overlay and detailed tolerance table share one image.
+    overlay = measurer.annotate_measurements(
+        img, contour, meas, result['class'], template_matching=tm
+    )
+    axes[1][1].imshow(cv2.cvtColor(overlay, cv2.COLOR_BGR2RGB))
+    axes[1][1].set_title('5. Edge Measurement + Dual QC Verdict', fontsize=10, fontweight='bold')
 
     # 6. Step-by-Step Inspection Pipeline
+    caliper_ok = meas.get('caliper_pass', meas.get('overall_pass', True))
+    template_ok = tm.get('template_quality_pass', tm.get('accepted', True)) if tm else True
+
     lines = [
         '6. QC Inspection Metrology Summary\n',
-        '[STEP 1: EDGE & CONTOUR SEGMENTATION]',
+        '[STEP 1: EDGE & MORPHOLOGY]',
         f'  Contour Points: {len(contour)}',
-        f'  Centroid: ({features["centroid"][0]:.1f}, {features["centroid"][1]:.1f})',
+        f'  Area          : {features.get("area", 0.0):.0f} px',
+        f'  Perimeter     : {features.get("perimeter", 0.0):.1f} px',
+        f'  Extent        : {features.get("extent", 0.0):.3f}',
+        f'  Solidity      : {features.get("solidity", 0.0):.3f}',
+        f'  Centroid      : ({features["centroid"][0]:.1f}, {features["centroid"][1]:.1f})',
         '',
-        '[STEP 2: CLASSIFICATION MATCHING]',
+        '[STEP 2: MULTI-CUE CLASSIFICATION]',
         '  Top Candidates (matchShapes + Hu):'
     ]
     for i, cand in enumerate(result.get('shortlist', [])[:3], start=1):
         lines.append(f'   {i}. {cand["label"]} score={cand["shape_score"]:.4f}')
 
-    lines.append(f'  Best score  : {result.get("best_score", 0.0):.4f}')
+    lines.append(f'  Shape score : {result.get("best_score", 0.0):.4f}')
     lines.append(f'  Margin      : {result.get("margin", 0.0):.4f}')
+    lines.append(f'  TM Matched  : {tm.get("predicted_class", "UNKNOWN")}')
+    lines.append(f'  Similarity  : {tm.get("similarity", 0.0):.4f} (min {tm.get("min_similarity", 0.60):.2f})')
+    lines.append(f'  Defect area : {tm.get("defect_ratio", 0.0)*100:.2f}% (max {tm.get("max_defect_ratio", 0.45)*100:.0f}%)')
+    lines.append(f'  Missing     : {tm.get("missing_ratio", 0.0)*100:.2f}%')
+    lines.append(f'  Extra/Burr  : {tm.get("extra_ratio", 0.0)*100:.2f}%')
     lines.append('')
     lines.append('[STEP 3: SPECIFICATION & TOLERANCES]')
     spec = result.get('spec')
@@ -153,24 +208,37 @@ def save_visualization_panel(img, described, result, meas, stem, output_png_path
         lines.append('  Spec        : No spec.json loaded (UNKNOWN)')
 
     lines.append('')
-    lines.append('[STEP 4: CALIPER MEASUREMENT]')
+    lines.append('[STEP 4: CALIPER METROLOGY GATE]')
     lines.append(f'  Length (L)  : {meas.get("Length_L_px", 0.0):.2f} px ({meas.get("Length_L_mm", 0.0):.2f} mm)')
     lines.append(f'  Width (W)   : {meas.get("Width_W_px", 0.0):.2f} px ({meas.get("Width_W_mm", 0.0):.2f} mm)')
+    lines.append(f'  Caliper Gate: {"PASS" if caliper_ok else "FAIL"}')
+
+    lines.append('')
+    lines.append('[STEP 5: TEMPLATE DEFECT GATE]')
+    lines.append(f'  Template QC : {"PASS" if template_ok else "FAIL"}')
 
     lines.append('')
     verdict = result['class']
-    if verdict == 'UNKNOWN':
-        headline = 'VERDICT: UNKNOWN (REJECTED)'
-    elif true_class and verdict != true_class:
-        headline = f'VERDICT: {verdict} (MISMATCH)'
+    overall_pass = bool(result.get('final_pass', caliper_ok and template_ok and result.get('accepted', False)))
+    if overall_pass and (not true_class or verdict == true_class):
+        headline = f'VERDICT: {verdict} (DUAL PASS - OK)'
+    elif not result.get('shape_accepted', False):
+        headline = 'VERDICT: SHAPE REJECTED (UNKNOWN)'
+    elif not caliper_ok and not template_ok:
+        headline = 'VERDICT: REJECTED (CALIPER + DEFECT FAIL)'
+    elif not caliper_ok:
+        headline = 'VERDICT: REJECTED (CALIPER TOLERANCE FAIL)'
+    elif not template_ok:
+        headline = 'VERDICT: REJECTED (TEMPLATE DEFECT EXCEEDED)'
     else:
-        headline = f'VERDICT: {verdict} (PASS)'
+        headline = f'VERDICT: {verdict} (MISMATCH)'
 
     axes[1][2].text(0.02, 0.98, '\n'.join(lines), va='top', ha='left',
                     family='monospace', fontsize=8.2)
-    axes[1][2].text(0.02, 0.04, headline, va='top', ha='left',
-                    family='monospace', fontsize=11.0, fontweight='bold',
-                    color='green' if 'PASS' in headline else 'red')
+    axes[1][2].set_title(
+        headline, color='green' if 'FINAL PASS' in headline else 'red',
+        fontsize=10.5, fontweight='bold', pad=8
+    )
     axes[1][2].axis('off')
 
     plt.tight_layout()
@@ -226,7 +294,10 @@ def update_evaluation_csv(csv_path: Path, row_data: dict, stem: str) -> bool:
     """
     rows = []
     fieldnames = ['filename', 'true_class', 'predicted_class', 'accepted',
-                  'best_score', 'second_score', 'margin', 'latency_ms',
+                  'best_score', 'second_score', 'margin',
+                  'template_class', 'template_similarity', 'template_margin',
+                  'template_defect_ratio', 'template_missing_ratio', 'template_extra_ratio', 'template_pass',
+                  'measurement_pass', 'final_pass', 'latency_ms',
                   'length_px', 'width_px']
 
     if csv_path.exists():
@@ -253,12 +324,15 @@ def update_evaluation_csv(csv_path: Path, row_data: dict, stem: str) -> bool:
         rows.append(row_data)
 
     csv_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(csv_path, 'w', encoding='utf-8', newline='') as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
-        writer.writeheader()
-        for r in rows:
-            clean_row = {k: r.get(k, '') for k in fieldnames}
-            writer.writerow(clean_row)
+    try:
+        with open(csv_path, 'w', encoding='utf-8', newline='') as f:
+            writer = csv.DictWriter(f, fieldnames=fieldnames)
+            writer.writeheader()
+            for r in rows:
+                clean_row = {k: r.get(k, '') for k in fieldnames}
+                writer.writerow(clean_row)
+    except PermissionError:
+        print(f"  [CẢNH BÁO] Không thể ghi đè file {csv_path.name} do đang được mở bởi ứng dụng khác (Excel).")
 
     return is_overwritten
 
@@ -295,6 +369,12 @@ def main():
 
     reference_items = clf.load_dataset(reference_dir)
     thresholds, _info = clf.calibrate_thresholds(reference_items, library, contours)
+    template_matcher = TemplateMatcher(
+        reference_dir,
+        min_similarity=config.TEMPLATE_MIN_SIMILARITY,
+        min_margin=config.TEMPLATE_MIN_MARGIN,
+        max_defect_ratio=config.TEMPLATE_MAX_DEFECT_RATIO,
+    )
 
     # Step 1: Preprocessing & segmentation
     described = clf.describe_image(img)
@@ -320,12 +400,28 @@ def main():
 
     # Step 2: Classification
     result = clf.predict(img, library, contours, thresholds)
+    shape_accepted = bool(result.get('accepted'))
+    expected_label = result.get('best_label')
+    template_result = template_matcher.match(img, described['object_mask'], expected_label)
+    result['shape_accepted'] = shape_accepted
+    result['template_matching'] = template_result
+    result['accepted'] = bool(shape_accepted and template_result['accepted'])
+    result['class'] = expected_label if result['accepted'] else 'UNKNOWN'
+    # Keep the best candidate's spec available for the measurement gate.
+    entry = library.get(expected_label, {})
+    result['spec'] = entry.get('spec')
+    result['drawing'] = entry.get('drawing')
     print('\n[BƯỚC 2: PHÂN LOẠI LINH KIỆN & SO KHỚP MẪU CHUẨN]')
     print(f'  Kết quả nhận diện : {result["class"]}')
     print(f'  Trạng thái        : {"CHẤP NHẬN (PASS)" if result["accepted"] else "KHÔNG XÁC ĐỊNH (UNKNOWN)"}')
     if result.get('shortlist'):
         print(f'  Điểm khớp (Hu)    : {result["best_score"]:.4f} (ngưỡng chấp nhận < {thresholds["match_threshold"]:.2f})')
         print(f'  Biên độ an toàn   : {result["margin"]:.4f} (khoảng cách so với ứng viên thứ 2)')
+
+    print(f'  Template matching : {template_result["predicted_class"]}')
+    print(f'  Similarity        : {template_result["similarity"]:.4f} (min {template_result["min_similarity"]:.2f})')
+    print(f'  Template margin   : {template_result["margin"]:.4f} (min {template_result["min_margin"]:.2f})')
+    print(f'  Template gate     : {"PASS" if template_result["accepted"] else "FAIL"}')
 
     # Step 3: Spec Loading
     print('\n[BƯỚC 3: TẢI ĐẶC TẢ KỸ THUẬT TIÊU CHUẨN (spec.json)]')
@@ -338,19 +434,33 @@ def main():
     else:
         print('  Không có file spec.json tương ứng hoặc kết quả là UNKNOWN')
 
-    # Step 4: Subpixel Caliper Metrology
-    meas = measurer.WorkpieceMeasurer().measure(img, described['contour'], spec)
-    print('\n[BƯỚC 4: ĐO ĐẠC KÍCH THƯỚC QUANG HỌC CALIPER (SUBPIXEL RA PIXEL)]')
-    print('  ' + '-' * 56)
-    print(f'  {"TÊN KÍCH THƯỚC / CẠNH ĐO":<30} | {"KÍCH THƯỚC (PIXEL)":<20}')
-    print('  ' + '-' * 56)
-    print(f'  {"Length (L) - Chiều dài tổng":<30} | {meas["Length_L_px"]:>12.2f} px')
-    print(f'  {"Width (W) - Chiều rộng tổng":<30} | {meas["Width_W_px"]:>12.2f} px')
-    print(f'  {"Top Edge - Cạnh trên":<30} | {meas["Top_Edge_px"]:>12.2f} px')
-    print(f'  {"Bottom Edge - Cạnh dưới":<30} | {meas["Bottom_Edge_px"]:>12.2f} px')
-    print(f'  {"Left Edge - Cạnh trái":<30} | {meas["Left_Edge_px"]:>12.2f} px')
-    print(f'  {"Right Edge - Cạnh phải":<30} | {meas["Right_Edge_px"]:>12.2f} px')
-    print('  ' + '-' * 56)
+    # Step 4: Subpixel Caliper Metrology & Quality Evaluation
+    meas = measurer.WorkpieceMeasurer().measure(
+        img, described['contour'], spec, template_matching=template_result
+    )
+    caliper_pass = bool(meas.get('caliper_pass', meas.get('overall_pass', False)))
+    template_pass = bool(template_result.get('template_quality_pass', template_result.get('accepted', True)))
+    final_pass = bool(result['accepted'] and caliper_pass and template_pass)
+    result['caliper_pass'] = caliper_pass
+    result['template_pass'] = template_pass
+    result['measurement_pass'] = caliper_pass
+    result['final_pass'] = final_pass
+    active_cals = meas.get('active_draw_calipers', [])
+    print('\n[BƯỚC 4: ĐO ĐẠC KÍCH THƯỚC QUANG HỌC CALIPER (THEO CẤU HÌNH NGƯỜI DÙNG)]')
+    print('  ' + '-' * 65)
+    print(f'  {"TÊN KÍCH THƯỚC / TIA ĐO":<32} | {"KÍCH THƯỚC ĐO ĐƯỢC":<28}')
+    print('  ' + '-' * 65)
+    if active_cals:
+        for c in active_cals:
+            lbl = c['label']
+            v_mm = c.get('val_mm', 0.0)
+            p1, p2 = c['p1'], c['p2']
+            px_len = float(np.hypot(p2[0] - p1[0], p2[1] - p1[1]))
+            print(f'  Kích thước [{lbl}]: {lbl:<18} | {px_len:8.2f} px ({v_mm:6.2f} mm)')
+    else:
+        print(f'  {"Length (L) - Chiều dài tổng":<32} | {meas["Length_L_px"]:>8.2f} px')
+        print(f'  {"Width (W) - Chiều rộng tổng":<32} | {meas["Width_W_px"]:>8.2f} px')
+    print('  ' + '-' * 65)
 
     scale = spec.get('optical_scale_mm_per_px') if spec else None
     if scale:
@@ -375,11 +485,43 @@ def main():
                 range_str = f'{nom:>5.2f} [{mi:.2f}, {ma:.2f}] mm' if (mi is not None and ma is not None) else f'{nom:>5.2f} MAX mm'
                 print(f'  {lbl:<10} | {val_str} | {range_str:<24} | {status:<12} | {note}')
         else:
-            l_mm = round(meas['Length_L_px'] * scale, 2)
-            w_mm = round(meas['Width_W_px'] * scale, 2)
-            print(f'  {"Length (L)":<10} | {l_mm:>7.2f} mm | Spec: L                  | PASS (OK)    | Truc doc')
-            print(f'  {"Width (W)":<10} | {w_mm:>7.2f} mm | Spec: W                  | PASS (OK)    | Truc ngang')
+            print('  (Không có kích thước nào được cấu hình để kiểm tra dung sai)')
         print('  ' + '-' * 85)
+
+        unmeas = meas.get('unmeasured_dimensions', [])
+        if unmeas:
+            unmeas_labels = [f"{u['label']} ({u['reason']})" for u in unmeas]
+            print(f'  [THÔNG SỐ BỎ QUA SO SÁNH DO NGƯỜI DÙNG ĐÃ XÓA/KHÔNG CHỌN]: {", ".join(unmeas_labels)}')
+            print('  ' + '-' * 85)
+
+    # Step 4C: Template Matching Quality Inspection (Defect analysis)
+    print('\n[BƯỚC 4C: ĐÁNH GIÁ CHẤT LƯỢNG BỀ MẶT & BIÊN DẠNG (TEMPLATE MATCHING QC)]')
+    print('  ' + '-' * 85)
+    sim_val = template_result.get('similarity', 0.0)
+    min_sim_val = template_result.get('min_similarity', 0.60)
+    def_val = template_result.get('defect_ratio', 0.0) * 100.0
+    max_def_val = template_result.get('max_defect_ratio', 0.45) * 100.0
+    mis_val = template_result.get('missing_ratio', 0.0) * 100.0
+    max_mis_val = template_result.get('max_missing_ratio', 0.35) * 100.0
+    ext_val = template_result.get('extra_ratio', 0.0) * 100.0
+    max_ext_val = template_result.get('max_extra_ratio', 0.35) * 100.0
+
+    print(f'  Độ tương đồng biên dạng (Similarity) : {sim_val:.4f} (Tiêu chuẩn >= {min_sim_val:.2f}) -> {"PASS" if sim_val >= min_sim_val else "FAIL"}')
+    print(f'  Tỷ lệ khuyết tật tổng (Defect Ratio) : {def_val:.2f}% (Tối đa <= {max_def_val:.1f}%) -> {"PASS" if def_val <= max_def_val else "FAIL"}')
+    print(f'  Vật liệu bị khuyết/mẻ (Missing)      : {mis_val:.2f}% (Tối đa <= {max_mis_val:.1f}%) -> {"PASS" if mis_val <= max_mis_val else "FAIL"}')
+    print(f'  Bavia/vật liệu thừa (Extra/Burr)     : {ext_val:.2f}% (Tối đa <= {max_ext_val:.1f}%) -> {"PASS" if ext_val <= max_ext_val else "FAIL"}')
+    print(f'  Cổng đánh giá Template QC Gate       : {"PASS (ĐẠT CHUẨN)" if template_pass else "FAIL (KHÔNG ĐẠT)"}')
+    print('  ' + '-' * 85)
+
+    print('\n[KẾT LUẬN KIỂM SOÁT CHẤT LƯỢNG TOÀN DIỆN (DUAL QC VERDICT)]')
+    if final_pass:
+        print('  >>> KẾT QUẢ: CHẤP NHẬN (PASS - CALIPER METROLOGY OK + TEMPLATE QC OK) <<<')
+    elif not caliper_pass and not template_pass:
+        print('  >>> KẾT QUẢ: TỪ CHỐI (FAIL - CẢ DUNG SAI KÍCH THƯỚC VÀ KHUYẾT TẬT BỀ MẶT ĐỀU LỖI) <<<')
+    elif not caliper_pass:
+        print('  >>> KẾT QUẢ: TỪ CHỐI (FAIL - KÍCH THƯỚC CALIPER VƯỢT DUNG SAI CAD CHO PHÉP) <<<')
+    else:
+        print('  >>> KẾT QUẢ: TỪ CHỐI (FAIL - BIÊN DẠNG KHUYẾT TẬT VƯỢT TIÊU CHUẨN TEMPLATE) <<<')
 
     latency_ms = (time.perf_counter() - t0) * 1000.0
 
@@ -417,8 +559,11 @@ def main():
         cv2.drawContours(vis_cnt, [described['contour']], -1, (0, 255, 0), 2)
         cv2.imwrite(str(step_dir / 'step3_contours_extracted.png'), vis_cnt)
 
-    # High-resolution annotated measurement overlay
-    annotated = measurer.annotate_measurements(img, described['contour'], meas, result['class'])
+    # High-resolution annotated measurement overlay (Caliper Metrology + Template Defect HUD)
+    annotated = measurer.annotate_measurements(
+        img, described['contour'], meas, result['class'],
+        template_matching=template_result
+    )
     cv2.imwrite(str(step_dir / 'step4_caliper_scanlines.png'), annotated)
     cv2.imwrite(str(step_dir / 'step5_final_inspection.png'), annotated)
 
@@ -443,6 +588,11 @@ def main():
         'accepted': result['accepted'],
         'best_score': result['best_score'],
         'margin': result['margin'],
+        'template_matching': public_template_result(template_result),
+        'caliper_pass': caliper_pass,
+        'template_pass': template_pass,
+        'measurement_pass': caliper_pass,
+        'final_pass': final_pass,
         'latency_ms': round(latency_ms, 2),
         'features': feat,
         'measurements_px': meas,
@@ -470,6 +620,15 @@ def main():
         'best_score': f"{result['best_score']:.6f}",
         'second_score': f"{second_s:.6f}" if second_s is not None else '',
         'margin': f"{result['margin']:.6f}",
+        'template_class': template_result['predicted_class'],
+        'template_similarity': f"{template_result['similarity']:.6f}",
+        'template_margin': f"{template_result['margin']:.6f}",
+        'template_defect_ratio': f"{template_result['defect_ratio']:.6f}",
+        'template_missing_ratio': f"{template_result['missing_ratio']:.6f}",
+        'template_pass': template_pass,
+        'caliper_pass': caliper_pass,
+        'measurement_pass': caliper_pass,
+        'final_pass': final_pass,
         'latency_ms': f"{latency_ms:.2f}",
         'length_px': f"{meas['Length_L_px']:.2f}",
         'width_px': f"{meas['Width_W_px']:.2f}"

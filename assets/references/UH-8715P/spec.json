@@ -1,0 +1,141 @@
+{
+  "sku": "UH-8715P",
+  "source_file": "items/UH-8715P.pdf",
+  "item_name": "UH-8715P",
+  "part_no": "UH-8715P",
+  "description": "Equipment",
+  "material": "Engineering Plastic",
+  "unit": "mm",
+  "drawing": null,
+  "review_status": "dynamically_extracted_from_pdf",
+  "dimensions": [
+    {
+      "raw_spec": "21.90±0.15mm",
+      "label": "A",
+      "nominal": 21.9,
+      "diameter": false,
+      "upper_tol": 0.15,
+      "lower_tol": -0.15,
+      "min": 21.75,
+      "max": 22.05,
+      "tolerance_type": "symmetric",
+      "axis": "2D_in_plane"
+    },
+    {
+      "raw_spec": "L 7.9±0.2mm 測  量",
+      "label": "L",
+      "nominal": 7.9,
+      "diameter": false,
+      "upper_tol": 0.2,
+      "lower_tol": -0.2,
+      "min": 7.7,
+      "max": 8.1,
+      "tolerance_type": "symmetric",
+      "axis": "2D_in_plane"
+    },
+    {
+      "raw_spec": "14.5 ± 0.2mm",
+      "label": "B",
+      "nominal": 14.5,
+      "diameter": false,
+      "upper_tol": 0.2,
+      "lower_tol": -0.2,
+      "min": 14.3,
+      "max": 14.7,
+      "tolerance_type": "symmetric",
+      "axis": "2D_in_plane"
+    },
+    {
+      "raw_spec": "16±0.2mm",
+      "label": "G",
+      "nominal": 16.0,
+      "diameter": false,
+      "upper_tol": 0.2,
+      "lower_tol": -0.2,
+      "min": 15.8,
+      "max": 16.2,
+      "tolerance_type": "symmetric",
+      "axis": "2D_in_plane"
+    },
+    {
+      "raw_spec": "9.5±0.2mm",
+      "label": "C",
+      "nominal": 9.5,
+      "diameter": false,
+      "upper_tol": 0.2,
+      "lower_tol": -0.2,
+      "min": 9.3,
+      "max": 9.7,
+      "tolerance_type": "symmetric",
+      "axis": "2D_in_plane"
+    },
+    {
+      "raw_spec": "K 5.8±0.2mm 測  量",
+      "label": "K",
+      "nominal": 5.8,
+      "diameter": false,
+      "upper_tol": 0.2,
+      "lower_tol": -0.2,
+      "min": 5.6,
+      "max": 6.0,
+      "tolerance_type": "symmetric",
+      "axis": "2D_in_plane"
+    },
+    {
+      "raw_spec": "4.7±0.2mm",
+      "label": "E",
+      "nominal": 4.7,
+      "diameter": false,
+      "upper_tol": 0.2,
+      "lower_tol": -0.2,
+      "min": 4.5,
+      "max": 4.9,
+      "tolerance_type": "symmetric",
+      "axis": "2D_in_plane"
+    },
+    {
+      "raw_spec": "3.05+0.05/-0.10mm",
+      "label": "I",
+      "nominal": 3.05,
+      "diameter": false,
+      "upper_tol": 0.05,
+      "lower_tol": -0.1,
+      "min": 2.95,
+      "max": 3.1,
+      "tolerance_type": "asymmetric",
+      "axis": "2D_in_plane"
+    },
+    {
+      "raw_spec": "J 1.6±0.2mm 測  量",
+      "label": "J",
+      "nominal": 1.6,
+      "diameter": false,
+      "upper_tol": 0.2,
+      "lower_tol": -0.2,
+      "min": 1.4,
+      "max": 1.8,
+      "tolerance_type": "symmetric",
+      "axis": "2D_in_plane"
+    },
+    {
+      "raw_spec": "8.60±0.15mm",
+      "label": "H",
+      "nominal": 8.6,
+      "diameter": false,
+      "upper_tol": 0.15,
+      "lower_tol": -0.15,
+      "min": 8.45,
+      "max": 8.75,
+      "tolerance_type": "symmetric",
+      "axis": "Z_height_side_view"
+    }
+  ],
+  "optical_scale_mm_per_px": 0.046694,
+  "golden_sample": {
+    "filename": "UH-8715P_1.png",
+    "obb_long_px": 469.0,
+    "obb_short_px": 337.3,
+    "angle_deg": 0.4,
+    "optical_scale_um_per_px": 46.69
+  }
+}

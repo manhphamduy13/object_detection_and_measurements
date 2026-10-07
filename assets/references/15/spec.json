@@ -1,0 +1,45 @@
+{
+  "sku": "15",
+  "source_file": "generated_from_reference_silhouette",
+  "item_name": "15",
+  "part_no": "15",
+  "description": "Provisional rotation-repeatability specification",
+  "material": "unknown",
+  "unit": "mm (provisional)",
+  "review_status": "PROVISIONAL_NOT_FOR_PRODUCTION_RELEASE",
+  "dimensions": [
+    {
+      "raw_spec": "PROVISIONAL L 57.071 +/- 2.854 mm",
+      "label": "L",
+      "nominal": 57.071,
+      "diameter": false,
+      "upper_tol": 2.854,
+      "lower_tol": -2.854,
+      "min": 54.217,
+      "max": 59.924,
+      "tolerance_type": "provisional_symmetric",
+      "axis": "2D_in_plane"
+    },
+    {
+      "raw_spec": "PROVISIONAL W 52.915 +/- 2.646 mm",
+      "label": "W",
+      "nominal": 52.915,
+      "diameter": false,
+      "upper_tol": 2.646,
+      "lower_tol": -2.646,
+      "min": 50.269,
+      "max": 55.56,
+      "tolerance_type": "provisional_symmetric",
+      "axis": "2D_in_plane"
+    }
+  ],
+  "optical_scale_mm_per_px": 0.05,
+  "golden_sample": {
+    "filenames": [
+      "15.jpg"
+    ],
+    "median_obb_long_px": 1141.411,
+    "median_obb_short_px": 1058.292,
+    "sample_count": 1
+  }
+}

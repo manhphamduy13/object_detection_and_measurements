@@ -1,0 +1,105 @@
+{
+  "sku": "98475",
+  "source_file": "items/98475.pdf",
+  "item_name": "98475",
+  "part_no": "98475",
+  "description": "Equipment",
+  "material": "Brass / Copper",
+  "unit": "mm",
+  "drawing": "drawing.png",
+  "review_status": "dynamically_extracted_from_pdf",
+  "dimensions": [
+    {
+      "raw_spec": "L 32.5±0.25mm",
+      "label": "L",
+      "nominal": 32.5,
+      "diameter": false,
+      "upper_tol": 0.25,
+      "lower_tol": -0.25,
+      "min": 32.25,
+      "max": 32.75,
+      "tolerance_type": "symmetric",
+      "axis": "2D_in_plane"
+    },
+    {
+      "raw_spec": "W 4.9±0.30mm",
+      "label": "W",
+      "nominal": 4.9,
+      "diameter": false,
+      "upper_tol": 0.3,
+      "lower_tol": -0.3,
+      "min": 4.6,
+      "max": 5.2,
+      "tolerance_type": "symmetric",
+      "axis": "2D_in_plane"
+    },
+    {
+      "raw_spec": "24.5±0.25mm",
+      "label": "E",
+      "nominal": 24.5,
+      "diameter": false,
+      "upper_tol": 0.25,
+      "lower_tol": -0.25,
+      "min": 24.25,
+      "max": 24.75,
+      "tolerance_type": "symmetric",
+      "axis": "2D_in_plane"
+    },
+    {
+      "raw_spec": "D 4.75+0/-0.05mm 測   量",
+      "label": "D",
+      "nominal": 4.75,
+      "diameter": false,
+      "upper_tol": 0.0,
+      "lower_tol": -0.05,
+      "min": 4.7,
+      "max": 4.75,
+      "tolerance_type": "asymmetric",
+      "axis": "2D_in_plane"
+    },
+    {
+      "raw_spec": "F 4.0±0.25mm",
+      "label": "F",
+      "nominal": 4.0,
+      "diameter": false,
+      "upper_tol": 0.25,
+      "lower_tol": -0.25,
+      "min": 3.75,
+      "max": 4.25,
+      "tolerance_type": "symmetric",
+      "axis": "2D_in_plane"
+    },
+    {
+      "raw_spec": "0.7±0.03mm",
+      "label": "t",
+      "nominal": 0.7,
+      "diameter": false,
+      "upper_tol": 0.03,
+      "lower_tol": -0.03,
+      "min": 0.67,
+      "max": 0.73,
+      "tolerance_type": "symmetric",
+      "axis": "2D_in_plane"
+    },
+    {
+      "raw_spec": "4.9±0.30mm",
+      "label": "H",
+      "nominal": 4.9,
+      "diameter": false,
+      "upper_tol": 0.3,
+      "lower_tol": -0.3,
+      "min": 4.6,
+      "max": 5.2,
+      "tolerance_type": "symmetric",
+      "axis": "Z_height_side_view"
+    }
+  ],
+  "optical_scale_mm_per_px": 0.038592,
+  "golden_sample": {
+    "filename": "98475_1.png",
+    "obb_long_px": 842.1,
+    "obb_short_px": 394.1,
+    "angle_deg": 89.2,
+    "optical_scale_um_per_px": 38.59
+  }
+}

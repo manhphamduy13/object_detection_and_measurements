@@ -26,6 +26,7 @@ import numpy as np
 import config
 import classifier as clf
 import measurer
+from src.template_matcher import TemplateMatcher, public_result as public_template_result
 
 
 # ======================================================================
@@ -111,7 +112,7 @@ def compare_match_methods(reference_items, library, contours):
 # 3-4. Classify every test image
 # ======================================================================
 
-def run_test_set(test_items, library, contours, thresholds):
+def run_test_set(test_items, library, contours, thresholds, template_matcher):
     """
     Classify every test image with clf.predict() (so each result already
     carries the matched class's spec, exactly like a real new photo would),
@@ -119,6 +120,14 @@ def run_test_set(test_items, library, contours, thresholds):
     save_visualization() needs the mask/contour/features it computed.
     """
     rows = []
+    grouped_paths = {}
+    for path, label in test_items:
+        grouped_paths.setdefault(label, []).append(path)
+    audit_paths = {paths[0] for paths in grouped_paths.values() if paths}
+    for path, _label in test_items:
+        if len(audit_paths) >= config.MAX_VISUALIZATIONS:
+            break
+        audit_paths.add(path)
     for path, true_label in test_items:
         img = cv2.imread(str(path))
         if img is None:
@@ -132,20 +141,62 @@ def run_test_set(test_items, library, contours, thresholds):
         else:
             result = clf.classify(described["features"], described["contour"],
                                   library, contours, thresholds)
-            entry = library.get(result["class"], {})
+            entry = library.get(result.get("best_label") or result["class"], {})
             result["spec"] = entry.get("spec")
             result["drawing"] = entry.get("drawing")
 
+        shape_accepted = bool(result.get("accepted"))
+        expected_label = result.get("best_label")
+        template_result = template_matcher.match(
+            img, described["object_mask"], expected_label=expected_label
+        ) if described is not None else {
+            "predicted_class": "UNKNOWN", "similarity": 0.0, "margin": 0.0,
+            "accepted": False, "score_pass": False,
+            "agrees_with_classification": False,
+        }
+        result["shape_accepted"] = shape_accepted
+        result["template_matching"] = template_result
+        consensus = bool(shape_accepted and template_result.get("accepted"))
+        confident_template = bool(
+            template_result.get("similarity", 0.0) >= config.TEMPLATE_FALLBACK_MIN_SIMILARITY
+            and template_result.get("margin", 0.0) >= config.TEMPLATE_FALLBACK_MIN_MARGIN
+            and template_result.get("defect_ratio", 1.0) <= config.TEMPLATE_FALLBACK_MAX_DEFECT_RATIO
+        )
+        accepted_label = (
+            expected_label if consensus
+            else template_result.get("predicted_class") if confident_template
+            else None
+        )
+        result["classification_route"] = (
+            "shape_template_consensus" if consensus
+            else "high_confidence_template" if confident_template
+            else "rejected"
+        )
+        result["accepted"] = accepted_label is not None
+        result["class"] = accepted_label or "UNKNOWN"
+        accepted_entry = library.get(accepted_label, {}) if accepted_label else {}
+        result["spec"] = accepted_entry.get("spec")
+        result["drawing"] = accepted_entry.get("drawing")
+
         meas = None
         if described is not None:
-            meas = measurer.WorkpieceMeasurer().measure(img, described["contour"], result.get("spec"))
+            meas = measurer.WorkpieceMeasurer().measure(
+                img, described["contour"], result.get("spec"),
+                template_matching=template_result
+            )
+        measurement_pass = bool(meas and meas.get("spec_report") and meas.get("overall_pass", False))
+        final_pass = bool(result["accepted"] and measurement_pass)
 
         latency_ms = (time.perf_counter() - start) * 1000.0
 
+        keep_visual = path in audit_paths
+        if not keep_visual:
+            template_result = public_template_result(template_result)
+            result["template_matching"] = template_result
         rows.append({
             "path": path,
-            "image": img,
-            "described": described,
+            "image": img if keep_visual else None,
+            "described": described if keep_visual else None,
             "filename": path.name,
             "true_class": true_label,
             "predicted_class": result["class"],
@@ -156,6 +207,9 @@ def run_test_set(test_items, library, contours, thresholds):
             "latency_ms": latency_ms,
             "result": result,
             "measurements": meas,
+            "template_matching": template_result,
+            "measurement_pass": measurement_pass,
+            "final_pass": final_pass,
         })
     return rows
 
@@ -173,6 +227,18 @@ def evaluate(rows):
 
     latencies = [r["latency_ms"] for r in rows]
 
+    template_pass = sum(1 for r in rows if r.get("template_matching", {}).get("accepted"))
+    template_correct = sum(
+        1 for r in rows
+        if r.get("template_matching", {}).get("predicted_class") == r["true_class"]
+    )
+    measurement_pass = sum(1 for r in rows if r.get("measurement_pass"))
+    final_pass = sum(1 for r in rows if r.get("final_pass"))
+    defect_ratios = [
+        float(r.get("template_matching", {}).get("defect_ratio", 0.0))
+        for r in rows if r.get("template_matching")
+    ]
+
     return {
         "test_images": total,
         "correct": correct,
@@ -184,17 +250,30 @@ def evaluate(rows):
         "average_latency_ms": float(np.mean(latencies)) if latencies else 0.0,
         "median_latency_ms": float(np.median(latencies)) if latencies else 0.0,
         "p95_latency_ms": percentile(latencies, 95),
+        "template_matching_pass": template_pass,
+        "template_matching_correct": template_correct,
+        "template_matching_accuracy": template_correct / total if total else 0.0,
+        "template_defect_min": float(np.min(defect_ratios)) if defect_ratios else 0.0,
+        "template_defect_mean": float(np.mean(defect_ratios)) if defect_ratios else 0.0,
+        "template_defect_max": float(np.max(defect_ratios)) if defect_ratios else 0.0,
+        "measurement_pass": measurement_pass,
+        "final_qc_pass": final_pass,
+        "final_qc_pass_rate": final_pass / total if total else 0.0,
     }
 
 
 def save_evaluation_csv(rows, path):
     columns = ["filename", "true_class", "predicted_class", "accepted",
-               "best_score", "second_score", "margin", "latency_ms", "length_px", "width_px"]
+               "best_score", "second_score", "margin",
+               "template_class", "template_similarity", "template_margin",
+               "template_defect_ratio", "template_missing_ratio", "template_extra_ratio", "template_pass",
+               "measurement_pass", "final_pass", "latency_ms", "length_px", "width_px"]
     with open(path, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=columns)
         writer.writeheader()
         for r in rows:
             meas = r.get("measurements") or {}
+            tm = r.get("template_matching") or {}
             writer.writerow({
                 "filename": r["filename"],
                 "true_class": r["true_class"],
@@ -203,6 +282,15 @@ def save_evaluation_csv(rows, path):
                 "best_score": f"{r['best_score']:.6f}" if np.isfinite(r["best_score"]) else "inf",
                 "second_score": f"{r['second_score']:.6f}" if np.isfinite(r["second_score"]) else "inf",
                 "margin": f"{r['margin']:.6f}" if np.isfinite(r["margin"]) else "inf",
+                "template_class": tm.get("predicted_class", "UNKNOWN"),
+                "template_similarity": f"{tm.get('similarity', 0.0):.6f}",
+                "template_margin": f"{tm.get('margin', 0.0):.6f}",
+                "template_defect_ratio": f"{tm.get('defect_ratio', 0.0):.6f}",
+                "template_missing_ratio": f"{tm.get('missing_ratio', 0.0):.6f}",
+                "template_extra_ratio": f"{tm.get('extra_ratio', 0.0):.6f}",
+                "template_pass": tm.get("accepted", False),
+                "measurement_pass": r.get("measurement_pass", False),
+                "final_pass": r.get("final_pass", False),
                 "latency_ms": f"{r['latency_ms']:.2f}",
                 "length_px": f"{meas.get('Length_L_px', 0.0):.2f}",
                 "width_px": f"{meas.get('Width_W_px', 0.0):.2f}",
@@ -224,6 +312,9 @@ def save_predictions_json(rows, path):
             "best_score": r["best_score"],
             "margin": r["margin"],
             "measurements_px": r.get("measurements"),
+            "template_matching": public_template_result(r.get("template_matching") or {}),
+            "measurement_pass": r.get("measurement_pass", False),
+            "final_pass": r.get("final_pass", False),
             "spec": r["result"]["spec"] if r["result"] else None,
         })
     with open(path, "w", encoding="utf-8") as f:
@@ -283,18 +374,59 @@ def save_visualization(row, path):
     axes[0][0].imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
     axes[0][0].set_title(f"1. Original\n{row['filename']}")
 
-    # 2. Grayscale + the threshold Otsu chose
-    axes[0][1].imshow(described["gray"], cmap="gray")
-    axes[0][1].set_title(f"2. Grayscale (Otsu threshold = {described['otsu']:.0f})")
+    # 2. Edge / Grayscale
+    stage2_steps = described.get("stage2_steps")
+    if stage2_steps is not None:
+        axes[0][1].imshow(stage2_steps.step2_edge_map, cmap="gray")
+        axes[0][1].set_title("2. Sobel Edge Gradient Map", fontsize=10, fontweight="bold")
+    else:
+        blurred = cv2.GaussianBlur(described["gray"], (5, 5), 1.0)
+        sobelx = cv2.Sobel(blurred, cv2.CV_32F, 1, 0, ksize=3)
+        sobely = cv2.Sobel(blurred, cv2.CV_32F, 0, 1, ksize=3)
+        mag = np.clip(cv2.magnitude(sobelx, sobely), 0, 255).astype(np.uint8)
+        axes[0][1].imshow(mag, cmap="gray")
+        axes[0][1].set_title("2. Sobel Edge Gradient Map", fontsize=10, fontweight="bold")
 
-    # 3. Binary mask after morphology
-    axes[0][2].imshow(described["mask"], cmap="gray")
-    axes[0][2].set_title("3. Binary mask (after OPEN + CLOSE)")
+    # 3. Classification + template/shape matching on the source image.
+    matching_vis = img.copy()
+    cv2.drawContours(matching_vis, [contour], -1, (0, 255, 0), 2, cv2.LINE_AA)
+    tm = row.get("template_matching") or result.get("template_matching", {})
+    match_lines = [f"MATCH: {result.get('class', 'UNKNOWN')}"]
+    match_lines.extend(
+        f"{i}. {cand['label']} score={cand['shape_score']:.4f}"
+        for i, cand in enumerate(result.get("shortlist", [])[:3], start=1)
+    )
+    match_lines.extend([
+        f"TM: {tm.get('predicted_class', 'UNKNOWN')} sim={tm.get('similarity', 0.0):.3f}",
+        f"TM margin={tm.get('margin', 0.0):.3f} pass={tm.get('accepted', False)}",
+    ])
+    for line_no, line in enumerate(match_lines):
+        y = 28 + line_no * 22
+        cv2.putText(matching_vis, line, (12, y), cv2.FONT_HERSHEY_SIMPLEX,
+                    0.55, (0, 0, 0), 3, cv2.LINE_AA)
+        cv2.putText(matching_vis, line, (12, y), cv2.FONT_HERSHEY_SIMPLEX,
+                    0.55, (0, 255, 255), 1, cv2.LINE_AA)
+    defect_map = tm.get("_defect_overlay_rgb")
+    if defect_map is not None:
+        axes[0][2].imshow(defect_map)
+    else:
+        axes[0][2].imshow(cv2.cvtColor(matching_vis, cv2.COLOR_BGR2RGB))
+    axes[0][2].set_title(
+        "3. Template Similarity / Defect Map\n"
+        f"sim={tm.get('similarity', 0.0):.3f} | defect={tm.get('defect_ratio', 0.0)*100:.1f}% "
+        f"(max {tm.get('max_defect_ratio', 0.0)*100:.0f}%) | "
+        f"missing={tm.get('missing_ratio', 0.0)*100:.1f}% | extra={tm.get('extra_ratio', 0.0)*100:.1f}%\n"
+        "green=match, red=missing, blue=extra",
+        fontsize=8.5, fontweight="bold"
+    )
 
-    # 4. Caliper Metrology Overlay: Oriented BBox + Measurement Lines (L, W)
+    # 5. Caliper Metrology Overlay: lines + detailed tolerance HUD.
     meas = row.get("measurements") or {}
     if meas:
-        overlay = measurer.annotate_measurements(img, contour, meas, result["class"])
+        overlay = measurer.annotate_measurements(
+            img, contour, meas, result["class"],
+            template_matching=row.get("template_matching")
+        )
         # Also save high-resolution measured detail image
         measured_detail_path = path.parent / f"{path.stem}_measured.png"
         cv2.imwrite(str(measured_detail_path), overlay)
@@ -304,24 +436,26 @@ def save_visualization(row, path):
         x, y, w, h = cv2.boundingRect(contour)
         cv2.rectangle(overlay, (x, y), (x + w, y + h), (0, 128, 255), 2)
 
-    axes[1][0].imshow(cv2.cvtColor(overlay, cv2.COLOR_BGR2RGB))
-    axes[1][0].set_title(f"4. Caliper Metrology (px)\nL: {meas.get('Length_L_px', 0):.1f}px | W: {meas.get('Width_W_px', 0):.1f}px")
+    spec = result.get("spec") or {}
+    spec_lines = [
+        "4. PDF Specification", "",
+        f"SKU   : {spec.get('sku', 'N/A')}",
+        f"Unit  : {spec.get('unit', 'mm')}",
+        f"Scale : {float(spec.get('optical_scale_mm_per_px', 0.0) or 0.0) * 1000:.2f} um/px",
+        "", "Dimensions:"
+    ]
+    for dim in spec.get("dimensions", []):
+        suffix = " [Z/not measured]" if dim.get("axis") == "Z_height_side_view" else ""
+        spec_lines.append(
+            f" {dim.get('label', 'DIM'):<4} {float(dim.get('nominal', 0.0)):6.2f} mm  "
+            f"[{float(dim.get('min', 0.0)):6.2f}..{float(dim.get('max', 0.0)):6.2f}]{suffix}"
+        )
+    axes[1][0].text(0.02, 0.98, "\n".join(spec_lines), va="top", ha="left",
+                    family="monospace", fontsize=7.7)
+    axes[1][0].axis("off")
 
-    # 5. Fingerprint numbers
-    hu_text = "\n".join(f"    Hu{i + 1} = {v:+.3f}" for i, v in enumerate(features["hu"]))
-    fingerprint_text = (
-        "5. Geometric fingerprint\n\n"
-        f"area          = {features['area']:.0f} px\n"
-        f"perimeter     = {features['perimeter']:.1f} px\n"
-        f"rect aspect   = {features['rect_aspect']:.3f}   (rotation invariant)\n"
-        f"solidity      = {features['solidity']:.3f}\n"
-        f"circularity   = {features['circularity']:.3f}\n"
-        f"hole_count    = {features['hole_count']}\n\n"
-        f"Hu moments (signed log):\n{hu_text}"
-    )
-    axes[1][1].text(0.02, 0.98, fingerprint_text, va="top", ha="left",
-                    family="monospace", fontsize=9.0)
-    axes[1][1].axis("off")
+    axes[1][1].imshow(cv2.cvtColor(overlay, cv2.COLOR_BGR2RGB))
+    axes[1][1].set_title("5. Edge Measurement + Tolerance Verdict", fontsize=10, fontweight="bold")
 
     # 6. Step-by-Step Inspection Pipeline
     lines = [
@@ -336,6 +470,13 @@ def save_visualization(row, path):
         lines.append(f"   {i}. {cand['label']:<11} score={cand['shape_score']:.4f} (fp {cand['fingerprint_distance']:.3f})")
 
     lines.append(f"  Best score  : {result['best_score']:.4f}  (margin: {result['margin']:.4f})")
+    lines.append(f"  Template    : {tm.get('predicted_class', 'UNKNOWN')}")
+    lines.append(f"  Similarity  : {tm.get('similarity', 0.0):.4f} (min {tm.get('min_similarity', 0.0):.2f})")
+    lines.append(f"  TM margin   : {tm.get('margin', 0.0):.4f} (min {tm.get('min_margin', 0.0):.2f})")
+    lines.append(f"  Agreement   : {tm.get('agrees_with_classification', False)}")
+    lines.append(f"  Defect area : {tm.get('defect_ratio', 0.0)*100:.2f}% (max {tm.get('max_defect_ratio', 0.0)*100:.0f}%)")
+    lines.append(f"  Missing     : {tm.get('missing_ratio', 0.0)*100:.2f}%")
+    lines.append(f"  Extra       : {tm.get('extra_ratio', 0.0)*100:.2f}%")
     lines.append("")
     lines.append("[STEP 3: SPECIFICATION SHEET]")
     spec = result.get("spec")
@@ -361,10 +502,14 @@ def save_visualization(row, path):
     lines.append("[STEP 5: QUALITY VERDICT]")
 
     verdict = result["class"]
-    if verdict == "UNKNOWN":
-        colour, headline = "darkorange", "VERDICT: UNKNOWN (REJECTED)"
-    elif verdict == row["true_class"]:
-        colour, headline = "green", f"VERDICT: {verdict} (PASS)"
+    if row.get("final_pass") and verdict == row["true_class"]:
+        colour, headline = "green", f"VERDICT: {verdict} (FINAL PASS)"
+    elif not result.get("shape_accepted", False):
+        colour, headline = "darkorange", "VERDICT: SHAPE CLASSIFICATION FAIL"
+    elif not tm.get("accepted", False):
+        colour, headline = "red", "VERDICT: TEMPLATE MATCHING FAIL"
+    elif not row.get("measurement_pass", False):
+        colour, headline = "red", "VERDICT: MEASUREMENT / SPEC FAIL"
     else:
         colour, headline = "red", f"VERDICT: {verdict} (MISMATCH)"
 
@@ -372,8 +517,7 @@ def save_visualization(row, path):
 
     axes[1][2].text(0.02, 0.98, "\n".join(lines), va="top", ha="left",
                     family="monospace", fontsize=8.5)
-    axes[1][2].text(0.02, 0.04, headline, va="top", ha="left",
-                    family="monospace", fontsize=12, color=colour, weight="bold")
+    axes[1][2].set_title(headline, color=colour, fontsize=11, fontweight="bold", pad=8)
     axes[1][2].axis("off")
 
     fig.tight_layout()
@@ -421,8 +565,11 @@ def save_intermediate_steps(row, steps_base_dir):
 
     meas = row.get("measurements") or {}
     res_class = row["result"]["class"] if row.get("result") else "UNKNOWN"
+    tm_row = row.get("template_matching")
     if meas:
-        caliper_vis = measurer.annotate_measurements(img, described["contour"], meas, res_class)
+        caliper_vis = measurer.annotate_measurements(
+            img, described["contour"], meas, res_class, template_matching=tm_row
+        )
     else:
         caliper_vis = img.copy()
         cv2.drawContours(caliper_vis, [described["contour"]], -1, (0, 255, 0), 2)
@@ -491,6 +638,14 @@ def print_report(metrics, n_reference, thresholds, threshold_info, method_report
     print(f"Accepted accuracy: {metrics['accepted_accuracy'] * 100:.2f}%")
     print(f"UNKNOWN rate     : {metrics['unknown_rate'] * 100:.2f}%")
     print()
+    print("Integrated QC gates:")
+    print(f"  Template correct : {metrics['template_matching_correct']}/{metrics['test_images']} "
+          f"({metrics['template_matching_accuracy'] * 100:.2f}%)")
+    print(f"  Template gate    : {metrics['template_matching_pass']}/{metrics['test_images']}")
+    print(f"  Measurement gate : {metrics['measurement_pass']}/{metrics['test_images']}")
+    print(f"  FINAL QC PASS    : {metrics['final_qc_pass']}/{metrics['test_images']} "
+          f"({metrics['final_qc_pass_rate'] * 100:.2f}%)")
+    print()
     print(f"Avg latency      : {metrics['average_latency_ms']:.1f} ms")
     print(f"Median latency   : {metrics['median_latency_ms']:.1f} ms")
     print(f"P95 latency      : {metrics['p95_latency_ms']:.1f} ms")
@@ -499,6 +654,9 @@ def print_report(metrics, n_reference, thresholds, threshold_info, method_report
     print("Thresholds actually used:")
     print(f"  MATCH_THRESHOLD = {thresholds['match_threshold']:.4f}")
     print(f"  MIN_MARGIN      = {thresholds['min_margin']:.4f}")
+    print(f"  TEMPLATE_SIM    = {config.TEMPLATE_MIN_SIMILARITY:.4f}")
+    print(f"  TEMPLATE_MARGIN = {config.TEMPLATE_MIN_MARGIN:.4f}")
+    print(f"  TEMPLATE_DEFECT = {config.TEMPLATE_MAX_DEFECT_RATIO:.4f} (maximum)")
     source = "calibrated from reference data (leave-one-out)" \
         if threshold_info["calibrated"] else "defaults from config.py"
     print(f"  source          : {source}")
@@ -532,7 +690,7 @@ def main():
 
     output_dir = Path(args.output_dir)
     vis_dir = output_dir / "visualizations"
-    steps_base_dir = output_dir / "intermediate_steps"
+    steps_base_dir = output_dir / "steps"
     output_dir.mkdir(parents=True, exist_ok=True)
 
     # Clean up previous outputs and visualizations to ensure fresh results
@@ -566,6 +724,12 @@ def main():
     # --- 2. digest the class database (images + specs + drawings) --------
     print("Building class database ...")
     library, contours, failures = clf.build_database(args.reference_dir)
+    template_matcher = TemplateMatcher(
+        args.reference_dir,
+        min_similarity=config.TEMPLATE_MIN_SIMILARITY,
+        min_margin=config.TEMPLATE_MIN_MARGIN,
+        max_defect_ratio=config.TEMPLATE_MAX_DEFECT_RATIO,
+    )
     for path, reason in failures:
         print(f"  skipped {path.name}: {reason}")
     n_with_spec = sum(1 for entry in library.values() if entry.get("spec"))
@@ -609,7 +773,7 @@ def main():
 
     # --- 5. classify the test set ---------------------------------------
     print(f"Classifying {len(test_items)} test images ...")
-    rows = run_test_set(test_items, library, contours, thresholds)
+    rows = run_test_set(test_items, library, contours, thresholds, template_matcher)
     print()
 
     # --- 6. evaluate ------------------------------------------------------
@@ -629,14 +793,27 @@ def main():
     steps_base_dir = output_dir / "steps"
     steps_base_dir.mkdir(parents=True, exist_ok=True)
 
-    drawn = 0
-    for row in rows:
-        if row["described"] is None:
-            continue
+    valid_rows = [row for row in rows if row["described"] is not None]
+    # Audit at least one result per SKU before filling the remaining quota.
+    # Previously the first N files over-represented the alphabetically first
+    # classes and wrote expensive intermediate images for every test case.
+    audit_rows, seen_labels, selected_ids = [], set(), set()
+    for row in valid_rows:
+        label = row["true_class"]
+        if label not in seen_labels:
+            audit_rows.append(row)
+            seen_labels.add(label)
+            selected_ids.add(id(row))
+    for row in valid_rows:
+        if len(audit_rows) >= config.MAX_VISUALIZATIONS:
+            break
+        if id(row) not in selected_ids:
+            audit_rows.append(row)
+            selected_ids.add(id(row))
+
+    for row in audit_rows[:config.MAX_VISUALIZATIONS]:
         save_intermediate_steps(row, steps_base_dir)
-        if drawn < config.MAX_VISUALIZATIONS:
-            save_visualization(row, vis_dir / f"{Path(row['filename']).stem}.png")
-            drawn += 1
+        save_visualization(row, vis_dir / f"{Path(row['filename']).stem}.png")
 
 
     # --- 8. honest notes about this dataset -------------------------------
@@ -711,6 +888,15 @@ def main():
         "overall_accuracy": metrics["overall_accuracy"],
         "accepted_accuracy": metrics["accepted_accuracy"],
         "unknown_rate": metrics["unknown_rate"],
+        "template_matching_pass": metrics["template_matching_pass"],
+        "template_matching_correct": metrics["template_matching_correct"],
+        "template_matching_accuracy": metrics["template_matching_accuracy"],
+        "template_defect_min": metrics["template_defect_min"],
+        "template_defect_mean": metrics["template_defect_mean"],
+        "template_defect_max": metrics["template_defect_max"],
+        "measurement_pass": metrics["measurement_pass"],
+        "final_qc_pass": metrics["final_qc_pass"],
+        "final_qc_pass_rate": metrics["final_qc_pass_rate"],
         "average_latency_ms": metrics["average_latency_ms"],
         "median_latency_ms": metrics["median_latency_ms"],
         "p95_latency_ms": metrics["p95_latency_ms"],
@@ -718,7 +904,12 @@ def main():
         "skus": labels,
         "match_method": config.MATCH_METHOD,
         "match_method_comparison": method_report,
-        "thresholds_used": thresholds,
+        "thresholds_used": {
+            **thresholds,
+            "template_min_similarity": config.TEMPLATE_MIN_SIMILARITY,
+            "template_min_margin": config.TEMPLATE_MIN_MARGIN,
+            "template_max_defect_ratio": config.TEMPLATE_MAX_DEFECT_RATIO,
+        },
         "threshold_calibration": threshold_info,
         "rotation_self_check": rotation_check,
         "holdout_self_check": holdout_check,

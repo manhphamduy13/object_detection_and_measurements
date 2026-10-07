@@ -1,0 +1,93 @@
+{
+  "sku": "98003P",
+  "source_file": "items/98003P.pdf",
+  "item_name": "98003P",
+  "part_no": "98003P",
+  "description": "Equipment",
+  "material": "Engineering Plastic",
+  "unit": "mm",
+  "drawing": "drawing.png",
+  "review_status": "dynamically_extracted_from_pdf",
+  "dimensions": [
+    {
+      "raw_spec": "32.0+0.0/-1.10mm",
+      "label": "L",
+      "nominal": 32.0,
+      "diameter": false,
+      "upper_tol": 0.0,
+      "lower_tol": -1.1,
+      "min": 30.9,
+      "max": 32.0,
+      "tolerance_type": "asymmetric",
+      "axis": "2D_in_plane"
+    },
+    {
+      "raw_spec": "W 26.0±0.30mm 測  量",
+      "label": "W",
+      "nominal": 26.0,
+      "diameter": false,
+      "upper_tol": 0.3,
+      "lower_tol": -0.3,
+      "min": 25.7,
+      "max": 26.3,
+      "tolerance_type": "symmetric",
+      "axis": "2D_in_plane"
+    },
+    {
+      "raw_spec": "φ 4.0+0/-0.05 mm",
+      "label": "D",
+      "nominal": 4.0,
+      "diameter": true,
+      "upper_tol": 0.0,
+      "lower_tol": -0.05,
+      "min": 3.95,
+      "max": 4.0,
+      "tolerance_type": "asymmetric",
+      "axis": "2D_in_plane"
+    },
+    {
+      "raw_spec": "φ 3.95+0.05/-0.10 mm",
+      "label": "D1",
+      "nominal": 3.95,
+      "diameter": true,
+      "upper_tol": 0.05,
+      "lower_tol": -0.1,
+      "min": 3.85,
+      "max": 4.0,
+      "tolerance_type": "asymmetric",
+      "axis": "2D_in_plane"
+    },
+    {
+      "raw_spec": "φ 3.5 mm MAX.",
+      "label": "D2",
+      "nominal": 3.5,
+      "diameter": true,
+      "upper_tol": 0.0,
+      "lower_tol": -3.5,
+      "min": 0.0,
+      "max": 3.5,
+      "tolerance_type": "max_limit",
+      "axis": "2D_in_plane"
+    },
+    {
+      "raw_spec": "7.0±0.2mm",
+      "label": "H",
+      "nominal": 7.0,
+      "diameter": false,
+      "upper_tol": 0.2,
+      "lower_tol": -0.2,
+      "min": 6.8,
+      "max": 7.2,
+      "tolerance_type": "symmetric",
+      "axis": "Z_height_side_view"
+    }
+  ],
+  "optical_scale_mm_per_px": 0.047145,
+  "golden_sample": {
+    "filename": "98003P_1.png",
+    "obb_long_px": 678.8,
+    "obb_short_px": 564.4,
+    "angle_deg": 88.4,
+    "optical_scale_um_per_px": 47.14
+  }
+}

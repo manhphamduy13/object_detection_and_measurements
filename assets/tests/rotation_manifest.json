@@ -1,0 +1,9692 @@
+{
+  "policy": "rotation_only_foreground_geometry_no_scale_lossless",
+  "affine_scale": 1.0,
+  "angles_deg": [
+    17,
+    43,
+    79,
+    137,
+    223,
+    311
+  ],
+  "images": [
+    {
+      "sku": "1",
+      "source": "1_1.JPG",
+      "output": "assets\\tests\\1\\images\\1_1_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2488,
+        4416
+      ],
+      "source_roi_xyxy": [
+        1779,
+        948,
+        2881,
+        1474
+      ],
+      "focused_shape": [
+        526,
+        1102
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1242,
+        1242
+      ]
+    },
+    {
+      "sku": "1",
+      "source": "1_1.JPG",
+      "output": "assets\\tests\\1\\images\\1_1_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2488,
+        4416
+      ],
+      "source_roi_xyxy": [
+        1779,
+        948,
+        2881,
+        1474
+      ],
+      "focused_shape": [
+        526,
+        1102
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1242,
+        1242
+      ]
+    },
+    {
+      "sku": "1",
+      "source": "1_1.JPG",
+      "output": "assets\\tests\\1\\images\\1_1_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2488,
+        4416
+      ],
+      "source_roi_xyxy": [
+        1779,
+        948,
+        2881,
+        1474
+      ],
+      "focused_shape": [
+        526,
+        1102
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1242,
+        1242
+      ]
+    },
+    {
+      "sku": "1",
+      "source": "1_1.JPG",
+      "output": "assets\\tests\\1\\images\\1_1_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2488,
+        4416
+      ],
+      "source_roi_xyxy": [
+        1779,
+        948,
+        2881,
+        1474
+      ],
+      "focused_shape": [
+        526,
+        1102
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1242,
+        1242
+      ]
+    },
+    {
+      "sku": "1",
+      "source": "1_1.JPG",
+      "output": "assets\\tests\\1\\images\\1_1_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2488,
+        4416
+      ],
+      "source_roi_xyxy": [
+        1779,
+        948,
+        2881,
+        1474
+      ],
+      "focused_shape": [
+        526,
+        1102
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1242,
+        1242
+      ]
+    },
+    {
+      "sku": "1",
+      "source": "1_1.JPG",
+      "output": "assets\\tests\\1\\images\\1_1_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2488,
+        4416
+      ],
+      "source_roi_xyxy": [
+        1779,
+        948,
+        2881,
+        1474
+      ],
+      "focused_shape": [
+        526,
+        1102
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1242,
+        1242
+      ]
+    },
+    {
+      "sku": "1",
+      "source": "1_2.jpg",
+      "output": "assets\\tests\\1\\images\\1_2_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        3072,
+        3072
+      ],
+      "source_roi_xyxy": [
+        846,
+        1145,
+        2224,
+        1826
+      ],
+      "focused_shape": [
+        681,
+        1378
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1558,
+        1558
+      ]
+    },
+    {
+      "sku": "1",
+      "source": "1_2.jpg",
+      "output": "assets\\tests\\1\\images\\1_2_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        3072,
+        3072
+      ],
+      "source_roi_xyxy": [
+        846,
+        1145,
+        2224,
+        1826
+      ],
+      "focused_shape": [
+        681,
+        1378
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1558,
+        1558
+      ]
+    },
+    {
+      "sku": "1",
+      "source": "1_2.jpg",
+      "output": "assets\\tests\\1\\images\\1_2_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        3072,
+        3072
+      ],
+      "source_roi_xyxy": [
+        846,
+        1145,
+        2224,
+        1826
+      ],
+      "focused_shape": [
+        681,
+        1378
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1558,
+        1558
+      ]
+    },
+    {
+      "sku": "1",
+      "source": "1_2.jpg",
+      "output": "assets\\tests\\1\\images\\1_2_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        3072,
+        3072
+      ],
+      "source_roi_xyxy": [
+        846,
+        1145,
+        2224,
+        1826
+      ],
+      "focused_shape": [
+        681,
+        1378
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1558,
+        1558
+      ]
+    },
+    {
+      "sku": "1",
+      "source": "1_2.jpg",
+      "output": "assets\\tests\\1\\images\\1_2_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        3072,
+        3072
+      ],
+      "source_roi_xyxy": [
+        846,
+        1145,
+        2224,
+        1826
+      ],
+      "focused_shape": [
+        681,
+        1378
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1558,
+        1558
+      ]
+    },
+    {
+      "sku": "1",
+      "source": "1_2.jpg",
+      "output": "assets\\tests\\1\\images\\1_2_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        3072,
+        3072
+      ],
+      "source_roi_xyxy": [
+        846,
+        1145,
+        2224,
+        1826
+      ],
+      "focused_shape": [
+        681,
+        1378
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1558,
+        1558
+      ]
+    },
+    {
+      "sku": "1",
+      "source": "1_4.JPG",
+      "output": "assets\\tests\\1\\images\\1_4_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2488,
+        4416
+      ],
+      "source_roi_xyxy": [
+        1795,
+        968,
+        2908,
+        1514
+      ],
+      "focused_shape": [
+        546,
+        1113
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1260,
+        1260
+      ]
+    },
+    {
+      "sku": "1",
+      "source": "1_4.JPG",
+      "output": "assets\\tests\\1\\images\\1_4_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2488,
+        4416
+      ],
+      "source_roi_xyxy": [
+        1795,
+        968,
+        2908,
+        1514
+      ],
+      "focused_shape": [
+        546,
+        1113
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1260,
+        1260
+      ]
+    },
+    {
+      "sku": "1",
+      "source": "1_4.JPG",
+      "output": "assets\\tests\\1\\images\\1_4_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2488,
+        4416
+      ],
+      "source_roi_xyxy": [
+        1795,
+        968,
+        2908,
+        1514
+      ],
+      "focused_shape": [
+        546,
+        1113
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1260,
+        1260
+      ]
+    },
+    {
+      "sku": "1",
+      "source": "1_4.JPG",
+      "output": "assets\\tests\\1\\images\\1_4_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2488,
+        4416
+      ],
+      "source_roi_xyxy": [
+        1795,
+        968,
+        2908,
+        1514
+      ],
+      "focused_shape": [
+        546,
+        1113
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1260,
+        1260
+      ]
+    },
+    {
+      "sku": "1",
+      "source": "1_4.JPG",
+      "output": "assets\\tests\\1\\images\\1_4_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2488,
+        4416
+      ],
+      "source_roi_xyxy": [
+        1795,
+        968,
+        2908,
+        1514
+      ],
+      "focused_shape": [
+        546,
+        1113
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1260,
+        1260
+      ]
+    },
+    {
+      "sku": "1",
+      "source": "1_4.JPG",
+      "output": "assets\\tests\\1\\images\\1_4_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2488,
+        4416
+      ],
+      "source_roi_xyxy": [
+        1795,
+        968,
+        2908,
+        1514
+      ],
+      "focused_shape": [
+        546,
+        1113
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1260,
+        1260
+      ]
+    },
+    {
+      "sku": "10",
+      "source": "10.png",
+      "output": "assets\\tests\\10\\images\\10_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        798,
+        1420
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1420,
+        798
+      ],
+      "focused_shape": [
+        1650,
+        2272
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        2828,
+        2828
+      ]
+    },
+    {
+      "sku": "10",
+      "source": "10.png",
+      "output": "assets\\tests\\10\\images\\10_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        798,
+        1420
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1420,
+        798
+      ],
+      "focused_shape": [
+        1650,
+        2272
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        2828,
+        2828
+      ]
+    },
+    {
+      "sku": "10",
+      "source": "10.png",
+      "output": "assets\\tests\\10\\images\\10_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        798,
+        1420
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1420,
+        798
+      ],
+      "focused_shape": [
+        1650,
+        2272
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        2828,
+        2828
+      ]
+    },
+    {
+      "sku": "10",
+      "source": "10.png",
+      "output": "assets\\tests\\10\\images\\10_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        798,
+        1420
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1420,
+        798
+      ],
+      "focused_shape": [
+        1650,
+        2272
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        2828,
+        2828
+      ]
+    },
+    {
+      "sku": "10",
+      "source": "10.png",
+      "output": "assets\\tests\\10\\images\\10_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        798,
+        1420
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1420,
+        798
+      ],
+      "focused_shape": [
+        1650,
+        2272
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        2828,
+        2828
+      ]
+    },
+    {
+      "sku": "10",
+      "source": "10.png",
+      "output": "assets\\tests\\10\\images\\10_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        798,
+        1420
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1420,
+        798
+      ],
+      "focused_shape": [
+        1650,
+        2272
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        2828,
+        2828
+      ]
+    },
+    {
+      "sku": "11",
+      "source": "11.jpg",
+      "output": "assets\\tests\\11\\images\\11_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1800,
+        1800
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1800,
+        1800
+      ],
+      "focused_shape": [
+        1800,
+        1800
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2566,
+        2566
+      ]
+    },
+    {
+      "sku": "11",
+      "source": "11.jpg",
+      "output": "assets\\tests\\11\\images\\11_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1800,
+        1800
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1800,
+        1800
+      ],
+      "focused_shape": [
+        1800,
+        1800
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2566,
+        2566
+      ]
+    },
+    {
+      "sku": "11",
+      "source": "11.jpg",
+      "output": "assets\\tests\\11\\images\\11_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1800,
+        1800
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1800,
+        1800
+      ],
+      "focused_shape": [
+        1800,
+        1800
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2566,
+        2566
+      ]
+    },
+    {
+      "sku": "11",
+      "source": "11.jpg",
+      "output": "assets\\tests\\11\\images\\11_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1800,
+        1800
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1800,
+        1800
+      ],
+      "focused_shape": [
+        1800,
+        1800
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2566,
+        2566
+      ]
+    },
+    {
+      "sku": "11",
+      "source": "11.jpg",
+      "output": "assets\\tests\\11\\images\\11_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1800,
+        1800
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1800,
+        1800
+      ],
+      "focused_shape": [
+        1800,
+        1800
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2566,
+        2566
+      ]
+    },
+    {
+      "sku": "11",
+      "source": "11.jpg",
+      "output": "assets\\tests\\11\\images\\11_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1800,
+        1800
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1800,
+        1800
+      ],
+      "focused_shape": [
+        1800,
+        1800
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2566,
+        2566
+      ]
+    },
+    {
+      "sku": "12",
+      "source": "12.jpg",
+      "output": "assets\\tests\\12\\images\\12_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        640,
+        640
+      ],
+      "focused_shape": [
+        640,
+        640
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        926,
+        926
+      ]
+    },
+    {
+      "sku": "12",
+      "source": "12.jpg",
+      "output": "assets\\tests\\12\\images\\12_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        640,
+        640
+      ],
+      "focused_shape": [
+        640,
+        640
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        926,
+        926
+      ]
+    },
+    {
+      "sku": "12",
+      "source": "12.jpg",
+      "output": "assets\\tests\\12\\images\\12_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        640,
+        640
+      ],
+      "focused_shape": [
+        640,
+        640
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        926,
+        926
+      ]
+    },
+    {
+      "sku": "12",
+      "source": "12.jpg",
+      "output": "assets\\tests\\12\\images\\12_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        640,
+        640
+      ],
+      "focused_shape": [
+        640,
+        640
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        926,
+        926
+      ]
+    },
+    {
+      "sku": "12",
+      "source": "12.jpg",
+      "output": "assets\\tests\\12\\images\\12_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        640,
+        640
+      ],
+      "focused_shape": [
+        640,
+        640
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        926,
+        926
+      ]
+    },
+    {
+      "sku": "12",
+      "source": "12.jpg",
+      "output": "assets\\tests\\12\\images\\12_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        640,
+        640
+      ],
+      "focused_shape": [
+        640,
+        640
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        926,
+        926
+      ]
+    },
+    {
+      "sku": "13",
+      "source": "13.jpg",
+      "output": "assets\\tests\\13\\images\\13_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        800,
+        800
+      ],
+      "source_roi_xyxy": [
+        36,
+        38,
+        766,
+        728
+      ],
+      "focused_shape": [
+        690,
+        730
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1026,
+        1026
+      ]
+    },
+    {
+      "sku": "13",
+      "source": "13.jpg",
+      "output": "assets\\tests\\13\\images\\13_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        800,
+        800
+      ],
+      "source_roi_xyxy": [
+        36,
+        38,
+        766,
+        728
+      ],
+      "focused_shape": [
+        690,
+        730
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1026,
+        1026
+      ]
+    },
+    {
+      "sku": "13",
+      "source": "13.jpg",
+      "output": "assets\\tests\\13\\images\\13_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        800,
+        800
+      ],
+      "source_roi_xyxy": [
+        36,
+        38,
+        766,
+        728
+      ],
+      "focused_shape": [
+        690,
+        730
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1026,
+        1026
+      ]
+    },
+    {
+      "sku": "13",
+      "source": "13.jpg",
+      "output": "assets\\tests\\13\\images\\13_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        800,
+        800
+      ],
+      "source_roi_xyxy": [
+        36,
+        38,
+        766,
+        728
+      ],
+      "focused_shape": [
+        690,
+        730
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1026,
+        1026
+      ]
+    },
+    {
+      "sku": "13",
+      "source": "13.jpg",
+      "output": "assets\\tests\\13\\images\\13_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        800,
+        800
+      ],
+      "source_roi_xyxy": [
+        36,
+        38,
+        766,
+        728
+      ],
+      "focused_shape": [
+        690,
+        730
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1026,
+        1026
+      ]
+    },
+    {
+      "sku": "13",
+      "source": "13.jpg",
+      "output": "assets\\tests\\13\\images\\13_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        800,
+        800
+      ],
+      "source_roi_xyxy": [
+        36,
+        38,
+        766,
+        728
+      ],
+      "focused_shape": [
+        690,
+        730
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1026,
+        1026
+      ]
+    },
+    {
+      "sku": "14",
+      "source": "14.jpg",
+      "output": "assets\\tests\\14\\images\\14_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1120,
+        1120
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1120,
+        1120
+      ],
+      "focused_shape": [
+        1120,
+        1120
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1604,
+        1604
+      ]
+    },
+    {
+      "sku": "14",
+      "source": "14.jpg",
+      "output": "assets\\tests\\14\\images\\14_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1120,
+        1120
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1120,
+        1120
+      ],
+      "focused_shape": [
+        1120,
+        1120
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1604,
+        1604
+      ]
+    },
+    {
+      "sku": "14",
+      "source": "14.jpg",
+      "output": "assets\\tests\\14\\images\\14_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1120,
+        1120
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1120,
+        1120
+      ],
+      "focused_shape": [
+        1120,
+        1120
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1604,
+        1604
+      ]
+    },
+    {
+      "sku": "14",
+      "source": "14.jpg",
+      "output": "assets\\tests\\14\\images\\14_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1120,
+        1120
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1120,
+        1120
+      ],
+      "focused_shape": [
+        1120,
+        1120
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1604,
+        1604
+      ]
+    },
+    {
+      "sku": "14",
+      "source": "14.jpg",
+      "output": "assets\\tests\\14\\images\\14_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1120,
+        1120
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1120,
+        1120
+      ],
+      "focused_shape": [
+        1120,
+        1120
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1604,
+        1604
+      ]
+    },
+    {
+      "sku": "14",
+      "source": "14.jpg",
+      "output": "assets\\tests\\14\\images\\14_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1120,
+        1120
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1120,
+        1120
+      ],
+      "focused_shape": [
+        1120,
+        1120
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1604,
+        1604
+      ]
+    },
+    {
+      "sku": "15",
+      "source": "15.jpg",
+      "output": "assets\\tests\\15\\images\\15_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1500,
+        1500
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1500,
+        1500
+      ],
+      "focused_shape": [
+        1500,
+        1500
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2142,
+        2142
+      ]
+    },
+    {
+      "sku": "15",
+      "source": "15.jpg",
+      "output": "assets\\tests\\15\\images\\15_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1500,
+        1500
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1500,
+        1500
+      ],
+      "focused_shape": [
+        1500,
+        1500
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2142,
+        2142
+      ]
+    },
+    {
+      "sku": "15",
+      "source": "15.jpg",
+      "output": "assets\\tests\\15\\images\\15_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1500,
+        1500
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1500,
+        1500
+      ],
+      "focused_shape": [
+        1500,
+        1500
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2142,
+        2142
+      ]
+    },
+    {
+      "sku": "15",
+      "source": "15.jpg",
+      "output": "assets\\tests\\15\\images\\15_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1500,
+        1500
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1500,
+        1500
+      ],
+      "focused_shape": [
+        1500,
+        1500
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2142,
+        2142
+      ]
+    },
+    {
+      "sku": "15",
+      "source": "15.jpg",
+      "output": "assets\\tests\\15\\images\\15_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1500,
+        1500
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1500,
+        1500
+      ],
+      "focused_shape": [
+        1500,
+        1500
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2142,
+        2142
+      ]
+    },
+    {
+      "sku": "15",
+      "source": "15.jpg",
+      "output": "assets\\tests\\15\\images\\15_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1500,
+        1500
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1500,
+        1500
+      ],
+      "focused_shape": [
+        1500,
+        1500
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2142,
+        2142
+      ]
+    },
+    {
+      "sku": "16",
+      "source": "16.jpg",
+      "output": "assets\\tests\\16\\images\\16_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        800,
+        800
+      ],
+      "source_roi_xyxy": [
+        0,
+        65,
+        800,
+        708
+      ],
+      "focused_shape": [
+        643,
+        800
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1048,
+        1048
+      ]
+    },
+    {
+      "sku": "16",
+      "source": "16.jpg",
+      "output": "assets\\tests\\16\\images\\16_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        800,
+        800
+      ],
+      "source_roi_xyxy": [
+        0,
+        65,
+        800,
+        708
+      ],
+      "focused_shape": [
+        643,
+        800
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1048,
+        1048
+      ]
+    },
+    {
+      "sku": "16",
+      "source": "16.jpg",
+      "output": "assets\\tests\\16\\images\\16_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        800,
+        800
+      ],
+      "source_roi_xyxy": [
+        0,
+        65,
+        800,
+        708
+      ],
+      "focused_shape": [
+        643,
+        800
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1048,
+        1048
+      ]
+    },
+    {
+      "sku": "16",
+      "source": "16.jpg",
+      "output": "assets\\tests\\16\\images\\16_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        800,
+        800
+      ],
+      "source_roi_xyxy": [
+        0,
+        65,
+        800,
+        708
+      ],
+      "focused_shape": [
+        643,
+        800
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1048,
+        1048
+      ]
+    },
+    {
+      "sku": "16",
+      "source": "16.jpg",
+      "output": "assets\\tests\\16\\images\\16_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        800,
+        800
+      ],
+      "source_roi_xyxy": [
+        0,
+        65,
+        800,
+        708
+      ],
+      "focused_shape": [
+        643,
+        800
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1048,
+        1048
+      ]
+    },
+    {
+      "sku": "16",
+      "source": "16.jpg",
+      "output": "assets\\tests\\16\\images\\16_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        800,
+        800
+      ],
+      "source_roi_xyxy": [
+        0,
+        65,
+        800,
+        708
+      ],
+      "focused_shape": [
+        643,
+        800
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1048,
+        1048
+      ]
+    },
+    {
+      "sku": "17",
+      "source": "17.jpg",
+      "output": "assets\\tests\\17\\images\\17_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        780,
+        780
+      ],
+      "source_roi_xyxy": [
+        109,
+        133,
+        648,
+        625
+      ],
+      "focused_shape": [
+        492,
+        539
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        750,
+        750
+      ]
+    },
+    {
+      "sku": "17",
+      "source": "17.jpg",
+      "output": "assets\\tests\\17\\images\\17_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        780,
+        780
+      ],
+      "source_roi_xyxy": [
+        109,
+        133,
+        648,
+        625
+      ],
+      "focused_shape": [
+        492,
+        539
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        750,
+        750
+      ]
+    },
+    {
+      "sku": "17",
+      "source": "17.jpg",
+      "output": "assets\\tests\\17\\images\\17_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        780,
+        780
+      ],
+      "source_roi_xyxy": [
+        109,
+        133,
+        648,
+        625
+      ],
+      "focused_shape": [
+        492,
+        539
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        750,
+        750
+      ]
+    },
+    {
+      "sku": "17",
+      "source": "17.jpg",
+      "output": "assets\\tests\\17\\images\\17_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        780,
+        780
+      ],
+      "source_roi_xyxy": [
+        109,
+        133,
+        648,
+        625
+      ],
+      "focused_shape": [
+        492,
+        539
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        750,
+        750
+      ]
+    },
+    {
+      "sku": "17",
+      "source": "17.jpg",
+      "output": "assets\\tests\\17\\images\\17_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        780,
+        780
+      ],
+      "source_roi_xyxy": [
+        109,
+        133,
+        648,
+        625
+      ],
+      "focused_shape": [
+        492,
+        539
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        750,
+        750
+      ]
+    },
+    {
+      "sku": "17",
+      "source": "17.jpg",
+      "output": "assets\\tests\\17\\images\\17_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        780,
+        780
+      ],
+      "source_roi_xyxy": [
+        109,
+        133,
+        648,
+        625
+      ],
+      "focused_shape": [
+        492,
+        539
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        750,
+        750
+      ]
+    },
+    {
+      "sku": "18",
+      "source": "18.jpg",
+      "output": "assets\\tests\\18\\images\\18_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        600,
+        600
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        600,
+        600
+      ],
+      "focused_shape": [
+        600,
+        600
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        870,
+        870
+      ]
+    },
+    {
+      "sku": "18",
+      "source": "18.jpg",
+      "output": "assets\\tests\\18\\images\\18_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        600,
+        600
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        600,
+        600
+      ],
+      "focused_shape": [
+        600,
+        600
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        870,
+        870
+      ]
+    },
+    {
+      "sku": "18",
+      "source": "18.jpg",
+      "output": "assets\\tests\\18\\images\\18_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        600,
+        600
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        600,
+        600
+      ],
+      "focused_shape": [
+        600,
+        600
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        870,
+        870
+      ]
+    },
+    {
+      "sku": "18",
+      "source": "18.jpg",
+      "output": "assets\\tests\\18\\images\\18_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        600,
+        600
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        600,
+        600
+      ],
+      "focused_shape": [
+        600,
+        600
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        870,
+        870
+      ]
+    },
+    {
+      "sku": "18",
+      "source": "18.jpg",
+      "output": "assets\\tests\\18\\images\\18_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        600,
+        600
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        600,
+        600
+      ],
+      "focused_shape": [
+        600,
+        600
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        870,
+        870
+      ]
+    },
+    {
+      "sku": "18",
+      "source": "18.jpg",
+      "output": "assets\\tests\\18\\images\\18_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        600,
+        600
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        600,
+        600
+      ],
+      "focused_shape": [
+        600,
+        600
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        870,
+        870
+      ]
+    },
+    {
+      "sku": "19",
+      "source": "19.jpg",
+      "output": "assets\\tests\\19\\images\\19_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        640,
+        640
+      ],
+      "focused_shape": [
+        640,
+        640
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        926,
+        926
+      ]
+    },
+    {
+      "sku": "19",
+      "source": "19.jpg",
+      "output": "assets\\tests\\19\\images\\19_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        640,
+        640
+      ],
+      "focused_shape": [
+        640,
+        640
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        926,
+        926
+      ]
+    },
+    {
+      "sku": "19",
+      "source": "19.jpg",
+      "output": "assets\\tests\\19\\images\\19_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        640,
+        640
+      ],
+      "focused_shape": [
+        640,
+        640
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        926,
+        926
+      ]
+    },
+    {
+      "sku": "19",
+      "source": "19.jpg",
+      "output": "assets\\tests\\19\\images\\19_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        640,
+        640
+      ],
+      "focused_shape": [
+        640,
+        640
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        926,
+        926
+      ]
+    },
+    {
+      "sku": "19",
+      "source": "19.jpg",
+      "output": "assets\\tests\\19\\images\\19_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        640,
+        640
+      ],
+      "focused_shape": [
+        640,
+        640
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        926,
+        926
+      ]
+    },
+    {
+      "sku": "19",
+      "source": "19.jpg",
+      "output": "assets\\tests\\19\\images\\19_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        640,
+        640
+      ],
+      "focused_shape": [
+        640,
+        640
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        926,
+        926
+      ]
+    },
+    {
+      "sku": "2",
+      "source": "2_1.JPG",
+      "output": "assets\\tests\\2\\images\\2_1_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2488,
+        4416
+      ],
+      "source_roi_xyxy": [
+        1991,
+        1128,
+        2408,
+        1354
+      ],
+      "focused_shape": [
+        226,
+        417
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        496,
+        496
+      ]
+    },
+    {
+      "sku": "2",
+      "source": "2_1.JPG",
+      "output": "assets\\tests\\2\\images\\2_1_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2488,
+        4416
+      ],
+      "source_roi_xyxy": [
+        1991,
+        1128,
+        2408,
+        1354
+      ],
+      "focused_shape": [
+        226,
+        417
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        496,
+        496
+      ]
+    },
+    {
+      "sku": "2",
+      "source": "2_1.JPG",
+      "output": "assets\\tests\\2\\images\\2_1_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2488,
+        4416
+      ],
+      "source_roi_xyxy": [
+        1991,
+        1128,
+        2408,
+        1354
+      ],
+      "focused_shape": [
+        226,
+        417
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        496,
+        496
+      ]
+    },
+    {
+      "sku": "2",
+      "source": "2_1.JPG",
+      "output": "assets\\tests\\2\\images\\2_1_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2488,
+        4416
+      ],
+      "source_roi_xyxy": [
+        1991,
+        1128,
+        2408,
+        1354
+      ],
+      "focused_shape": [
+        226,
+        417
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        496,
+        496
+      ]
+    },
+    {
+      "sku": "2",
+      "source": "2_1.JPG",
+      "output": "assets\\tests\\2\\images\\2_1_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2488,
+        4416
+      ],
+      "source_roi_xyxy": [
+        1991,
+        1128,
+        2408,
+        1354
+      ],
+      "focused_shape": [
+        226,
+        417
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        496,
+        496
+      ]
+    },
+    {
+      "sku": "2",
+      "source": "2_1.JPG",
+      "output": "assets\\tests\\2\\images\\2_1_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2488,
+        4416
+      ],
+      "source_roi_xyxy": [
+        1991,
+        1128,
+        2408,
+        1354
+      ],
+      "focused_shape": [
+        226,
+        417
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        496,
+        496
+      ]
+    },
+    {
+      "sku": "2",
+      "source": "2_2.jpg",
+      "output": "assets\\tests\\2\\images\\2_2_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        4096,
+        4096
+      ],
+      "source_roi_xyxy": [
+        1467,
+        1718,
+        2726,
+        2386
+      ],
+      "focused_shape": [
+        668,
+        1259
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1446,
+        1446
+      ]
+    },
+    {
+      "sku": "2",
+      "source": "2_2.jpg",
+      "output": "assets\\tests\\2\\images\\2_2_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        4096,
+        4096
+      ],
+      "source_roi_xyxy": [
+        1467,
+        1718,
+        2726,
+        2386
+      ],
+      "focused_shape": [
+        668,
+        1259
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1446,
+        1446
+      ]
+    },
+    {
+      "sku": "2",
+      "source": "2_2.jpg",
+      "output": "assets\\tests\\2\\images\\2_2_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        4096,
+        4096
+      ],
+      "source_roi_xyxy": [
+        1467,
+        1718,
+        2726,
+        2386
+      ],
+      "focused_shape": [
+        668,
+        1259
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1446,
+        1446
+      ]
+    },
+    {
+      "sku": "2",
+      "source": "2_2.jpg",
+      "output": "assets\\tests\\2\\images\\2_2_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        4096,
+        4096
+      ],
+      "source_roi_xyxy": [
+        1467,
+        1718,
+        2726,
+        2386
+      ],
+      "focused_shape": [
+        668,
+        1259
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1446,
+        1446
+      ]
+    },
+    {
+      "sku": "2",
+      "source": "2_2.jpg",
+      "output": "assets\\tests\\2\\images\\2_2_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        4096,
+        4096
+      ],
+      "source_roi_xyxy": [
+        1467,
+        1718,
+        2726,
+        2386
+      ],
+      "focused_shape": [
+        668,
+        1259
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1446,
+        1446
+      ]
+    },
+    {
+      "sku": "2",
+      "source": "2_2.jpg",
+      "output": "assets\\tests\\2\\images\\2_2_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        4096,
+        4096
+      ],
+      "source_roi_xyxy": [
+        1467,
+        1718,
+        2726,
+        2386
+      ],
+      "focused_shape": [
+        668,
+        1259
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1446,
+        1446
+      ]
+    },
+    {
+      "sku": "20",
+      "source": "20.jpg",
+      "output": "assets\\tests\\20\\images\\20_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        798,
+        1420
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1420,
+        798
+      ],
+      "focused_shape": [
+        798,
+        1420
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1650,
+        1650
+      ]
+    },
+    {
+      "sku": "20",
+      "source": "20.jpg",
+      "output": "assets\\tests\\20\\images\\20_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        798,
+        1420
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1420,
+        798
+      ],
+      "focused_shape": [
+        798,
+        1420
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1650,
+        1650
+      ]
+    },
+    {
+      "sku": "20",
+      "source": "20.jpg",
+      "output": "assets\\tests\\20\\images\\20_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        798,
+        1420
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1420,
+        798
+      ],
+      "focused_shape": [
+        798,
+        1420
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1650,
+        1650
+      ]
+    },
+    {
+      "sku": "20",
+      "source": "20.jpg",
+      "output": "assets\\tests\\20\\images\\20_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        798,
+        1420
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1420,
+        798
+      ],
+      "focused_shape": [
+        798,
+        1420
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1650,
+        1650
+      ]
+    },
+    {
+      "sku": "20",
+      "source": "20.jpg",
+      "output": "assets\\tests\\20\\images\\20_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        798,
+        1420
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1420,
+        798
+      ],
+      "focused_shape": [
+        798,
+        1420
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1650,
+        1650
+      ]
+    },
+    {
+      "sku": "20",
+      "source": "20.jpg",
+      "output": "assets\\tests\\20\\images\\20_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        798,
+        1420
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1420,
+        798
+      ],
+      "focused_shape": [
+        798,
+        1420
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1650,
+        1650
+      ]
+    },
+    {
+      "sku": "21",
+      "source": "21.jpg",
+      "output": "assets\\tests\\21\\images\\21_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        650,
+        650
+      ],
+      "source_roi_xyxy": [
+        71,
+        0,
+        598,
+        650
+      ],
+      "focused_shape": [
+        650,
+        527
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        858,
+        858
+      ]
+    },
+    {
+      "sku": "21",
+      "source": "21.jpg",
+      "output": "assets\\tests\\21\\images\\21_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        650,
+        650
+      ],
+      "source_roi_xyxy": [
+        71,
+        0,
+        598,
+        650
+      ],
+      "focused_shape": [
+        650,
+        527
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        858,
+        858
+      ]
+    },
+    {
+      "sku": "21",
+      "source": "21.jpg",
+      "output": "assets\\tests\\21\\images\\21_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        650,
+        650
+      ],
+      "source_roi_xyxy": [
+        71,
+        0,
+        598,
+        650
+      ],
+      "focused_shape": [
+        650,
+        527
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        858,
+        858
+      ]
+    },
+    {
+      "sku": "21",
+      "source": "21.jpg",
+      "output": "assets\\tests\\21\\images\\21_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        650,
+        650
+      ],
+      "source_roi_xyxy": [
+        71,
+        0,
+        598,
+        650
+      ],
+      "focused_shape": [
+        650,
+        527
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        858,
+        858
+      ]
+    },
+    {
+      "sku": "21",
+      "source": "21.jpg",
+      "output": "assets\\tests\\21\\images\\21_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        650,
+        650
+      ],
+      "source_roi_xyxy": [
+        71,
+        0,
+        598,
+        650
+      ],
+      "focused_shape": [
+        650,
+        527
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        858,
+        858
+      ]
+    },
+    {
+      "sku": "21",
+      "source": "21.jpg",
+      "output": "assets\\tests\\21\\images\\21_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        650,
+        650
+      ],
+      "source_roi_xyxy": [
+        71,
+        0,
+        598,
+        650
+      ],
+      "focused_shape": [
+        650,
+        527
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        858,
+        858
+      ]
+    },
+    {
+      "sku": "22",
+      "source": "22.jpg",
+      "output": "assets\\tests\\22\\images\\22_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1732,
+        1732
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1732,
+        1732
+      ],
+      "focused_shape": [
+        1732,
+        1732
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2470,
+        2470
+      ]
+    },
+    {
+      "sku": "22",
+      "source": "22.jpg",
+      "output": "assets\\tests\\22\\images\\22_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1732,
+        1732
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1732,
+        1732
+      ],
+      "focused_shape": [
+        1732,
+        1732
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2470,
+        2470
+      ]
+    },
+    {
+      "sku": "22",
+      "source": "22.jpg",
+      "output": "assets\\tests\\22\\images\\22_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1732,
+        1732
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1732,
+        1732
+      ],
+      "focused_shape": [
+        1732,
+        1732
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2470,
+        2470
+      ]
+    },
+    {
+      "sku": "22",
+      "source": "22.jpg",
+      "output": "assets\\tests\\22\\images\\22_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1732,
+        1732
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1732,
+        1732
+      ],
+      "focused_shape": [
+        1732,
+        1732
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2470,
+        2470
+      ]
+    },
+    {
+      "sku": "22",
+      "source": "22.jpg",
+      "output": "assets\\tests\\22\\images\\22_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1732,
+        1732
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1732,
+        1732
+      ],
+      "focused_shape": [
+        1732,
+        1732
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2470,
+        2470
+      ]
+    },
+    {
+      "sku": "22",
+      "source": "22.jpg",
+      "output": "assets\\tests\\22\\images\\22_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1732,
+        1732
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1732,
+        1732
+      ],
+      "focused_shape": [
+        1732,
+        1732
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2470,
+        2470
+      ]
+    },
+    {
+      "sku": "23",
+      "source": "23.jpg",
+      "output": "assets\\tests\\23\\images\\23_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        800,
+        1200
+      ],
+      "source_roi_xyxy": [
+        16,
+        0,
+        1183,
+        800
+      ],
+      "focused_shape": [
+        800,
+        1167
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1436,
+        1436
+      ]
+    },
+    {
+      "sku": "23",
+      "source": "23.jpg",
+      "output": "assets\\tests\\23\\images\\23_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        800,
+        1200
+      ],
+      "source_roi_xyxy": [
+        16,
+        0,
+        1183,
+        800
+      ],
+      "focused_shape": [
+        800,
+        1167
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1436,
+        1436
+      ]
+    },
+    {
+      "sku": "23",
+      "source": "23.jpg",
+      "output": "assets\\tests\\23\\images\\23_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        800,
+        1200
+      ],
+      "source_roi_xyxy": [
+        16,
+        0,
+        1183,
+        800
+      ],
+      "focused_shape": [
+        800,
+        1167
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1436,
+        1436
+      ]
+    },
+    {
+      "sku": "23",
+      "source": "23.jpg",
+      "output": "assets\\tests\\23\\images\\23_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        800,
+        1200
+      ],
+      "source_roi_xyxy": [
+        16,
+        0,
+        1183,
+        800
+      ],
+      "focused_shape": [
+        800,
+        1167
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1436,
+        1436
+      ]
+    },
+    {
+      "sku": "23",
+      "source": "23.jpg",
+      "output": "assets\\tests\\23\\images\\23_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        800,
+        1200
+      ],
+      "source_roi_xyxy": [
+        16,
+        0,
+        1183,
+        800
+      ],
+      "focused_shape": [
+        800,
+        1167
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1436,
+        1436
+      ]
+    },
+    {
+      "sku": "23",
+      "source": "23.jpg",
+      "output": "assets\\tests\\23\\images\\23_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        800,
+        1200
+      ],
+      "source_roi_xyxy": [
+        16,
+        0,
+        1183,
+        800
+      ],
+      "focused_shape": [
+        800,
+        1167
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1436,
+        1436
+      ]
+    },
+    {
+      "sku": "24",
+      "source": "24.jpg",
+      "output": "assets\\tests\\24\\images\\24_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1000,
+        1000
+      ],
+      "source_roi_xyxy": [
+        0,
+        32,
+        1000,
+        991
+      ],
+      "focused_shape": [
+        959,
+        1000
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1406,
+        1406
+      ]
+    },
+    {
+      "sku": "24",
+      "source": "24.jpg",
+      "output": "assets\\tests\\24\\images\\24_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1000,
+        1000
+      ],
+      "source_roi_xyxy": [
+        0,
+        32,
+        1000,
+        991
+      ],
+      "focused_shape": [
+        959,
+        1000
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1406,
+        1406
+      ]
+    },
+    {
+      "sku": "24",
+      "source": "24.jpg",
+      "output": "assets\\tests\\24\\images\\24_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1000,
+        1000
+      ],
+      "source_roi_xyxy": [
+        0,
+        32,
+        1000,
+        991
+      ],
+      "focused_shape": [
+        959,
+        1000
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1406,
+        1406
+      ]
+    },
+    {
+      "sku": "24",
+      "source": "24.jpg",
+      "output": "assets\\tests\\24\\images\\24_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1000,
+        1000
+      ],
+      "source_roi_xyxy": [
+        0,
+        32,
+        1000,
+        991
+      ],
+      "focused_shape": [
+        959,
+        1000
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1406,
+        1406
+      ]
+    },
+    {
+      "sku": "24",
+      "source": "24.jpg",
+      "output": "assets\\tests\\24\\images\\24_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1000,
+        1000
+      ],
+      "source_roi_xyxy": [
+        0,
+        32,
+        1000,
+        991
+      ],
+      "focused_shape": [
+        959,
+        1000
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1406,
+        1406
+      ]
+    },
+    {
+      "sku": "24",
+      "source": "24.jpg",
+      "output": "assets\\tests\\24\\images\\24_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1000,
+        1000
+      ],
+      "source_roi_xyxy": [
+        0,
+        32,
+        1000,
+        991
+      ],
+      "focused_shape": [
+        959,
+        1000
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1406,
+        1406
+      ]
+    },
+    {
+      "sku": "25",
+      "source": "25.jpg",
+      "output": "assets\\tests\\25\\images\\25_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        500,
+        500
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        500,
+        500
+      ],
+      "focused_shape": [
+        800,
+        800
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        1152,
+        1152
+      ]
+    },
+    {
+      "sku": "25",
+      "source": "25.jpg",
+      "output": "assets\\tests\\25\\images\\25_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        500,
+        500
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        500,
+        500
+      ],
+      "focused_shape": [
+        800,
+        800
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        1152,
+        1152
+      ]
+    },
+    {
+      "sku": "25",
+      "source": "25.jpg",
+      "output": "assets\\tests\\25\\images\\25_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        500,
+        500
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        500,
+        500
+      ],
+      "focused_shape": [
+        800,
+        800
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        1152,
+        1152
+      ]
+    },
+    {
+      "sku": "25",
+      "source": "25.jpg",
+      "output": "assets\\tests\\25\\images\\25_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        500,
+        500
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        500,
+        500
+      ],
+      "focused_shape": [
+        800,
+        800
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        1152,
+        1152
+      ]
+    },
+    {
+      "sku": "25",
+      "source": "25.jpg",
+      "output": "assets\\tests\\25\\images\\25_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        500,
+        500
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        500,
+        500
+      ],
+      "focused_shape": [
+        800,
+        800
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        1152,
+        1152
+      ]
+    },
+    {
+      "sku": "25",
+      "source": "25.jpg",
+      "output": "assets\\tests\\25\\images\\25_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        500,
+        500
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        500,
+        500
+      ],
+      "focused_shape": [
+        800,
+        800
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        1152,
+        1152
+      ]
+    },
+    {
+      "sku": "26",
+      "source": "26.jpg",
+      "output": "assets\\tests\\26\\images\\26_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1600,
+        1600
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1600,
+        1600
+      ],
+      "focused_shape": [
+        1600,
+        1600
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2284,
+        2284
+      ]
+    },
+    {
+      "sku": "26",
+      "source": "26.jpg",
+      "output": "assets\\tests\\26\\images\\26_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1600,
+        1600
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1600,
+        1600
+      ],
+      "focused_shape": [
+        1600,
+        1600
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2284,
+        2284
+      ]
+    },
+    {
+      "sku": "26",
+      "source": "26.jpg",
+      "output": "assets\\tests\\26\\images\\26_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1600,
+        1600
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1600,
+        1600
+      ],
+      "focused_shape": [
+        1600,
+        1600
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2284,
+        2284
+      ]
+    },
+    {
+      "sku": "26",
+      "source": "26.jpg",
+      "output": "assets\\tests\\26\\images\\26_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1600,
+        1600
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1600,
+        1600
+      ],
+      "focused_shape": [
+        1600,
+        1600
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2284,
+        2284
+      ]
+    },
+    {
+      "sku": "26",
+      "source": "26.jpg",
+      "output": "assets\\tests\\26\\images\\26_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1600,
+        1600
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1600,
+        1600
+      ],
+      "focused_shape": [
+        1600,
+        1600
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2284,
+        2284
+      ]
+    },
+    {
+      "sku": "26",
+      "source": "26.jpg",
+      "output": "assets\\tests\\26\\images\\26_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1600,
+        1600
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1600,
+        1600
+      ],
+      "focused_shape": [
+        1600,
+        1600
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2284,
+        2284
+      ]
+    },
+    {
+      "sku": "27",
+      "source": "27.jpg",
+      "output": "assets\\tests\\27\\images\\27_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1000,
+        1000
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1000,
+        1000
+      ],
+      "focused_shape": [
+        1000,
+        1000
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1436,
+        1436
+      ]
+    },
+    {
+      "sku": "27",
+      "source": "27.jpg",
+      "output": "assets\\tests\\27\\images\\27_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1000,
+        1000
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1000,
+        1000
+      ],
+      "focused_shape": [
+        1000,
+        1000
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1436,
+        1436
+      ]
+    },
+    {
+      "sku": "27",
+      "source": "27.jpg",
+      "output": "assets\\tests\\27\\images\\27_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1000,
+        1000
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1000,
+        1000
+      ],
+      "focused_shape": [
+        1000,
+        1000
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1436,
+        1436
+      ]
+    },
+    {
+      "sku": "27",
+      "source": "27.jpg",
+      "output": "assets\\tests\\27\\images\\27_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1000,
+        1000
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1000,
+        1000
+      ],
+      "focused_shape": [
+        1000,
+        1000
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1436,
+        1436
+      ]
+    },
+    {
+      "sku": "27",
+      "source": "27.jpg",
+      "output": "assets\\tests\\27\\images\\27_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1000,
+        1000
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1000,
+        1000
+      ],
+      "focused_shape": [
+        1000,
+        1000
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1436,
+        1436
+      ]
+    },
+    {
+      "sku": "27",
+      "source": "27.jpg",
+      "output": "assets\\tests\\27\\images\\27_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1000,
+        1000
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1000,
+        1000
+      ],
+      "focused_shape": [
+        1000,
+        1000
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1436,
+        1436
+      ]
+    },
+    {
+      "sku": "28",
+      "source": "28.jpeg",
+      "output": "assets\\tests\\28\\images\\28_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1919,
+        1920
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1920,
+        1919
+      ],
+      "focused_shape": [
+        1919,
+        1920
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2736,
+        2736
+      ]
+    },
+    {
+      "sku": "28",
+      "source": "28.jpeg",
+      "output": "assets\\tests\\28\\images\\28_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1919,
+        1920
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1920,
+        1919
+      ],
+      "focused_shape": [
+        1919,
+        1920
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2736,
+        2736
+      ]
+    },
+    {
+      "sku": "28",
+      "source": "28.jpeg",
+      "output": "assets\\tests\\28\\images\\28_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1919,
+        1920
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1920,
+        1919
+      ],
+      "focused_shape": [
+        1919,
+        1920
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2736,
+        2736
+      ]
+    },
+    {
+      "sku": "28",
+      "source": "28.jpeg",
+      "output": "assets\\tests\\28\\images\\28_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1919,
+        1920
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1920,
+        1919
+      ],
+      "focused_shape": [
+        1919,
+        1920
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2736,
+        2736
+      ]
+    },
+    {
+      "sku": "28",
+      "source": "28.jpeg",
+      "output": "assets\\tests\\28\\images\\28_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1919,
+        1920
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1920,
+        1919
+      ],
+      "focused_shape": [
+        1919,
+        1920
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2736,
+        2736
+      ]
+    },
+    {
+      "sku": "28",
+      "source": "28.jpeg",
+      "output": "assets\\tests\\28\\images\\28_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1919,
+        1920
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1920,
+        1919
+      ],
+      "focused_shape": [
+        1919,
+        1920
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2736,
+        2736
+      ]
+    },
+    {
+      "sku": "29",
+      "source": "29.png",
+      "output": "assets\\tests\\29\\images\\29_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        762,
+        767
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        767,
+        762
+      ],
+      "focused_shape": [
+        762,
+        767
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1102,
+        1102
+      ]
+    },
+    {
+      "sku": "29",
+      "source": "29.png",
+      "output": "assets\\tests\\29\\images\\29_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        762,
+        767
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        767,
+        762
+      ],
+      "focused_shape": [
+        762,
+        767
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1102,
+        1102
+      ]
+    },
+    {
+      "sku": "29",
+      "source": "29.png",
+      "output": "assets\\tests\\29\\images\\29_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        762,
+        767
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        767,
+        762
+      ],
+      "focused_shape": [
+        762,
+        767
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1102,
+        1102
+      ]
+    },
+    {
+      "sku": "29",
+      "source": "29.png",
+      "output": "assets\\tests\\29\\images\\29_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        762,
+        767
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        767,
+        762
+      ],
+      "focused_shape": [
+        762,
+        767
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1102,
+        1102
+      ]
+    },
+    {
+      "sku": "29",
+      "source": "29.png",
+      "output": "assets\\tests\\29\\images\\29_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        762,
+        767
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        767,
+        762
+      ],
+      "focused_shape": [
+        762,
+        767
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1102,
+        1102
+      ]
+    },
+    {
+      "sku": "29",
+      "source": "29.png",
+      "output": "assets\\tests\\29\\images\\29_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        762,
+        767
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        767,
+        762
+      ],
+      "focused_shape": [
+        762,
+        767
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1102,
+        1102
+      ]
+    },
+    {
+      "sku": "3",
+      "source": "3_1.JPG",
+      "output": "assets\\tests\\3\\images\\3_1_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2488,
+        4416
+      ],
+      "source_roi_xyxy": [
+        1806,
+        1050,
+        2671,
+        1526
+      ],
+      "focused_shape": [
+        476,
+        865
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1008,
+        1008
+      ]
+    },
+    {
+      "sku": "3",
+      "source": "3_1.JPG",
+      "output": "assets\\tests\\3\\images\\3_1_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2488,
+        4416
+      ],
+      "source_roi_xyxy": [
+        1806,
+        1050,
+        2671,
+        1526
+      ],
+      "focused_shape": [
+        476,
+        865
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1008,
+        1008
+      ]
+    },
+    {
+      "sku": "3",
+      "source": "3_1.JPG",
+      "output": "assets\\tests\\3\\images\\3_1_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2488,
+        4416
+      ],
+      "source_roi_xyxy": [
+        1806,
+        1050,
+        2671,
+        1526
+      ],
+      "focused_shape": [
+        476,
+        865
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1008,
+        1008
+      ]
+    },
+    {
+      "sku": "3",
+      "source": "3_1.JPG",
+      "output": "assets\\tests\\3\\images\\3_1_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2488,
+        4416
+      ],
+      "source_roi_xyxy": [
+        1806,
+        1050,
+        2671,
+        1526
+      ],
+      "focused_shape": [
+        476,
+        865
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1008,
+        1008
+      ]
+    },
+    {
+      "sku": "3",
+      "source": "3_1.JPG",
+      "output": "assets\\tests\\3\\images\\3_1_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2488,
+        4416
+      ],
+      "source_roi_xyxy": [
+        1806,
+        1050,
+        2671,
+        1526
+      ],
+      "focused_shape": [
+        476,
+        865
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1008,
+        1008
+      ]
+    },
+    {
+      "sku": "3",
+      "source": "3_1.JPG",
+      "output": "assets\\tests\\3\\images\\3_1_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2488,
+        4416
+      ],
+      "source_roi_xyxy": [
+        1806,
+        1050,
+        2671,
+        1526
+      ],
+      "focused_shape": [
+        476,
+        865
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1008,
+        1008
+      ]
+    },
+    {
+      "sku": "3",
+      "source": "3_2.jpg",
+      "output": "assets\\tests\\3\\images\\3_2_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        4096,
+        4096
+      ],
+      "source_roi_xyxy": [
+        595,
+        1219,
+        3515,
+        2838
+      ],
+      "focused_shape": [
+        1619,
+        2920
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        3360,
+        3360
+      ]
+    },
+    {
+      "sku": "3",
+      "source": "3_2.jpg",
+      "output": "assets\\tests\\3\\images\\3_2_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        4096,
+        4096
+      ],
+      "source_roi_xyxy": [
+        595,
+        1219,
+        3515,
+        2838
+      ],
+      "focused_shape": [
+        1619,
+        2920
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        3360,
+        3360
+      ]
+    },
+    {
+      "sku": "3",
+      "source": "3_2.jpg",
+      "output": "assets\\tests\\3\\images\\3_2_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        4096,
+        4096
+      ],
+      "source_roi_xyxy": [
+        595,
+        1219,
+        3515,
+        2838
+      ],
+      "focused_shape": [
+        1619,
+        2920
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        3360,
+        3360
+      ]
+    },
+    {
+      "sku": "3",
+      "source": "3_2.jpg",
+      "output": "assets\\tests\\3\\images\\3_2_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        4096,
+        4096
+      ],
+      "source_roi_xyxy": [
+        595,
+        1219,
+        3515,
+        2838
+      ],
+      "focused_shape": [
+        1619,
+        2920
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        3360,
+        3360
+      ]
+    },
+    {
+      "sku": "3",
+      "source": "3_2.jpg",
+      "output": "assets\\tests\\3\\images\\3_2_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        4096,
+        4096
+      ],
+      "source_roi_xyxy": [
+        595,
+        1219,
+        3515,
+        2838
+      ],
+      "focused_shape": [
+        1619,
+        2920
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        3360,
+        3360
+      ]
+    },
+    {
+      "sku": "3",
+      "source": "3_2.jpg",
+      "output": "assets\\tests\\3\\images\\3_2_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        4096,
+        4096
+      ],
+      "source_roi_xyxy": [
+        595,
+        1219,
+        3515,
+        2838
+      ],
+      "focused_shape": [
+        1619,
+        2920
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        3360,
+        3360
+      ]
+    },
+    {
+      "sku": "30",
+      "source": "30.jpg",
+      "output": "assets\\tests\\30\\images\\30_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        917,
+        940
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        940,
+        917
+      ],
+      "focused_shape": [
+        917,
+        940
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1334,
+        1334
+      ]
+    },
+    {
+      "sku": "30",
+      "source": "30.jpg",
+      "output": "assets\\tests\\30\\images\\30_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        917,
+        940
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        940,
+        917
+      ],
+      "focused_shape": [
+        917,
+        940
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1334,
+        1334
+      ]
+    },
+    {
+      "sku": "30",
+      "source": "30.jpg",
+      "output": "assets\\tests\\30\\images\\30_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        917,
+        940
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        940,
+        917
+      ],
+      "focused_shape": [
+        917,
+        940
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1334,
+        1334
+      ]
+    },
+    {
+      "sku": "30",
+      "source": "30.jpg",
+      "output": "assets\\tests\\30\\images\\30_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        917,
+        940
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        940,
+        917
+      ],
+      "focused_shape": [
+        917,
+        940
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1334,
+        1334
+      ]
+    },
+    {
+      "sku": "30",
+      "source": "30.jpg",
+      "output": "assets\\tests\\30\\images\\30_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        917,
+        940
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        940,
+        917
+      ],
+      "focused_shape": [
+        917,
+        940
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1334,
+        1334
+      ]
+    },
+    {
+      "sku": "30",
+      "source": "30.jpg",
+      "output": "assets\\tests\\30\\images\\30_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        917,
+        940
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        940,
+        917
+      ],
+      "focused_shape": [
+        917,
+        940
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1334,
+        1334
+      ]
+    },
+    {
+      "sku": "31",
+      "source": "31.jpg",
+      "output": "assets\\tests\\31\\images\\31_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1000,
+        1000
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1000,
+        1000
+      ],
+      "focused_shape": [
+        1000,
+        1000
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1436,
+        1436
+      ]
+    },
+    {
+      "sku": "31",
+      "source": "31.jpg",
+      "output": "assets\\tests\\31\\images\\31_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1000,
+        1000
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1000,
+        1000
+      ],
+      "focused_shape": [
+        1000,
+        1000
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1436,
+        1436
+      ]
+    },
+    {
+      "sku": "31",
+      "source": "31.jpg",
+      "output": "assets\\tests\\31\\images\\31_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1000,
+        1000
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1000,
+        1000
+      ],
+      "focused_shape": [
+        1000,
+        1000
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1436,
+        1436
+      ]
+    },
+    {
+      "sku": "31",
+      "source": "31.jpg",
+      "output": "assets\\tests\\31\\images\\31_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1000,
+        1000
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1000,
+        1000
+      ],
+      "focused_shape": [
+        1000,
+        1000
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1436,
+        1436
+      ]
+    },
+    {
+      "sku": "31",
+      "source": "31.jpg",
+      "output": "assets\\tests\\31\\images\\31_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1000,
+        1000
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1000,
+        1000
+      ],
+      "focused_shape": [
+        1000,
+        1000
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1436,
+        1436
+      ]
+    },
+    {
+      "sku": "31",
+      "source": "31.jpg",
+      "output": "assets\\tests\\31\\images\\31_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1000,
+        1000
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1000,
+        1000
+      ],
+      "focused_shape": [
+        1000,
+        1000
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1436,
+        1436
+      ]
+    },
+    {
+      "sku": "32",
+      "source": "32.jpg",
+      "output": "assets\\tests\\32\\images\\32_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        800,
+        800
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        800,
+        800
+      ],
+      "focused_shape": [
+        800,
+        800
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1152,
+        1152
+      ]
+    },
+    {
+      "sku": "32",
+      "source": "32.jpg",
+      "output": "assets\\tests\\32\\images\\32_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        800,
+        800
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        800,
+        800
+      ],
+      "focused_shape": [
+        800,
+        800
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1152,
+        1152
+      ]
+    },
+    {
+      "sku": "32",
+      "source": "32.jpg",
+      "output": "assets\\tests\\32\\images\\32_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        800,
+        800
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        800,
+        800
+      ],
+      "focused_shape": [
+        800,
+        800
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1152,
+        1152
+      ]
+    },
+    {
+      "sku": "32",
+      "source": "32.jpg",
+      "output": "assets\\tests\\32\\images\\32_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        800,
+        800
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        800,
+        800
+      ],
+      "focused_shape": [
+        800,
+        800
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1152,
+        1152
+      ]
+    },
+    {
+      "sku": "32",
+      "source": "32.jpg",
+      "output": "assets\\tests\\32\\images\\32_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        800,
+        800
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        800,
+        800
+      ],
+      "focused_shape": [
+        800,
+        800
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1152,
+        1152
+      ]
+    },
+    {
+      "sku": "32",
+      "source": "32.jpg",
+      "output": "assets\\tests\\32\\images\\32_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        800,
+        800
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        800,
+        800
+      ],
+      "focused_shape": [
+        800,
+        800
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1152,
+        1152
+      ]
+    },
+    {
+      "sku": "33",
+      "source": "33.jpg",
+      "output": "assets\\tests\\33\\images\\33_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1000,
+        1000
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        988,
+        1000
+      ],
+      "focused_shape": [
+        1000,
+        988
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1426,
+        1426
+      ]
+    },
+    {
+      "sku": "33",
+      "source": "33.jpg",
+      "output": "assets\\tests\\33\\images\\33_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1000,
+        1000
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        988,
+        1000
+      ],
+      "focused_shape": [
+        1000,
+        988
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1426,
+        1426
+      ]
+    },
+    {
+      "sku": "33",
+      "source": "33.jpg",
+      "output": "assets\\tests\\33\\images\\33_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1000,
+        1000
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        988,
+        1000
+      ],
+      "focused_shape": [
+        1000,
+        988
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1426,
+        1426
+      ]
+    },
+    {
+      "sku": "33",
+      "source": "33.jpg",
+      "output": "assets\\tests\\33\\images\\33_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1000,
+        1000
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        988,
+        1000
+      ],
+      "focused_shape": [
+        1000,
+        988
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1426,
+        1426
+      ]
+    },
+    {
+      "sku": "33",
+      "source": "33.jpg",
+      "output": "assets\\tests\\33\\images\\33_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1000,
+        1000
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        988,
+        1000
+      ],
+      "focused_shape": [
+        1000,
+        988
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1426,
+        1426
+      ]
+    },
+    {
+      "sku": "33",
+      "source": "33.jpg",
+      "output": "assets\\tests\\33\\images\\33_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1000,
+        1000
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        988,
+        1000
+      ],
+      "focused_shape": [
+        1000,
+        988
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1426,
+        1426
+      ]
+    },
+    {
+      "sku": "34",
+      "source": "34.jpg",
+      "output": "assets\\tests\\34\\images\\34_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        474,
+        474
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        474,
+        474
+      ],
+      "focused_shape": [
+        474,
+        474
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        692,
+        692
+      ]
+    },
+    {
+      "sku": "34",
+      "source": "34.jpg",
+      "output": "assets\\tests\\34\\images\\34_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        474,
+        474
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        474,
+        474
+      ],
+      "focused_shape": [
+        474,
+        474
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        692,
+        692
+      ]
+    },
+    {
+      "sku": "34",
+      "source": "34.jpg",
+      "output": "assets\\tests\\34\\images\\34_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        474,
+        474
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        474,
+        474
+      ],
+      "focused_shape": [
+        474,
+        474
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        692,
+        692
+      ]
+    },
+    {
+      "sku": "34",
+      "source": "34.jpg",
+      "output": "assets\\tests\\34\\images\\34_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        474,
+        474
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        474,
+        474
+      ],
+      "focused_shape": [
+        474,
+        474
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        692,
+        692
+      ]
+    },
+    {
+      "sku": "34",
+      "source": "34.jpg",
+      "output": "assets\\tests\\34\\images\\34_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        474,
+        474
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        474,
+        474
+      ],
+      "focused_shape": [
+        474,
+        474
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        692,
+        692
+      ]
+    },
+    {
+      "sku": "34",
+      "source": "34.jpg",
+      "output": "assets\\tests\\34\\images\\34_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        474,
+        474
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        474,
+        474
+      ],
+      "focused_shape": [
+        474,
+        474
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        692,
+        692
+      ]
+    },
+    {
+      "sku": "35",
+      "source": "35.jpg",
+      "output": "assets\\tests\\35\\images\\35_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        798,
+        1420
+      ],
+      "source_roi_xyxy": [
+        60,
+        0,
+        1367,
+        798
+      ],
+      "focused_shape": [
+        798,
+        1307
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1552,
+        1552
+      ]
+    },
+    {
+      "sku": "35",
+      "source": "35.jpg",
+      "output": "assets\\tests\\35\\images\\35_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        798,
+        1420
+      ],
+      "source_roi_xyxy": [
+        60,
+        0,
+        1367,
+        798
+      ],
+      "focused_shape": [
+        798,
+        1307
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1552,
+        1552
+      ]
+    },
+    {
+      "sku": "35",
+      "source": "35.jpg",
+      "output": "assets\\tests\\35\\images\\35_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        798,
+        1420
+      ],
+      "source_roi_xyxy": [
+        60,
+        0,
+        1367,
+        798
+      ],
+      "focused_shape": [
+        798,
+        1307
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1552,
+        1552
+      ]
+    },
+    {
+      "sku": "35",
+      "source": "35.jpg",
+      "output": "assets\\tests\\35\\images\\35_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        798,
+        1420
+      ],
+      "source_roi_xyxy": [
+        60,
+        0,
+        1367,
+        798
+      ],
+      "focused_shape": [
+        798,
+        1307
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1552,
+        1552
+      ]
+    },
+    {
+      "sku": "35",
+      "source": "35.jpg",
+      "output": "assets\\tests\\35\\images\\35_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        798,
+        1420
+      ],
+      "source_roi_xyxy": [
+        60,
+        0,
+        1367,
+        798
+      ],
+      "focused_shape": [
+        798,
+        1307
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1552,
+        1552
+      ]
+    },
+    {
+      "sku": "35",
+      "source": "35.jpg",
+      "output": "assets\\tests\\35\\images\\35_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        798,
+        1420
+      ],
+      "source_roi_xyxy": [
+        60,
+        0,
+        1367,
+        798
+      ],
+      "focused_shape": [
+        798,
+        1307
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1552,
+        1552
+      ]
+    },
+    {
+      "sku": "36",
+      "source": "36.jpg",
+      "output": "assets\\tests\\36\\images\\36_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        500,
+        500
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        500,
+        500
+      ],
+      "focused_shape": [
+        500,
+        500
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        728,
+        728
+      ]
+    },
+    {
+      "sku": "36",
+      "source": "36.jpg",
+      "output": "assets\\tests\\36\\images\\36_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        500,
+        500
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        500,
+        500
+      ],
+      "focused_shape": [
+        500,
+        500
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        728,
+        728
+      ]
+    },
+    {
+      "sku": "36",
+      "source": "36.jpg",
+      "output": "assets\\tests\\36\\images\\36_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        500,
+        500
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        500,
+        500
+      ],
+      "focused_shape": [
+        500,
+        500
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        728,
+        728
+      ]
+    },
+    {
+      "sku": "36",
+      "source": "36.jpg",
+      "output": "assets\\tests\\36\\images\\36_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        500,
+        500
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        500,
+        500
+      ],
+      "focused_shape": [
+        500,
+        500
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        728,
+        728
+      ]
+    },
+    {
+      "sku": "36",
+      "source": "36.jpg",
+      "output": "assets\\tests\\36\\images\\36_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        500,
+        500
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        500,
+        500
+      ],
+      "focused_shape": [
+        500,
+        500
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        728,
+        728
+      ]
+    },
+    {
+      "sku": "36",
+      "source": "36.jpg",
+      "output": "assets\\tests\\36\\images\\36_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        500,
+        500
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        500,
+        500
+      ],
+      "focused_shape": [
+        500,
+        500
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        728,
+        728
+      ]
+    },
+    {
+      "sku": "37",
+      "source": "37.jpg",
+      "output": "assets\\tests\\37\\images\\37_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        550,
+        550
+      ],
+      "source_roi_xyxy": [
+        51,
+        0,
+        496,
+        550
+      ],
+      "focused_shape": [
+        550,
+        445
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        728,
+        728
+      ]
+    },
+    {
+      "sku": "37",
+      "source": "37.jpg",
+      "output": "assets\\tests\\37\\images\\37_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        550,
+        550
+      ],
+      "source_roi_xyxy": [
+        51,
+        0,
+        496,
+        550
+      ],
+      "focused_shape": [
+        550,
+        445
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        728,
+        728
+      ]
+    },
+    {
+      "sku": "37",
+      "source": "37.jpg",
+      "output": "assets\\tests\\37\\images\\37_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        550,
+        550
+      ],
+      "source_roi_xyxy": [
+        51,
+        0,
+        496,
+        550
+      ],
+      "focused_shape": [
+        550,
+        445
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        728,
+        728
+      ]
+    },
+    {
+      "sku": "37",
+      "source": "37.jpg",
+      "output": "assets\\tests\\37\\images\\37_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        550,
+        550
+      ],
+      "source_roi_xyxy": [
+        51,
+        0,
+        496,
+        550
+      ],
+      "focused_shape": [
+        550,
+        445
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        728,
+        728
+      ]
+    },
+    {
+      "sku": "37",
+      "source": "37.jpg",
+      "output": "assets\\tests\\37\\images\\37_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        550,
+        550
+      ],
+      "source_roi_xyxy": [
+        51,
+        0,
+        496,
+        550
+      ],
+      "focused_shape": [
+        550,
+        445
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        728,
+        728
+      ]
+    },
+    {
+      "sku": "37",
+      "source": "37.jpg",
+      "output": "assets\\tests\\37\\images\\37_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        550,
+        550
+      ],
+      "source_roi_xyxy": [
+        51,
+        0,
+        496,
+        550
+      ],
+      "focused_shape": [
+        550,
+        445
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        728,
+        728
+      ]
+    },
+    {
+      "sku": "37",
+      "source": "37_a.jpg",
+      "output": "assets\\tests\\37\\images\\37_a_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2000,
+        2000
+      ],
+      "source_roi_xyxy": [
+        69,
+        0,
+        1984,
+        2000
+      ],
+      "focused_shape": [
+        2000,
+        1915
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2790,
+        2790
+      ]
+    },
+    {
+      "sku": "37",
+      "source": "37_a.jpg",
+      "output": "assets\\tests\\37\\images\\37_a_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2000,
+        2000
+      ],
+      "source_roi_xyxy": [
+        69,
+        0,
+        1984,
+        2000
+      ],
+      "focused_shape": [
+        2000,
+        1915
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2790,
+        2790
+      ]
+    },
+    {
+      "sku": "37",
+      "source": "37_a.jpg",
+      "output": "assets\\tests\\37\\images\\37_a_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2000,
+        2000
+      ],
+      "source_roi_xyxy": [
+        69,
+        0,
+        1984,
+        2000
+      ],
+      "focused_shape": [
+        2000,
+        1915
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2790,
+        2790
+      ]
+    },
+    {
+      "sku": "37",
+      "source": "37_a.jpg",
+      "output": "assets\\tests\\37\\images\\37_a_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2000,
+        2000
+      ],
+      "source_roi_xyxy": [
+        69,
+        0,
+        1984,
+        2000
+      ],
+      "focused_shape": [
+        2000,
+        1915
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2790,
+        2790
+      ]
+    },
+    {
+      "sku": "37",
+      "source": "37_a.jpg",
+      "output": "assets\\tests\\37\\images\\37_a_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2000,
+        2000
+      ],
+      "source_roi_xyxy": [
+        69,
+        0,
+        1984,
+        2000
+      ],
+      "focused_shape": [
+        2000,
+        1915
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2790,
+        2790
+      ]
+    },
+    {
+      "sku": "37",
+      "source": "37_a.jpg",
+      "output": "assets\\tests\\37\\images\\37_a_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2000,
+        2000
+      ],
+      "source_roi_xyxy": [
+        69,
+        0,
+        1984,
+        2000
+      ],
+      "focused_shape": [
+        2000,
+        1915
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2790,
+        2790
+      ]
+    },
+    {
+      "sku": "38",
+      "source": "38.jpg",
+      "output": "assets\\tests\\38\\images\\38_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        640,
+        640
+      ],
+      "focused_shape": [
+        640,
+        640
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        926,
+        926
+      ]
+    },
+    {
+      "sku": "38",
+      "source": "38.jpg",
+      "output": "assets\\tests\\38\\images\\38_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        640,
+        640
+      ],
+      "focused_shape": [
+        640,
+        640
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        926,
+        926
+      ]
+    },
+    {
+      "sku": "38",
+      "source": "38.jpg",
+      "output": "assets\\tests\\38\\images\\38_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        640,
+        640
+      ],
+      "focused_shape": [
+        640,
+        640
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        926,
+        926
+      ]
+    },
+    {
+      "sku": "38",
+      "source": "38.jpg",
+      "output": "assets\\tests\\38\\images\\38_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        640,
+        640
+      ],
+      "focused_shape": [
+        640,
+        640
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        926,
+        926
+      ]
+    },
+    {
+      "sku": "38",
+      "source": "38.jpg",
+      "output": "assets\\tests\\38\\images\\38_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        640,
+        640
+      ],
+      "focused_shape": [
+        640,
+        640
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        926,
+        926
+      ]
+    },
+    {
+      "sku": "38",
+      "source": "38.jpg",
+      "output": "assets\\tests\\38\\images\\38_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        640,
+        640
+      ],
+      "focused_shape": [
+        640,
+        640
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        926,
+        926
+      ]
+    },
+    {
+      "sku": "39",
+      "source": "39.jpg",
+      "output": "assets\\tests\\39\\images\\39_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        450,
+        450
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        450,
+        450
+      ],
+      "focused_shape": [
+        450,
+        450
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        658,
+        658
+      ]
+    },
+    {
+      "sku": "39",
+      "source": "39.jpg",
+      "output": "assets\\tests\\39\\images\\39_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        450,
+        450
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        450,
+        450
+      ],
+      "focused_shape": [
+        450,
+        450
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        658,
+        658
+      ]
+    },
+    {
+      "sku": "39",
+      "source": "39.jpg",
+      "output": "assets\\tests\\39\\images\\39_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        450,
+        450
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        450,
+        450
+      ],
+      "focused_shape": [
+        450,
+        450
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        658,
+        658
+      ]
+    },
+    {
+      "sku": "39",
+      "source": "39.jpg",
+      "output": "assets\\tests\\39\\images\\39_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        450,
+        450
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        450,
+        450
+      ],
+      "focused_shape": [
+        450,
+        450
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        658,
+        658
+      ]
+    },
+    {
+      "sku": "39",
+      "source": "39.jpg",
+      "output": "assets\\tests\\39\\images\\39_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        450,
+        450
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        450,
+        450
+      ],
+      "focused_shape": [
+        450,
+        450
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        658,
+        658
+      ]
+    },
+    {
+      "sku": "39",
+      "source": "39.jpg",
+      "output": "assets\\tests\\39\\images\\39_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        450,
+        450
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        450,
+        450
+      ],
+      "focused_shape": [
+        450,
+        450
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        658,
+        658
+      ]
+    },
+    {
+      "sku": "4",
+      "source": "4_1.JPG",
+      "output": "assets\\tests\\4\\images\\4_1_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2488,
+        4416
+      ],
+      "source_roi_xyxy": [
+        1918,
+        1131,
+        2515,
+        1449
+      ],
+      "focused_shape": [
+        318,
+        597
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        698,
+        698
+      ]
+    },
+    {
+      "sku": "4",
+      "source": "4_1.JPG",
+      "output": "assets\\tests\\4\\images\\4_1_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2488,
+        4416
+      ],
+      "source_roi_xyxy": [
+        1918,
+        1131,
+        2515,
+        1449
+      ],
+      "focused_shape": [
+        318,
+        597
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        698,
+        698
+      ]
+    },
+    {
+      "sku": "4",
+      "source": "4_1.JPG",
+      "output": "assets\\tests\\4\\images\\4_1_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2488,
+        4416
+      ],
+      "source_roi_xyxy": [
+        1918,
+        1131,
+        2515,
+        1449
+      ],
+      "focused_shape": [
+        318,
+        597
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        698,
+        698
+      ]
+    },
+    {
+      "sku": "4",
+      "source": "4_1.JPG",
+      "output": "assets\\tests\\4\\images\\4_1_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2488,
+        4416
+      ],
+      "source_roi_xyxy": [
+        1918,
+        1131,
+        2515,
+        1449
+      ],
+      "focused_shape": [
+        318,
+        597
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        698,
+        698
+      ]
+    },
+    {
+      "sku": "4",
+      "source": "4_1.JPG",
+      "output": "assets\\tests\\4\\images\\4_1_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2488,
+        4416
+      ],
+      "source_roi_xyxy": [
+        1918,
+        1131,
+        2515,
+        1449
+      ],
+      "focused_shape": [
+        318,
+        597
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        698,
+        698
+      ]
+    },
+    {
+      "sku": "4",
+      "source": "4_1.JPG",
+      "output": "assets\\tests\\4\\images\\4_1_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2488,
+        4416
+      ],
+      "source_roi_xyxy": [
+        1918,
+        1131,
+        2515,
+        1449
+      ],
+      "focused_shape": [
+        318,
+        597
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        698,
+        698
+      ]
+    },
+    {
+      "sku": "4",
+      "source": "4_3.JPG",
+      "output": "assets\\tests\\4\\images\\4_3_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2488,
+        4416
+      ],
+      "source_roi_xyxy": [
+        1917,
+        1076,
+        2518,
+        1393
+      ],
+      "focused_shape": [
+        317,
+        601
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        700,
+        700
+      ]
+    },
+    {
+      "sku": "4",
+      "source": "4_3.JPG",
+      "output": "assets\\tests\\4\\images\\4_3_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2488,
+        4416
+      ],
+      "source_roi_xyxy": [
+        1917,
+        1076,
+        2518,
+        1393
+      ],
+      "focused_shape": [
+        317,
+        601
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        700,
+        700
+      ]
+    },
+    {
+      "sku": "4",
+      "source": "4_3.JPG",
+      "output": "assets\\tests\\4\\images\\4_3_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2488,
+        4416
+      ],
+      "source_roi_xyxy": [
+        1917,
+        1076,
+        2518,
+        1393
+      ],
+      "focused_shape": [
+        317,
+        601
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        700,
+        700
+      ]
+    },
+    {
+      "sku": "4",
+      "source": "4_3.JPG",
+      "output": "assets\\tests\\4\\images\\4_3_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2488,
+        4416
+      ],
+      "source_roi_xyxy": [
+        1917,
+        1076,
+        2518,
+        1393
+      ],
+      "focused_shape": [
+        317,
+        601
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        700,
+        700
+      ]
+    },
+    {
+      "sku": "4",
+      "source": "4_3.JPG",
+      "output": "assets\\tests\\4\\images\\4_3_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2488,
+        4416
+      ],
+      "source_roi_xyxy": [
+        1917,
+        1076,
+        2518,
+        1393
+      ],
+      "focused_shape": [
+        317,
+        601
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        700,
+        700
+      ]
+    },
+    {
+      "sku": "4",
+      "source": "4_3.JPG",
+      "output": "assets\\tests\\4\\images\\4_3_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        2488,
+        4416
+      ],
+      "source_roi_xyxy": [
+        1917,
+        1076,
+        2518,
+        1393
+      ],
+      "focused_shape": [
+        317,
+        601
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        700,
+        700
+      ]
+    },
+    {
+      "sku": "41",
+      "source": "41.jpg",
+      "output": "assets\\tests\\41\\images\\41_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        0,
+        1,
+        640,
+        638
+      ],
+      "focused_shape": [
+        637,
+        640
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        924,
+        924
+      ]
+    },
+    {
+      "sku": "41",
+      "source": "41.jpg",
+      "output": "assets\\tests\\41\\images\\41_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        0,
+        1,
+        640,
+        638
+      ],
+      "focused_shape": [
+        637,
+        640
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        924,
+        924
+      ]
+    },
+    {
+      "sku": "41",
+      "source": "41.jpg",
+      "output": "assets\\tests\\41\\images\\41_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        0,
+        1,
+        640,
+        638
+      ],
+      "focused_shape": [
+        637,
+        640
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        924,
+        924
+      ]
+    },
+    {
+      "sku": "41",
+      "source": "41.jpg",
+      "output": "assets\\tests\\41\\images\\41_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        0,
+        1,
+        640,
+        638
+      ],
+      "focused_shape": [
+        637,
+        640
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        924,
+        924
+      ]
+    },
+    {
+      "sku": "41",
+      "source": "41.jpg",
+      "output": "assets\\tests\\41\\images\\41_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        0,
+        1,
+        640,
+        638
+      ],
+      "focused_shape": [
+        637,
+        640
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        924,
+        924
+      ]
+    },
+    {
+      "sku": "41",
+      "source": "41.jpg",
+      "output": "assets\\tests\\41\\images\\41_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        0,
+        1,
+        640,
+        638
+      ],
+      "focused_shape": [
+        637,
+        640
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        924,
+        924
+      ]
+    },
+    {
+      "sku": "42",
+      "source": "43.jpg",
+      "output": "assets\\tests\\42\\images\\43_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        999,
+        999
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        999,
+        996
+      ],
+      "focused_shape": [
+        996,
+        999
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1432,
+        1432
+      ]
+    },
+    {
+      "sku": "42",
+      "source": "43.jpg",
+      "output": "assets\\tests\\42\\images\\43_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        999,
+        999
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        999,
+        996
+      ],
+      "focused_shape": [
+        996,
+        999
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1432,
+        1432
+      ]
+    },
+    {
+      "sku": "42",
+      "source": "43.jpg",
+      "output": "assets\\tests\\42\\images\\43_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        999,
+        999
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        999,
+        996
+      ],
+      "focused_shape": [
+        996,
+        999
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1432,
+        1432
+      ]
+    },
+    {
+      "sku": "42",
+      "source": "43.jpg",
+      "output": "assets\\tests\\42\\images\\43_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        999,
+        999
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        999,
+        996
+      ],
+      "focused_shape": [
+        996,
+        999
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1432,
+        1432
+      ]
+    },
+    {
+      "sku": "42",
+      "source": "43.jpg",
+      "output": "assets\\tests\\42\\images\\43_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        999,
+        999
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        999,
+        996
+      ],
+      "focused_shape": [
+        996,
+        999
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1432,
+        1432
+      ]
+    },
+    {
+      "sku": "42",
+      "source": "43.jpg",
+      "output": "assets\\tests\\42\\images\\43_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        999,
+        999
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        999,
+        996
+      ],
+      "focused_shape": [
+        996,
+        999
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1432,
+        1432
+      ]
+    },
+    {
+      "sku": "43",
+      "source": "43.jpg",
+      "output": "assets\\tests\\43\\images\\43_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1485,
+        2048
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        2048,
+        1485
+      ],
+      "focused_shape": [
+        1485,
+        2048
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2550,
+        2550
+      ]
+    },
+    {
+      "sku": "43",
+      "source": "43.jpg",
+      "output": "assets\\tests\\43\\images\\43_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1485,
+        2048
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        2048,
+        1485
+      ],
+      "focused_shape": [
+        1485,
+        2048
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2550,
+        2550
+      ]
+    },
+    {
+      "sku": "43",
+      "source": "43.jpg",
+      "output": "assets\\tests\\43\\images\\43_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1485,
+        2048
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        2048,
+        1485
+      ],
+      "focused_shape": [
+        1485,
+        2048
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2550,
+        2550
+      ]
+    },
+    {
+      "sku": "43",
+      "source": "43.jpg",
+      "output": "assets\\tests\\43\\images\\43_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1485,
+        2048
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        2048,
+        1485
+      ],
+      "focused_shape": [
+        1485,
+        2048
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2550,
+        2550
+      ]
+    },
+    {
+      "sku": "43",
+      "source": "43.jpg",
+      "output": "assets\\tests\\43\\images\\43_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1485,
+        2048
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        2048,
+        1485
+      ],
+      "focused_shape": [
+        1485,
+        2048
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2550,
+        2550
+      ]
+    },
+    {
+      "sku": "43",
+      "source": "43.jpg",
+      "output": "assets\\tests\\43\\images\\43_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1485,
+        2048
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        2048,
+        1485
+      ],
+      "focused_shape": [
+        1485,
+        2048
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        2550,
+        2550
+      ]
+    },
+    {
+      "sku": "44",
+      "source": "44.jpg",
+      "output": "assets\\tests\\44\\images\\44_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        798,
+        1420
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1420,
+        798
+      ],
+      "focused_shape": [
+        798,
+        1420
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1650,
+        1650
+      ]
+    },
+    {
+      "sku": "44",
+      "source": "44.jpg",
+      "output": "assets\\tests\\44\\images\\44_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        798,
+        1420
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1420,
+        798
+      ],
+      "focused_shape": [
+        798,
+        1420
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1650,
+        1650
+      ]
+    },
+    {
+      "sku": "44",
+      "source": "44.jpg",
+      "output": "assets\\tests\\44\\images\\44_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        798,
+        1420
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1420,
+        798
+      ],
+      "focused_shape": [
+        798,
+        1420
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1650,
+        1650
+      ]
+    },
+    {
+      "sku": "44",
+      "source": "44.jpg",
+      "output": "assets\\tests\\44\\images\\44_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        798,
+        1420
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1420,
+        798
+      ],
+      "focused_shape": [
+        798,
+        1420
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1650,
+        1650
+      ]
+    },
+    {
+      "sku": "44",
+      "source": "44.jpg",
+      "output": "assets\\tests\\44\\images\\44_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        798,
+        1420
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1420,
+        798
+      ],
+      "focused_shape": [
+        798,
+        1420
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1650,
+        1650
+      ]
+    },
+    {
+      "sku": "44",
+      "source": "44.jpg",
+      "output": "assets\\tests\\44\\images\\44_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        798,
+        1420
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        1420,
+        798
+      ],
+      "focused_shape": [
+        798,
+        1420
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1650,
+        1650
+      ]
+    },
+    {
+      "sku": "45",
+      "source": "45.jpg",
+      "output": "assets\\tests\\45\\images\\45_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        500,
+        500
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        500,
+        500
+      ],
+      "focused_shape": [
+        500,
+        500
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        728,
+        728
+      ]
+    },
+    {
+      "sku": "45",
+      "source": "45.jpg",
+      "output": "assets\\tests\\45\\images\\45_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        500,
+        500
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        500,
+        500
+      ],
+      "focused_shape": [
+        500,
+        500
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        728,
+        728
+      ]
+    },
+    {
+      "sku": "45",
+      "source": "45.jpg",
+      "output": "assets\\tests\\45\\images\\45_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        500,
+        500
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        500,
+        500
+      ],
+      "focused_shape": [
+        500,
+        500
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        728,
+        728
+      ]
+    },
+    {
+      "sku": "45",
+      "source": "45.jpg",
+      "output": "assets\\tests\\45\\images\\45_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        500,
+        500
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        500,
+        500
+      ],
+      "focused_shape": [
+        500,
+        500
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        728,
+        728
+      ]
+    },
+    {
+      "sku": "45",
+      "source": "45.jpg",
+      "output": "assets\\tests\\45\\images\\45_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        500,
+        500
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        500,
+        500
+      ],
+      "focused_shape": [
+        500,
+        500
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        728,
+        728
+      ]
+    },
+    {
+      "sku": "45",
+      "source": "45.jpg",
+      "output": "assets\\tests\\45\\images\\45_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        500,
+        500
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        500,
+        500
+      ],
+      "focused_shape": [
+        500,
+        500
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        728,
+        728
+      ]
+    },
+    {
+      "sku": "46",
+      "source": "46.jpg",
+      "output": "assets\\tests\\46\\images\\46_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        600,
+        600
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        600,
+        600
+      ],
+      "focused_shape": [
+        600,
+        600
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        870,
+        870
+      ]
+    },
+    {
+      "sku": "46",
+      "source": "46.jpg",
+      "output": "assets\\tests\\46\\images\\46_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        600,
+        600
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        600,
+        600
+      ],
+      "focused_shape": [
+        600,
+        600
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        870,
+        870
+      ]
+    },
+    {
+      "sku": "46",
+      "source": "46.jpg",
+      "output": "assets\\tests\\46\\images\\46_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        600,
+        600
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        600,
+        600
+      ],
+      "focused_shape": [
+        600,
+        600
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        870,
+        870
+      ]
+    },
+    {
+      "sku": "46",
+      "source": "46.jpg",
+      "output": "assets\\tests\\46\\images\\46_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        600,
+        600
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        600,
+        600
+      ],
+      "focused_shape": [
+        600,
+        600
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        870,
+        870
+      ]
+    },
+    {
+      "sku": "46",
+      "source": "46.jpg",
+      "output": "assets\\tests\\46\\images\\46_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        600,
+        600
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        600,
+        600
+      ],
+      "focused_shape": [
+        600,
+        600
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        870,
+        870
+      ]
+    },
+    {
+      "sku": "46",
+      "source": "46.jpg",
+      "output": "assets\\tests\\46\\images\\46_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        600,
+        600
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        600,
+        600
+      ],
+      "focused_shape": [
+        600,
+        600
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        870,
+        870
+      ]
+    },
+    {
+      "sku": "47",
+      "source": "47.jpg",
+      "output": "assets\\tests\\47\\images\\47_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        500,
+        500
+      ],
+      "source_roi_xyxy": [
+        0,
+        44,
+        500,
+        456
+      ],
+      "focused_shape": [
+        412,
+        500
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        668,
+        668
+      ]
+    },
+    {
+      "sku": "47",
+      "source": "47.jpg",
+      "output": "assets\\tests\\47\\images\\47_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        500,
+        500
+      ],
+      "source_roi_xyxy": [
+        0,
+        44,
+        500,
+        456
+      ],
+      "focused_shape": [
+        412,
+        500
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        668,
+        668
+      ]
+    },
+    {
+      "sku": "47",
+      "source": "47.jpg",
+      "output": "assets\\tests\\47\\images\\47_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        500,
+        500
+      ],
+      "source_roi_xyxy": [
+        0,
+        44,
+        500,
+        456
+      ],
+      "focused_shape": [
+        412,
+        500
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        668,
+        668
+      ]
+    },
+    {
+      "sku": "47",
+      "source": "47.jpg",
+      "output": "assets\\tests\\47\\images\\47_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        500,
+        500
+      ],
+      "source_roi_xyxy": [
+        0,
+        44,
+        500,
+        456
+      ],
+      "focused_shape": [
+        412,
+        500
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        668,
+        668
+      ]
+    },
+    {
+      "sku": "47",
+      "source": "47.jpg",
+      "output": "assets\\tests\\47\\images\\47_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        500,
+        500
+      ],
+      "source_roi_xyxy": [
+        0,
+        44,
+        500,
+        456
+      ],
+      "focused_shape": [
+        412,
+        500
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        668,
+        668
+      ]
+    },
+    {
+      "sku": "47",
+      "source": "47.jpg",
+      "output": "assets\\tests\\47\\images\\47_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        500,
+        500
+      ],
+      "source_roi_xyxy": [
+        0,
+        44,
+        500,
+        456
+      ],
+      "focused_shape": [
+        412,
+        500
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        668,
+        668
+      ]
+    },
+    {
+      "sku": "48",
+      "source": "48.jpg",
+      "output": "assets\\tests\\48\\images\\48_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        13,
+        52,
+        640,
+        640
+      ],
+      "focused_shape": [
+        588,
+        627
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        880,
+        880
+      ]
+    },
+    {
+      "sku": "48",
+      "source": "48.jpg",
+      "output": "assets\\tests\\48\\images\\48_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        13,
+        52,
+        640,
+        640
+      ],
+      "focused_shape": [
+        588,
+        627
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        880,
+        880
+      ]
+    },
+    {
+      "sku": "48",
+      "source": "48.jpg",
+      "output": "assets\\tests\\48\\images\\48_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        13,
+        52,
+        640,
+        640
+      ],
+      "focused_shape": [
+        588,
+        627
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        880,
+        880
+      ]
+    },
+    {
+      "sku": "48",
+      "source": "48.jpg",
+      "output": "assets\\tests\\48\\images\\48_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        13,
+        52,
+        640,
+        640
+      ],
+      "focused_shape": [
+        588,
+        627
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        880,
+        880
+      ]
+    },
+    {
+      "sku": "48",
+      "source": "48.jpg",
+      "output": "assets\\tests\\48\\images\\48_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        13,
+        52,
+        640,
+        640
+      ],
+      "focused_shape": [
+        588,
+        627
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        880,
+        880
+      ]
+    },
+    {
+      "sku": "48",
+      "source": "48.jpg",
+      "output": "assets\\tests\\48\\images\\48_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        13,
+        52,
+        640,
+        640
+      ],
+      "focused_shape": [
+        588,
+        627
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        880,
+        880
+      ]
+    },
+    {
+      "sku": "49",
+      "source": "49.jpg",
+      "output": "assets\\tests\\49\\images\\49_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        800,
+        800
+      ],
+      "source_roi_xyxy": [
+        227,
+        56,
+        800,
+        752
+      ],
+      "focused_shape": [
+        696,
+        573
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        922,
+        922
+      ]
+    },
+    {
+      "sku": "49",
+      "source": "49.jpg",
+      "output": "assets\\tests\\49\\images\\49_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        800,
+        800
+      ],
+      "source_roi_xyxy": [
+        227,
+        56,
+        800,
+        752
+      ],
+      "focused_shape": [
+        696,
+        573
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        922,
+        922
+      ]
+    },
+    {
+      "sku": "49",
+      "source": "49.jpg",
+      "output": "assets\\tests\\49\\images\\49_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        800,
+        800
+      ],
+      "source_roi_xyxy": [
+        227,
+        56,
+        800,
+        752
+      ],
+      "focused_shape": [
+        696,
+        573
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        922,
+        922
+      ]
+    },
+    {
+      "sku": "49",
+      "source": "49.jpg",
+      "output": "assets\\tests\\49\\images\\49_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        800,
+        800
+      ],
+      "source_roi_xyxy": [
+        227,
+        56,
+        800,
+        752
+      ],
+      "focused_shape": [
+        696,
+        573
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        922,
+        922
+      ]
+    },
+    {
+      "sku": "49",
+      "source": "49.jpg",
+      "output": "assets\\tests\\49\\images\\49_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        800,
+        800
+      ],
+      "source_roi_xyxy": [
+        227,
+        56,
+        800,
+        752
+      ],
+      "focused_shape": [
+        696,
+        573
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        922,
+        922
+      ]
+    },
+    {
+      "sku": "49",
+      "source": "49.jpg",
+      "output": "assets\\tests\\49\\images\\49_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        800,
+        800
+      ],
+      "source_roi_xyxy": [
+        227,
+        56,
+        800,
+        752
+      ],
+      "focused_shape": [
+        696,
+        573
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        922,
+        922
+      ]
+    },
+    {
+      "sku": "5",
+      "source": "5.jpg",
+      "output": "assets\\tests\\5\\images\\5_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        927,
+        927
+      ],
+      "source_roi_xyxy": [
+        39,
+        189,
+        879,
+        911
+      ],
+      "focused_shape": [
+        722,
+        840
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1128,
+        1128
+      ]
+    },
+    {
+      "sku": "5",
+      "source": "5.jpg",
+      "output": "assets\\tests\\5\\images\\5_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        927,
+        927
+      ],
+      "source_roi_xyxy": [
+        39,
+        189,
+        879,
+        911
+      ],
+      "focused_shape": [
+        722,
+        840
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1128,
+        1128
+      ]
+    },
+    {
+      "sku": "5",
+      "source": "5.jpg",
+      "output": "assets\\tests\\5\\images\\5_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        927,
+        927
+      ],
+      "source_roi_xyxy": [
+        39,
+        189,
+        879,
+        911
+      ],
+      "focused_shape": [
+        722,
+        840
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1128,
+        1128
+      ]
+    },
+    {
+      "sku": "5",
+      "source": "5.jpg",
+      "output": "assets\\tests\\5\\images\\5_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        927,
+        927
+      ],
+      "source_roi_xyxy": [
+        39,
+        189,
+        879,
+        911
+      ],
+      "focused_shape": [
+        722,
+        840
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1128,
+        1128
+      ]
+    },
+    {
+      "sku": "5",
+      "source": "5.jpg",
+      "output": "assets\\tests\\5\\images\\5_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        927,
+        927
+      ],
+      "source_roi_xyxy": [
+        39,
+        189,
+        879,
+        911
+      ],
+      "focused_shape": [
+        722,
+        840
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1128,
+        1128
+      ]
+    },
+    {
+      "sku": "5",
+      "source": "5.jpg",
+      "output": "assets\\tests\\5\\images\\5_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        927,
+        927
+      ],
+      "source_roi_xyxy": [
+        39,
+        189,
+        879,
+        911
+      ],
+      "focused_shape": [
+        722,
+        840
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1128,
+        1128
+      ]
+    },
+    {
+      "sku": "6",
+      "source": "6.jpg",
+      "output": "assets\\tests\\6\\images\\6_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        800,
+        800
+      ],
+      "source_roi_xyxy": [
+        9,
+        68,
+        791,
+        761
+      ],
+      "focused_shape": [
+        693,
+        782
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1066,
+        1066
+      ]
+    },
+    {
+      "sku": "6",
+      "source": "6.jpg",
+      "output": "assets\\tests\\6\\images\\6_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        800,
+        800
+      ],
+      "source_roi_xyxy": [
+        9,
+        68,
+        791,
+        761
+      ],
+      "focused_shape": [
+        693,
+        782
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1066,
+        1066
+      ]
+    },
+    {
+      "sku": "6",
+      "source": "6.jpg",
+      "output": "assets\\tests\\6\\images\\6_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        800,
+        800
+      ],
+      "source_roi_xyxy": [
+        9,
+        68,
+        791,
+        761
+      ],
+      "focused_shape": [
+        693,
+        782
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1066,
+        1066
+      ]
+    },
+    {
+      "sku": "6",
+      "source": "6.jpg",
+      "output": "assets\\tests\\6\\images\\6_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        800,
+        800
+      ],
+      "source_roi_xyxy": [
+        9,
+        68,
+        791,
+        761
+      ],
+      "focused_shape": [
+        693,
+        782
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1066,
+        1066
+      ]
+    },
+    {
+      "sku": "6",
+      "source": "6.jpg",
+      "output": "assets\\tests\\6\\images\\6_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        800,
+        800
+      ],
+      "source_roi_xyxy": [
+        9,
+        68,
+        791,
+        761
+      ],
+      "focused_shape": [
+        693,
+        782
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1066,
+        1066
+      ]
+    },
+    {
+      "sku": "6",
+      "source": "6.jpg",
+      "output": "assets\\tests\\6\\images\\6_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        800,
+        800
+      ],
+      "source_roi_xyxy": [
+        9,
+        68,
+        791,
+        761
+      ],
+      "focused_shape": [
+        693,
+        782
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1066,
+        1066
+      ]
+    },
+    {
+      "sku": "7",
+      "source": "7.jpg",
+      "output": "assets\\tests\\7\\images\\7_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1000,
+        1000
+      ],
+      "source_roi_xyxy": [
+        161,
+        33,
+        881,
+        814
+      ],
+      "focused_shape": [
+        781,
+        720
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1084,
+        1084
+      ]
+    },
+    {
+      "sku": "7",
+      "source": "7.jpg",
+      "output": "assets\\tests\\7\\images\\7_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1000,
+        1000
+      ],
+      "source_roi_xyxy": [
+        161,
+        33,
+        881,
+        814
+      ],
+      "focused_shape": [
+        781,
+        720
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1084,
+        1084
+      ]
+    },
+    {
+      "sku": "7",
+      "source": "7.jpg",
+      "output": "assets\\tests\\7\\images\\7_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1000,
+        1000
+      ],
+      "source_roi_xyxy": [
+        161,
+        33,
+        881,
+        814
+      ],
+      "focused_shape": [
+        781,
+        720
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1084,
+        1084
+      ]
+    },
+    {
+      "sku": "7",
+      "source": "7.jpg",
+      "output": "assets\\tests\\7\\images\\7_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1000,
+        1000
+      ],
+      "source_roi_xyxy": [
+        161,
+        33,
+        881,
+        814
+      ],
+      "focused_shape": [
+        781,
+        720
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1084,
+        1084
+      ]
+    },
+    {
+      "sku": "7",
+      "source": "7.jpg",
+      "output": "assets\\tests\\7\\images\\7_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1000,
+        1000
+      ],
+      "source_roi_xyxy": [
+        161,
+        33,
+        881,
+        814
+      ],
+      "focused_shape": [
+        781,
+        720
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1084,
+        1084
+      ]
+    },
+    {
+      "sku": "7",
+      "source": "7.jpg",
+      "output": "assets\\tests\\7\\images\\7_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1000,
+        1000
+      ],
+      "source_roi_xyxy": [
+        161,
+        33,
+        881,
+        814
+      ],
+      "focused_shape": [
+        781,
+        720
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1084,
+        1084
+      ]
+    },
+    {
+      "sku": "8",
+      "source": "8.jpg",
+      "output": "assets\\tests\\8\\images\\8_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        640,
+        640
+      ],
+      "focused_shape": [
+        640,
+        640
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        926,
+        926
+      ]
+    },
+    {
+      "sku": "8",
+      "source": "8.jpg",
+      "output": "assets\\tests\\8\\images\\8_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        640,
+        640
+      ],
+      "focused_shape": [
+        640,
+        640
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        926,
+        926
+      ]
+    },
+    {
+      "sku": "8",
+      "source": "8.jpg",
+      "output": "assets\\tests\\8\\images\\8_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        640,
+        640
+      ],
+      "focused_shape": [
+        640,
+        640
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        926,
+        926
+      ]
+    },
+    {
+      "sku": "8",
+      "source": "8.jpg",
+      "output": "assets\\tests\\8\\images\\8_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        640,
+        640
+      ],
+      "focused_shape": [
+        640,
+        640
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        926,
+        926
+      ]
+    },
+    {
+      "sku": "8",
+      "source": "8.jpg",
+      "output": "assets\\tests\\8\\images\\8_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        640,
+        640
+      ],
+      "focused_shape": [
+        640,
+        640
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        926,
+        926
+      ]
+    },
+    {
+      "sku": "8",
+      "source": "8.jpg",
+      "output": "assets\\tests\\8\\images\\8_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        640,
+        640
+      ],
+      "focused_shape": [
+        640,
+        640
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        926,
+        926
+      ]
+    },
+    {
+      "sku": "9",
+      "source": "9.jpg",
+      "output": "assets\\tests\\9\\images\\9_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        640,
+        640
+      ],
+      "focused_shape": [
+        640,
+        640
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        926,
+        926
+      ]
+    },
+    {
+      "sku": "9",
+      "source": "9.jpg",
+      "output": "assets\\tests\\9\\images\\9_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        640,
+        640
+      ],
+      "focused_shape": [
+        640,
+        640
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        926,
+        926
+      ]
+    },
+    {
+      "sku": "9",
+      "source": "9.jpg",
+      "output": "assets\\tests\\9\\images\\9_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        640,
+        640
+      ],
+      "focused_shape": [
+        640,
+        640
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        926,
+        926
+      ]
+    },
+    {
+      "sku": "9",
+      "source": "9.jpg",
+      "output": "assets\\tests\\9\\images\\9_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        640,
+        640
+      ],
+      "focused_shape": [
+        640,
+        640
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        926,
+        926
+      ]
+    },
+    {
+      "sku": "9",
+      "source": "9.jpg",
+      "output": "assets\\tests\\9\\images\\9_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        640,
+        640
+      ],
+      "focused_shape": [
+        640,
+        640
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        926,
+        926
+      ]
+    },
+    {
+      "sku": "9",
+      "source": "9.jpg",
+      "output": "assets\\tests\\9\\images\\9_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        640
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        640,
+        640
+      ],
+      "focused_shape": [
+        640,
+        640
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        926,
+        926
+      ]
+    },
+    {
+      "sku": "98003P",
+      "source": "98003P_1.png",
+      "output": "assets\\tests\\98003P\\images\\98003P_1_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1035,
+        968
+      ],
+      "source_roi_xyxy": [
+        45,
+        0,
+        968,
+        1035
+      ],
+      "focused_shape": [
+        1035,
+        923
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1408,
+        1408
+      ]
+    },
+    {
+      "sku": "98003P",
+      "source": "98003P_1.png",
+      "output": "assets\\tests\\98003P\\images\\98003P_1_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1035,
+        968
+      ],
+      "source_roi_xyxy": [
+        45,
+        0,
+        968,
+        1035
+      ],
+      "focused_shape": [
+        1035,
+        923
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1408,
+        1408
+      ]
+    },
+    {
+      "sku": "98003P",
+      "source": "98003P_1.png",
+      "output": "assets\\tests\\98003P\\images\\98003P_1_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1035,
+        968
+      ],
+      "source_roi_xyxy": [
+        45,
+        0,
+        968,
+        1035
+      ],
+      "focused_shape": [
+        1035,
+        923
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1408,
+        1408
+      ]
+    },
+    {
+      "sku": "98003P",
+      "source": "98003P_1.png",
+      "output": "assets\\tests\\98003P\\images\\98003P_1_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1035,
+        968
+      ],
+      "source_roi_xyxy": [
+        45,
+        0,
+        968,
+        1035
+      ],
+      "focused_shape": [
+        1035,
+        923
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1408,
+        1408
+      ]
+    },
+    {
+      "sku": "98003P",
+      "source": "98003P_1.png",
+      "output": "assets\\tests\\98003P\\images\\98003P_1_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1035,
+        968
+      ],
+      "source_roi_xyxy": [
+        45,
+        0,
+        968,
+        1035
+      ],
+      "focused_shape": [
+        1035,
+        923
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1408,
+        1408
+      ]
+    },
+    {
+      "sku": "98003P",
+      "source": "98003P_1.png",
+      "output": "assets\\tests\\98003P\\images\\98003P_1_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1035,
+        968
+      ],
+      "source_roi_xyxy": [
+        45,
+        0,
+        968,
+        1035
+      ],
+      "focused_shape": [
+        1035,
+        923
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        1408,
+        1408
+      ]
+    },
+    {
+      "sku": "98475",
+      "source": "98475_1.png",
+      "output": "assets\\tests\\98475\\images\\98475_1_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1241,
+        540
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        540,
+        1241
+      ],
+      "focused_shape": [
+        1985,
+        1284
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        2386,
+        2386
+      ]
+    },
+    {
+      "sku": "98475",
+      "source": "98475_1.png",
+      "output": "assets\\tests\\98475\\images\\98475_1_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1241,
+        540
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        540,
+        1241
+      ],
+      "focused_shape": [
+        1985,
+        1284
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        2386,
+        2386
+      ]
+    },
+    {
+      "sku": "98475",
+      "source": "98475_1.png",
+      "output": "assets\\tests\\98475\\images\\98475_1_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1241,
+        540
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        540,
+        1241
+      ],
+      "focused_shape": [
+        1985,
+        1284
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        2386,
+        2386
+      ]
+    },
+    {
+      "sku": "98475",
+      "source": "98475_1.png",
+      "output": "assets\\tests\\98475\\images\\98475_1_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1241,
+        540
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        540,
+        1241
+      ],
+      "focused_shape": [
+        1985,
+        1284
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        2386,
+        2386
+      ]
+    },
+    {
+      "sku": "98475",
+      "source": "98475_1.png",
+      "output": "assets\\tests\\98475\\images\\98475_1_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1241,
+        540
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        540,
+        1241
+      ],
+      "focused_shape": [
+        1985,
+        1284
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        2386,
+        2386
+      ]
+    },
+    {
+      "sku": "98475",
+      "source": "98475_1.png",
+      "output": "assets\\tests\\98475\\images\\98475_1_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1241,
+        540
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        540,
+        1241
+      ],
+      "focused_shape": [
+        1985,
+        1284
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        2386,
+        2386
+      ]
+    },
+    {
+      "sku": "98475",
+      "source": "98475_2.png",
+      "output": "assets\\tests\\98475\\images\\98475_2_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1241,
+        598
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        598,
+        1241
+      ],
+      "focused_shape": [
+        1985,
+        1342
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        2418,
+        2418
+      ]
+    },
+    {
+      "sku": "98475",
+      "source": "98475_2.png",
+      "output": "assets\\tests\\98475\\images\\98475_2_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1241,
+        598
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        598,
+        1241
+      ],
+      "focused_shape": [
+        1985,
+        1342
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        2418,
+        2418
+      ]
+    },
+    {
+      "sku": "98475",
+      "source": "98475_2.png",
+      "output": "assets\\tests\\98475\\images\\98475_2_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1241,
+        598
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        598,
+        1241
+      ],
+      "focused_shape": [
+        1985,
+        1342
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        2418,
+        2418
+      ]
+    },
+    {
+      "sku": "98475",
+      "source": "98475_2.png",
+      "output": "assets\\tests\\98475\\images\\98475_2_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1241,
+        598
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        598,
+        1241
+      ],
+      "focused_shape": [
+        1985,
+        1342
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        2418,
+        2418
+      ]
+    },
+    {
+      "sku": "98475",
+      "source": "98475_2.png",
+      "output": "assets\\tests\\98475\\images\\98475_2_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1241,
+        598
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        598,
+        1241
+      ],
+      "focused_shape": [
+        1985,
+        1342
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        2418,
+        2418
+      ]
+    },
+    {
+      "sku": "98475",
+      "source": "98475_2.png",
+      "output": "assets\\tests\\98475\\images\\98475_2_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        1241,
+        598
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        598,
+        1241
+      ],
+      "focused_shape": [
+        1985,
+        1342
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        2418,
+        2418
+      ]
+    },
+    {
+      "sku": "98661BBS-1",
+      "source": "98661BBS-1_2.png",
+      "output": "assets\\tests\\98661BBS-1\\images\\98661BBS-1_2_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        621,
+        226
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        226,
+        621
+      ],
+      "focused_shape": [
+        993,
+        598
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        1180,
+        1180
+      ]
+    },
+    {
+      "sku": "98661BBS-1",
+      "source": "98661BBS-1_2.png",
+      "output": "assets\\tests\\98661BBS-1\\images\\98661BBS-1_2_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        621,
+        226
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        226,
+        621
+      ],
+      "focused_shape": [
+        993,
+        598
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        1180,
+        1180
+      ]
+    },
+    {
+      "sku": "98661BBS-1",
+      "source": "98661BBS-1_2.png",
+      "output": "assets\\tests\\98661BBS-1\\images\\98661BBS-1_2_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        621,
+        226
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        226,
+        621
+      ],
+      "focused_shape": [
+        993,
+        598
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        1180,
+        1180
+      ]
+    },
+    {
+      "sku": "98661BBS-1",
+      "source": "98661BBS-1_2.png",
+      "output": "assets\\tests\\98661BBS-1\\images\\98661BBS-1_2_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        621,
+        226
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        226,
+        621
+      ],
+      "focused_shape": [
+        993,
+        598
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        1180,
+        1180
+      ]
+    },
+    {
+      "sku": "98661BBS-1",
+      "source": "98661BBS-1_2.png",
+      "output": "assets\\tests\\98661BBS-1\\images\\98661BBS-1_2_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        621,
+        226
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        226,
+        621
+      ],
+      "focused_shape": [
+        993,
+        598
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        1180,
+        1180
+      ]
+    },
+    {
+      "sku": "98661BBS-1",
+      "source": "98661BBS-1_2.png",
+      "output": "assets\\tests\\98661BBS-1\\images\\98661BBS-1_2_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        621,
+        226
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        226,
+        621
+      ],
+      "focused_shape": [
+        993,
+        598
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        1180,
+        1180
+      ]
+    },
+    {
+      "sku": "AH001",
+      "source": "98661BBS-1_6.png",
+      "output": "assets\\tests\\AH001\\images\\98661BBS-1_6_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        232
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        232,
+        640
+      ],
+      "focused_shape": [
+        1024,
+        616
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        1216,
+        1216
+      ]
+    },
+    {
+      "sku": "AH001",
+      "source": "98661BBS-1_6.png",
+      "output": "assets\\tests\\AH001\\images\\98661BBS-1_6_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        232
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        232,
+        640
+      ],
+      "focused_shape": [
+        1024,
+        616
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        1216,
+        1216
+      ]
+    },
+    {
+      "sku": "AH001",
+      "source": "98661BBS-1_6.png",
+      "output": "assets\\tests\\AH001\\images\\98661BBS-1_6_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        232
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        232,
+        640
+      ],
+      "focused_shape": [
+        1024,
+        616
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        1216,
+        1216
+      ]
+    },
+    {
+      "sku": "AH001",
+      "source": "98661BBS-1_6.png",
+      "output": "assets\\tests\\AH001\\images\\98661BBS-1_6_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        232
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        232,
+        640
+      ],
+      "focused_shape": [
+        1024,
+        616
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        1216,
+        1216
+      ]
+    },
+    {
+      "sku": "AH001",
+      "source": "98661BBS-1_6.png",
+      "output": "assets\\tests\\AH001\\images\\98661BBS-1_6_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        232
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        232,
+        640
+      ],
+      "focused_shape": [
+        1024,
+        616
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        1216,
+        1216
+      ]
+    },
+    {
+      "sku": "AH001",
+      "source": "98661BBS-1_6.png",
+      "output": "assets\\tests\\AH001\\images\\98661BBS-1_6_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        640,
+        232
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        232,
+        640
+      ],
+      "focused_shape": [
+        1024,
+        616
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        1216,
+        1216
+      ]
+    },
+    {
+      "sku": "UH-004",
+      "source": "UH-004_1.png",
+      "output": "assets\\tests\\UH-004\\images\\UH-004_1_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        548,
+        524
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        524,
+        548
+      ],
+      "focused_shape": [
+        548,
+        524
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        780,
+        780
+      ]
+    },
+    {
+      "sku": "UH-004",
+      "source": "UH-004_1.png",
+      "output": "assets\\tests\\UH-004\\images\\UH-004_1_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        548,
+        524
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        524,
+        548
+      ],
+      "focused_shape": [
+        548,
+        524
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        780,
+        780
+      ]
+    },
+    {
+      "sku": "UH-004",
+      "source": "UH-004_1.png",
+      "output": "assets\\tests\\UH-004\\images\\UH-004_1_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        548,
+        524
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        524,
+        548
+      ],
+      "focused_shape": [
+        548,
+        524
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        780,
+        780
+      ]
+    },
+    {
+      "sku": "UH-004",
+      "source": "UH-004_1.png",
+      "output": "assets\\tests\\UH-004\\images\\UH-004_1_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        548,
+        524
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        524,
+        548
+      ],
+      "focused_shape": [
+        548,
+        524
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        780,
+        780
+      ]
+    },
+    {
+      "sku": "UH-004",
+      "source": "UH-004_1.png",
+      "output": "assets\\tests\\UH-004\\images\\UH-004_1_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        548,
+        524
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        524,
+        548
+      ],
+      "focused_shape": [
+        548,
+        524
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        780,
+        780
+      ]
+    },
+    {
+      "sku": "UH-004",
+      "source": "UH-004_1.png",
+      "output": "assets\\tests\\UH-004\\images\\UH-004_1_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        548,
+        524
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        524,
+        548
+      ],
+      "focused_shape": [
+        548,
+        524
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        780,
+        780
+      ]
+    },
+    {
+      "sku": "UH-004",
+      "source": "UH-004_2.png",
+      "output": "assets\\tests\\UH-004\\images\\UH-004_2_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        712,
+        779
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        779,
+        712
+      ],
+      "focused_shape": [
+        1180,
+        1247
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        1738,
+        1738
+      ]
+    },
+    {
+      "sku": "UH-004",
+      "source": "UH-004_2.png",
+      "output": "assets\\tests\\UH-004\\images\\UH-004_2_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        712,
+        779
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        779,
+        712
+      ],
+      "focused_shape": [
+        1180,
+        1247
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        1738,
+        1738
+      ]
+    },
+    {
+      "sku": "UH-004",
+      "source": "UH-004_2.png",
+      "output": "assets\\tests\\UH-004\\images\\UH-004_2_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        712,
+        779
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        779,
+        712
+      ],
+      "focused_shape": [
+        1180,
+        1247
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        1738,
+        1738
+      ]
+    },
+    {
+      "sku": "UH-004",
+      "source": "UH-004_2.png",
+      "output": "assets\\tests\\UH-004\\images\\UH-004_2_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        712,
+        779
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        779,
+        712
+      ],
+      "focused_shape": [
+        1180,
+        1247
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        1738,
+        1738
+      ]
+    },
+    {
+      "sku": "UH-004",
+      "source": "UH-004_2.png",
+      "output": "assets\\tests\\UH-004\\images\\UH-004_2_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        712,
+        779
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        779,
+        712
+      ],
+      "focused_shape": [
+        1180,
+        1247
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        1738,
+        1738
+      ]
+    },
+    {
+      "sku": "UH-004",
+      "source": "UH-004_2.png",
+      "output": "assets\\tests\\UH-004\\images\\UH-004_2_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        712,
+        779
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        779,
+        712
+      ],
+      "focused_shape": [
+        1180,
+        1247
+      ],
+      "focus_status": "source_clipped_background_matted_and_padded",
+      "output_shape": [
+        1738,
+        1738
+      ]
+    },
+    {
+      "sku": "UH-8715P",
+      "source": "UH-8715P_1.png",
+      "output": "assets\\tests\\UH-8715P\\images\\UH-8715P_1_rot17.png",
+      "angle_deg": 17,
+      "affine_scale": 1.0,
+      "source_shape": [
+        582,
+        449
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        449,
+        582
+      ],
+      "focused_shape": [
+        582,
+        449
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        756,
+        756
+      ]
+    },
+    {
+      "sku": "UH-8715P",
+      "source": "UH-8715P_1.png",
+      "output": "assets\\tests\\UH-8715P\\images\\UH-8715P_1_rot43.png",
+      "angle_deg": 43,
+      "affine_scale": 1.0,
+      "source_shape": [
+        582,
+        449
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        449,
+        582
+      ],
+      "focused_shape": [
+        582,
+        449
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        756,
+        756
+      ]
+    },
+    {
+      "sku": "UH-8715P",
+      "source": "UH-8715P_1.png",
+      "output": "assets\\tests\\UH-8715P\\images\\UH-8715P_1_rot79.png",
+      "angle_deg": 79,
+      "affine_scale": 1.0,
+      "source_shape": [
+        582,
+        449
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        449,
+        582
+      ],
+      "focused_shape": [
+        582,
+        449
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        756,
+        756
+      ]
+    },
+    {
+      "sku": "UH-8715P",
+      "source": "UH-8715P_1.png",
+      "output": "assets\\tests\\UH-8715P\\images\\UH-8715P_1_rot137.png",
+      "angle_deg": 137,
+      "affine_scale": 1.0,
+      "source_shape": [
+        582,
+        449
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        449,
+        582
+      ],
+      "focused_shape": [
+        582,
+        449
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        756,
+        756
+      ]
+    },
+    {
+      "sku": "UH-8715P",
+      "source": "UH-8715P_1.png",
+      "output": "assets\\tests\\UH-8715P\\images\\UH-8715P_1_rot223.png",
+      "angle_deg": 223,
+      "affine_scale": 1.0,
+      "source_shape": [
+        582,
+        449
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        449,
+        582
+      ],
+      "focused_shape": [
+        582,
+        449
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        756,
+        756
+      ]
+    },
+    {
+      "sku": "UH-8715P",
+      "source": "UH-8715P_1.png",
+      "output": "assets\\tests\\UH-8715P\\images\\UH-8715P_1_rot311.png",
+      "angle_deg": 311,
+      "affine_scale": 1.0,
+      "source_shape": [
+        582,
+        449
+      ],
+      "source_roi_xyxy": [
+        0,
+        0,
+        449,
+        582
+      ],
+      "focused_shape": [
+        582,
+        449
+      ],
+      "focus_status": "segmented_roi_background_matted",
+      "output_shape": [
+        756,
+        756
+      ]
+    }
+  ],
+  "skipped": [
+    {
+      "sku": "40",
+      "reason": "no reference image"
+    }
+  ]
+}
