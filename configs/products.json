@@ -209,100 +209,64 @@
     "review_status": "dynamically_extracted_from_pdf",
     "dimensions": [
       {
-        "raw_spec": "L 28.5±0.30mm",
         "label": "L",
         "nominal": 28.5,
-        "diameter": false,
-        "upper_tol": 0.3,
-        "lower_tol": -0.3,
-        "min": 28.2,
-        "max": 28.8,
-        "tolerance_type": "symmetric",
-        "axis": "2D_in_plane"
+        "min": 28.4,
+        "max": 28.6,
+        "lower_tol": -0.1,
+        "upper_tol": 0.1,
+        "axis": "2D_in_plane",
+        "raw_spec": "Tong chieu dai (Overall length L)"
       },
       {
-        "raw_spec": "W 4.3±0.30mm 測  量",
         "label": "W",
         "nominal": 4.3,
-        "diameter": false,
-        "upper_tol": 0.3,
-        "lower_tol": -0.3,
-        "min": 4.0,
-        "max": 4.6,
-        "tolerance_type": "symmetric",
-        "axis": "2D_in_plane"
+        "min": 4.2,
+        "max": 4.4,
+        "lower_tol": -0.1,
+        "upper_tol": 0.1,
+        "axis": "2D_in_plane",
+        "raw_spec": "Chieu rong than (Body width W)"
       },
       {
-        "raw_spec": "J 6.3±0.07mm",
-        "label": "J",
-        "nominal": 6.3,
-        "diameter": false,
-        "upper_tol": 0.07,
-        "lower_tol": -0.07,
-        "min": 6.23,
-        "max": 6.37,
-        "tolerance_type": "symmetric",
-        "axis": "2D_in_plane"
-      },
-      {
-        "raw_spec": "F 4.3±0.30mm",
         "label": "F",
         "nominal": 4.3,
-        "diameter": false,
-        "upper_tol": 0.3,
-        "lower_tol": -0.3,
-        "min": 4.0,
-        "max": 4.6,
-        "tolerance_type": "symmetric",
-        "axis": "2D_in_plane"
+        "min": 4.2,
+        "max": 4.4,
+        "lower_tol": -0.1,
+        "upper_tol": 0.1,
+        "axis": "2D_in_plane",
+        "raw_spec": "Chieu rong la tiep diem (Contact blade width F)"
       },
       {
-        "raw_spec": "3.15±0.07mm",
-        "label": "d",
-        "nominal": 3.15,
-        "diameter": false,
-        "upper_tol": 0.07,
-        "lower_tol": -0.07,
-        "min": 3.08,
-        "max": 3.22,
-        "tolerance_type": "symmetric",
-        "axis": "2D_in_plane"
+        "label": "J",
+        "nominal": 6.3,
+        "min": 6.2,
+        "max": 6.4,
+        "lower_tol": -0.1,
+        "upper_tol": 0.1,
+        "axis": "2D_in_plane",
+        "raw_spec": "Chieu dai doan khoa ngam (Locking tab length J)"
       },
       {
-        "raw_spec": "3.0±0.20mm",
         "label": "K",
         "nominal": 3.0,
-        "diameter": false,
-        "upper_tol": 0.2,
-        "lower_tol": -0.2,
-        "min": 2.8,
-        "max": 3.2,
-        "tolerance_type": "symmetric",
-        "axis": "2D_in_plane"
+        "min": 2.9,
+        "max": 3.1,
+        "lower_tol": -0.1,
+        "upper_tol": 0.1,
+        "axis": "2D_in_plane",
+        "raw_spec": "Khoang cach ngam kep (Contact gap K)"
       },
       {
-        "raw_spec": "1.5+0/-0.04mm",
-        "label": "T",
-        "nominal": 1.5,
-        "diameter": false,
-        "upper_tol": 0.0,
-        "lower_tol": -0.04,
-        "min": 1.46,
-        "max": 1.5,
-        "tolerance_type": "asymmetric",
-        "axis": "2D_in_plane"
-      },
-      {
-        "raw_spec": "H 4.2±0.30mm 測  量",
-        "label": "H",
-        "nominal": 4.2,
-        "diameter": false,
-        "upper_tol": 0.3,
-        "lower_tol": -0.3,
-        "min": 3.9,
-        "max": 4.5,
-        "tolerance_type": "symmetric",
-        "axis": "Z_height_side_view"
+        "label": "d",
+        "nominal": 3.15,
+        "min": 3.05,
+        "max": 3.25,
+        "lower_tol": -0.1,
+        "upper_tol": 0.1,
+        "axis": "2D_in_plane",
+        "raw_spec": "Duong kinh lo tron (Hole diameter d)"
       }
     ],
     "optical_scale_mm_per_px": 0.048142,
@@ -312,6 +276,11 @@
       "obb_short_px": 227.0,
       "angle_deg": 0.0,
       "optical_scale_um_per_px": 48.14
+    },
+    "contour_profile": {
+      "enabled": false,
+      "tolerance_mm": 0.1,
+      "rule": "all_sampled_points_inside_golden_band"
     }
   },
   "UH-004": {
@@ -2745,6 +2714,55 @@
       "median_obb_long_px": 556.756,
       "median_obb_short_px": 141.298,
       "sample_count": 1
+    }
+  },
+  "test1": {
+    "sku": "test1",
+    "unit": "mm",
+    "optical_scale_mm_per_px": 0.044255,
+    "golden_sample": {
+      "image": "assets\\references\\test1\\images\\test1_1.png",
+      "wcs": {
+        "center": [
+          1534.4951171875,
+          1495.1712646484375
+        ],
+        "width": 808.6699829101562,
+        "height": 111.8686294555664,
+        "angle": 1.6365737915039062,
+        "centroid_offset": [
+          -51.23139418344158,
+          1.205642892681226
+        ]
+      }
+    },
+    "dimensions": [
+      {
+        "label": "DIM_1",
+        "nominal": 35.59,
+        "min": 35.510000000000005,
+        "max": 35.68000000000001,
+        "lower_tol": -0.08,
+        "upper_tol": 0.09,
+        "axis": "2D_in_plane",
+        "raw_spec": "Custom caliper DIM_1"
+      },
+      {
+        "label": "DIM_2",
+        "nominal": 3.5,
+        "min": 3.42,
+        "max": 3.59,
+        "lower_tol": -0.08,
+        "upper_tol": 0.09,
+        "axis": "2D_in_plane",
+        "raw_spec": "Bề rộng cắt ngang DIM_1 (u=-0.07)"
+      }
+    ],
+    "contour_profile": {
+      "enabled": false,
+      "lower_mm": 0.1,
+      "upper_mm": 0.1,
+      "rule": "signed_offset_from_golden"
     }
   }
 }

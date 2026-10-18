@@ -1,0 +1,49 @@
+{
+  "sku": "test1",
+  "unit": "mm",
+  "optical_scale_mm_per_px": 0.044255,
+  "golden_sample": {
+    "image": "assets\\references\\test1\\images\\test1_1.png",
+    "wcs": {
+      "center": [
+        1534.4951171875,
+        1495.1712646484375
+      ],
+      "width": 808.6699829101562,
+      "height": 111.8686294555664,
+      "angle": 1.6365737915039062,
+      "centroid_offset": [
+        -51.23139418344158,
+        1.205642892681226
+      ]
+    }
+  },
+  "dimensions": [
+    {
+      "label": "DIM_1",
+      "nominal": 35.59,
+      "min": 35.510000000000005,
+      "max": 35.68000000000001,
+      "lower_tol": -0.08,
+      "upper_tol": 0.09,
+      "axis": "2D_in_plane",
+      "raw_spec": "Custom caliper DIM_1"
+    },
+    {
+      "label": "DIM_2",
+      "nominal": 3.5,
+      "min": 3.42,
+      "max": 3.59,
+      "lower_tol": -0.08,
+      "upper_tol": 0.09,
+      "axis": "2D_in_plane",
+      "raw_spec": "Bề rộng cắt ngang DIM_1 (u=-0.07)"
+    }
+  ],
+  "contour_profile": {
+    "enabled": false,
+    "lower_mm": 0.1,
+    "upper_mm": 0.1,
+    "rule": "signed_offset_from_golden"
+  }
+}

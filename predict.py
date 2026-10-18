@@ -15,6 +15,7 @@ Features:
 """
 
 import argparse
+import copy
 import csv
 import json
 import os
@@ -42,6 +43,7 @@ import config
 import classifier as clf
 import measurer
 from src.template_matcher import TemplateMatcher, public_result as public_template_result
+from src.template_geometry import draw_profile
 
 
 def parse_args():
@@ -54,11 +56,19 @@ def parse_args():
                         help='Base output folder (default: outputs)')
     parser.add_argument('--true-class', default=None,
                         help='Optional ground truth label for validation')
+    parser.add_argument('--sku', default=None,
+                        help='Inspect against this known SKU/golden recipe; skip automatic classification')
+    parser.add_argument('--profile-lower', type=float, default=None,
+                        help='Override inward contour tolerance in mm (with --sku)')
+    parser.add_argument('--profile-upper', type=float, default=None,
+                        help='Override outward contour tolerance in mm (with --sku)')
     args = parser.parse_args()
     if args.image_opt:
         args.image = args.image_opt
     if not args.image:
         parser.error("Vui lòng cung cấp đường dẫn ảnh (ví dụ: python predict.py <đường_dẫn_ảnh> hoặc python predict.py --image <đường_dẫn_ảnh>)")
+    if not args.sku and (args.profile_lower is not None or args.profile_upper is not None):
+        parser.error('--profile-lower / --profile-upper require --sku')
     return args
 
 
@@ -79,6 +89,87 @@ def to_python(obj):
     return obj
 
 
+def inspect_known_sample(img, recipe, spec, output_dir, stem, *, described=None, golden_image=None):
+    """Studio and --sku share metrology, contour inspection and standard reports.
+
+    The SKU is selected by the operator; recognition is explicitly not performed.
+    Missing legacy golden geometry is taught from its reference photo in memory.
+    Production recipes/specs are never changed by this function.
+    """
+    recipe, spec = copy.deepcopy(recipe), copy.deepcopy(spec)
+    sku = spec['sku']
+    recipe.setdefault('contour_profile_enabled', True)
+    if described is None:
+        described = clf.describe_image(img)
+    if described is None:
+        raise ValueError('Failed to segment sample image')
+    engine = measurer.WorkpieceMeasurer()
+    if golden_image is not None:
+        golden_desc = clf.describe_image(golden_image)
+        if golden_desc is None:
+            raise ValueError('Failed to segment golden image')
+        golden_contour = golden_desc['contour']
+        frame = engine._contour_frame(golden_contour)
+        if not recipe.get('golden_contour_local_px'):
+            recipe['wcs'] = frame
+            recipe['golden_contour_local_px'] = [
+                engine._point_to_frame_local(p, frame).tolist()
+                for p in golden_contour.reshape(-1, 2)
+            ]
+    elif not recipe.get('golden_contour_local_px'):
+        raise ValueError('Golden contour is missing; select a reference photo or teach the SKU again')
+    engine.caliper_recipes[sku] = recipe
+    measurements = engine.measure(img, described['contour'], spec)
+    # Legacy SCAN calipers can also report their golden comparison. P1/P2
+    # signed deltas remain exclusive to rigid template calipers.
+    if golden_image is not None:
+        control = engine.measure(golden_image, golden_contour, spec)
+        control_cals = control.get('recipe_calipers', {})
+        for row in measurements.get('spec_report', []):
+            if row.get('golden_length_mm') is not None:
+                continue
+            original = control_cals.get(row['label'], {})
+            current = measurements.get('recipe_calipers', {}).get(row['label'], {})
+            baseline = original.get('length_mm')
+            if baseline is None:
+                continue
+            delta = row['measured_mm'] - baseline if row.get('measured_mm') is not None else None
+            comparison = {'golden_length_mm': baseline, 'golden_source': 'image',
+                          'total_delta_mm': delta}
+            row.update(comparison)
+            current.update(comparison)
+    result = {
+        'class': sku, 'spec': spec, 'accepted': True, 'shape_accepted': True,
+        'classification_performed': False, 'inspection_mode': 'known_sku',
+        'template_matching': {}, 'final_pass': bool(measurements['overall_pass']),
+        'reference_image': recipe.get('reference_image', ''),
+    }
+    out = Path(output_dir)
+    paths = {
+        'panel_summary': out / 'visualizations' / f'{stem}.png',
+        'measured_image': out / 'visualizations' / f'{stem}_measured.png',
+        'prediction': out / 'predictions' / f'{stem}.json',
+    }
+    for path in paths.values():
+        path.parent.mkdir(parents=True, exist_ok=True)
+    annotated = measurer.annotate_measurements(img, described['contour'], measurements, sku)
+    if not cv2.imwrite(str(paths['measured_image']), annotated):
+        raise OSError(f"Cannot write {paths['measured_image']}")
+    save_visualization_panel(img, described, result, measurements, stem, paths['panel_summary'])
+    record = {
+        'stem': stem, 'predicted_class': None, 'expected_sku': sku,
+        'inspection_mode': 'known_sku', 'classification_performed': False,
+        'measurement_pass': measurements['caliper_pass'],
+        'profile_pass': measurements.get('profile_pass'), 'final_pass': result['final_pass'],
+        'measurements_px': measurements, 'spec_report': measurements.get('spec_report', []),
+        'spec': spec, 'inspection_recipe': recipe,
+        'outputs': {k: str(v) for k, v in paths.items()},
+    }
+    paths['prediction'].write_text(json.dumps(to_python(record), indent=2, ensure_ascii=False),
+                                   encoding='utf-8')
+    return measurements, paths
+
+
 def save_visualization_panel(img, described, result, meas, stem, output_png_path, true_class=None):
     """
     Generates and saves the full 6-panel inspection summary figure:
@@ -89,8 +180,10 @@ def save_visualization_panel(img, described, result, meas, stem, output_png_path
     5. Edge measurement overlay and tolerance HUD
     6. Step-by-step QC Pipeline & Tolerance Verdict
     """
-    features = described['features']
+    features = described.get('features', {})
     contour = described['contour']
+    profile = meas.get('contour_profile')
+    known_sku = result.get('inspection_mode') == 'known_sku'
 
     fig, axes = plt.subplots(2, 3, figsize=(15, 9))
 
@@ -105,7 +198,7 @@ def save_visualization_panel(img, described, result, meas, stem, output_png_path
         axes[0][1].set_title('2. Sobel Edge Gradient Map (Stage 2)', fontsize=10, fontweight='bold')
     else:
         axes[0][1].imshow(described['gray'], cmap='gray')
-        axes[0][1].set_title(f'2. Grayscale (Otsu = {described["otsu"]:.0f})', fontsize=10, fontweight='bold')
+        axes[0][1].set_title(f'2. Grayscale (Otsu = {described.get("otsu", 0):.0f})', fontsize=10, fontweight='bold')
 
     # 3. Classification / template-shape matching on the same source image.
     matching_vis = img.copy()
@@ -128,22 +221,38 @@ def save_visualization_panel(img, described, result, meas, stem, output_png_path
         cv2.putText(matching_vis, line, (12, y), cv2.FONT_HERSHEY_SIMPLEX,
                     0.55, (0, 255, 255), 1, cv2.LINE_AA)
     defect_map = tm.get('_defect_overlay_rgb')
-    if defect_map is not None:
+    if profile and profile.get('aligned_golden_contour') is not None:
+        profile_vis = img.copy()
+        cv2.drawContours(profile_vis, [contour], -1, (0, 255, 0), 2, cv2.LINE_AA)
+        draw_profile(profile_vis, profile)
+        x, y, w, h = cv2.boundingRect(contour)
+        margin = int(max(w, h) * .08) + 10
+        roi = profile_vis[max(0, y-margin):min(img.shape[0], y+h+margin),
+                          max(0, x-margin):min(img.shape[1], x+w+margin)]
+        axes[0][2].imshow(cv2.cvtColor(roi, cv2.COLOR_BGR2RGB))
+        axes[0][2].set_title(
+            f"3. Golden Contour / Tolerance Band: {profile['status']}\n"
+            f"in={profile.get('lower_mm', 0):.3f} / out={profile.get('upper_mm', 0):.3f} mm\n"
+            "blue=inner, orange=outer, gray=golden, green=sample, red=out of band",
+            fontsize=8.5, fontweight='bold',
+        )
+    elif defect_map is not None:
         axes[0][2].imshow(defect_map)
     else:
         axes[0][2].imshow(cv2.cvtColor(matching_vis, cv2.COLOR_BGR2RGB))
-    axes[0][2].set_title(
+    if not (profile and profile.get('aligned_golden_contour') is not None):
+        axes[0][2].set_title(
         '3. Template Similarity / Defect Map\n'
         f"sim={tm.get('similarity', 0.0):.3f} | defect={tm.get('defect_ratio', 0.0)*100:.1f}% "
         f"(max {tm.get('max_defect_ratio', 0.0)*100:.0f}%) | "
         f"missing={tm.get('missing_ratio', 0.0)*100:.1f}% | extra={tm.get('extra_ratio', 0.0)*100:.1f}%\n"
         'green=match, red=missing, blue=extra', fontsize=8.5, fontweight='bold'
-    )
+        )
 
     # 4. Specification loaded from PDF, including all nominal/tolerance values.
     spec = result.get('spec') or {}
     spec_lines = [
-        '4. PDF Specification', '',
+        '4. Specification / Golden Recipe', '',
         f"SKU   : {spec.get('sku', 'N/A')}",
         f"Unit  : {spec.get('unit', 'mm')}",
         f"Scale : {float(spec.get('optical_scale_mm_per_px', 0.0) or 0.0) * 1000:.2f} um/px",
@@ -158,6 +267,12 @@ def save_visualization_panel(img, described, result, meas, stem, output_png_path
             f" {dim.get('label', 'DIM'):<4} {float(dim.get('nominal', 0.0)):6.2f} mm  "
             f"[{float(dim.get('min', 0.0)):6.2f}..{float(dim.get('max', 0.0)):6.2f}]{suffix}"
         )
+    if profile:
+        spec_lines.extend([
+            '', 'Contour offsets (per edge):',
+            f" Inward : {profile.get('lower_mm', 0):.3f} mm",
+            f" Outward: {profile.get('upper_mm', 0):.3f} mm",
+        ])
     axes[1][0].text(0.02, 0.98, '\n'.join(spec_lines), va='top', ha='left',
                     family='monospace', fontsize=7.7)
     axes[1][0].axis('off')
@@ -181,7 +296,7 @@ def save_visualization_panel(img, described, result, meas, stem, output_png_path
         f'  Perimeter     : {features.get("perimeter", 0.0):.1f} px',
         f'  Extent        : {features.get("extent", 0.0):.3f}',
         f'  Solidity      : {features.get("solidity", 0.0):.3f}',
-        f'  Centroid      : ({features["centroid"][0]:.1f}, {features["centroid"][1]:.1f})',
+        f'  Centroid      : ({features.get("centroid", (0, 0))[0]:.1f}, {features.get("centroid", (0, 0))[1]:.1f})',
         '',
         '[STEP 2: MULTI-CUE CLASSIFICATION]',
         '  Top Candidates (matchShapes + Hu):'
@@ -217,10 +332,38 @@ def save_visualization_panel(img, described, result, meas, stem, output_png_path
     lines.append('[STEP 5: TEMPLATE DEFECT GATE]')
     lines.append(f'  Template QC : {"PASS" if template_ok else "FAIL"}')
 
+    if known_sku:
+        lines = [
+            '6. Inspection Summary', '',
+            f"Selected SKU: {result['class']}",
+            'Recognition: not run (operator selected SKU)', '',
+            f"Dimensions: {'PASS' if meas.get('dimension_pass', False) else 'FAIL'}",
+            f"Golden contour: {profile['status'] if profile else 'DISABLED'}",
+        ]
+        if profile:
+            lines.extend([
+                f"Max inward : {profile.get('max_inward_mm', 0):.3f} mm",
+                f"Max outward: {profile.get('max_outward_mm', 0):.3f} mm",
+                f"Outside band: {profile.get('outside_point_count', 0)} points",
+            ])
+            if profile.get('error'):
+                lines.append(profile['error'])
+        lines.extend(['', 'Measurement vs Golden (mm):'])
+        for row in meas.get('spec_report', [])[:7]:
+            val, baseline, delta = row.get('measured_mm'), row.get('golden_length_mm'), row.get('total_delta_mm')
+            lines.append(f" {row['label']}: {val:.3f}  {row['status']}" if val is not None
+                         else f" {row['label']}: N/A FAIL")
+            if baseline is not None and delta is not None:
+                lines.append(f"   golden={baseline:.3f}, delta={delta:+.3f}")
+            if row.get('delta_p1_mm') is not None:
+                lines.append(f"   P1={row['delta_p1_mm']:+.3f}, P2={row['delta_p2_mm']:+.3f}")
+
     lines.append('')
     verdict = result['class']
     overall_pass = bool(result.get('final_pass', caliper_ok and template_ok and result.get('accepted', False)))
-    if overall_pass and (not true_class or verdict == true_class):
+    if known_sku:
+        headline = f"VERDICT: {verdict} ({'PASS' if overall_pass else 'FAIL'})"
+    elif overall_pass and (not true_class or verdict == true_class):
         headline = f'VERDICT: {verdict} (DUAL PASS - OK)'
     elif not result.get('shape_accepted', False):
         headline = 'VERDICT: SHAPE REJECTED (UNKNOWN)'
@@ -236,7 +379,7 @@ def save_visualization_panel(img, described, result, meas, stem, output_png_path
     axes[1][2].text(0.02, 0.98, '\n'.join(lines), va='top', ha='left',
                     family='monospace', fontsize=8.2)
     axes[1][2].set_title(
-        headline, color='green' if 'FINAL PASS' in headline else 'red',
+        headline, color='green' if overall_pass else 'red',
         fontsize=10.5, fontweight='bold', pad=8
     )
     axes[1][2].axis('off')
@@ -360,6 +503,34 @@ def main():
 
     # Build reference library & calibrate
     reference_dir = Path(args.reference_dir).resolve()
+    if args.sku:
+        spec_path = reference_dir / args.sku / 'spec.json'
+        spec = json.loads(spec_path.read_text(encoding='utf-8'))
+        recipe = copy.deepcopy(measurer.WorkpieceMeasurer().caliper_recipes.get(args.sku, {}))
+        reference_path = recipe.get('reference_image')
+        reference_path = (Path(config.PROJECT_DIR) / reference_path) if reference_path else None
+        if reference_path is None or not reference_path.is_file():
+            photos = sorted(p for p in (reference_dir / args.sku / 'images').iterdir()
+                            if p.suffix.lower() in config.IMAGE_EXTENSIONS)
+            if not photos:
+                sys.exit(f'No golden image for {args.sku}')
+            reference_path = photos[0]
+        golden_image = cv2.imread(str(reference_path))
+        if golden_image is None:
+            sys.exit(f'Cannot read golden image: {reference_path}')
+        recipe['reference_image'] = str(reference_path)
+        if args.profile_lower is not None:
+            recipe['contour_lower_mm'] = args.profile_lower
+        if args.profile_upper is not None:
+            recipe['contour_upper_mm'] = args.profile_upper
+        measured, paths = inspect_known_sample(img, recipe, spec, out_dir, stem,
+                                               golden_image=golden_image)
+        print(f"SKU {args.sku}: {'PASS' if measured['overall_pass'] else 'FAIL'} (known SKU)")
+        profile = measured.get('contour_profile')
+        print(f"Golden contour: {profile['status'] if profile else 'DISABLED'}")
+        for name, path in paths.items():
+            print(f'{name}: {path}')
+        return
     library, contours, failures = clf.build_database(reference_dir)
     for path, reason in failures:
         print(f'  skipped {path.name}: {reason}')
@@ -456,7 +627,15 @@ def main():
             v_mm = c.get('val_mm', 0.0)
             p1, p2 = c['p1'], c['p2']
             px_len = float(np.hypot(p2[0] - p1[0], p2[1] - p1[1]))
-            print(f'  Kích thước [{lbl}]: {lbl:<18} | {px_len:8.2f} px ({v_mm:6.2f} mm)')
+            value_text = f'{v_mm:6.3f} mm' if v_mm is not None else 'N/A - FAIL'
+            print(f'  Kích thước [{lbl}]: {lbl:<18} | {px_len:8.2f} px ({value_text})')
+            if c.get('measure_type') == 'template_contour' and c.get('valid', True):
+                detail = meas.get('recipe_calipers', {}).get(lbl, {})
+                print(
+                    f'    TEMPLATE: golden={detail.get("golden_length_mm", 0.0):.3f} mm '
+                    f'+ delta_P1={detail.get("delta_p1_mm", 0.0):+.3f} mm '
+                    f'+ delta_P2={detail.get("delta_p2_mm", 0.0):+.3f} mm'
+                )
     else:
         print(f'  {"Length (L) - Chiều dài tổng":<32} | {meas["Length_L_px"]:>8.2f} px')
         print(f'  {"Width (W) - Chiều rộng tổng":<32} | {meas["Width_W_px"]:>8.2f} px')
@@ -493,6 +672,21 @@ def main():
             unmeas_labels = [f"{u['label']} ({u['reason']})" for u in unmeas]
             print(f'  [THÔNG SỐ BỎ QUA SO SÁNH DO NGƯỜI DÙNG ĐÃ XÓA/KHÔNG CHỌN]: {", ".join(unmeas_labels)}')
             print('  ' + '-' * 85)
+
+        profile = meas.get('contour_profile')
+        if profile:
+            print('\n[BƯỚC 4B.1: GOLDEN CONTOUR TOLERANCE BAND]')
+            print(f'  Lệch vào cho phép: {profile.get("lower_mm", 0.0):.3f} mm')
+            print(f'  Lệch ra cho phép : {profile.get("upper_mm", 0.0):.3f} mm')
+            print(f'  Sai lệch lớn nhất: {profile.get("max_deviation_mm", 0.0):.3f} mm')
+            print(f'  P95 deviation    : {profile.get("p95_deviation_mm", 0.0):.3f} mm')
+            print(
+                f'  Điểm ngoài band  : {profile.get("outside_point_count", 0)}/'
+                f'{profile.get("sampled_point_count", 0)}'
+            )
+            print(f'  Profile gate     : {profile["status"]}')
+            if profile.get('error'):
+                print(f'  Error            : {profile["error"]}')
 
     # Step 4C: Template Matching Quality Inspection (Defect analysis)
     print('\n[BƯỚC 4C: ĐÁNH GIÁ CHẤT LƯỢNG BỀ MẶT & BIÊN DẠNG (TEMPLATE MATCHING QC)]')

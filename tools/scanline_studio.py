@@ -32,6 +32,10 @@ sys.path.insert(0, str(PROJECT_DIR / "src"))
 import classifier as clf
 import measurer
 from src.specification import build_dimension, tolerance_magnitudes, upsert_dimension
+from src.template_geometry import (
+    profile_limits, golden_baseline, offset_contours, draw_profile,
+)
+from src.viewport import ImageViewport
 RECIPE_FILE = PROJECT_DIR / "configs" / "caliper_recipes.json"
 
 def get_wcs_info(cnt):
@@ -246,6 +250,57 @@ def snap_point_to_contour(pt, contour):
             best_pt = (float(proj[0]), float(proj[1]))
     return best_pt, best_dist
 
+class ZoomImageView(tk.Frame):
+    """Zoom/pan viewer for inspection output, using the teaching viewport math."""
+
+    def __init__(self, parent, image):
+        super().__init__(parent, bg=BG_CARD)
+        self.image = image
+        self.view = ImageViewport()
+        self.press = None
+        self.label = tk.Label(self, bg=BG_CARD, fg=TEXT_MUTED,
+                              text="Ctrl + wheel: zoom | Left drag: pan")
+        self.label.pack(fill=tk.X)
+        self.canvas = tk.Canvas(self, bg="#080b0f", height=280, highlightthickness=0)
+        self.canvas.pack(fill=tk.BOTH, expand=True)
+        self.canvas.bind("<Configure>", lambda e: self.render())
+        self.canvas.bind("<Control-MouseWheel>", self.zoom)
+        self.canvas.bind("<ButtonPress-1>", self.start_pan)
+        self.canvas.bind("<B1-Motion>", self.pan)
+        self.canvas.bind("<ButtonRelease-1>", lambda e: setattr(self, "press", None))
+
+    def sizes(self):
+        return (self.image.shape[1], self.image.shape[0]), (
+            max(1, self.canvas.winfo_width()), max(1, self.canvas.winfo_height())
+        )
+
+    def zoom(self, event):
+        if event.delta:
+            self.view.zoom_at(1.25 if event.delta > 0 else .8,
+                              event.x, event.y, *self.sizes())
+            self.render()
+        return "break"
+
+    def start_pan(self, event):
+        self.press = (event.x, event.y, self.view.pan_x, self.view.pan_y)
+
+    def pan(self, event):
+        if self.press and self.view.zoom > 1:
+            x, y, px, py = self.press
+            self.view.pan_x, self.view.pan_y = px + event.x - x, py + event.y - y
+            self.render()
+
+    def render(self):
+        image_size, size = self.sizes()
+        scale, x, y = self.view.transform(image_size, size)
+        displayed = cv2.warpAffine(self.image, np.array([[scale, 0, x], [0, scale, y]]),
+                                   size, borderValue=(8, 11, 15))
+        self.photo = ImageTk.PhotoImage(Image.fromarray(cv2.cvtColor(displayed, cv2.COLOR_BGR2RGB)))
+        self.canvas.delete("all")
+        self.canvas.create_image(0, 0, image=self.photo, anchor="nw")
+        self.label.config(text=f"{self.view.zoom * 100:.0f}% | Ctrl + wheel: zoom | Left drag: pan")
+
+
 class ScanlineStudioApp:
     def __init__(self, root, initial_sku="98661BBS-1"):
         self.root = root
@@ -272,6 +327,10 @@ class ScanlineStudioApp:
         self.temp_mouse_pos = None
         self.active_mode = "select" # "select", "draw", or "draw_inner"
         self.pending_dimension = None
+        self.viewport = ImageViewport()
+        self._mouse_press = None
+        self._dragging_image = False
+        self._profile_preview_cache = None
 
         self.recipes = {}
         self.load_recipes()
@@ -631,6 +690,10 @@ class ScanlineStudioApp:
         self.sku_combo.bind("<<ComboboxSelected>>", self.on_sku_changed)
         button(toolbar, "TẠO SKU TỪ ẢNH MẪU", self.create_new_sku_from_image, "#1e3a8a", "#93c5fd").pack(side=tk.LEFT, padx=(0, 6))
         button(toolbar, "NHẬP PDF (PHỤ)", self.import_new_pdf, "#374151", "#9ca3af").pack(side=tk.LEFT, padx=(0, 10))
+        button(toolbar, "▶ CHẠY THỬ MẪU", self.run_test_sample, "#b7791f", "#ffffff").pack(side=tk.RIGHT, padx=4)
+        button(toolbar, "💾 LƯU SPEC & CÔNG THỨC", self.save_recipe, "#059669", "#ffffff").pack(side=tk.RIGHT, padx=4)
+        toolbar = tk.Frame(self.root, bg="#1b232d", padx=18, pady=5)
+        toolbar.pack(fill=tk.X)
         tk.Frame(toolbar, bg="#344253", width=1, height=30).pack(side=tk.LEFT, padx=(0, 8))
         button(toolbar, "↔ CHIỀU DÀI L", self.add_quick_length_caliper, "#0e7490", "#ffffff").pack(side=tk.LEFT, padx=3)
         button(toolbar, "↕ BỀ RỘNG W", self.add_quick_width_caliper, "#0284c7", "#ffffff").pack(side=tk.LEFT, padx=3)
@@ -647,8 +710,6 @@ class ScanlineStudioApp:
         )
         self.chk_ortho.pack(side=tk.LEFT, padx=(5, 6))
         button(toolbar, "XÓA HẾT", self.clear_all_calipers, "#3b2730", "#fda4af").pack(side=tk.LEFT, padx=3)
-        button(toolbar, "▶ CHẠY THỬ MẪU", self.run_test_sample, "#b7791f", "#ffffff").pack(side=tk.RIGHT, padx=4)
-        button(toolbar, "💾 LƯU SPEC & CÔNG THỨC", self.save_recipe, "#059669", "#ffffff").pack(side=tk.RIGHT, padx=4)
 
         # Work area ----------------------------------------------------------
         body = tk.PanedWindow(
@@ -666,18 +727,21 @@ class ScanlineStudioApp:
             font=("Segoe UI Semibold", 10), padx=12,
         ).pack(side=tk.LEFT, pady=10)
         tk.Label(
-            viewport_header, text="OUTER", bg=BG_CARD, fg="#4ade80",
+            viewport_header, text="OUTER LIMIT", bg=BG_CARD, fg="#ff9100",
             font=("Consolas", 8, "bold"), padx=8,
         ).pack(side=tk.RIGHT)
         tk.Label(
-            viewport_header, text="INNER", bg=BG_CARD, fg="#d8b4fe",
+            viewport_header, text="INNER LIMIT", bg=BG_CARD, fg="#2896ff",
             font=("Consolas", 8, "bold"), padx=8,
         ).pack(side=tk.RIGHT)
         self.canvas = tk.Canvas(
             viewport, bg="#080b0f", highlightthickness=0, cursor="crosshair",
         )
         self.canvas.pack(fill=tk.BOTH, expand=True, padx=6)
-        self.canvas.bind("<Button-1>", self.on_canvas_click)
+        self.canvas.bind("<ButtonPress-1>", self.on_canvas_press)
+        self.canvas.bind("<B1-Motion>", self.on_canvas_drag)
+        self.canvas.bind("<ButtonRelease-1>", self.on_canvas_release)
+        self.canvas.bind("<Control-MouseWheel>", self.on_canvas_zoom)
         self.canvas.bind("<Motion>", self.on_canvas_motion)
         self.canvas.bind("<Button-3>", self.on_canvas_right_click)
         self.canvas.bind("<Configure>", lambda e: self.redraw_canvas())
@@ -688,23 +752,60 @@ class ScanlineStudioApp:
             font=("Consolas", 8),
         )
         self.canvas_status_lbl.pack(fill=tk.X, padx=6, pady=(0, 6))
+        self.zoom_label = tk.Label(
+            viewport, text="100% | Ctrl + wheel: zoom | Left drag: pan",
+            bg=BG_CARD, fg=TEXT_MUTED, anchor="w", padx=12,
+        )
+        self.zoom_label.pack(fill=tk.X)
 
-        sidebar = tk.Frame(body, bg=BG_SIDEBAR, width=410)
-        sidebar.pack_propagate(False)
-        body.add(sidebar, minsize=370, width=410)
+        # The inspector is taller than many laptop screens.  Host it in a
+        # vertical canvas so every acquisition control remains reachable
+        # instead of being clipped below the bottom edge of the window.
+        sidebar_host = tk.Frame(body, bg=BG_SIDEBAR, width=420)
+        sidebar_host.pack_propagate(False)
+        body.add(sidebar_host, minsize=380, width=420)
+
+        sidebar_canvas = tk.Canvas(
+            sidebar_host, bg=BG_SIDEBAR, highlightthickness=0, bd=0,
+        )
+        sidebar_scrollbar = ttk.Scrollbar(
+            sidebar_host, orient=tk.VERTICAL, command=sidebar_canvas.yview,
+        )
+        sidebar_canvas.configure(yscrollcommand=sidebar_scrollbar.set)
+        sidebar_scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+        sidebar_canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+
+        sidebar = tk.Frame(sidebar_canvas, bg=BG_SIDEBAR)
+        sidebar_window = sidebar_canvas.create_window(
+            (0, 0), window=sidebar, anchor="nw"
+        )
+
+        def update_sidebar_scrollregion(_event=None):
+            sidebar_canvas.configure(scrollregion=sidebar_canvas.bbox("all"))
+
+        def fit_sidebar_width(event):
+            sidebar_canvas.itemconfigure(sidebar_window, width=event.width)
+
+        def scroll_sidebar(event):
+            units = -1 if event.delta > 0 else 1
+            sidebar_canvas.yview_scroll(units * 3, "units")
+            return "break"
+
+        sidebar.bind("<Configure>", update_sidebar_scrollregion)
+        sidebar_canvas.bind("<Configure>", fit_sidebar_width)
 
         section_title(sidebar, "01", "ACTIVE DIMENSIONS", "recipe output")
         tree_frame = tk.Frame(sidebar, bg=BG_SIDEBAR)
-        tree_frame.pack(fill=tk.BOTH, expand=True, padx=16)
-        columns = ("label", "nominal", "measured", "type")
+        tree_frame.pack(fill=tk.X, padx=16)
+        columns = ("label", "nominal", "measured", "type", "status")
         self.tree = ttk.Treeview(
-            tree_frame, columns=columns, show="headings", height=7,
+            tree_frame, columns=columns, show="headings", height=5,
             selectmode="browse", style="Industrial.Treeview",
         )
         headings = {
-            "label": "ID", "nominal": "NOMINAL", "measured": "MEASURED", "type": "MODE"
+            "label": "ID", "nominal": "NOMINAL", "measured": "GOLDEN", "type": "MODE", "status": "STATUS"
         }
-        widths = {"label": 58, "nominal": 90, "measured": 96, "type": 92}
+        widths = {"label": 46, "nominal": 74, "measured": 78, "type": 64, "status": 64}
         for name in columns:
             self.tree.heading(name, text=headings[name])
             self.tree.column(name, width=widths[name], anchor="center", stretch=True)
@@ -733,17 +834,18 @@ class ScanlineStudioApp:
         self.entry_label = field(inspector, "Dimension ID", 2, 0)
         self.entry_nom = field(inspector, "Nominal", 2, 1)
         self.entry_desc = field(inspector, "Engineering description", 4, 0, 2)
+        self.entry_golden_actual = field(inspector, "TPL Golden actual mm (blank = image)", 6, 0, 2)
         button(
             inspector, "APPLY DIMENSION", self.update_current_caliper, "#0e7490"
-        ).grid(row=6, column=0, columnspan=2, sticky="ew")
+        ).grid(row=8, column=0, columnspan=2, sticky="ew")
         inspector.columnconfigure(0, weight=1)
         inspector.columnconfigure(1, weight=1)
 
-        section_title(sidebar, "03", "TOLERANCE & ACQUISITION", "bilateral")
+        section_title(sidebar, "03", "DIMENSION TOLERANCE", "per scanline")
         tolerance = tk.Frame(sidebar, bg=BG_CARD, padx=12, pady=11)
         tolerance.pack(fill=tk.X, padx=16)
-        self.entry_tol_minus = field(tolerance, "Lower (-)", 0, 0)
-        self.entry_tol_plus = field(tolerance, "Upper (+)", 0, 1)
+        self.entry_tol_minus = field(tolerance, "Dimension minus (mm)", 0, 0)
+        self.entry_tol_plus = field(tolerance, "Dimension plus (mm)", 0, 1)
         self.entry_tol_minus.insert(0, "0.10")
         self.entry_tol_plus.insert(0, "0.10")
         button(
@@ -754,6 +856,34 @@ class ScanlineStudioApp:
         ).grid(row=2, column=1, sticky="ew", padx=(4, 0))
         tolerance.columnconfigure(0, weight=1)
         tolerance.columnconfigure(1, weight=1)
+        section_title(sidebar, "04", "TEMPLATE CONTOUR", "whole outline")
+        profile_card = tk.Frame(sidebar, bg=BG_CARD, padx=12, pady=11)
+        profile_card.pack(fill=tk.X, padx=16)
+        self.entry_profile_lower = field(profile_card, "Inward / Lower (mm)", 0, 0)
+        self.entry_profile_upper = field(profile_card, "Outward / Upper (mm)", 0, 1)
+        for entry in (self.entry_profile_lower, self.entry_profile_upper):
+            entry.insert(0, "0.10")
+            entry.bind("<KeyRelease>", lambda e: self.redraw_canvas())
+        tk.Label(profile_card, text="BLUE: inner  |  ORANGE: outer  |  GRAY: golden",
+                 bg=BG_CARD, fg="#aabbd0", font=("Consolas", 8)).grid(
+                     row=2, column=0, columnspan=2, sticky="w", pady=5)
+        button(
+            profile_card, "ADD TEMPLATE-CONTOUR DIMENSION",
+            self.add_dimension_and_draw_template, "#9a5b13", "#ffffff"
+        ).grid(row=3, column=0, columnspan=2, sticky="ew")
+        self.profile_state_label = tk.Label(
+            profile_card, text="Golden contour inspection enabled",
+            bg=BG_CARD, fg=ACCENT_YELLOW, font=("Segoe UI", 8), anchor="w",
+        )
+        self.profile_state_label.grid(row=4, column=0, columnspan=2, sticky="ew", pady=(5, 0))
+        self.profile_enabled_var = tk.BooleanVar(value=True)
+        tk.Checkbutton(
+            profile_card, text="CHECK GOLDEN CONTOUR", variable=self.profile_enabled_var,
+            command=self.refresh_table, bg=BG_CARD, fg=TEXT_WHITE,
+            selectcolor=BG_DARK, activebackground=BG_CARD, activeforeground=TEXT_WHITE,
+        ).grid(row=5, column=0, columnspan=2, sticky="w")
+        profile_card.columnconfigure(0, weight=1)
+        profile_card.columnconfigure(1, weight=1)
 
         info = tk.Frame(sidebar, bg="#11161d", padx=14, pady=10)
         info.pack(fill=tk.X, padx=16, pady=14)
@@ -773,12 +903,24 @@ class ScanlineStudioApp:
         )
         self.info_status_lbl.pack(fill=tk.X)
 
+        # Bind the wheel on every sidebar child.  The dimensions table keeps
+        # its dedicated scrollbar; the mouse wheel moves the whole inspector.
+        def bind_sidebar_wheel(widget):
+            widget.bind("<MouseWheel>", scroll_sidebar, add="+")
+            for child in widget.winfo_children():
+                bind_sidebar_wheel(child)
+
+        bind_sidebar_wheel(sidebar_canvas)
+        self.sidebar_canvas = sidebar_canvas
+
     def load_sku(self, sku):
         self.current_sku = sku
         self.sku_var.set(sku)
         self.selected_idx = -1
         self.drawing_points = []
         self.active_mode = "select"
+        self.viewport.reset()
+        self._profile_preview_cache = None
 
         # Load reference image
         ref_dir = PROJECT_DIR / "assets" / "references" / sku / "images"
@@ -800,7 +942,9 @@ class ScanlineStudioApp:
             messagebox.showerror("Lỗi", f"Không tìm thấy ảnh mẫu chuẩn cho SKU: {sku}")
             return
 
-        self.ref_img_path = ref_candidates[0]
+        taught_image = self.recipes.get(sku, {}).get("reference_image")
+        taught_path = PROJECT_DIR / taught_image if taught_image else None
+        self.ref_img_path = taught_path if taught_path and taught_path.is_file() else ref_candidates[0]
         self.ref_img = cv2.imread(str(self.ref_img_path))
         if self.ref_img is None:
             messagebox.showerror("Lỗi", f"Không thể đọc file ảnh: {self.ref_img_path}")
@@ -828,7 +972,10 @@ class ScanlineStudioApp:
             except Exception:
                 pass
 
-        self.optical_scale = self.products.get(sku, {}).get("optical_scale_mm_per_px", 0.044)
+        self.optical_scale = self.spec_data.get(
+            "optical_scale_mm_per_px",
+            self.products.get(sku, {}).get("optical_scale_mm_per_px", 0.044),
+        )
         self.info_scale_lbl.config(text=f"Độ phân giải camera: {self.optical_scale*1000.0:.2f} um/px ({self.optical_scale:.5f} mm/px)")
 
         # Update CAD combo values
@@ -845,6 +992,10 @@ class ScanlineStudioApp:
 
         # Load calipers from recipe, or if empty propose defaults
         sku_recipe = self.recipes.get(sku, {})
+        self.profile_enabled_var.set(sku_recipe.get("contour_profile_enabled", True))
+        lower, upper = profile_limits(sku_recipe)
+        self._replace_entry(self.entry_profile_lower, f"{lower:g}")
+        self._replace_entry(self.entry_profile_upper, f"{upper:g}")
         calipers = sku_recipe.get("calipers", [])
         if not calipers:
             calipers = get_proposed_calipers_for_sku(sku, self.wcs, self.optical_scale)
@@ -887,6 +1038,12 @@ class ScanlineStudioApp:
                 cal["p2_edge"] = q2
                 d_px = float(np.hypot(q2[0] - q1[0], q2[1] - q1[1]))
                 cal["measured_mm"] = round(d_px * self.optical_scale, 2)
+                if cal.get("measure_type") == "template_contour":
+                    cal["p1_ref"], cal["p2_ref"] = list(q1), list(q2)
+                    cal["golden_length_mm"], cal["golden_source"] = golden_baseline(
+                        cal, d_px, self.optical_scale
+                    )
+                    cal["measured_mm"] = cal["golden_length_mm"]
 
         self.calipers = calipers
         self.refresh_table()
@@ -1158,6 +1315,7 @@ class ScanlineStudioApp:
     def _save_spec(self):
         self.spec_data["sku"] = self.current_sku
         self.spec_data.setdefault("unit", "mm")
+        self.spec_data["optical_scale_mm_per_px"] = self.optical_scale
         self.spec_data["dimensions"] = self.spec_dims
         self.spec_path.parent.mkdir(parents=True, exist_ok=True)
         tmp_path = self.spec_path.with_suffix(".json.tmp")
@@ -1199,7 +1357,46 @@ class ScanlineStudioApp:
             fg="#ce93d8",
         )
 
+    def add_dimension_and_draw_template(self):
+        """Register a dimension measured as signed deviation from the golden contour."""
+        try:
+            dimension = self._upsert_form_dimension()
+            lower, upper = self._profile_offsets()
+            self._golden_actual_from_form()
+        except ValueError as exc:
+            messagebox.showerror("Thong so khong hop le", str(exc))
+            return
+        self.pending_dimension = dimension
+        self.enable_template_draw_mode(keep_pending=True)
+        self.canvas_status_lbl.config(
+            text=(f"TEMPLATE [{dimension['label']}]: click 2 moc tren contour golden. "
+                  f"Inward {lower:g} / Outward {upper:g} mm."),
+            fg="#fbbf24",
+        )
+
+    def _profile_offsets(self):
+        return profile_limits({
+            "contour_lower_mm": self.entry_profile_lower.get().strip() or "0",
+            "contour_upper_mm": self.entry_profile_upper.get().strip() or "0",
+        })
+
+    def _golden_actual_from_form(self):
+        text = self.entry_golden_actual.get().strip()
+        if not text:
+            return None
+        value = float(text)
+        if not np.isfinite(value) or value <= 0:
+            raise ValueError("Golden actual must be greater than zero, or leave blank for image")
+        return value
+
     def refresh_table(self):
+        if hasattr(self, "profile_state_label"):
+            enabled = self.profile_enabled_var.get()
+            self.profile_state_label.config(
+                text="Profile QC enabled: whole outline (SCAN / TPL)" if enabled else
+                     "Profile QC disabled: preview only",
+                fg=ACCENT_GREEN if enabled else ACCENT_YELLOW,
+            )
         for item in self.tree.get_children():
             self.tree.delete(item)
 
@@ -1215,7 +1412,9 @@ class ScanlineStudioApp:
                 status = "PASS" if lo <= measured <= hi else "FAIL"
             else:
                 status = "--"
-            self.tree.insert("", tk.END, iid=str(idx), values=(lbl, nom, meas_v, status))
+            mode = "TPL" if cal.get("measure_type") == "template_contour" else "SCAN"
+            values = (lbl, nom, meas_v, mode, status)
+            self.tree.insert("", tk.END, iid=str(idx), values=values)
 
         if 0 <= self.selected_idx < len(self.calipers):
             self.tree.selection_set(str(self.selected_idx))
@@ -1231,6 +1430,8 @@ class ScanlineStudioApp:
             self.entry_nom.insert(0, str(cal.get("nominal_mm", "")))
             self.entry_desc.delete(0, tk.END)
             self.entry_desc.insert(0, cal.get("desc", ""))
+            actual = cal.get("golden_actual_mm")
+            self._replace_entry(self.entry_golden_actual, "" if actual is None else f"{actual:g}")
             spec_dim = self._spec_for_label(cal.get("label", "")) or cal
             tol_minus, tol_plus = tolerance_magnitudes(spec_dim)
             self._replace_entry(self.entry_tol_minus, f"{tol_minus:g}")
@@ -1294,6 +1495,7 @@ class ScanlineStudioApp:
             return
         try:
             dimension = self._upsert_form_dimension()
+            actual = self._golden_actual_from_form()
         except ValueError as exc:
             messagebox.showerror("Thong so khong hop le", str(exc))
             return
@@ -1306,7 +1508,14 @@ class ScanlineStudioApp:
             "max_mm": dimension["max"],
             "tolerance_minus_mm": abs(dimension["lower_tol"]),
             "tolerance_plus_mm": dimension["upper_tol"],
+            "golden_actual_mm": actual,
         })
+        cal = self.calipers[self.selected_idx]
+        if cal.get("measure_type") == "template_contour":
+            p1, p2 = cal["p1_edge"], cal["p2_edge"]
+            px = float(np.linalg.norm(np.asarray(p2) - p1))
+            cal["golden_length_mm"], cal["golden_source"] = golden_baseline(cal, px, self.optical_scale)
+            cal["measured_mm"] = cal["golden_length_mm"]
         self.info_status_lbl.config(text="Da cap nhat. Nhan Luu de ghi spec va recipe.", fg=ACCENT_YELLOW)
         self.refresh_table()
         self.redraw_canvas()
@@ -1374,6 +1583,56 @@ class ScanlineStudioApp:
             fg="#ce93d8",
         )
 
+    def enable_template_draw_mode(self, keep_pending=False):
+        """Teach a scanline whose value is derived from golden-edge deviations."""
+        if not keep_pending:
+            self.pending_dimension = None
+        self.active_mode = "draw_template"
+        self.drawing_points = []
+        self.canvas_status_lbl.config(
+            text="TEMPLATE CONTOUR: click P1 and P2 on opposite golden edges.",
+            fg="#fbbf24",
+        )
+
+    def _viewport_sizes(self):
+        return (self.ref_img.shape[1], self.ref_img.shape[0]), (
+            max(1, self.canvas.winfo_width()), max(1, self.canvas.winfo_height())
+        )
+
+    def on_canvas_zoom(self, event):
+        if not hasattr(self, "ref_img") or self.ref_img is None or not event.delta:
+            return "break"
+        image_size, canvas_size = self._viewport_sizes()
+        steps = max(1, abs(event.delta) / 120)
+        factor = 1.25 ** (steps if event.delta > 0 else -steps)
+        self.viewport.zoom_at(factor, event.x, event.y, image_size, canvas_size)
+        self.redraw_canvas()
+        return "break"
+
+    def on_canvas_press(self, event):
+        self._mouse_press = (event.x, event.y, self.viewport.pan_x, self.viewport.pan_y)
+        self._dragging_image = False
+
+    def on_canvas_drag(self, event):
+        if self._mouse_press is None:
+            return
+        x, y, pan_x, pan_y = self._mouse_press
+        dx, dy = event.x - x, event.y - y
+        if np.hypot(dx, dy) > 4:
+            self._dragging_image = True
+        if self._dragging_image and self.viewport.zoom > 1:
+            self.viewport.pan_x, self.viewport.pan_y = pan_x + dx, pan_y + dy
+            self.canvas.configure(cursor="fleur")
+            self.redraw_canvas()
+
+    def on_canvas_release(self, event):
+        click = self._mouse_press is not None and not self._dragging_image
+        self._mouse_press = None
+        self._dragging_image = False
+        self.canvas.configure(cursor="crosshair")
+        if click:
+            self.on_canvas_click(event)
+
     def on_canvas_click(self, event):
         # Convert canvas coords to image coords
         if not hasattr(self, "img_scale") or self.img_scale <= 0:
@@ -1381,6 +1640,8 @@ class ScanlineStudioApp:
 
         ix = (event.x - self.img_offset_x) / self.img_scale
         iy = (event.y - self.img_offset_y) / self.img_scale
+        if not (0 <= ix < self.ref_img.shape[1] and 0 <= iy < self.ref_img.shape[0]):
+            return
 
         if self.active_mode == "slice_width":
             u_pt, _ = to_wcs((ix, iy), self.wcs)
@@ -1446,7 +1707,7 @@ class ScanlineStudioApp:
             )
             return
 
-        if self.active_mode in ("draw", "draw_inner"):
+        if self.active_mode in ("draw", "draw_inner", "draw_template"):
             self.drawing_points.append((ix, iy))
             if len(self.drawing_points) == 1:
                 self.canvas_status_lbl.config(
@@ -1459,6 +1720,13 @@ class ScanlineStudioApp:
                 p2_raw = self.drawing_points[1]
 
                 is_inner = self.active_mode == "draw_inner"
+                is_template = self.active_mode == "draw_template"
+                try:
+                    actual = self._golden_actual_from_form() if is_template else None
+                except ValueError as exc:
+                    self.drawing_points = []
+                    messagebox.showerror("Golden actual", str(exc))
+                    return
                 if is_inner:
                     q1_edge, q2_edge, selected_inner_contour = self.measurer_inst.snap_scanline_to_inner_contour(
                         self.gray, self.cnt, p1_raw, p2_raw, image_bgr=self.ref_img
@@ -1507,10 +1775,23 @@ class ScanlineStudioApp:
                     "p2_edge": q2_edge,
                     "measured_mm": d_mm,
                     "length_px": round(d_px, 2),
-                    "measure_type": "inner_contour" if is_inner else "taught_caliper",
+                    "measure_type": (
+                        "inner_contour" if is_inner else
+                        "template_contour" if is_template else
+                        "taught_caliper"
+                    ),
+                    "golden_length_mm": d_mm if is_template else None,
+                    "golden_actual_mm": actual,
+                    "golden_length_px": round(d_px, 4) if is_template else None,
                     "inner_contour": selected_inner_contour,
                     "color": [210, 80, 230] if is_inner else PALETTE[len(self.calipers) % len(PALETTE)]
                 }
+
+                if is_template:
+                    new_cal["golden_length_mm"], new_cal["golden_source"] = golden_baseline(
+                        new_cal, d_px, self.optical_scale
+                    )
+                    new_cal["measured_mm"] = new_cal["golden_length_mm"]
 
                 # A dimension entered in the compact spec form takes priority
                 # over the next automatic CAD suggestion.
@@ -1542,7 +1823,7 @@ class ScanlineStudioApp:
                 self.redraw_canvas()
         else:
             # Mode "select": find closest caliper to click
-            best_dist = 25.0 # pixels tolerance
+            best_dist = 25.0 / max(self.img_scale, 1e-9)
             best_idx = -1
             for idx, cal in enumerate(self.calipers):
                 p1 = cal.get("p1_edge", cal.get("p1_ref", (0, 0)))
@@ -1560,6 +1841,8 @@ class ScanlineStudioApp:
                 self.redraw_canvas()
 
     def on_canvas_motion(self, event):
+        if self._mouse_press is not None:
+            return
         if not hasattr(self, "img_scale") or self.img_scale <= 0:
             return
 
@@ -1581,7 +1864,7 @@ class ScanlineStudioApp:
             self.redraw_canvas()
             return
 
-        if self.active_mode in ("draw", "draw_inner") and len(self.drawing_points) == 1:
+        if self.active_mode in ("draw", "draw_inner", "draw_template") and len(self.drawing_points) == 1:
             p1 = self.drawing_points[0]
             p2 = (ix, iy)
             if self.active_mode == "draw_inner":
@@ -1600,7 +1883,7 @@ class ScanlineStudioApp:
 
     def on_canvas_right_click(self, event):
         # Cancel drawing
-        if self.active_mode in ("draw", "draw_inner", "slice_width"):
+        if self.active_mode in ("draw", "draw_inner", "draw_template", "slice_width"):
             self.drawing_points = []
             self.active_mode = "select"
             self.pending_dimension = None
@@ -1631,8 +1914,24 @@ class ScanlineStudioApp:
 
         vis = self.ref_img.copy()
 
-        # 1. Draw physical zero-bleed contour boundary
-        cv2.drawContours(vis, [self.cnt], -1, (0, 255, 0), 2, cv2.LINE_AA)
+        # Preview uses the same offset geometry/colors as inspection output.
+        try:
+            lower, upper = self._profile_offsets()
+            key = (id(self.cnt), lower, upper, self.optical_scale)
+            if self._profile_preview_cache is None or self._profile_preview_cache[0] != key:
+                inner, outer = offset_contours(
+                    self.cnt, lower / self.optical_scale, upper / self.optical_scale
+                )
+                profile = {
+                    "aligned_golden_contour": self.cnt,
+                    "inner_contours": inner, "outer_contours": outer,
+                    "lower_px": lower / self.optical_scale,
+                    "upper_px": upper / self.optical_scale,
+                }
+                self._profile_preview_cache = (key, profile)
+            draw_profile(vis, self._profile_preview_cache[1])
+        except (ValueError, ZeroDivisionError):
+            cv2.drawContours(vis, [self.cnt], -1, (160, 160, 160), 1, cv2.LINE_AA)
 
         # Closed inner edges detected strictly inside the workpiece. They are
         # shown independently from caliper lines so the operator can verify
@@ -1692,7 +1991,6 @@ class ScanlineStudioApp:
                 hi = float(spec_dim.get("max", nom))
                 status = "PASS" if lo <= float(meas_v) <= hi else "FAIL"
                 tag = f"[{idx+1}] {lbl} {meas_v:.2f}mm | {nom:.2f} [{lo:.2f}..{hi:.2f}] {status}"
-            cv2.putText(vis, tag, (mx + 8, my - 6), cv2.FONT_HERSHEY_SIMPLEX, 0.50, (0, 0, 0), 3, cv2.LINE_AA)
             cv2.putText(vis, tag, (mx + 8, my - 6), cv2.FONT_HERSHEY_SIMPLEX, 0.50, col, 1, cv2.LINE_AA)
 
         # 3. Draw active drawing line preview (snapped to physical edge)
@@ -1707,7 +2005,7 @@ class ScanlineStudioApp:
             cv2.circle(vis, q1_i, 6, (0, 230, 255), -1, cv2.LINE_AA)
             cv2.circle(vis, q2_i, 6, (0, 230, 255), -1, cv2.LINE_AA)
 
-        elif self.active_mode in ("draw", "draw_inner") and len(self.drawing_points) == 1 and self.temp_mouse_pos:
+        elif self.active_mode in ("draw", "draw_inner", "draw_template") and len(self.drawing_points) == 1 and self.temp_mouse_pos:
             p1 = self.drawing_points[0]
             p2 = self.temp_mouse_pos
             if self.active_mode == "draw_inner":
@@ -1726,26 +2024,83 @@ class ScanlineStudioApp:
             cv2.circle(vis, q1_i, 6, (0, 255, 0), -1, cv2.LINE_AA)
             cv2.circle(vis, q2_i, 6, (0, 255, 0), -1, cv2.LINE_AA)
 
-        # Resize image to fit canvas maintaining aspect ratio
+        # Render only canvas-sized pixels, even at 32x, to avoid allocating a
+        # gigantic resized image. Measurements always use source coordinates.
         img_h, img_w = vis.shape[:2]
-        scale = min(c_w / float(img_w), c_h / float(img_h))
+        scale, offset_x, offset_y = self.viewport.transform((img_w, img_h), (c_w, c_h))
         self.img_scale = scale
-        new_w = max(1, int(round(img_w * scale)))
-        new_h = max(1, int(round(img_h * scale)))
-
-        self.img_offset_x = (c_w - new_w) // 2
-        self.img_offset_y = (c_h - new_h) // 2
-
-        resized = cv2.resize(vis, (new_w, new_h), interpolation=cv2.INTER_LINEAR)
+        self.img_offset_x, self.img_offset_y = offset_x, offset_y
+        resized = cv2.warpAffine(
+            vis, np.array([[scale, 0, offset_x], [0, scale, offset_y]], dtype=np.float64),
+            (c_w, c_h), flags=cv2.INTER_LINEAR, borderValue=(8, 11, 15),
+        )
         rgb = cv2.cvtColor(resized, cv2.COLOR_BGR2RGB)
         self.pil_img = Image.fromarray(rgb)
         self.tk_img = ImageTk.PhotoImage(self.pil_img)
 
         self.canvas.delete("all")
-        self.canvas.create_image(self.img_offset_x, self.img_offset_y, anchor="nw", image=self.tk_img)
+        self.canvas.create_image(0, 0, anchor="nw", image=self.tk_img)
+        self.zoom_label.config(text=(
+            f"{self.viewport.zoom * 100:.0f}% | Ctrl + wheel: zoom | Left drag: pan"
+        ))
+
+    def _recipe_snapshot(self):
+        """Build one complete in-memory recipe shared by Save and Test."""
+        lower, upper = self._profile_offsets()
+        if not np.isfinite(self.optical_scale) or self.optical_scale <= 0:
+            raise ValueError("mm/pixel calibration must be greater than zero")
+        calipers = []
+        labels = [str(c.get("label", "")).strip().casefold() for c in self.calipers]
+        if len(labels) != len(set(labels)):
+            raise ValueError("Dimension IDs must be unique. Delete the duplicate or change its ID.")
+        for original in self.calipers:
+            cal = dict(original)
+            if cal.get("measure_type") == "template_contour":
+                p1 = cal.get("p1_edge", cal.get("p1_ref"))
+                p2 = cal.get("p2_edge", cal.get("p2_ref"))
+                if p1 is None or p2 is None:
+                    raise ValueError("Template scanline is missing its golden landmarks")
+                px = float(np.linalg.norm(np.asarray(p2) - p1))
+                baseline, source = golden_baseline(cal, px, self.optical_scale)
+                cal.update({
+                    "p1_ref": list(p1), "p2_ref": list(p2),
+                    "p1_wcs": list(to_wcs(p1, self.wcs)),
+                    "p2_wcs": list(to_wcs(p2, self.wcs)),
+                    "golden_length_px": px, "golden_length_mm": baseline,
+                    "golden_source": source,
+                })
+            calipers.append(cal)
+        # Keep every vertex so narrow defects in the golden are not simplified away.
+        local = [self.measurer_inst._point_to_frame_local(p, self.wcs).tolist()
+                 for p in self.cnt.reshape(-1, 2)]
+        return {
+            "sku": self.current_sku,
+            "reference_image": str(self.ref_img_path.relative_to(PROJECT_DIR)),
+            "optical_scale_mm_per_px": self.optical_scale,
+            "wcs": self.wcs, "golden_contour_local_px": local,
+            "contour_lower_mm": lower, "contour_upper_mm": upper,
+            "contour_profile_enabled": bool(self.profile_enabled_var.get()),
+            "calipers": calipers,
+        }
+
+    @staticmethod
+    def _json_value(value):
+        if isinstance(value, np.ndarray):
+            return value.tolist()
+        if isinstance(value, np.generic):
+            return value.item()
+        raise TypeError(f"Cannot serialize {type(value).__name__}")
 
     def save_recipe(self):
         sku = self.current_sku
+        try:
+            recipe = self._recipe_snapshot()
+        except ValueError as exc:
+            messagebox.showerror(
+                "Thong so khong hop le", str(exc),
+            )
+            return
+
         # Build dimensions list for spec.json from active calipers
         new_dims = []
         for cal in self.calipers:
@@ -1753,12 +2108,12 @@ class ScanlineStudioApp:
             nom = float(cal.get("nominal_mm", cal.get("measured_mm", 0.0)))
             tol_minus = abs(float(cal.get("tolerance_minus_mm", 0.10)))
             tol_plus = abs(float(cal.get("tolerance_plus_mm", 0.10)))
-            lo = round(nom - tol_minus, 2)
-            hi = round(nom + tol_plus, 2)
+            lo = nom - tol_minus
+            hi = nom + tol_plus
             desc = cal.get("desc", f"Kích thước {lbl}")
             new_dims.append({
                 "label": lbl,
-                "nominal": round(nom, 2),
+                "nominal": nom,
                 "min": lo,
                 "max": hi,
                 "lower_tol": -tol_minus,
@@ -1767,17 +2122,17 @@ class ScanlineStudioApp:
                 "raw_spec": desc
             })
         self.spec_dims = new_dims
+        self.spec_data["contour_profile"] = {
+            "enabled": recipe["contour_profile_enabled"],
+            "lower_mm": recipe["contour_lower_mm"],
+            "upper_mm": recipe["contour_upper_mm"],
+            "rule": "signed_offset_from_golden",
+        }
         self._save_spec()
 
-        self.recipes[sku] = {
-            "sku": sku,
-            "reference_image": str(self.ref_img_path.relative_to(PROJECT_DIR)),
-            "optical_scale_mm_per_px": self.optical_scale,
-            "wcs": self.wcs,
-            "calipers": self.calipers
-        }
+        self.recipes[sku] = recipe
         with open(RECIPE_FILE, "w", encoding="utf-8") as f:
-            json.dump(self.recipes, f, indent=2, ensure_ascii=False)
+            json.dump(self.recipes, f, indent=2, ensure_ascii=False, default=self._json_value)
 
         # Update products.json as well
         self.products[sku] = self.spec_data
@@ -1850,15 +2205,23 @@ class ScanlineStudioApp:
             return
 
         cnt = desc["contour"]
-        spec = self.spec_data
+        spec = dict(self.spec_data)
+        spec["optical_scale_mm_per_px"] = self.optical_scale
+        spec["dimensions"] = [build_dimension(
+            c["label"], c.get("nominal_mm", 0),
+            c.get("tolerance_minus_mm", .1), c.get("tolerance_plus_mm", .1),
+            axis=c.get("axis", "2D_in_plane"),
+        ) for c in self.calipers]
 
-        m = measurer.WorkpieceMeasurer()
-        m.caliper_recipes[self.current_sku] = {
-            "sku": self.current_sku,
-            "wcs": self.wcs,
-            "calipers": self.calipers
-        }
-        meas = m.measure(test_img, cnt, spec)
+        try:
+            from predict import inspect_known_sample
+            meas, report_paths = inspect_known_sample(
+                test_img, self._recipe_snapshot(), spec, PROJECT_DIR / "outputs", test_img_path.stem,
+                described=desc, golden_image=self.ref_img,
+            )
+        except (ValueError, OSError) as exc:
+            messagebox.showerror("Template configuration", str(exc))
+            return
 
         # Generate annotated inspection image with HUD table
         annotated_vis = measurer.annotate_measurements(test_img, cnt, meas, self.current_sku)
@@ -1866,7 +2229,7 @@ class ScanlineStudioApp:
         # Show results dialog
         win = tk.Toplevel(self.root)
         win.title(f"Kết quả kiểm tra đo lường QC - {test_img_path.name}")
-        win.geometry("900x650")
+        win.geometry("1100x800")
         win.configure(bg=BG_CARD)
 
         lbl_hdr = tk.Label(
@@ -1878,36 +2241,62 @@ class ScanlineStudioApp:
         # Visual preview frame
         body_f = tk.Frame(win, bg=BG_CARD)
         body_f.pack(fill=tk.BOTH, expand=True, padx=12, pady=5)
+        tabs = ttk.Notebook(body_f)
+        tabs.pack(fill=tk.BOTH, expand=True)
+        overlay_tab = ZoomImageView(tabs, annotated_vis)
+        tabs.add(overlay_tab, text="Contour / Scanline")
+        panel = cv2.imread(str(report_paths["panel_summary"]))
+        if panel is not None:
+            tabs.add(ZoomImageView(tabs, panel), text="Báo cáo 6 khung")
+        tk.Label(body_f, text=f"Đã lưu báo cáo: {report_paths['panel_summary']}",
+                 bg=BG_CARD, fg=TEXT_MUTED, anchor="w").pack(fill=tk.X)
+        profile = meas.get("contour_profile")
+        if profile:
+            text = (f"PROFILE {profile['status']} | Inward {profile.get('lower_mm', 0):.3f} mm | "
+                    f"Outward {profile.get('upper_mm', 0):.3f} mm | "
+                    f"Max inward {profile.get('max_inward_mm', 0):.3f} mm | "
+                    f"Max outward {profile.get('max_outward_mm', 0):.3f} mm")
+            if profile.get("error"):
+                text = "PROFILE FAIL: " + profile["error"]
+            tk.Label(body_f, text=text, bg=BG_CARD,
+                     fg=ACCENT_GREEN if profile["pass"] else ACCENT_RED).pack(fill=tk.X)
 
         # Table frame
         tree_f = tk.Frame(body_f, bg=BG_CARD)
-        tree_f.pack(fill=tk.BOTH, expand=True, pady=5)
+        tree_f.pack(fill=tk.X, pady=5)
 
-        cols = ("label", "measured", "spec", "status", "note")
-        tree = ttk.Treeview(tree_f, columns=cols, show="headings", height=8, style="Industrial.Treeview")
+        cols = ("label", "golden", "measured", "delta", "edges", "status")
+        tree = ttk.Treeview(tree_f, columns=cols, show="headings", height=4, style="Industrial.Treeview")
         tree.heading("label", text="Kích thước")
+        tree.heading("golden", text="Golden (mm)")
         tree.heading("measured", text="Đo được (mm)")
-        tree.heading("spec", text="Tiêu chuẩn ± Sai số")
+        tree.heading("delta", text="Chênh lệch (mm)")
+        tree.heading("edges", text="Δ P1 / Δ P2 (mm)")
         tree.heading("status", text="Kết luận")
-        tree.heading("note", text="Ghi chú")
 
         tree.column("label", width=90, anchor="center")
         tree.column("measured", width=120, anchor="center")
-        tree.column("spec", width=170, anchor="center")
+        tree.column("golden", width=120, anchor="center")
+        tree.column("delta", width=130, anchor="center")
+        tree.column("edges", width=200, anchor="center")
         tree.column("status", width=90, anchor="center")
-        tree.column("note", width=200, anchor="w")
 
         report = meas.get("spec_report", [])
         for r in report:
             tree.insert("", tk.END, values=(
                 r["label"],
-                f"{r['measured_mm']:.2f} mm" if r['measured_mm'] is not None else "N/A",
-                r.get("raw_spec", ""),
+                f"{r['golden_length_mm']:.3f}" if r.get('golden_length_mm') is not None else "--",
+                f"{r['measured_mm']:.3f}" if r['measured_mm'] is not None else "N/A",
+                f"{r['total_delta_mm']:+.3f}" if r.get('total_delta_mm') is not None else "--",
+                (f"{r['delta_p1_mm']:+.3f} / {r['delta_p2_mm']:+.3f}"
+                 if r.get('delta_p1_mm') is not None else "--"),
                 r.get("status", ""),
-                r.get("note", "")
             ))
 
-        tree.pack(fill=tk.BOTH, expand=True)
+        results_scroll = ttk.Scrollbar(tree_f, orient=tk.VERTICAL, command=tree.yview)
+        tree.configure(yscrollcommand=results_scroll.set)
+        tree.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        results_scroll.pack(side=tk.RIGHT, fill=tk.Y)
 
         is_pass = meas.get("overall_pass", False)
         verdict_str = "TỔNG KẾT: PASS (ĐẠT CHUẨN XUẤT XƯỞNG)" if is_pass else "TỔNG KẾT: FAIL (VƯỢT QUÁ SAI SỐ CHO PHÉP)"

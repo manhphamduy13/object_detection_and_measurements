@@ -14,6 +14,10 @@ import json
 from typing import Dict, Any, Optional, Tuple, List
 import cv2
 import numpy as np
+from src.template_geometry import (
+    profile_limits, check_profile, draw_profile, golden_baseline,
+    template_intersections,
+)
 
 
 class WorkpieceMeasurer:
@@ -318,6 +322,117 @@ class WorkpieceMeasurer:
         p1 = c + (min_proj - c_proj) * direction
         p2 = c + (max_proj - c_proj) * direction
         return (float(p1[0]), float(p1[1])), (float(p2[0]), float(p2[1]))
+
+    @staticmethod
+    def _contour_frame(contour: np.ndarray) -> Dict[str, Any]:
+        """Return the rigid WCS frame used to align a golden contour.
+
+        Width and height are intentionally *not* used as scale factors.  A
+        metrology template may be translated and rotated to the inspected
+        part, but scaling it would hide the dimensional error being measured.
+        """
+        center, (rw, rh), angle = cv2.minAreaRect(contour)
+        if rw < rh:
+            rw, rh = rh, rw
+            angle += 90.0
+        moments = cv2.moments(contour)
+        if abs(moments["m00"]) > 1e-9:
+            centroid = (
+                moments["m10"] / moments["m00"],
+                moments["m01"] / moments["m00"],
+            )
+        else:
+            centroid = center
+        return {
+            "center": (float(center[0]), float(center[1])),
+            "width": float(rw),
+            "height": float(rh),
+            "angle": float(angle),
+            "centroid_offset": (
+                float(centroid[0] - center[0]),
+                float(centroid[1] - center[1]),
+            ),
+        }
+
+    @staticmethod
+    def _point_to_frame_local(
+        point: Tuple[float, float], frame: Dict[str, Any]
+    ) -> np.ndarray:
+        center = np.asarray(frame.get("center", (0.0, 0.0)), dtype=np.float64)
+        delta = np.asarray(point, dtype=np.float64) - center
+        angle = np.radians(-float(frame.get("angle", 0.0)))
+        c, s = np.cos(angle), np.sin(angle)
+        return np.asarray(
+            [delta[0] * c - delta[1] * s, delta[0] * s + delta[1] * c],
+            dtype=np.float64,
+        )
+
+    @staticmethod
+    def _point_from_frame_local(
+        point: Tuple[float, float], frame: Dict[str, Any]
+    ) -> Tuple[float, float]:
+        local = np.asarray(point, dtype=np.float64)
+        angle = np.radians(float(frame.get("angle", 0.0)))
+        c, s = np.cos(angle), np.sin(angle)
+        center = np.asarray(frame.get("center", (0.0, 0.0)), dtype=np.float64)
+        mapped = center + np.asarray(
+            [local[0] * c - local[1] * s, local[0] * s + local[1] * c]
+        )
+        return float(mapped[0]), float(mapped[1])
+
+    @classmethod
+    def _aligned_template_frame(
+        cls, contour: np.ndarray, reference_frame: Dict[str, Any]
+    ) -> Dict[str, Any]:
+        """Align target orientation to the taught golden orientation."""
+        target = cls._contour_frame(contour)
+        ref_off = np.asarray(reference_frame.get("centroid_offset", (0.0, 0.0)), dtype=float)
+        tgt_off = np.asarray(target.get("centroid_offset", (0.0, 0.0)), dtype=float)
+        ref_local = cls._point_to_frame_local(
+            np.asarray(reference_frame.get("center", (0.0, 0.0))) + ref_off,
+            reference_frame,
+        )
+        tgt_local = cls._point_to_frame_local(
+            np.asarray(target.get("center", (0.0, 0.0))) + tgt_off,
+            target,
+        )
+        if ref_local[0] * tgt_local[0] < -1e-4:
+            target["angle"] = (float(target["angle"]) + 180.0) % 360.0
+        return target
+
+    @classmethod
+    def _aligned_golden_contour(
+        cls, contour: np.ndarray, recipe: Dict[str, Any]
+    ) -> Optional[np.ndarray]:
+        local_points = recipe.get("golden_contour_local_px")
+        reference_frame = recipe.get("wcs", {})
+        if not local_points or not reference_frame:
+            return None
+        target_frame = cls._aligned_template_frame(contour, reference_frame)
+        mapped = [cls._point_from_frame_local(point, target_frame) for point in local_points]
+        return np.asarray(mapped, dtype=np.float32).reshape(-1, 1, 2)
+
+    def evaluate_contour_profile(
+        self, contour: np.ndarray, optical_scale: float, sku: str
+    ) -> Optional[Dict[str, Any]]:
+        """Check the complete measured silhouette against the golden tolerance band."""
+        recipe = self.caliper_recipes.get(sku, {})
+        enabled = recipe.get("contour_profile_enabled", any(
+            item.get("measure_type") == "template_contour"
+            for item in recipe.get("calipers", [])
+        ))
+        if not enabled:
+            return None
+        try:
+            lower, upper = profile_limits(recipe)
+            if not optical_scale or not np.isfinite(optical_scale) or optical_scale <= 0:
+                raise ValueError("Missing or invalid mm/pixel calibration")
+            golden = self._aligned_golden_contour(contour, recipe)
+            if golden is None or len(golden) < 3:
+                raise ValueError("Golden contour is missing; teach and save this template again")
+            return check_profile(contour, golden, optical_scale, lower, upper)
+        except (ValueError, TypeError) as exc:
+            return {"enabled": True, "pass": False, "status": "FAIL", "error": str(exc)}
 
     @staticmethod
     def snap_scanline_to_edges(
@@ -986,6 +1101,23 @@ class WorkpieceMeasurer:
             dy = rx * sin_a + ry * cos_a
             return (float(target_wcs["center"][0] + dx), float(target_wcs["center"][1] + dy))
 
+        template_target_frame = self._aligned_template_frame(contour, ref_wcs)
+
+        def template_reference_point(caliper, key):
+            ref_point = caliper.get(f"{key}_ref")
+            if ref_point is None:
+                uv = caliper.get(f"{key}_wcs", (0.0, 0.0))
+                # Legacy recipes store normalized WCS endpoints.  Recreate
+                # the original golden pixel point before applying rigid-only
+                # alignment to the inspected part.
+                local = (
+                    float(uv[0]) * float(ref_wcs.get("width", 1.0)),
+                    float(uv[1]) * float(ref_wcs.get("height", 1.0)),
+                )
+                ref_point = self._point_from_frame_local(local, ref_wcs)
+            local = self._point_to_frame_local(ref_point, ref_wcs)
+            return self._point_from_frame_local(local, template_target_frame)
+
         recipe_results = {}
         for cal in recipe.get("calipers", []):
             lbl = cal.get("label", "DIM")
@@ -998,7 +1130,65 @@ class WorkpieceMeasurer:
             measure_type = cal.get("measure_type", "taught_caliper")
             inner_contour = None
             projected_length_px = None
-            if measure_type in {"inner_contour", "hole", "slot"}:
+            template_details = {}
+            if measure_type == "template_contour":
+                golden_p1 = template_reference_point(cal, "p1")
+                golden_p2 = template_reference_point(cal, "p2")
+                pair = template_intersections(contour, golden_p1, golden_p2)
+                if pair is None:
+                    recipe_results[lbl] = {
+                        "label": lbl, "p1": golden_p1, "p2": golden_p2,
+                        "length_px": None, "length_mm": None,
+                        "measure_type": measure_type, "valid": False,
+                        "error": "No matching edge pair on the taught scanline",
+                        "inner_contour": None,
+                    }
+                    continue
+                p1_edge, p2_edge = pair
+                axis_vec = np.asarray(golden_p2, dtype=np.float64) - np.asarray(
+                    golden_p1, dtype=np.float64
+                )
+                golden_length_px = float(np.linalg.norm(axis_vec))
+                if golden_length_px > 1e-9:
+                    axis_vec /= golden_length_px
+                    p1_shift_px = float(
+                        np.dot(
+                            np.asarray(p1_edge, dtype=np.float64)
+                            - np.asarray(golden_p1, dtype=np.float64),
+                            axis_vec,
+                        )
+                    )
+                    p2_shift_px = float(
+                        np.dot(
+                            np.asarray(p2_edge, dtype=np.float64)
+                            - np.asarray(golden_p2, dtype=np.float64),
+                            axis_vec,
+                        )
+                    )
+                    # P1 outward is the negative axis direction; P2 outward
+                    # is positive.  Negative values therefore mean that the
+                    # measured edge moved toward the template centre.
+                    delta_p1_px = -p1_shift_px
+                    delta_p2_px = p2_shift_px
+                    taught_mm, baseline_source = golden_baseline(cal, golden_length_px, optical_scale)
+                    measured_mm = taught_mm + (
+                        delta_p1_px + delta_p2_px
+                    ) * optical_scale
+                    projected_length_px = golden_length_px + delta_p1_px + delta_p2_px
+                    template_details = {
+                        "golden_p1": golden_p1,
+                        "golden_p2": golden_p2,
+                        "golden_length_px": golden_length_px,
+                        "golden_length_mm": taught_mm,
+                        "golden_source": baseline_source,
+                        "delta_p1_mm": delta_p1_px * optical_scale,
+                        "delta_p2_mm": delta_p2_px * optical_scale,
+                        "total_delta_mm": (delta_p1_px + delta_p2_px) * optical_scale,
+                        "measured_mm_unrounded": measured_mm,
+                        "valid": True,
+                        "measurement_formula": "golden_length_mm + delta_p1_mm + delta_p2_mm",
+                    }
+            elif measure_type in {"inner_contour", "hole", "slot"}:
                 p1_edge, p2_edge, inner_contour = self.snap_scanline_to_inner_contour(
                     gray, contour, p1_raw, p2_raw, image_bgr=image_bgr
                 )
@@ -1044,7 +1234,10 @@ class WorkpieceMeasurer:
             d_px = projected_length_px if projected_length_px is not None else float(
                 np.hypot(p2_edge[0] - p1_edge[0], p2_edge[1] - p1_edge[1])
             )
-            d_mm = round(d_px * optical_scale, 2)
+            d_mm = round(
+                template_details.get("measured_mm_unrounded", d_px * optical_scale),
+                3 if measure_type == "template_contour" else 2,
+            )
 
             recipe_results[lbl] = {
                 "label": lbl,
@@ -1059,6 +1252,7 @@ class WorkpieceMeasurer:
                 "inner_contour": inner_contour,
                 "color": cal.get("color", [0, 230, 255])
             }
+            recipe_results[lbl].update(template_details)
 
         return recipe_results
 
@@ -1378,6 +1572,13 @@ class WorkpieceMeasurer:
                     )
         meas_dict["recipe_calipers"] = recipe_calipers
 
+        contour_profile = None
+        if sku:
+            contour_profile = self.evaluate_contour_profile(
+                contour, optical_scale, sku
+            )
+        meas_dict["contour_profile"] = contour_profile
+
         # Only evaluate pins if "D" or "D1" is in active_labels AND sku is 98003P
         pin_res = {}
         if optical_scale and sku == "98003P" and any(k in active_labels for k in ("D", "D1", "D2")):
@@ -1444,6 +1645,15 @@ class WorkpieceMeasurer:
 
             # RULE: If a dimension is not drawn/measured, DO NOT compare it
             if val is None:
+                failed_template = recipe_calipers.get(lbl, {})
+                if failed_template.get("measure_type") == "template_contour":
+                    spec_report.append({
+                        "label": lbl, "raw_spec": item.get("raw_spec", lbl),
+                        "nominal_mm": nom, "measured_mm": None,
+                        "min_mm": mi, "max_mm": ma, "status": "FAIL",
+                        "note": failed_template.get("error", "Template measurement unavailable"),
+                    })
+                    continue
                 unmeasured_dims.append({
                     "label": lbl,
                     "nominal_mm": nom,
@@ -1452,7 +1662,9 @@ class WorkpieceMeasurer:
                 })
                 continue
 
-            status = "PASS" if (mi <= val <= ma) else "FAIL"
+            detail = recipe_calipers.get(lbl, {})
+            precise_val = detail.get("measured_mm_unrounded", val)
+            status = "PASS" if (mi - 1e-9 <= precise_val <= ma + 1e-9) else "FAIL"
             spec_report.append({
                 "label": lbl,
                 "raw_spec": item.get("raw_spec", f"{lbl} {nom}mm"),
@@ -1469,12 +1681,26 @@ class WorkpieceMeasurer:
                 "axis": axis,
                 "note": desc or "Biên dạng 2D CAD"
             })
+            if detail.get("measure_type") == "template_contour":
+                spec_report[-1].update({key: detail.get(key) for key in (
+                    "golden_length_mm", "golden_source", "delta_p1_mm",
+                    "delta_p2_mm", "total_delta_mm",
+                )})
 
         meas_dict["spec_report"] = spec_report
         meas_dict["unmeasured_dimensions"] = unmeasured_dims
-        caliper_pass = all(
+        dimension_pass = all(
             r["status"] == "PASS" for r in spec_report
         ) if spec_report else True
+        dimension_pass = dimension_pass and all(
+            cal.get("valid", True) for cal in recipe_calipers.values()
+        )
+        if any(c.get("measure_type") == "template_contour" for c in user_calipers) and not recipe_calipers:
+            dimension_pass = False
+        profile_pass = bool(contour_profile.get("pass", True)) if contour_profile else True
+        caliper_pass = bool(dimension_pass and profile_pass)
+        meas_dict["dimension_pass"] = dimension_pass
+        meas_dict["profile_pass"] = profile_pass
         meas_dict["caliper_pass"] = caliper_pass
 
         if template_matching is not None:
@@ -1493,13 +1719,14 @@ class WorkpieceMeasurer:
         outer_measure_types = {
             "taught_caliper", "length", "overall_length", "width",
             "gap", "step_length", "thickness", "outer_dimension",
+            "template_contour",
         }
         for lbl, r_cal in recipe_calipers.items():
             if lbl in active_labels:
                 measure_type = r_cal.get("measure_type", "taught_caliper")
                 p1, p2 = r_cal["p1"], r_cal["p2"]
                 r_inner = r_cal.get("inner_contour")
-                if measure_type in outer_measure_types:
+                if measure_type in outer_measure_types and measure_type != "template_contour":
                     p1, p2 = self.snap_scanline_to_edges(gray, contour, p1, p2)
                 elif r_inner is not None:
                     p1, p2 = self.snap_scanline_to_edges(gray, r_inner, p1, p2)
@@ -1510,7 +1737,13 @@ class WorkpieceMeasurer:
                     "val_mm": r_cal["length_mm"],
                     "measure_type": measure_type,
                     "inner_contour": r_inner,
-                    "color": r_cal.get("color", [0, 255, 200])
+                    "color": r_cal.get("color", [0, 255, 200]),
+                    "golden_p1": r_cal.get("golden_p1"),
+                    "golden_p2": r_cal.get("golden_p2"),
+                    "delta_p1_mm": r_cal.get("delta_p1_mm"),
+                    "delta_p2_mm": r_cal.get("delta_p2_mm"),
+                    "total_delta_mm": r_cal.get("total_delta_mm"),
+                    "valid": r_cal.get("valid", True),
                 })
 
         # Draw L only if requested
@@ -1596,10 +1829,18 @@ def annotate_measurements(
     """
     vis = img_bgr.copy()
 
-    # 1. Physical workpiece boundary
-    cv2.drawContours(vis, [contour], -1, (0, 255, 0), 2, cv2.LINE_AA)
+    # 1. Golden contour tolerance band (template-contour mode only).
+    profile = measurements.get("contour_profile")
+    if profile and profile.get("aligned_golden_contour") is not None:
+        draw_profile(vis, profile)
 
-    # 2. Draw user-configured calipers (STRICTLY what user selected)
+    # 2. Physical workpiece boundary
+    cv2.drawContours(vis, [contour], -1, (0, 255, 0), 2, cv2.LINE_AA)
+    if profile:
+        for point in profile.get("outside_target_points", []):
+            cv2.circle(vis, tuple(np.rint(point).astype(int)), 2, (0, 0, 255), -1)
+
+    # 3. Draw user-configured calipers (STRICTLY what user selected)
     draw_calipers = measurements.get("active_draw_calipers", [])
     if not draw_calipers:
         recipe_calipers = measurements.get("recipe_calipers", {})
@@ -1624,6 +1865,7 @@ def annotate_measurements(
         outer_types = {
             "taught_caliper", "length", "overall_length", "width",
             "gap", "step_length", "thickness", "outer_dimension",
+            "template_contour",
         }
         raw_p1, raw_p2 = cal["p1"], cal["p2"]
         p1 = (int(round(raw_p1[0])), int(round(raw_p1[1])))
@@ -1660,17 +1902,24 @@ def annotate_measurements(
                 [mx, my - 6], [mx + 6, my], [mx, my + 6], [mx - 6, my]
             ], dtype=np.int32)
             cv2.polylines(vis, [diamond], True, col, 2, cv2.LINE_AA)
-        tag = f"{'INNER ' if is_inner else ''}{lbl}: {v_mm:.2f}mm"
-        cv2.putText(vis, tag, (mx + 8, my - 6), cv2.FONT_HERSHEY_SIMPLEX, 0.48, (0, 0, 0), 3, cv2.LINE_AA)
+        prefix = "TPL " if measure_type == "template_contour" else ("INNER " if is_inner else "")
+        tag = f"{prefix}{lbl}: {v_mm:.3f}mm" if v_mm is not None else f"{prefix}{lbl}: N/A FAIL"
+        if measure_type == "template_contour" and cal.get("total_delta_mm") is not None:
+            tag += f" (d={cal['total_delta_mm']:+.3f}mm)"
+        if measure_type == "template_contour":
+            for key in ("golden_p1", "golden_p2"):
+                if cal.get(key) is not None:
+                    cv2.circle(vis, tuple(np.rint(cal[key]).astype(int)), 6, (160, 160, 160), 1)
         cv2.putText(vis, tag, (mx + 8, my - 6), cv2.FONT_HERSHEY_SIMPLEX, 0.48, col, 1, cv2.LINE_AA)
 
-    # 3. Semi-transparent Industrial HUD Quality Inspection Table
+    # 4. Semi-transparent Industrial HUD Quality Inspection Table
     tm = template_matching if template_matching is not None else measurements.get("template_matching")
     report = measurements.get("spec_report", [])
-    if report or tm:
+    if report or tm or profile:
         hud_w = 490
         tm_extra_h = 56 if tm else 0
-        hud_h = 45 + len(report) * 22 + tm_extra_h + 38
+        profile_extra_h = 30 if profile else 0
+        hud_h = 45 + len(report) * 22 + tm_extra_h + profile_extra_h + 38
         overlay = vis.copy()
         cv2.rectangle(overlay, (10, 10), (10 + hud_w, 10 + hud_h), (15, 15, 20), -1)
         cv2.addWeighted(overlay, 0.88, vis, 0.12, 0, vis)
@@ -1692,11 +1941,11 @@ def annotate_measurements(
             if status == "PASS":
                 st_color = (0, 230, 0)
                 st_text = "[PASS]"
-                val_text = f"{meas:6.2f} mm"
+                val_text = f"{meas:6.2f} mm" if meas is not None else "   N/A   "
             elif status == "FAIL":
                 st_color = (0, 0, 255)
                 st_text = "[FAIL]"
-                val_text = f"{meas:6.2f} mm"
+                val_text = f"{meas:6.2f} mm" if meas is not None else "   N/A   "
             else:
                 st_color = (255, 200, 0)
                 st_text = "[Z-AXIS]"
@@ -1709,7 +1958,25 @@ def annotate_measurements(
             cv2.putText(vis, st_text, (10 + hud_w - 65, y), cv2.FONT_HERSHEY_SIMPLEX, 0.42, st_color, 1, cv2.LINE_AA)
             y += 22
 
-        caliper_ok = all(r["status"] == "PASS" for r in report) if report else True
+        if profile:
+            cv2.line(vis, (18, y - 6), (10 + hud_w - 8, y - 6), (65, 65, 75), 1)
+            y += 12
+            profile_ok = bool(profile.get("pass", False))
+            profile_text = (
+                f"PROFILE Max:{profile.get('max_deviation_mm', 0.0):.3f}mm "
+                f"In:{profile.get('lower_mm', 0.0):.3f} Out:{profile.get('upper_mm', 0.0):.3f}mm"
+            )
+            cv2.putText(vis, profile_text, (18, y), cv2.FONT_HERSHEY_SIMPLEX,
+                        0.39, (200, 220, 240), 1, cv2.LINE_AA)
+            cv2.putText(vis, "[PASS]" if profile_ok else "[FAIL]",
+                        (10 + hud_w - 65, y), cv2.FONT_HERSHEY_SIMPLEX, 0.39,
+                        (0, 230, 0) if profile_ok else (0, 0, 255), 1, cv2.LINE_AA)
+            y += 20
+
+        caliper_ok = bool(measurements.get(
+            "caliper_pass",
+            all(r["status"] == "PASS" for r in report) if report else True,
+        ))
 
         # Template Matching Inspection Section (Surface Profile / Defects)
         template_ok = True

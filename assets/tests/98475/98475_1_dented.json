@@ -1,0 +1,21 @@
+{
+  "type": "synthetic_defect_fixture",
+  "sku": "98475",
+  "image": "images/98475_1_dented.png",
+  "control": "images/98475_1_golden_control.png",
+  "golden_reference": "assets/references/98475/images/98475_1.png",
+  "origin": "imagegen edit: one concave notch in the right edge of the vertical metal shaft",
+  "canvas_normalization": {
+    "generated_width_height": [827, 1902],
+    "test_width_height": [540, 1241],
+    "basis": "image canvas resolution, not detected workpiece size"
+  },
+  "calibration_mm_per_px": 0.038592,
+  "example_profile_offsets_mm": {"inward": 0.4, "outward": 0.4},
+  "example_scanline_y_px": 570,
+  "expected_control_profile": "PASS",
+  "expected_dented_profile": "FAIL",
+  "report": "outputs/visualizations/98475_1_dented.png",
+  "inspection_record": "outputs/predictions/98475_1_dented.json",
+  "notes": "AI may introduce slight changes outside the notch. This fixture demonstrates inspection behavior; physical millimetre accuracy is not validated. The report's inspection_recipe records the exact taught scanline without changing the production recipe."
+}
